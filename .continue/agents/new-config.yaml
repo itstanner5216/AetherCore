@@ -1,0 +1,106 @@
+name: Gemini 3.0 Polyglot
+version: 1.0.5
+schema: v1
+models:
+  # -------------------------------------------------------
+  # MODEL 1: Gemini 3 Pro Preview (The Brain)
+  # Best for: Complex logic, refactoring, and deep reasoning
+  # -------------------------------------------------------
+  - name: Gemini 3 Pro Preview
+    provider: gemini
+    model: gemini-3-pro-preview
+    apiKey: "AIzaSyCvZLhrK5cj6sulOzyl5z56ZDU54LHUTbw"
+    roles:
+      - chat
+      - edit
+      - summarize
+    systemMessage: |
+      You are an elite, polyglot software engineer.
+      1. NO LAZINESS: Never use placeholders like "// ... rest of code". Always output the full, functional file.
+      2. NO FLUFF: Do not apologize or over-explain. Provide the code solution immediately.
+      3. CONTEXT AWARE: Detect the language automatically based on the file extension and existing code style.
+      4. DIFF FRIENDLY: When editing, output code blocks that match the existing indentation perfectly so diffs apply cleanly.
+    defaultCompletionOptions:
+      contextLength: 2097152
+      maxTokens: 65536
+      temperature: 0.7
+    capabilities:
+      - tool_use
+      - image_input
+
+  # -------------------------------------------------------
+  # MODEL 2: Gemini 2.5 Pro (The Stable Backup)
+  # Best for: Daily tasks if the Preview model acts buggy
+  # -------------------------------------------------------
+  - name: Gemini 2.5 Pro
+    provider: gemini
+    model: gemini-2.5-pro
+    apiKey: "AIzaSyCvZLhrK5cj6sulOzyl5z56ZDU54LHUTbw"
+    roles:
+      - chat
+      - edit
+    systemMessage: |
+      You are an elite, polyglot software engineer.
+      1. NO LAZINESS: Never use placeholders like "// ... rest of code". Always output the full, functional file.
+      2. NO FLUFF: Do not apologize or over-explain. Provide the code solution immediately.
+      3. CONTEXT AWARE: Detect the language automatically based on the file extension and existing code style.
+      4. DIFF FRIENDLY: When editing, output code blocks that match the existing indentation perfectly so diffs apply cleanly.
+    defaultCompletionOptions:
+      contextLength: 2097152
+      maxTokens: 8192
+    capabilities:
+      - tool_use
+      - image_input
+
+  # -------------------------------------------------------
+  # MODEL 3: Gemini 2.5 Flash (The Speedster)
+  # Best for: Autocomplete, simple questions, and quick edits
+  # -------------------------------------------------------
+  - name: Gemini 2.5 Flash
+    provider: gemini
+    model: gemini-2.5-flash
+    apiKey: "AIzaSyCvZLhrK5cj6sulOzyl5z56ZDU54LHUTbw"
+    roles:
+      - autocomplete
+      - chat # Added back so you can use the system message in chat mode
+      - edit
+    systemMessage: |
+      You are an elite, polyglot software engineer.
+      1. NO LAZINESS: Never use placeholders like "// ... rest of code". Always output the full, functional file.
+      2. NO FLUFF: Do not apologize or over-explain. Provide the code solution immediately.
+      3. CONTEXT AWARE: Detect the language automatically based on the file extension and existing code style.
+      4. DIFF FRIENDLY: When editing, output code blocks that match the existing indentation perfectly so diffs apply cleanly.
+    defaultCompletionOptions:
+      contextLength: 1048576
+      maxTokens: 2048 # Increased slightly for Chat/Edit, but Autocomplete will override this internally
+      temperature: 0.1
+    capabilities:
+      - tool_use
+
+context:
+  - name: File Context
+    provider: file
+  - name: Code Context
+    provider: code
+  - name: Diff Context
+    provider: diff
+  - name: Terminal Context
+    provider: terminal
+  - name: folder
+    provider: folder
+  - name: currentFile
+    provider: currentFile
+  - name: Problems
+    provider: problems
+  - name: Tree Context
+    provider: tree
+
+requestOptions:
+  timeout: 120000
+  caBundlePath: ""
+  extraBodyProperties: {}
+  headers: {}
+
+env:
+  enableUsageStats: true
+  enableErrorReporting: true
