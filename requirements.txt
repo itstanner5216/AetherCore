@@ -1,4 +1,4 @@
- ProjectGPT HTTP Gateway - Python Dependencies
+# ProjectGPT HTTP Gateway - Python Dependencies
 # Install with: pip install -r requirements.txt
 
 # Core Framework
