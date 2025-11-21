@@ -25,6 +25,7 @@ import uvicorn
 import logging
 import json
 import os
+import uuid
 from collections import defaultdict
 
 # Local imports
@@ -48,6 +49,68 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
 )
 logger = logging.getLogger(__name__)
+
+# ----------------------------------------------------------------------------
+# Telemetry Logger (Auto file-based logging)
+# ----------------------------------------------------------------------------
+
+class TelemetryLogger:
+    """Automatic file-based telemetry - no GPT involvement required."""
+
+    def __init__(self, log_dir: str = "logs"):
+        self.log_dir = log_dir
+        os.makedirs(log_dir, exist_ok=True)
+        self.telemetry_file = os.path.join(log_dir, "telemetry.jsonl")
+        self.errors_file = os.path.join(log_dir, "errors.jsonl")
+
+    def _write(self, filepath: str, data: dict):
+        data["_logged_at"] = datetime.now().isoformat()
+        try:
+            with open(filepath, "a") as f:
+                f.write(json.dumps(data) + "\n")
+        except Exception as e:
+            logger.error(f"Failed to write telemetry: {e}")
+
+    def log_skill_execution(self, skill: str, tool: str, context_id: str,
+                           execution_time_ms: float, success: bool, result_summary: str = ""):
+        self._write(self.telemetry_file, {
+            "event": "skill_execution",
+            "skill": skill,
+            "tool": tool,
+            "context_id": context_id,
+            "execution_time_ms": execution_time_ms,
+            "success": success,
+            "result_summary": result_summary[:200] if result_summary else ""
+        })
+
+    def log_error(self, skill: str, tool: str, context_id: str, error: str, error_type: str = "execution"):
+        self._write(self.errors_file, {
+            "event": "error",
+            "error_type": error_type,
+            "skill": skill,
+            "tool": tool,
+            "context_id": context_id,
+            "error": str(error)[:500]
+        })
+
+    def log_quota_event(self, provider: str, event_type: str, details: dict = None):
+        self._write(self.telemetry_file, {
+            "event": "quota",
+            "provider": provider,
+            "event_type": event_type,
+            "details": details or {}
+        })
+
+    def log_request(self, endpoint: str, method: str, api_key_prefix: str, status_code: int):
+        self._write(self.telemetry_file, {
+            "event": "request",
+            "endpoint": endpoint,
+            "method": method,
+            "api_key_prefix": api_key_prefix,
+            "status_code": status_code
+        })
+
+telemetry = TelemetryLogger()
 
 # ----------------------------------------------------------------------------
 # FastAPI App
@@ -180,7 +243,47 @@ async def root():
         "documentation": "/docs",
         "openapi_spec": "/openapi.json",
         "health": "/health",
+        "logs": "/logs",
     }
+
+
+@app.get("/logs", tags=["System"])
+async def get_logs(
+    limit: int = 50,
+    log_type: str = "all",
+    api_key: str = Depends(verify_api_key),
+):
+    """
+    View recent telemetry logs.
+
+    Args:
+        limit: Number of recent entries (default 50, max 500)
+        log_type: 'all', 'telemetry', or 'errors'
+
+    Returns:
+        Recent log entries as JSON array
+    """
+    limit = min(limit, 500)
+    logs = []
+
+    def read_jsonl(filepath: str, max_lines: int) -> list:
+        if not os.path.exists(filepath):
+            return []
+        try:
+            with open(filepath, "r") as f:
+                lines = f.readlines()
+            return [json.loads(line) for line in lines[-max_lines:]]
+        except Exception as e:
+            return [{"error": f"Failed to read {filepath}: {e}"}]
+
+    if log_type in ("all", "telemetry"):
+        logs.extend(read_jsonl(telemetry.telemetry_file, limit))
+    if log_type in ("all", "errors"):
+        logs.extend(read_jsonl(telemetry.errors_file, limit))
+
+    # Sort by timestamp descending
+    logs.sort(key=lambda x: x.get("_logged_at", ""), reverse=True)
+    return {"logs": logs[:limit], "count": len(logs[:limit])}
 
 
 # ============================================================================
@@ -336,20 +439,38 @@ async def execute_tool(
     )
 
     try:
+        # Generate context_id for request tracking
+        context_id = str(uuid.uuid4())
+        context = request.context or {}
+        context["context_id"] = context_id
+
         result = await skill_loader.execute_tool(
             skill_name=canonical_skill_name,
             tool_name=canonical_tool_name,
             parameters=request.parameters,
-            context=request.context,
+            context=context,
+        )
+
+        exec_time = result.get("_execution_time_ms", 0)
+
+        # Auto-log telemetry
+        telemetry.log_skill_execution(
+            skill=canonical_skill_name,
+            tool=canonical_tool_name,
+            context_id=context_id,
+            execution_time_ms=exec_time,
+            success=True,
+            result_summary=str(result.get("results", result.get("findings", "")))[:200]
         )
 
         return {
             "success": True,
             "skill": canonical_skill_name,
             "tool": canonical_tool_name,
+            "context_id": context_id,
             "result": result,
             "timestamp": datetime.now().isoformat(),
-            "execution_time_ms": result.get("_execution_time_ms", 0),
+            "execution_time_ms": exec_time,
         }
 
     except HTTPException:
@@ -358,6 +479,13 @@ async def execute_tool(
     except Exception as e:
         logger.error(
             f"Tool execution failed: {canonical_skill_name}.{canonical_tool_name} - {str(e)}"
+        )
+        # Auto-log error
+        telemetry.log_error(
+            skill=canonical_skill_name,
+            tool=canonical_tool_name,
+            context_id=context_id if 'context_id' in dir() else "unknown",
+            error=str(e)
         )
         raise HTTPException(
             status_code=500,
@@ -410,7 +538,8 @@ async def orchestrate_skills(
         )
 
     results: List[Dict[str, Any]] = []
-    context: Dict[str, Any] = {}
+    context_id = str(uuid.uuid4())
+    context: Dict[str, Any] = {"context_id": context_id}
 
     for step in workflow:
         raw_skill_name = step.get("skill")
@@ -527,6 +656,7 @@ async def orchestrate_skills(
 
     return {
         "success": all(r.get("success", False) for r in results),
+        "context_id": context_id,
         "steps_executed": len(results),
         "results": results,
         "final_context": context,

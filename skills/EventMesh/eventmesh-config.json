@@ -16,7 +16,7 @@
   "AetherCore.MarketSweep",
   "AetherCore.GeminiBridge",
   "AetherCore.PromptFoundry"
-]
+],
   "integration": {
     "inherits_from": "Full-Output Intelligence Protocol",
     "tone_inheritance": true,

@@ -75,6 +75,31 @@
           "callable": true,
           "load_timeout_ms": 5000,
           "on_failure": "continue_with_warning"
+        },
+        {
+          "name": "AetherCore.SearchEngine",
+          "entry_point": "AetherCore/SearchEngine/searchengine-entry.js",
+          "priority": 7,
+          "callable": true,
+          "load_timeout_ms": 10000,
+          "on_failure": "continue_with_warning",
+          "requires_api_keys": true
+        },
+        {
+          "name": "AetherCore.ReasoningChain",
+          "entry_point": "AetherCore/ReasoningChain/reasoningchain-entry.js",
+          "priority": 8,
+          "callable": true,
+          "load_timeout_ms": 5000,
+          "on_failure": "continue_with_warning"
+        },
+        {
+          "name": "AetherCore.SourceValidator",
+          "entry_point": "AetherCore/SourceValidator/sourcevalidator-entry.js",
+          "priority": 9,
+          "callable": true,
+          "load_timeout_ms": 5000,
+          "on_failure": "continue_with_warning"
         }
       ]
     }

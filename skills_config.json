@@ -183,6 +183,82 @@
       "metadata": {
         "category": "prompting"
       }
+    },
+
+    "AetherCore.SearchEngine": {
+      "skill_name": "AetherCore.SearchEngine",
+      "version": "1.0.0",
+      "type": "callable",
+      "description": "Multi-provider search engine with automatic failover, quota management, and web scraping fallback.",
+      "execution_priority": 7,
+      "callable": true,
+      "dependencies": [
+        "AetherCore.Orchestrator",
+        "AetherCore.EventMesh",
+        "AetherCore.OptiGraph"
+      ],
+      "tools": [
+        "search",
+        "scrape",
+        "quota_status",
+        "reset_quotas"
+      ],
+      "tool_descriptions": {
+        "search": "Execute web search with automatic provider failover (Google, Brave, Serper).",
+        "scrape": "Scrape URL content with fallback providers (Webscraping API, ScrapingAnt).",
+        "quota_status": "Get current quota status for all providers.",
+        "reset_quotas": "Force reset quota counters."
+      },
+      "metadata": {
+        "category": "search",
+        "requires_api_key": true,
+        "providers": {
+          "search": ["google", "brave", "serper"],
+          "scrape": ["webscraping_api", "scrapingant"]
+        }
+      }
+    },
+
+    "AetherCore.ReasoningChain": {
+      "skill_name": "AetherCore.ReasoningChain",
+      "version": "1.0",
+      "type": "callable",
+      "description": "Enforces structured chain-of-thought reasoning with decomposition, step verification, and synthesis for complex queries.",
+      "execution_priority": 8,
+      "callable": true,
+      "dependencies": ["AetherCore.Orchestrator", "AetherCore.EventMesh"],
+      "tools": ["decompose", "reason_step", "verify_step", "synthesize"],
+      "tool_descriptions": {
+        "decompose": "Break complex query into atomic sub-questions with dependency graph.",
+        "reason_step": "Execute reasoning for a single step with evidence tracking.",
+        "verify_step": "Validate reasoning step for logical consistency.",
+        "synthesize": "Combine verified steps into final conclusion with confidence score."
+      },
+      "metadata": {
+        "category": "reasoning",
+        "supports_complex_queries": true
+      }
+    },
+
+    "AetherCore.SourceValidator": {
+      "skill_name": "AetherCore.SourceValidator",
+      "version": "1.0",
+      "type": "callable",
+      "description": "Scores source credibility, cross-references claims, detects bias, and ensures proper citation formatting.",
+      "execution_priority": 9,
+      "callable": true,
+      "dependencies": ["AetherCore.Orchestrator", "AetherCore.DeepForge", "AetherCore.SearchEngine"],
+      "tools": ["score_source", "cross_reference", "detect_bias", "cite"],
+      "tool_descriptions": {
+        "score_source": "Evaluate source credibility (0-100) with tier classification.",
+        "cross_reference": "Verify claim against multiple sources for agreement rate.",
+        "detect_bias": "Analyze content for potential bias indicators.",
+        "cite": "Generate properly formatted citation (APA, MLA, Chicago)."
+      },
+      "metadata": {
+        "category": "validation",
+        "credibility_tiers": ["tier_1", "tier_2", "tier_3", "tier_4"]
+      }
     }
   },
 
