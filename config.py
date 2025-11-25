@@ -1,5 +1,5 @@
 """
-Configuration Management for ProjectGPT Gateway
+Configuration Management for AetherCore Gateway
 
 Loads configuration from environment variables and config files.
 Handles secrets, API keys, and runtime settings.

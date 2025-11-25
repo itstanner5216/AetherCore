@@ -1,5 +1,5 @@
 """
-Authentication Manager for ProjectGPT Gateway
+Authentication Manager for AetherCore Gateway
 
 Handles API key validation, OAuth token management, and user authorization.
 Supports both simple API keys for development and OAuth for production.

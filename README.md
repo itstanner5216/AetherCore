@@ -1,4 +1,4 @@
-# ProjectGPT Gateway API
+# AetherCore Gateway API
 
 ProjectGPT is a modular skillset ecosystem with an HTTP Gateway that exposes AetherCore skills as REST API endpoints. This enables Custom GPT Actions integration, allowing OpenAI GPTs to access sophisticated research, search, commerce, and reasoning capabilities through standard HTTP requests.
 
@@ -117,10 +117,10 @@ This project is configured for automatic deployment to Koyeb from GitHub:
 
 ```bash
 # Build Docker image
-docker build -t projectgpt-gateway .
+docker build -t aethercore-gateway .
 
 # Run locally
-docker run -p 8000:8000 --env-file dev.env projectgpt-gateway
+docker run -p 8000:8000 --env-file dev.env aethercore-gateway
 
 # Test health endpoint
 curl http://localhost:8000/health

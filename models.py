@@ -1,5 +1,5 @@
 """
-Pydantic Models for ProjectGPT Gateway (Aligned with AetherCore Skill Definitions)
+Pydantic Models for AetherCore Gateway (Aligned with AetherCore Skill Definitions)
 
 Defines request/response schemas for:
 - Tool execution

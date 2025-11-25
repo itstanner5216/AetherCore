@@ -117,7 +117,7 @@ telemetry = TelemetryLogger()
 # ----------------------------------------------------------------------------
 
 app = FastAPI(
-    title="ProjectGPT Gateway API",
+    title="AetherCore Gateway API",
     description="HTTP Gateway for ProjectGPT (AetherCore) Skills - Converts modular AI skills into REST endpoints",
     version="1.0.0",
     docs_url="/docs",
