@@ -12,8 +12,9 @@ logs/
 providers.json
 **/providers.json
 
-# Northflank secrets
-northflank.secrets.json
+# Deployment secrets
+*.secrets.json
+koyeb.secrets.json
 
 # Python
 __pycache__/

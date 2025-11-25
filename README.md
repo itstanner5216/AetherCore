@@ -9,7 +9,7 @@ This repository contains:
 - **10 Modular Skills**: Autonomous capabilities for research, search, commerce, reasoning, and more
 - **Event-Driven Architecture**: Skills communicate via messaging bus for complex workflows
 - **OpenAI Custom GPT Integration**: Direct integration via Actions and outbound connections
-- **Northflank Deployment**: Production-ready containerized deployment
+- **Koyeb Deployment**: Production-ready containerized deployment on free tier
 
 ### Key Features
 
@@ -20,6 +20,7 @@ This repository contains:
 - **Authentication**: API key-based authentication with rate limiting
 - **Automatic Telemetry**: File-based logging for skill execution and error tracking
 - **Scalable Workflows**: Supports complex multi-stage automation pipelines
+- **Free Deployment**: Runs completely free on Koyeb's Starter plan
 
 ## Skills Included
 
@@ -44,7 +45,7 @@ The repository includes 10 AetherCore skills:
 ### Prerequisites
 - Python 3.11+
 - Docker (for containerized deployment)
-- Northflank account (for production deployment)
+- Koyeb account (free tier available)
 
 ### Local Development
 
@@ -64,20 +65,39 @@ The repository includes 10 AetherCore skills:
    ```
 6. Access the docs at: http://localhost:8000/docs
 
-## Deployment to Northflank
+## Deployment to Koyeb (100% Free)
+
+### Why Koyeb?
+- **Free Tier**: 2 web services, 2 GB RAM, 2 vCPU shared
+- **No Credit Card Required**: Truly free deployment
+- **Auto-scaling**: Scales to zero when not in use
+- **Global CDN**: Fast response times worldwide
+- **GitHub Integration**: Auto-deploy on push
 
 ### Automated Deployment
 
-This project is configured for automatic deployment to Northflank from GitHub:
+This project is configured for automatic deployment to Koyeb from GitHub:
 
-1. **Connect GitHub Repository**
-   - Link your GitHub repository to Northflank
-   - Configure automatic builds on push to `main` branch
+1. **Create Koyeb Account**
+   - Sign up at https://app.koyeb.com (no credit card required)
+   - Connect your GitHub account
 
-2. **Configure Environment Variables** (in Northflank dashboard)
+2. **Deploy from GitHub**
+   - In Koyeb dashboard, click "Create Web Service"
+   - Select "GitHub" as source
+   - Choose repository: `itstanner5216/AetherCore`
+   - Branch: `main`
+   - Build type: Dockerfile
+   - Instance type: **Nano (free tier)**
+   - Regions: Choose any free region (e.g., Washington D.C.)
+   - Port: `8000`
+
+3. **Configure Environment Variables**
+   Add these in Koyeb dashboard under "Environment":
    ```
    ENVIRONMENT=production
    DEBUG=false
+   PORT=8000
    API_KEY=your_gateway_api_key
    GOOGLE_API_KEY=your_google_api_key
    GOOGLE_CSE_ID=your_google_cse_id
@@ -87,10 +107,11 @@ This project is configured for automatic deployment to Northflank from GitHub:
    SCRAPINGANT_API_KEY=your_scrapingant_api_key
    ```
 
-3. **Deploy**
-   - Northflank automatically builds the Docker container
+4. **Deploy**
+   - Click "Deploy"
+   - Koyeb automatically builds the Docker container
    - Health checks ensure service availability at `/health`
-   - Your API is live at: `https://your-service.northflank.app`
+   - Your API is live at: `https://your-service-name.koyeb.app`
 
 ### Manual Deployment
 
@@ -124,13 +145,13 @@ curl http://localhost:8000/health
 
 ## Custom GPT Integration
 
-### Step 1: Deploy to Northflank
+### Step 1: Deploy to Koyeb
 Follow the deployment instructions above to get your live API URL.
 
 ### Step 2: Import OpenAPI Spec
 1. Open Custom GPT builder in ChatGPT
-2. Go to Actions → Import from URL
-3. Enter: `https://your-service.northflank.app/openapi.json`
+2. Go to **Actions** → **Import from URL**
+3. Enter: `https://your-service-name.koyeb.app/openapi.json`
 4. Configure authentication with your API key
 
 ### Step 3: Test Integration
@@ -156,7 +177,7 @@ All endpoints (except `/health` and `/`) require Bearer token authentication:
 
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  https://your-service.northflank.app/skills
+  https://your-service-name.koyeb.app/skills
 ```
 
 ## Architecture
@@ -182,7 +203,6 @@ Aethercore/
 ├── models.py               # Pydantic models
 ├── skills_config.json      # Skill definitions
 ├── Dockerfile              # Container configuration
-├── northflank.json         # Northflank deployment config
 ├── requirements.txt        # Python dependencies
 └── skills/                 # Individual skill implementations
 ```
@@ -217,7 +237,7 @@ Telemetry is automatically logged to `logs/` directory:
 Access logs via the API:
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
-  https://your-service.northflank.app/logs?limit=50&log_type=all
+  https://your-service-name.koyeb.app/logs?limit=50&log_type=all
 ```
 
 ## Rate Limiting
@@ -227,12 +247,37 @@ Default rate limits:
 - Rate limit headers included in responses
 - 429 status code when limit exceeded
 
+## Koyeb Free Tier Limits
+
+- **Web Services**: 2 services
+- **Instances**: Nano (512MB RAM, 0.1 vCPU)
+- **Build Time**: Unlimited
+- **Bandwidth**: Unlimited data transfer
+- **Auto-sleep**: Services sleep after 30min inactivity, wake on first request
+- **Custom Domains**: 1 custom domain per service
+
+## Troubleshooting
+
+### Service Won't Start
+- Check environment variables are set correctly
+- Verify Dockerfile builds locally first
+- Check Koyeb logs for specific errors
+
+### Health Check Failing
+- Ensure port 8000 is exposed
+- Verify `/health` endpoint returns 200 status
+- Check that uvicorn is binding to 0.0.0.0, not localhost
+
+### Out of Memory
+- Reduce `--workers` in Dockerfile CMD to 1 for Nano instances
+- Consider upgrading to Eco instance if needed (still free)
+
 ## Support
 
 For issues or questions:
 - Check individual skill documentation in `skills/` directory
 - Review API documentation at `/docs` endpoint
-- Check Northflank deployment logs
+- Check Koyeb deployment logs
 - Ensure all environment variables are configured
 
 ## License
@@ -241,4 +286,4 @@ This skill ecosystem is designed for use with OpenAI Custom GPT and similar AI p
 
 ---
 
-**Note**: This system exposes AetherCore skills as REST API endpoints, enabling complex automation while maintaining compatibility with OpenAI Custom GPT Actions and other HTTP clients.
+**Note**: This system exposes AetherCore skills as REST API endpoints, enabling complex automation while maintaining compatibility with OpenAI Custom GPT Actions and other HTTP clients. Deployed completely free on Koyeb's Starter plan.

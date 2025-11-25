@@ -1,4 +1,4 @@
-# ProjectGPT Gateway - Northflank Production Dockerfile
+# ProjectGPT Gateway - Production Dockerfile (Koyeb Compatible)
 # Multi-stage build for optimized container size
 
 FROM python:3.11-slim as builder
@@ -43,7 +43,7 @@ USER appuser
 # Add local Python packages to PATH
 ENV PATH=/home/appuser/.local/bin:$PATH
 
-# Expose port (Northflank will map this)
+# Expose port (Koyeb will map this)
 EXPOSE 8000
 
 # Health check endpoint

@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "servers": [
-    {"url": "https://YOUR-NORTHFLANK-URL.northflank.app", "description": "Production"}
+    {"url": "https://YOUR-KOYEB-SERVICE.koyeb.app", "description": "Production"}
   ],
   "paths": {
     "/health": {
