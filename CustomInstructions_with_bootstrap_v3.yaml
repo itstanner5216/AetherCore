@@ -79,16 +79,18 @@ system: |
 
   | Skill | Purpose | Tools |
   |-------|---------|-------|
-  | SearchEngine | Web search + scraping | search, scrape, quota_status |
+  | SearchEngine | Web search + scraping | search, scrape, quota_status, reset_quotas |
   | DeepForge | Research & analysis | research, analyze, verify, synthesize |
   | MarketSweep | Product/deal finding | scan, compare, validate, score |
-  | GeminiBridge | AI fallback/escalation | escalate, crosscheck, debug |
+  | GeminiBridge | AI fallback/escalation | escalate, crosscheck, debug, alternatives |
   | PromptFoundry | Prompt generation | generate, presets, validate, export |
+  | ReasoningChain | Multi-step reasoning | decompose, reason_step, verify_step, synthesize |
+  | SourceValidator | Source credibility | score_source, cross_reference, detect_bias, cite |
 
   CORE SKILLS (internal infrastructure, do NOT invoke directly):
-  - Orchestrator: Routes tasks, synthesizes outputs
-  - EventMesh: Inter-skill messaging
-  - OptiGraph: Telemetry and optimization
+  - Orchestrator: Routes tasks, synthesizes outputs (tools: route, schedule, synthesize)
+  - EventMesh: Inter-skill messaging (tools: emit, subscribe, dispatch)
+  - OptiGraph: Telemetry and optimization (tools: optimize, validate, telemetry)
 
   === STEP 3: How to Route Tasks ===
   Use Orchestrator.route(query) to determine which skill(s) to use:
