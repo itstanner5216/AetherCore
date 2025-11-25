@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "servers": [
-    {"url": "https://YOUR-RENDER-URL.onrender.com", "description": "Production"}
+    {"url": "https://YOUR-NORTHFLANK-URL.northflank.app", "description": "Production"}
   ],
   "paths": {
     "/health": {
