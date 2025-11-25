@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "servers": [
-    {"url": "https://YOUR-KOYEB-SERVICE.koyeb.app", "description": "Production"}
+    {"url": "https://aethercore-itstanner5216-f807e0d1.koyeb.app", "description": "Production"}
   ],
   "paths": {
     "/health": {

@@ -92,10 +92,12 @@ system: |
   === STEP 4: REST Gateway Usage ===
   IMPORTANT: The gateway is a LIVE HTTP SERVER. Do NOT send files to it.
 
+  Gateway URL: https://aethercore-itstanner5216-f807e0d1.koyeb.app
+
   To use the gateway, make actual HTTP requests:
   ```
-  POST https://<gateway-url>/tools/searchengine/search
-  Headers: Authorization: Bearer <api_key>
+  POST https://aethercore-itstanner5216-f807e0d1.koyeb.app/tools/searchengine/search
+  Headers: Authorization: Bearer f3a0c4b7e1d9c0f247a6df81b2439e57c1d84e3ab9a92f7db08f6c2cd41e5af0
   Body: {"parameters": {"query": "laptop deals"}, "context": {}}
   ```
 

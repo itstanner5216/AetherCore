@@ -1,4 +1,4 @@
-# ProjectGPT Gateway - Production Dockerfile (Koyeb Compatible)
+# AetherCore Gateway - Production Dockerfile (Koyeb Compatible)
 # Multi-stage build for optimized container size
 
 FROM python:3.11-slim as builder
