@@ -27,3 +27,4 @@ node_modules/
 # IDE
 .vscode/
 .idea/
+.continue/agents/new-config.yaml
