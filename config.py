@@ -74,18 +74,28 @@ class Config:
         # Scrape providers
         self.webscraping_api_key = os.getenv("WEBSCRAPING_API_KEY", "")
         self.scrapingant_api_key = os.getenv("SCRAPINGANT_API_KEY", "")
-        
+
         # Validate configuration
-                    line = line.strip()
-                    if line and not line.startswith("#"):
-                        try:
-                            key, value = line.split("=", 1)
-                            # Only set if not already in environment
-                            if key not in os.environ:
-                                os.environ[key] = value
-                        except ValueError:
-                            logger.warning(f"Invalid .env line: {line}")
-    
+        self._validate()
+
+    def _load_env_file(self):
+        """Load environment variables from .env file"""
+        env_path = Path(".env")
+        if not env_path.exists():
+            return
+
+        with open(env_path, "r") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#"):
+                    try:
+                        key, value = line.split("=", 1)
+                        # Only set if not already in environment
+                        if key not in os.environ:
+                            os.environ[key] = value
+                    except ValueError:
+                        logger.warning(f"Invalid .env line: {line}")
+
     def _load_api_keys(self) -> List[str]:
         """
         Load API keys from environment
