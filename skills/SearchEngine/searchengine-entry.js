@@ -354,7 +354,6 @@ function calculateScrapingAntCredits(renderJs, usePremium) {
 
 class SearchEngine {
   constructor() {
-    this.quotaManager = new QuotaManager();
     this.telemetryBuffer = [];
   }
 
@@ -369,14 +368,6 @@ class SearchEngine {
       : [preferredProvider];
 
     for (const provider of providers) {
-      if (!this.quotaManager.canUse(provider)) {
-        this.quotaManager._logEvent('provider_failover', {
-          from: provider,
-          reason: 'quota_exhausted'
-        });
-        continue;
-      }
-
       try {
         switch (provider) {
           case 'google':
@@ -390,21 +381,11 @@ class SearchEngine {
             break;
         }
 
-        this.quotaManager.consume(provider);
         usedProvider = provider;
         break;
 
       } catch (error) {
         errors.push({ provider, error: error.message });
-        this.quotaManager._logEvent('error_handling', {
-          provider,
-          error: error.message,
-          action: 'continue_with_warning'
-        });
-        this.quotaManager._logEvent('provider_failover', {
-          from: provider,
-          reason: 'error'
-        });
       }
     }
 
@@ -413,9 +394,8 @@ class SearchEngine {
     if (!results) {
       return {
         success: false,
-        error: 'All search providers exhausted or failed',
+        error: 'All search providers failed',
         errors,
-        quota_status: this.quotaManager.getStatus()
       };
     }
 
@@ -433,7 +413,6 @@ class SearchEngine {
       results,
       results_count: results.length,
       execution_time_ms: executionTime,
-      quota_status: this.quotaManager.getStatus()
     };
   }
 
@@ -447,18 +426,6 @@ class SearchEngine {
     const providers = ['webscraping_api', 'scrapingant'];
 
     for (const provider of providers) {
-      const credits = provider === 'scrapingant'
-        ? calculateScrapingAntCredits(renderJs, usePremium)
-        : 1;
-
-      if (!this.quotaManager.canUse(provider, credits)) {
-        this.quotaManager._logEvent('provider_failover', {
-          from: provider,
-          reason: 'quota_exhausted'
-        });
-        continue;
-      }
-
       try {
         if (provider === 'webscraping_api') {
           content = await scrapeWebscrapingApi(targetUrl, renderJs);
@@ -466,21 +433,11 @@ class SearchEngine {
           content = await scrapeScrapingAnt(targetUrl, renderJs, usePremium);
         }
 
-        this.quotaManager.consume(provider, credits);
         usedProvider = provider;
         break;
 
       } catch (error) {
         errors.push({ provider, error: error.message });
-        this.quotaManager._logEvent('error_handling', {
-          provider,
-          error: error.message,
-          action: 'continue_with_warning'
-        });
-        this.quotaManager._logEvent('provider_failover', {
-          from: provider,
-          reason: 'error'
-        });
       }
     }
 
@@ -489,9 +446,8 @@ class SearchEngine {
     if (!content) {
       return {
         success: false,
-        error: 'All scrape providers exhausted or failed',
+        error: 'All scrape providers failed',
         errors,
-        quota_status: this.quotaManager.getStatus()
       };
     }
 
@@ -507,23 +463,19 @@ class SearchEngine {
       url: targetUrl,
       content: content.content,
       execution_time_ms: executionTime,
-      quota_status: this.quotaManager.getStatus()
     };
   }
 
   getQuotaStatus() {
     return {
-      providers: this.quotaManager.getStatus(),
-      events: this.quotaManager.getEvents().slice(-20)
+      message: "Quota status managed by Redis in server.js"
     };
   }
 
   resetQuotas(provider = 'all') {
-    this.quotaManager.forceReset(provider);
     return {
       success: true,
-      message: `Quota reset for: ${provider}`,
-      quota_status: this.quotaManager.getStatus()
+      message: `Quota reset requested for: ${provider} (handled by server.js via Redis)`
     };
   }
 

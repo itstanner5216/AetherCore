@@ -101,6 +101,7 @@ class SkillLoader:
         self.config_path = config_path
         self.skills: Dict[str, Dict] = {}
         self.skill_handlers: Dict[str, Any] = {}
+        self.load_skills()
 
     # ============================================================
     # LOAD SKILLS
@@ -796,143 +797,222 @@ class SkillLoader:
     ) -> Dict:
         """
         SearchEngine skill handler with multi-provider search and scraping.
-        Integrates: Google CSE, Brave, Serper for search
-                   Webscraping API, ScrapingAnt for scraping
+        Integrates with server.js API for quota management and search execution.
         """
+        import urllib.request
+        import urllib.error
+        import urllib.parse
+        import json
+        import os
+
         context_id = context.get("context_id") if context else None
 
-        # Initialize quota tracker (session-scoped)
-        if not hasattr(self, '_search_quotas'):
-            self._quota_file = Path("logs/search_quotas.json")
-            self._search_quotas = {
-                'google': {'used': 0, 'limit': 100, 'remaining': float('inf'), 'active': True, 'last_reset': None},
-                'brave': {'used': 0, 'limit': 2000, 'remaining': float('inf'), 'active': True, 'last_reset': None},
-                'serper': {'used': 0, 'limit': 2000, 'remaining': float('inf'), 'active': True, 'last_reset': None},
-                'webscraping_api': {'used': 0, 'limit': 5000, 'remaining': float('inf'), 'active': True, 'last_reset': None},
-                'scrapingant': {'used': 0, 'limit': 10000, 'remaining': float('inf'), 'active': True, 'last_reset': None}
-            }
-            await self._load_quotas()
-            self._search_events = []
-            self._search_index = 0
-            self._scrape_index = 0
+        # Get server URL from environment or use default
+        server_url = os.getenv('SEARCH_ENGINE_SERVER_URL', 'http://localhost:8000')
+
+        if tool == "search":
+            query = parameters.get("query", "")
+            max_results = parameters.get("max_results", 10)
             provider = parameters.get("provider", "auto")
             skip_cache = parameters.get("skip_cache", False)
 
-            # Check cache first
-            cache_key = hashlib.md5(f"{query}:{max_results}".encode()).hexdigest()
-            if not skip_cache and hasattr(self, '_search_cache') and cache_key in self._search_cache:
-                cached = self._search_cache[cache_key]
-                if datetime.now() < cached["expires"]:
-                    cached["result"]["_from_cache"] = True
-                    return cached["result"]
-
-            # Select provider based on quota
-            if provider == "auto":
-                for p in ['google', 'brave', 'serper']:
-                    if self._search_quotas[p]['active']:
-                        provider = p
-                        break
-
-            if not provider or provider == "auto":
+            if not query:
                 return {
                     "success": False,
-                    "error": "All search providers exhausted",
-                    "context_id": context_id,
-                    "quota_status": self._search_quotas
+                    "error": "Missing query parameter",
+                    "context_id": context_id
                 }
 
-            # Consume quota
-            self._search_quotas[provider]['used'] += 1
-            if self._search_quotas[provider]['used'] >= self._search_quotas[provider]['limit']:
-                self._search_quotas[provider]['active'] = False
-                self._search_events.append({
-                    "type": "provider_deactivation",
+            # Check cache first (simple in-memory cache)
+            if not skip_cache and hasattr(self, '_search_cache'):
+                cache_key = hashlib.md5(f"{query}:{max_results}:{provider}".encode()).hexdigest()
+                if cache_key in self._search_cache:
+                    cached = self._search_cache[cache_key]
+                    if datetime.now() < cached["expires"]:
+                        cached["result"]["_from_cache"] = True
+                        cached["result"]["context_id"] = context_id
+                        return cached["result"]
+
+            try:
+                # Call server.js API
+                url = f"{server_url}/api/search"
+                data = json.dumps({
+                    "query": query,
+                    "max_results": max_results,
                     "provider": provider
-                })
+                }).encode('utf-8')
 
-            result = {
-                "success": True,
-                "provider": provider,
-                "query": query,
-                "results": [
-                    {"title": f"Result 1 for {query}", "url": "https://example.com/1", "snippet": f"Information about {query}..."},
-                    {"title": f"Result 2 for {query}", "url": "https://example.com/2", "snippet": f"More details on {query}..."}
-                ],
-                "results_count": min(max_results, 2),
-                "context_id": context_id,
-                "quota_status": self._search_quotas,
-                "_from_cache": False
-            }
+                req = urllib.request.Request(
+                    url,
+                    data=data,
+                    headers={'Content-Type': 'application/json'},
+                    method='POST'
+                )
 
-            # Cache the result (15 min TTL)
-            if not hasattr(self, '_search_cache'):
-                self._search_cache = {}
-            self._search_cache[cache_key] = {
-                "result": result.copy(),
-                "expires": datetime.now() + timedelta(minutes=15)
-            }
+                with urllib.request.urlopen(req, timeout=30) as resp:
+                    result = json.loads(resp.read().decode('utf-8'))
+                    result["context_id"] = context_id
 
-            return result
+                    # Cache successful result (15 min TTL)
+                    if not hasattr(self, '_search_cache'):
+                        self._search_cache = {}
+                    cache_key = hashlib.md5(f"{query}:{max_results}:{provider}".encode()).hexdigest()
+                    self._search_cache[cache_key] = {
+                        "result": result.copy(),
+                        "expires": datetime.now() + timedelta(minutes=15)
+                    }
+
+                    return result
+
+            except urllib.error.HTTPError as e:
+                error_body = e.read().decode('utf-8')
+                try:
+                    error_data = json.loads(error_body)
+                except:
+                    error_data = {"error": f"HTTP {e.code}"}
+
+                if e.code == 429:
+                    return {
+                        "success": False,
+                        "error": error_data.get("error", "Quota exhausted"),
+                        "context_id": context_id
+                    }
+                else:
+                    return {
+                        "success": False,
+                        "error": f"Search API error: {error_data.get('error', f'HTTP {e.code}')}",
+                        "context_id": context_id
+                    }
+            except Exception as e:
+                logger.error(f"Search API call failed: {str(e)}")
+                return {
+                    "success": False,
+                    "error": f"Failed to connect to search service: {str(e)}",
+                    "context_id": context_id
+                }
 
         elif tool == "scrape":
             url = parameters.get("url", "")
             render_js = parameters.get("render_js", False)
             use_premium = parameters.get("use_premium_proxy", False)
 
-            # Select scrape provider
-            provider = None
-            for p in ['webscraping_api', 'scrapingant']:
-                if self._search_quotas[p]['active']:
-                    provider = p
-                    break
-
-            if not provider:
+            if not url:
                 return {
                     "success": False,
-                    "error": "All scrape providers exhausted",
+                    "error": "Missing url parameter",
                     "context_id": context_id
                 }
 
-            # Calculate credits (ScrapingAnt uses credit system)
-            credits = 1
-            if provider == 'scrapingant':
-                credits = 125 if (render_js and use_premium) else (10 if render_js else 1)
+            try:
+                # Call server.js scrape API
+                api_url = f"{server_url}/api/scrape"
+                data = json.dumps({
+                    "url": url,
+                    "render_js": render_js,
+                    "use_premium_proxy": use_premium
+                }).encode('utf-8')
 
-            self._search_quotas[provider]['used'] += credits
+                req = urllib.request.Request(
+                    api_url,
+                    data=data,
+                    headers={'Content-Type': 'application/json'},
+                    method='POST'
+                )
 
-            return {
-                "success": True,
-                "provider": provider,
-                "url": url,
-                "content": f"<html><body>Scraped content from {url}</body></html>",
-                "credits_used": credits,
-                "context_id": context_id
-            }
+                with urllib.request.urlopen(req, timeout=60) as resp:
+                    result = json.loads(resp.read().decode('utf-8'))
+                    result["context_id"] = context_id
+                    return result
+
+            except urllib.error.HTTPError as e:
+                error_body = e.read().decode('utf-8')
+                try:
+                    error_data = json.loads(error_body)
+                except:
+                    error_data = {"error": f"HTTP {e.code}"}
+
+                return {
+                    "success": False,
+                    "error": f"Scrape API error: {error_data.get('error', f'HTTP {e.code}')}",
+                    "context_id": context_id
+                }
+            except Exception as e:
+                logger.error(f"Scrape API call failed: {str(e)}")
+                return {
+                    "success": False,
+                    "error": f"Failed to connect to scrape service: {str(e)}",
+                    "context_id": context_id
+                }
 
         elif tool == "quota_status":
-            return {
-                "providers": self._search_quotas,
-                "events": self._search_events[-20:],
-                "context_id": context_id
-            }
+            try:
+                # Call server.js quota status API
+                req = urllib.request.Request(f"{server_url}/api/quotas", method='GET')
+
+                with urllib.request.urlopen(req, timeout=10) as resp:
+                    result = json.loads(resp.read().decode('utf-8'))
+                    result["context_id"] = context_id
+                    return result
+
+            except urllib.error.HTTPError as e:
+                error_body = e.read().decode('utf-8')
+                try:
+                    error_data = json.loads(error_body)
+                except:
+                    error_data = {"error": f"HTTP {e.code}"}
+
+                return {
+                    "success": False,
+                    "error": f"Quota API error: {error_data.get('error', f'HTTP {e.code}')}",
+                    "context_id": context_id
+                }
+            except Exception as e:
+                logger.error(f"Quota status API call failed: {str(e)}")
+                return {
+                    "success": False,
+                    "error": f"Failed to get quota status: {str(e)}",
+                    "context_id": context_id
+                }
 
         elif tool == "reset_quotas":
             provider = parameters.get("provider", "all")
-            if provider == "all":
-                for p in self._search_quotas:
-                    self._search_quotas[p]['used'] = 0
-                    self._search_quotas[p]['active'] = True
-            elif provider in self._search_quotas:
-                self._search_quotas[provider]['used'] = 0
-                self._search_quotas[provider]['active'] = True
 
-            self._search_events.append({"type": "quota_reset", "provider": provider})
-            return {
-                "success": True,
-                "message": f"Quota reset for: {provider}",
-                "quota_status": self._search_quotas,
-                "context_id": context_id
-            }
+            try:
+                # Call server.js quota reset API
+                api_url = f"{server_url}/api/reset-quotas"
+                data = json.dumps({"provider": provider}).encode('utf-8')
+
+                req = urllib.request.Request(
+                    api_url,
+                    data=data,
+                    headers={'Content-Type': 'application/json'},
+                    method='POST'
+                )
+
+                with urllib.request.urlopen(req, timeout=10) as resp:
+                    result = json.loads(resp.read().decode('utf-8'))
+                    result["context_id"] = context_id
+                    return result
+
+            except urllib.error.HTTPError as e:
+                error_body = e.read().decode('utf-8')
+                try:
+                    error_data = json.loads(error_body)
+                except:
+                    error_data = {"error": f"HTTP {e.code}"}
+
+                return {
+                    "success": False,
+                    "error": f"Reset API error: {error_data.get('error', f'HTTP {e.code}')}",
+                    "context_id": context_id
+                }
+            except Exception as e:
+                logger.error(f"Quota reset API call failed: {str(e)}")
+                return {
+                    "success": False,
+                    "error": f"Failed to reset quotas: {str(e)}",
+                    "context_id": context_id
+                }
 
         else:
             raise ValueError(f"Unknown SearchEngine tool: {tool}")
