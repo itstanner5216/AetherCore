@@ -803,18 +803,18 @@ class SkillLoader:
 
         # Initialize quota tracker (session-scoped)
         if not hasattr(self, '_search_quotas'):
+            self._quota_file = Path("logs/search_quotas.json")
             self._search_quotas = {
-                'google': {'used': 0, 'limit': 100, 'active': True},
-                'brave': {'used': 0, 'limit': 2000, 'active': True},
-                'serper': {'used': 0, 'limit': 2000, 'active': True},
-                'webscraping_api': {'used': 0, 'limit': 5000, 'active': True},
-                'scrapingant': {'used': 0, 'limit': 10000, 'active': True}
+                'google': {'used': 0, 'limit': 100, 'remaining': float('inf'), 'active': True, 'last_reset': None},
+                'brave': {'used': 0, 'limit': 2000, 'remaining': float('inf'), 'active': True, 'last_reset': None},
+                'serper': {'used': 0, 'limit': 2000, 'remaining': float('inf'), 'active': True, 'last_reset': None},
+                'webscraping_api': {'used': 0, 'limit': 5000, 'remaining': float('inf'), 'active': True, 'last_reset': None},
+                'scrapingant': {'used': 0, 'limit': 10000, 'remaining': float('inf'), 'active': True, 'last_reset': None}
             }
+            await self._load_quotas()
             self._search_events = []
-
-        if tool == "search":
-            query = parameters.get("query", "")
-            max_results = parameters.get("max_results", 10)
+            self._search_index = 0
+            self._scrape_index = 0
             provider = parameters.get("provider", "auto")
             skip_cache = parameters.get("skip_cache", False)
 
@@ -936,6 +936,148 @@ class SkillLoader:
 
         else:
             raise ValueError(f"Unknown SearchEngine tool: {tool}")
+
+    async def _do_search(self, provider: str, query: str, num_results: int) -> list:
+        """Perform real search using the specified provider."""
+        import aiohttp
+        import os
+        results = []
+        try:
+            if provider == 'google':
+                key = os.getenv("GOOGLE_API_KEY")
+                cse_id = os.getenv("GOOGLE_CSE_ID")
+                if not key or not cse_id:
+                    raise ValueError("Google API key or CSE ID missing")
+                url = "https://www.googleapis.com/customsearch/v1"
+                params = {
+                    'key': key,
+                    'cx': cse_id,
+                    'q': query,
+                    'num': min(num_results, 10)
+                }
+                timeout = aiohttp.ClientTimeout(total=30)
+                async with aiohttp.ClientSession(timeout=timeout) as session:
+                    async with session.get(url, params=params) as resp:
+                        resp.raise_for_status()
+                        data = await resp.json()
+                        items = data.get('items', [])
+                        for item in items:
+                            results.append({
+                                'title': item.get('title', ''),
+                                'url': item.get('link', ''),
+                                'snippet': item.get('snippet', '')
+                            })
+            elif provider == 'brave':
+                key = os.getenv("BRAVE_API")
+                if not key:
+                    raise ValueError("Brave API key missing")
+                url = "https://api.search.brave.com/res/v1/web/search"
+                headers = {'X-Subscription-Token': key}
+                params = {
+                    'q': query,
+                    'count': min(num_results, 20)
+                }
+                timeout = aiohttp.ClientTimeout(total=30)
+                async with aiohttp.ClientSession(timeout=timeout) as session:
+                    async with session.get(url, headers=headers, params=params) as resp:
+                        resp.raise_for_status()
+                        data = await resp.json()
+                        web_results = data.get('web', {}).get('results', [])
+                        for result in web_results:
+                            results.append({
+                                'title': result.get('title', ''),
+                                'url': result.get('url', ''),
+                                'snippet': result.get('description', '')
+                            })
+            elif provider == 'serper':
+                key = os.getenv("SERPER_API_KEY")
+                if not key:
+                    raise ValueError("Serper API key missing")
+                url = "https://google.serper.dev/search"
+                post_data = {'q': query}
+                headers = {
+                    'X-API-KEY': key,
+                    'Content-Type': 'application/json'
+                }
+                timeout = aiohttp.ClientTimeout(total=30)
+                async with aiohttp.ClientSession(timeout=timeout) as session:
+                    async with session.post(url, json=post_data, headers=headers) as resp:
+                        resp.raise_for_status()
+                        data = await resp.json()
+                        organic = data.get('organic', [])
+                        for result in organic:
+                            results.append({
+                                'title': result.get('title', ''),
+                                'url': result.get('link', ''),
+                                'snippet': result.get('snippet', '')
+                            })
+            else:
+                raise ValueError(f"Unknown provider: {provider}")
+        except aiohttp.ClientResponseError as e:
+            if e.status == 429 or e.status == 402:
+                raise ValueError(f"{provider.capitalize()} quota exceeded")
+            raise ValueError(f"{provider.capitalize()} API error: {e.status}")
+        except Exception as e:
+            raise ValueError(f"Search error: {str(e)}")
+        return results
+
+    async def _do_scrape(self, provider: str, url: str, render_js: bool = False) -> str:
+        """Perform real scrape using the specified provider."""
+        import aiohttp
+        import os
+        try:
+            if provider == 'webscraping_api':
+                key = os.getenv("WEBSCRAPING_API_KEY")
+                if not key:
+                    raise ValueError("Webscraping API key missing")
+                scrape_url = "https://api.webscraping.ai/html"
+                params = {
+                    'api_key': key,
+                    'url': url
+                }
+                if render_js:
+                    params['wait_for'] = 'networkidle0'
+                timeout = aiohttp.ClientTimeout(total=60)
+                async with aiohttp.ClientSession(timeout=timeout) as session:
+                    async with session.get(scrape_url, params=params) as resp:
+                        resp.raise_for_status()
+                        content = await resp.text()
+                        return content
+            elif provider == 'scrapingant':
+                key = os.getenv("SCRAPINGANT_API_KEY")
+                if not key:
+                    raise ValueError("ScrapingAnt API key missing")
+                scrape_url = "https://api.scrapingant.com/v2/general"
+                params = {
+                    'token': key,
+                    'url': url,
+                    'mode': 'js' if render_js else 'html'
+                }
+                timeout = aiohttp.ClientTimeout(total=60)
+                async with aiohttp.ClientSession(timeout=timeout) as session:
+                    async with session.get(scrape_url, params=params) as resp:
+                        resp.raise_for_status()
+                        data = await resp.json()
+                        return data.get('html', '')
+            else:
+                raise ValueError(f"Unknown scrape provider: {provider}")
+        except aiohttp.ClientResponseError as e:
+            if e.status == 429 or e.status == 402:
+                raise ValueError(f"{provider} quota exceeded")
+            raise ValueError(f"{provider} scrape error: {e.status}")
+        except Exception as e:
+            raise ValueError(f"Scrape error: {str(e)}")
+
+    async def _save_quotas(self):
+        """Save quotas to JSON file."""
+        try:
+            self._quota_file.parent.mkdir(parents=True, exist_ok=True)
+            with open(self._quota_file, 'w') as f:
+                for p in self._search_quotas:
+                    self._search_quotas[p]['last_reset'] = datetime.now().isoformat()
+                json.dump(self._search_quotas, f, indent=2)
+        except Exception as e:
+            logger.warning(f"Failed to save quotas: {e}")
 
     # -------------------------------
     # REASONING CHAIN

@@ -65,17 +65,17 @@ class Config:
         # External services
         self.gemini_api_key = os.getenv("GEMINI_API_KEY", "")
         
-        # Validate configuration
-        self._validate()
+        # Search providers
+        self.google_api_key = os.getenv("GOOGLE_API_KEY", "")
+        self.google_cse_id = os.getenv("GOOGLE_CSE_ID", "")
+        self.brave_api = os.getenv("BRAVE_API", "")
+        self.serper_api_key = os.getenv("SERPER_API_KEY", "")
         
-        logger.info(f"Configuration loaded: {self.environment} environment")
-    
-    def _load_env_file(self):
-        """Load .env file if it exists"""
-        env_file = Path(".env")
-        if env_file.exists():
-            with open(env_file) as f:
-                for line in f:
+        # Scrape providers
+        self.webscraping_api_key = os.getenv("WEBSCRAPING_API_KEY", "")
+        self.scrapingant_api_key = os.getenv("SCRAPINGANT_API_KEY", "")
+        
+        # Validate configuration
                     line = line.strip()
                     if line and not line.startswith("#"):
                         try:
