@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
 Repository Analyzer - Main Orchestrator
-Analyzes repository structure, dependencies, and file relevance.
+Analyzes repository structure using an ADVERSARIAL AGENT SYSTEM:
+- Prosecutor Agent: Argues files should be removed
+- Defense Agent: Argues files should be kept  
+- Judge Agent: Renders final verdict
 
 Part of AetherCore Repository Cleanup System
 """
@@ -20,6 +23,14 @@ from collections import defaultdict
 from dependency_graph import DependencyGraphBuilder
 from semantic_analyzer import SemanticAnalyzer
 from quarantine_manager import QuarantineManager
+
+# Import adversarial agents
+try:
+    from agents import FileCourt
+    AGENTS_AVAILABLE = True
+except ImportError:
+    AGENTS_AVAILABLE = False
+    print("⚠️  Adversarial agents not available, using basic analysis")
 
 logging.basicConfig(
     level=logging.INFO,
@@ -540,46 +551,161 @@ def main():
     parser.add_argument('--output', '-o', help='Output directory for reports')
     parser.add_argument('--quarantine', '-q', action='store_true', help='Move files to quarantine')
     parser.add_argument('--dry-run', '-n', action='store_true', help='Dry run (no file moves)')
+    parser.add_argument('--adversarial', '-a', action='store_true', default=True, 
+                        help='Use adversarial agent system (default: True)')
+    parser.add_argument('--threshold', '-t', type=float, default=0.5,
+                        help='Suspicion threshold for trials (default: 0.5)')
+    parser.add_argument('--conservative', action='store_true', default=True,
+                        help='Conservative mode - err on side of keeping files')
     
     args = parser.parse_args()
     
-    # Run analysis
-    analyzer = RepositoryAnalyzer(args.repo, args.output)
-    report = analyzer.run_analysis()
+    # Determine output directory
+    repo_path = Path(args.repo).resolve()
+    output_dir = Path(args.output) if args.output else repo_path / '.github' / 'cleanup_reports'
+    output_dir.mkdir(parents=True, exist_ok=True)
     
-    # Save reports
-    json_path, md_path = analyzer.save_reports()
+    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
     
-    print(f"\n{'='*60}")
-    print("Repository Analysis Complete")
-    print(f"{'='*60}")
-    print(f"Files analyzed: {report.analyzed_files}")
-    print(f"Orphaned files: {report.orphaned_count}")
-    print(f"Quarantine candidates: {report.quarantine_count}")
-    print(f"\nReports saved to:")
-    print(f"  JSON: {json_path}")
-    print(f"  Markdown: {md_path}")
+    # Check if we should use adversarial system
+    use_adversarial = args.adversarial and AGENTS_AVAILABLE
     
-    # Optionally move files to quarantine
-    if args.quarantine and report.quarantine_files:
-        if args.dry_run:
-            print("\n[DRY RUN] Would move the following files to quarantine:")
-            for item in report.quarantine_files:
-                print(f"  - {item['path']}")
-        else:
-            print("\nMoving files to quarantine...")
-            moved = analyzer.quarantine_manager.move_to_quarantine(
-                [item['path'] for item in report.quarantine_files]
-            )
-            print(f"Moved {len(moved)} files to quarantine/")
+    if use_adversarial:
+        print("")
+        print("╔" + "═" * 68 + "╗")
+        print("║" + "⚖️  ADVERSARIAL FILE ANALYSIS SYSTEM".center(68) + "║")
+        print("║" + "Prosecutor vs Defense - Judge Decides".center(68) + "║")
+        print("╚" + "═" * 68 + "╝")
+        print("")
+        
+        # Run adversarial analysis
+        court = FileCourt(
+            repo_root=str(repo_path),
+            conservative=args.conservative,
+            verbose=True
+        )
+        
+        # Identify suspects and run trials
+        suspects = court.identify_suspects(threshold=args.threshold)
+        
+        if suspects:
+            court.run_all_trials(suspects)
             
-    # Set output for GitHub Actions
-    if os.environ.get('GITHUB_OUTPUT'):
-        with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-            f.write(f"report_json={json_path}\n")
-            f.write(f"report_md={md_path}\n")
-            f.write(f"quarantine_count={report.quarantine_count}\n")
-            f.write(f"orphaned_count={report.orphaned_count}\n")
+            # Generate reports
+            text_report = court.generate_full_report()
+            json_report = court.generate_json_report()
+            
+            # Save reports
+            md_path = output_dir / f'court_report_{timestamp}.md'
+            with open(md_path, 'w') as f:
+                f.write(text_report)
+            
+            json_path = output_dir / f'court_report_{timestamp}.json'
+            with open(json_path, 'w') as f:
+                json.dump(json_report, f, indent=2)
+            
+            # Print the full report to stdout for GitHub Actions visibility
+            print(text_report)
+            
+            # Get action items
+            verdicts = court.get_verdicts_by_decision()
+            quarantine_files = verdicts['QUARANTINE'] + verdicts['DELETE']
+            review_files = verdicts['REVIEW_NEEDED']
+            
+            # Optionally move files to quarantine
+            if args.quarantine and quarantine_files:
+                qm = QuarantineManager(repo_path)
+                if args.dry_run:
+                    print("\n[DRY RUN] Would move the following files to quarantine:")
+                    for f in quarantine_files:
+                        print(f"  - {f}")
+                else:
+                    print("\nMoving files to quarantine...")
+                    moved = qm.move_to_quarantine(quarantine_files)
+                    print(f"Moved {len(moved)} files to quarantine/")
+            
+            # Set output for GitHub Actions
+            if os.environ.get('GITHUB_OUTPUT'):
+                with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                    f.write(f"report_json={json_path}\n")
+                    f.write(f"report_md={md_path}\n")
+                    f.write(f"quarantine_count={len(quarantine_files)}\n")
+                    f.write(f"review_count={len(review_files)}\n")
+                    f.write(f"trials_conducted={len(court.trials)}\n")
+            
+            print(f"\n📄 Reports saved:")
+            print(f"   Markdown: {md_path}")
+            print(f"   JSON: {json_path}")
+            
+        else:
+            print("\n✅ No suspicious files identified - repository looks clean!")
+            
+            # Still create a report
+            clean_report = {
+                "metadata": {
+                    "generated_at": datetime.now().isoformat(),
+                    "repository": str(repo_path),
+                    "status": "clean"
+                },
+                "summary": {
+                    "keep": court.all_files if hasattr(court, 'all_files') else 0,
+                    "quarantine": 0,
+                    "delete": 0,
+                    "review_needed": 0
+                },
+                "message": "No files warranted adversarial review"
+            }
+            
+            json_path = output_dir / f'court_report_{timestamp}.json'
+            with open(json_path, 'w') as f:
+                json.dump(clean_report, f, indent=2)
+            
+            if os.environ.get('GITHUB_OUTPUT'):
+                with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                    f.write(f"report_json={json_path}\n")
+                    f.write(f"quarantine_count=0\n")
+                    f.write(f"review_count=0\n")
+                    
+    else:
+        # Fallback to basic analysis
+        print("Running basic analysis (adversarial agents not available)")
+        
+        analyzer = RepositoryAnalyzer(args.repo, args.output)
+        report = analyzer.run_analysis()
+        
+        # Save reports
+        json_path, md_path = analyzer.save_reports()
+        
+        print(f"\n{'='*60}")
+        print("Repository Analysis Complete")
+        print(f"{'='*60}")
+        print(f"Files analyzed: {report.analyzed_files}")
+        print(f"Orphaned files: {report.orphaned_count}")
+        print(f"Quarantine candidates: {report.quarantine_count}")
+        print(f"\nReports saved to:")
+        print(f"  JSON: {json_path}")
+        print(f"  Markdown: {md_path}")
+        
+        # Optionally move files to quarantine
+        if args.quarantine and report.quarantine_files:
+            if args.dry_run:
+                print("\n[DRY RUN] Would move the following files to quarantine:")
+                for item in report.quarantine_files:
+                    print(f"  - {item['path']}")
+            else:
+                print("\nMoving files to quarantine...")
+                moved = analyzer.quarantine_manager.move_to_quarantine(
+                    [item['path'] for item in report.quarantine_files]
+                )
+                print(f"Moved {len(moved)} files to quarantine/")
+                
+        # Set output for GitHub Actions
+        if os.environ.get('GITHUB_OUTPUT'):
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                f.write(f"report_json={json_path}\n")
+                f.write(f"report_md={md_path}\n")
+                f.write(f"quarantine_count={report.quarantine_count}\n")
+                f.write(f"orphaned_count={report.orphaned_count}\n")
             
     # Always return 0 - finding candidates is not an error
     return 0
