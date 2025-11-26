@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AetherCore Skill Output Schema",
+  "description": "Unified schema for all AetherCore skill outputs to ensure cross-skill compatibility",
+  "type": "object",
+  "properties": {
+    "sections": {
+      "type": "array",
+      "description": "Structured output sections from skill execution",
+      "items": {
+        "type": "object",
+        "properties": {
+          "skill": {
+            "type": "string",
+            "description": "Canonical skill name that produced this section"
+          },
+          "content": {
+            "type": "object",
+            "description": "Skill-specific output content"
+          },
+          "position": {
+            "type": "integer",
+            "description": "Order position in merged output"
+          }
+        },
+        "required": ["skill", "content", "position"]
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Execution metadata and context",
+      "properties": {
+        "context_id": {
+          "type": ["string", "null"],
+          "description": "Unique identifier for request tracking"
+        },
+        "skills_used": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of skills in execution order"
+        },
+        "orchestration_mode": {
+          "type": "string",
+          "enum": ["single-skill", "multi-skill"],
+          "description": "Whether single or multiple skills were orchestrated"
+        }
+      }
+    },
+    "_execution_time_ms": {
+      "type": "number",
+      "description": "Total execution time in milliseconds"
+    },
+    "_skill": {
+      "type": "string",
+      "description": "Canonical skill name"
+    },
+    "_tool": {
+      "type": "string",
+      "description": "Tool name executed"
+    }
+  },
+  "additionalProperties": true
+}

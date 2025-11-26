@@ -1,0 +1,71 @@
+{
+  "skill_name": "AetherCore.PromptFoundry",
+  "version": "1.0",
+  "description": "Dynamic prompt generator that structures and refines task instructions automatically within ProjectGPT.",
+  "compatible_with": [
+    "Universal Skill Integration Framework \u22651.0"
+  ],
+  "execution_scope": "Subordinate",
+  "callable": true,
+  "auto_register": true,
+  "entry_point": "promptfoundry.md",
+  "dependencies": [],
+  "integration": {
+    "inherits_from": "Full-Output Intelligence Protocol",
+    "auto_register": true,
+    "tone_inheritance": true,
+    "logging": {
+      "behavior": "append",
+      "format": "json",
+      "fields": [
+        "timestamp",
+        "action",
+        "state",
+        "result_summary"
+      ],
+      "auto_flush": true
+    }
+  },
+  "activation": {
+    "trigger_phrases": [
+      "generate prompt",
+      "create prompt",
+      "prompt template",
+      "build query",
+      "prompt design"
+    ],
+    "match_policy": "fuzzy"
+  },
+  "metadata": {
+    "category": "callable",
+    "status": "active",
+    "tags": [
+      "prompting",
+      "template",
+      "generation",
+      "automation"
+    ],
+    "notes": "Generates optimized prompt structures and builds contextual LLM instructions."
+  },
+  "notes": "Generates optimized prompt structures and builds contextual LLM instructions.",
+  "intents": [
+    "generate prompt",
+    "create prompt",
+    "format prompt",
+    "template",
+    "structure",
+    "design prompt"
+  ],
+  "keywords": [
+    "prompt",
+    "template",
+    "format",
+    "instruction",
+    "generator"
+  ],
+  "persistence": {
+    "cache_skill": true,
+    "memory_scope": "session-temporary",
+    "unload_on_exit": true
+  }
+}

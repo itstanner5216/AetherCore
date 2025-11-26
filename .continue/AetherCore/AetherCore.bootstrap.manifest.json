@@ -1,0 +1,191 @@
+{
+  "manifest_version": "2.0",
+  "manifest_type": "ProjectGPT Bootstrap Coordinator",
+  "description": "Global bootstrap orchestrator for ProjectGPT USIF skill initialization",
+  "archive": {
+    "name": "ProjectGPT.zip",
+    "auto_extract": true,
+    "extract_policy": "mount_root_then_scan",
+    "target_directory": "skills/"
+  },
+  "bootstrap_sequence": {
+    "phase_1_core_infrastructure": {
+      "description": "Non-callable infrastructure modules that MUST load first",
+      "required": true,
+      "skills": [
+        {
+          "name": "AetherCore.Orchestrator",
+          "priority": 0,
+          "callable": false,
+          "load_timeout_ms": 5000,
+          "on_failure": "abort_bootstrap",
+          "entry_point": "AetherCore/Orchestrator/orchestrator-entry.js"
+        },
+        {
+          "name": "AetherCore.EventMesh",
+          "priority": 1,
+          "callable": false,
+          "load_timeout_ms": 3000,
+          "on_failure": "abort_bootstrap",
+          "entry_point": "AetherCore/EventMesh/eventmesh-entry.js"
+        },
+        {
+          "name": "AetherCore.OptiGraph",
+          "priority": 2,
+          "callable": false,
+          "load_timeout_ms": 3000,
+          "on_failure": "abort_bootstrap",
+          "entry_point": "AetherCore/OptiGraph/optigraph-entry.js"
+        }
+      ]
+    },
+    "phase_2_callable_skills": {
+      "description": "Callable functional skills that load after infrastructure",
+      "required": false,
+      "parallel_load": false,
+      "skills": [
+        {
+          "name": "AetherCore.DeepForge",
+          "entry_point": "AetherCore/DeepForge/deepforge-entry.js",
+          "priority": 3,
+          "callable": true,
+          "load_timeout_ms": 5000,
+          "on_failure": "continue_with_warning"
+        },
+        {
+          "name": "AetherCore.MarketSweep",
+          "entry_point": "AetherCore/MarketSweep/marketsweep-entry.js",
+          "priority": 4,
+          "callable": true,
+          "load_timeout_ms": 5000,
+          "on_failure": "continue_with_warning"
+        },
+        {
+          "name": "AetherCore.GeminiBridge",
+          "entry_point": "AetherCore/GeminiBridge/geminibridge-entry.js",
+          "priority": 5,
+          "callable": true,
+          "load_timeout_ms": 5000,
+          "on_failure": "continue_with_warning"
+        },
+        {
+          "name": "AetherCore.PromptFoundry",
+          "entry_point": "AetherCore/PromptFoundry/promptfoundry-entry.js",
+          "priority": 6,
+          "callable": true,
+          "load_timeout_ms": 5000,
+          "on_failure": "continue_with_warning"
+        },
+        {
+          "name": "AetherCore.SearchEngine",
+          "entry_point": "AetherCore/SearchEngine/searchengine-entry.js",
+          "priority": 7,
+          "callable": true,
+          "load_timeout_ms": 10000,
+          "on_failure": "continue_with_warning",
+          "requires_api_keys": true
+        },
+        {
+          "name": "AetherCore.ReasoningChain",
+          "entry_point": "AetherCore/ReasoningChain/reasoningchain-entry.js",
+          "priority": 8,
+          "callable": true,
+          "load_timeout_ms": 5000,
+          "on_failure": "continue_with_warning"
+        },
+        {
+          "name": "AetherCore.SourceValidator",
+          "entry_point": "AetherCore/SourceValidator/sourcevalidator-entry.js",
+          "priority": 9,
+          "callable": true,
+          "load_timeout_ms": 5000,
+          "on_failure": "continue_with_warning"
+        }
+      ]
+    }
+  },
+  "validation": {
+    "verify_config_json": true,
+    "verify_entry_points": true,
+    "verify_dependencies": true,
+    "strict_mode": false
+  },
+  "initialization_rules": {
+    "auto_register": true,
+    "silent_initialization": true,
+    "user_visible_output": false,
+    "emit_telemetry": true,
+    "cache_registry": true,
+    "transparency_mode": "invisible",
+    "debug_mode": false
+  },
+  "fallback_policies": {
+    "on_core_failure": "abort_bootstrap",
+    "on_skill_failure": "continue_without_skill",
+    "on_timeout": "skip_skill",
+    "on_missing_dependency": "load_without_dependency"
+  },
+  "logging": {
+    "silent_initialization": true,
+    "user_visible_messages": false,
+    "log_level": "internal_only",
+    "emit_telemetry": true,
+    "log_targets": [
+      "internal_log",
+      "telemetry_bus"
+    ],
+    "internal_messages": {
+      "on_bootstrap_start": "[INTERNAL] Initializing ProjectGPT core infrastructure",
+      "on_phase_1_complete": "[INTERNAL] Core modules initialized",
+      "on_phase_2_complete": "[INTERNAL] Callable skills initialized",
+      "on_bootstrap_success": "[INTERNAL] System ready - {skill_count} skills active",
+      "on_bootstrap_failure": "[INTERNAL] Bootstrap failed - {error_message}",
+      "on_partial_load": "[INTERNAL] Partial load - {failed_count} failures"
+    },
+    "user_facing_output_policy": {
+      "description": "User should NEVER see initialization mechanics per Rule 6 of Knowledge Orchestrator",
+      "allowed_scenarios": {
+        "debug_mode": "Only when explicitly enabled by developer",
+        "catastrophic_failure": "Only if system completely fails to initialize",
+        "normal_operation": "NEVER - completely silent"
+      },
+      "on_complete": {
+        "user_sees": "Nothing - system is ready for first query",
+        "internal_state": "All skills registered and initialized"
+      }
+    }
+  },
+  "discovery": {
+    "scan_directories": true,
+    "scan_archives": true,
+    "scan_patterns": [
+      "*.zip",
+      "*/config.json",
+      "*.md"
+    ],
+    "exclude_patterns": [
+      ".git",
+      "**pycache**",
+      "node_modules",
+      ".DS_Store"
+    ]
+  },
+  "compatibility": {
+    "min_usif_version": "1.0",
+    "max_usif_version": "2.0",
+    "required_python_version": "3.8+",
+    "required_node_version": "16+",
+    "platform": [
+      "linux",
+      "darwin",
+      "win32"
+    ]
+  },
+  "metadata": {
+    "author": "Aethercore Team",
+    "created": "2025-11-13",
+    "last_updated": "2025-11-13",
+    "version": "2.0",
+    "license": "Proprietary"
+  }
+}

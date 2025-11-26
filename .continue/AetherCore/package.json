@@ -1,0 +1,30 @@
+{
+  "name": "aethercore",
+  "version": "1.0.0",
+  "description": "ProjectGPT is a modular skillset ecosystem with an HTTP Gateway that exposes AetherCore skills as REST API endpoints. This enables Custom GPT Actions integration, allowing OpenAI GPTs to access sophisticated research, search, commerce, and reasoning capabilities through standard HTTP requests.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itstanner5216/AetherCore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/itstanner5216/AetherCore/issues"
+  },
+  "homepage": "https://github.com/itstanner5216/AetherCore#readme",
+  "dependencies": {
+    "@upstash/ratelimit": "^2.0.7",
+    "@upstash/redis": "^1.35.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0"
+  }
+}

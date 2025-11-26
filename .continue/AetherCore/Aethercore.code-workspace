@@ -1,0 +1,20 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "node_modules": true,
+            ".git": false
+        }
+    },
+    "extensions": {
+        "recommendations": [
+            "saoudrizwan.claude-dev",
+            "github.copilot",
+            "continue.continue"
+        ]
+    }
+}

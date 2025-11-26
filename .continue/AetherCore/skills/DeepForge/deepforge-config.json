@@ -1,0 +1,115 @@
+{
+  "skill_name": "AetherCore.DeepForge",
+  "version": "5.9",
+  "description": "Advanced multi-phase research protocol with triple-source verification and narrative synthesis for comprehensive analytical reports.",
+  "compatible_with": [
+    "Universal Skill Integration Framework \u22651.0"
+  ],
+  "scope": "Subordinate",
+  "callable": true,
+  "auto_register": true,
+  "entry_point": "deepforge.md",
+  "dependencies": [],
+  "integration": {
+    "inherits_from": "Full-Output Intelligence Protocol",
+    "execution_scope": "Subordinate",
+    "tone_inheritance": true,
+    "auto_register": true,
+    "compatible_with": [
+      "Universal Skill Integration Framework \u22651.0"
+    ],
+    "logging": {
+      "behavior": "append",
+      "format": "json",
+      "fields": [
+        "timestamp",
+        "action",
+        "state",
+        "result_summary"
+      ],
+      "auto_flush": true
+    }
+  },
+  "activation": {
+    "trigger_phrases": [
+      "activate deep research",
+      "use deep research",
+      "run deep research",
+      "enable deep research",
+      "launch deep research",
+      "deep research mode",
+      "initiate research protocol",
+      "comprehensive research",
+      "full research analysis",
+      "research"
+    ],
+    "match_policy": "fuzzy"
+  },
+  "metadata": {
+    "category": "callable",
+    "status": "active",
+    "tags": [
+      "research",
+      "web-search",
+      "fact-verification",
+      "data-synthesis"
+    ],
+    "notes": "Performs advanced web search and knowledge synthesis using verification tiers."
+  },
+  "notes": "Performs advanced web search and knowledge synthesis using verification tiers.",
+  "features": {
+    "confidence_modeling": true,
+    "triple_source_verification": true,
+    "narrative_synthesis": true,
+    "conflict_resolution": true,
+    "mechanistic_explanation": true,
+    "automated_clarification": true,
+    "fidelity_preservation": true
+  },
+  "execution": {
+    "steps": [
+      "0-5.5"
+    ],
+    "word_count_target": {
+      "min": 1200,
+      "max": 2500
+    },
+    "citation_minimum": 7,
+    "source_diversity": {
+      "unique_domains_min": 5,
+      "source_types_min": 3
+    },
+    "verification_tiers": [
+      "High",
+      "Medium",
+      "Low"
+    ]
+  },
+  "persistence": {
+    "cache_skill": true,
+    "memory_scope": "session-temporary",
+    "unload_on_exit": true,
+    "state_preservation": "AWAITING_RESEARCH"
+  },
+  "log": {
+    "on_load": "Register AetherCore.DeepForge as active module. Protocol State: AWAITING_RESEARCH",
+    "on_activation": "Deep Research Protocol ACTIVE. Executing Steps 0-5.5",
+    "on_completion": "Research synthesis complete. Reverting to AWAITING_RESEARCH state",
+    "on_exit": "Unregister AetherCore.DeepForge module"
+  },
+  "test_mode": false,
+  "intents": [
+    "research",
+    "investigate",
+    "analyze information",
+    "compare sources",
+    "verify facts"
+  ],
+  "keywords": [
+    "research",
+    "investigation",
+    "analysis",
+    "sources",
+    "study"
+  ]
+}
