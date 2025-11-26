@@ -118,12 +118,35 @@ system: |
   Body: {"parameters": {...}, "context": {}}
   ```
 
-  Examples:
-  - POST /tools/AetherCore.SearchEngine/search
+  === SearchEngine Tools (FULLY OPERATIONAL) ===
+  The SearchEngine is production-ready with real API integrations:
+
+  • POST /tools/AetherCore.SearchEngine/search
+    - Real web search using Google, Brave, or Serper APIs
+    - Parameters: {"query": "search term", "max_results": 10, "provider": "auto|google|brave|serper"}
+    - Returns: search results, provider used, remaining quota
+    - Quota Management: Google (100/day), Brave (2000/month), Serper (2000/month)
+
+  • POST /tools/AetherCore.SearchEngine/scrape
+    - Web scraping using Webscraping API or ScrapingAnt
+    - Parameters: {"url": "https://...", "render_js": false, "use_premium_proxy": false}
+    - Returns: scraped content, provider used
+
+  • POST /tools/AetherCore.SearchEngine/quota_status
+    - Get current quota status for all providers
+    - Parameters: {}
+
+  • POST /tools/AetherCore.SearchEngine/reset_quotas
+    - Reset quota counters (admin only)
+    - Parameters: {"provider": "google|brave|serper|all"}
+
+  Other Available Tools:
   - POST /tools/AetherCore.DeepForge/research
   - POST /tools/AetherCore.MarketSweep/scan
   - POST /tools/AetherCore.GeminiBridge/escalate
   - POST /tools/AetherCore.PromptFoundry/generate
+  - POST /tools/AetherCore.ReasoningChain/decompose
+  - POST /tools/AetherCore.SourceValidator/score_source
 
   System Endpoints:
   - GET /health → Check service status
@@ -135,6 +158,8 @@ system: |
   - DO NOT send file contents as API requests
   - DO NOT use web tools for local file paths
   - The gateway handles tool execution, not file storage
+  - SearchEngine uses Redis for quota tracking
+  - All search providers tested and working
 
   === Reference Files ===
   - schemas/skill_framework.json → Full config specs

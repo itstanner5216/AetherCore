@@ -83,7 +83,34 @@
           "callable": true,
           "load_timeout_ms": 10000,
           "on_failure": "continue_with_warning",
-          "requires_api_keys": true
+          "requires_api_keys": true,
+          "status": "OPERATIONAL",
+          "last_tested": "2025-11-26",
+          "features": {
+            "web_search": {
+              "providers": ["google", "brave", "serper"],
+              "quotas": {
+                "google": "100/day",
+                "brave": "2000/month",
+                "serper": "2000/month"
+              },
+              "tested": true
+            },
+            "web_scraping": {
+              "providers": ["webscraping_api", "scrapingant"],
+              "features": ["render_js", "premium_proxy", "credit_based"],
+              "tested": true
+            },
+            "quota_management": {
+              "backend": "redis",
+              "tracking": "atomic",
+              "reset": "manual_endpoint",
+              "tested": true
+            }
+          },
+          "tools": ["search", "scrape", "quota_status", "reset_quotas"],
+          "production_ready": true,
+          "test_results": "6/6 tests passed (100%)"
         },
         {
           "name": "AetherCore.ReasoningChain",

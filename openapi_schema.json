@@ -183,6 +183,84 @@
         "type": "http",
         "scheme": "bearer"
       }
+    },
+    "examples": {
+      "SearchEngine_search": {
+        "summary": "SearchEngine.search example",
+        "description": "Real web search using Google, Brave, or Serper APIs with Redis quota management",
+        "value": {
+          "parameters": {
+            "query": "Kubernetes deployment tutorial",
+            "max_results": 10,
+            "provider": "auto"
+          },
+          "context": {
+            "context_id": "user-123"
+          }
+        }
+      },
+      "SearchEngine_scrape": {
+        "summary": "SearchEngine.scrape example",
+        "description": "Web scraping using Webscraping API or ScrapingAnt",
+        "value": {
+          "parameters": {
+            "url": "https://example.com",
+            "render_js": false,
+            "use_premium_proxy": false
+          },
+          "context": {
+            "context_id": "scrape-456"
+          }
+        }
+      },
+      "SearchEngine_quota_status": {
+        "summary": "SearchEngine.quota_status example",
+        "description": "Get current quota status for all search providers",
+        "value": {
+          "parameters": {},
+          "context": {
+            "context_id": "quota-check"
+          }
+        }
+      },
+      "SearchEngine_reset_quotas": {
+        "summary": "SearchEngine.reset_quotas example",
+        "description": "Reset quota counters for a specific provider or all providers",
+        "value": {
+          "parameters": {
+            "provider": "google"
+          },
+          "context": {
+            "context_id": "admin-reset"
+          }
+        }
+      }
     }
-  }
+  },
+  "tags": [
+    {
+      "name": "System",
+      "description": "System health and monitoring endpoints"
+    },
+    {
+      "name": "Skills",
+      "description": "Skill discovery and information endpoints"
+    },
+    {
+      "name": "Tools",
+      "description": "Execute tools from AetherCore skills"
+    },
+    {
+      "name": "SearchEngine",
+      "description": "Web search and scraping tools with quota management",
+      "externalDocs": {
+        "description": "SearchEngine Documentation",
+        "url": "https://github.com/aethercore/searchengine"
+      }
+    },
+    {
+      "name": "Orchestration",
+      "description": "Multi-skill workflow orchestration"
+    }
+  ]
 }
