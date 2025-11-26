@@ -28,3 +28,6 @@ node_modules/
 .vscode/
 .idea/
 .continue/agents/new-config.yaml
+
+# Generated reports
+.github/cleanup_reports/
