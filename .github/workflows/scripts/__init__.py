@@ -26,6 +26,8 @@ except ImportError:
     _AGENTS_AVAILABLE = False
 
 __version__ = '1.0.0'
+
+# Base exports always available
 __all__ = [
     'RepositoryAnalyzer',
     'FileAnalysis', 
@@ -33,13 +35,17 @@ __all__ = [
     'DependencyGraphBuilder',
     'SemanticAnalyzer',
     'QuarantineManager',
-    # Agents
-    'FileCourt',
-    'TrialRecord',
-    'ProsecutorAgent',
-    'ProsecutionCase',
-    'DefenseAgent',
-    'DefenseCase',
-    'JudgeAgent',
-    'Verdict',
 ]
+
+# Only add agent exports when they are available
+if _AGENTS_AVAILABLE:
+    __all__.extend([
+        'FileCourt',
+        'TrialRecord',
+        'ProsecutorAgent',
+        'ProsecutionCase',
+        'DefenseAgent',
+        'DefenseCase',
+        'JudgeAgent',
+        'Verdict',
+    ])

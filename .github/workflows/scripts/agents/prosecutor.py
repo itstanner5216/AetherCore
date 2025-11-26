@@ -110,6 +110,14 @@ class ProsecutorAgent:
         self.all_file_paths = set(all_files)
         self.file_contents: Dict[str, str] = {}
         
+        # Build stem index for efficient module resolution
+        self.stem_to_files: Dict[str, List[str]] = {}
+        for f in all_files:
+            stem = Path(f).stem
+            if stem not in self.stem_to_files:
+                self.stem_to_files[stem] = []
+            self.stem_to_files[stem].append(f)
+        
         # Build reference graphs for orphan detection
         self.dep_graph: Dict[str, Set[str]] = {}
         self.reverse_graph: Dict[str, Set[str]] = {}
@@ -137,12 +145,11 @@ class ProsecutorAgent:
                     module_path = module.replace('.', '/') + '.py'
                     if module_path in self.all_file_paths:
                         imports.add(module_path)
-                    # Also check if module name matches a file stem
+                    # Also check if module name matches a file stem (using index)
                     parts = module.split('.')
                     for part in parts:
-                        for f in self.all_file_paths:
-                            if Path(f).stem == part:
-                                imports.add(f)
+                        if part in self.stem_to_files:
+                            imports.update(self.stem_to_files[part])
                                 
                 for match in re.finditer(r'^import\s+([\w.]+)', content, re.MULTILINE):
                     module = match.group(1)
