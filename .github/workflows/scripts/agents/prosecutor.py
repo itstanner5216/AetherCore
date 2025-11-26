@@ -12,6 +12,7 @@ Investigates:
 - Is it a partial/incomplete implementation?
 """
 
+import os
 import re
 import hashlib
 from pathlib import Path
@@ -39,6 +40,32 @@ class ProsecutionCase:
     prosecution_score: float = 0.0  # 0-100, higher = stronger case for removal
     summary: str = ""
     recommended_action: str = "keep"  # keep, quarantine, delete
+    verdict: str = "KEEP"  # KEEP, QUARANTINE, DELETE, REVIEW_NEEDED
+    confidence: float = 0.0  # 0.0 to 1.0
+    argument: str = ""
+    
+    def to_dict(self) -> Dict:
+        """Convert case to dictionary for reporting"""
+        return {
+            "file_path": self.file_path,
+            "verdict": self.verdict,
+            "confidence": self.confidence,
+            "charges": self.charges,
+            "evidence": [
+                {
+                    "type": e.type,
+                    "description": e.description,
+                    "severity": e.severity,
+                    "weight": e.weight,
+                    "details": e.details
+                }
+                for e in self.evidence
+            ],
+            "prosecution_score": self.prosecution_score,
+            "summary": self.summary,
+            "recommended_action": self.recommended_action,
+            "argument": self.argument
+        }
 
 
 class ProsecutorAgent:
@@ -70,26 +97,91 @@ class ProsecutorAgent:
         r'\.\.\.', r'stub', r'placeholder', r'skeleton'
     ]
     
-    def __init__(self, repo_path: Path, all_files: List[Path], 
-                 dependency_graph: Dict, reverse_graph: Dict,
-                 file_contents: Dict[str, str] = None):
-        self.repo_path = Path(repo_path)
+    def __init__(self, repo_root: str, all_files: List[str]):
+        """
+        Initialize the Prosecutor Agent.
+        
+        Args:
+            repo_root: Path to the repository root
+            all_files: List of file paths relative to repo root
+        """
+        self.repo_path = Path(repo_root)
         self.all_files = all_files
-        self.all_file_paths = {str(f.relative_to(repo_path)) for f in all_files}
-        self.dep_graph = dependency_graph
-        self.reverse_graph = reverse_graph
-        self.file_contents = file_contents or {}
+        self.all_file_paths = set(all_files)
+        self.file_contents: Dict[str, str] = {}
+        
+        # Build reference graphs for orphan detection
+        self.dep_graph: Dict[str, Set[str]] = {}
+        self.reverse_graph: Dict[str, Set[str]] = {}
+        self._build_reference_graphs()
         
         # Build content hashes for duplicate detection
         self.content_hashes: Dict[str, List[str]] = {}
         self._build_content_hashes()
+    
+    def _build_reference_graphs(self):
+        """Build import/reference graphs from file contents"""
+        for file_path in self.all_files:
+            content = self._get_content(file_path)
+            if not content:
+                continue
+                
+            ext = Path(file_path).suffix.lower()
+            imports: Set[str] = set()
+            
+            if ext == '.py':
+                # Python imports
+                for match in re.finditer(r'from\s+([\w.]+)\s+import', content):
+                    module = match.group(1)
+                    # Convert module path to file path
+                    module_path = module.replace('.', '/') + '.py'
+                    if module_path in self.all_file_paths:
+                        imports.add(module_path)
+                    # Also check if module name matches a file stem
+                    parts = module.split('.')
+                    for part in parts:
+                        for f in self.all_file_paths:
+                            if Path(f).stem == part:
+                                imports.add(f)
+                                
+                for match in re.finditer(r'^import\s+([\w.]+)', content, re.MULTILINE):
+                    module = match.group(1)
+                    module_path = module.replace('.', '/') + '.py'
+                    if module_path in self.all_file_paths:
+                        imports.add(module_path)
+                        
+            elif ext in {'.js', '.ts', '.jsx', '.tsx'}:
+                # JavaScript imports
+                patterns = [
+                    r'require\s*\(\s*[\'"]([^\'"]+)[\'"]\s*\)',
+                    r'import\s+.*?\s+from\s+[\'"]([^\'"]+)[\'"]',
+                    r'import\s+[\'"]([^\'"]+)[\'"]',
+                ]
+                for pattern in patterns:
+                    for match in re.finditer(pattern, content):
+                        target = match.group(1)
+                        if target.startswith('.'):
+                            # Resolve relative path
+                            source_dir = str(Path(file_path).parent)
+                            resolved = os.path.normpath(os.path.join(source_dir, target))
+                            for ext_suffix in ['', '.js', '.ts', '.jsx', '.tsx']:
+                                check_path = resolved + ext_suffix
+                                if check_path in self.all_file_paths:
+                                    imports.add(check_path)
+            
+            self.dep_graph[file_path] = imports
+            
+            # Build reverse graph
+            for imp in imports:
+                if imp not in self.reverse_graph:
+                    self.reverse_graph[imp] = set()
+                self.reverse_graph[imp].add(file_path)
         
     def _build_content_hashes(self):
         """Build hash index for duplicate detection"""
         for file_path in self.all_files:
             try:
-                rel_path = str(file_path.relative_to(self.repo_path))
-                content = self._get_content(rel_path)
+                content = self._get_content(file_path)
                 if content:
                     # Normalize whitespace for comparison
                     normalized = re.sub(r'\s+', ' ', content.strip())
@@ -97,7 +189,7 @@ class ProsecutorAgent:
                     
                     if content_hash not in self.content_hashes:
                         self.content_hashes[content_hash] = []
-                    self.content_hashes[content_hash].append(rel_path)
+                    self.content_hashes[content_hash].append(file_path)
             except Exception:
                 pass
                 
@@ -136,18 +228,65 @@ class ProsecutorAgent:
         # Build charges list
         case.charges = [e.description for e in case.evidence if e.weight > 0.3]
         
-        # Determine recommended action
+        # Determine recommended action and verdict
         if case.prosecution_score >= 70:
             case.recommended_action = "quarantine"
+            case.verdict = "QUARANTINE"
+            case.confidence = min(0.95, case.prosecution_score / 100)
         elif case.prosecution_score >= 50:
             case.recommended_action = "review"
+            case.verdict = "REVIEW_NEEDED"
+            case.confidence = case.prosecution_score / 100
         else:
             case.recommended_action = "keep"
+            case.verdict = "KEEP"
+            case.confidence = max(0.3, case.prosecution_score / 100)
             
-        # Build summary
+        # Build summary and argument
         case.summary = self._build_summary(case)
+        case.argument = self._build_argument(case)
         
         return case
+    
+    def prosecute(self, file_path: str) -> ProsecutionCase:
+        """
+        Prosecute a file - build the case for removal.
+        
+        This is the main entry point used by FileCourt.
+        """
+        return self.build_case(file_path)
+    
+    def _build_argument(self, case: ProsecutionCase) -> str:
+        """Build a compelling prosecution argument"""
+        filename = Path(case.file_path).name
+        
+        if not case.evidence:
+            return f"🔴 No significant evidence against '{filename}'."
+        
+        # Group evidence by severity
+        critical = [e for e in case.evidence if e.severity == "critical"]
+        major = [e for e in case.evidence if e.severity == "major"]
+        
+        argument_parts = [f"🔴 **PROSECUTION OF '{filename}'**\n"]
+        
+        if case.verdict == "QUARANTINE":
+            argument_parts.append("⚠️ **This file should be QUARANTINED.**\n")
+        elif case.verdict == "REVIEW_NEEDED":
+            argument_parts.append("📋 **This file requires REVIEW.**\n")
+        else:
+            argument_parts.append("✅ **Insufficient evidence for removal.**\n")
+        
+        if critical:
+            argument_parts.append("\n**Critical Issues:**")
+            for e in critical[:3]:
+                argument_parts.append(f"  🚨 {e.description}")
+        
+        if major:
+            argument_parts.append("\n**Major Issues:**")
+            for e in major[:3]:
+                argument_parts.append(f"  ⚠️ {e.description}")
+        
+        return "\n".join(argument_parts)
     
     def _check_orphan_status(self, file_path: str, case: ProsecutionCase):
         """Check if file is orphaned (not imported by anything)"""
