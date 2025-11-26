@@ -581,7 +581,8 @@ def main():
             f.write(f"quarantine_count={report.quarantine_count}\n")
             f.write(f"orphaned_count={report.orphaned_count}\n")
             
-    return 0 if report.quarantine_count == 0 else 1
+    # Always return 0 - finding candidates is not an error
+    return 0
 
 
 if __name__ == '__main__':
