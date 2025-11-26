@@ -1,0 +1,10 @@
+# Repository Cleanup System Dependencies
+# For .github/workflows/scripts/
+
+# Required
+PyYAML>=6.0
+
+# Optional - for enhanced features
+# aiohttp>=3.8.0      # For async HTTP requests
+# networkx>=3.0       # For advanced graph analysis
+# scikit-learn>=1.0   # For ML-based clustering

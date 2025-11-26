@@ -1,0 +1,239 @@
+name: Repository Cleanup Analysis
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Dry run mode (no file moves)'
+        required: false
+        default: 'true'
+        type: boolean
+      create_pr:
+        description: 'Create PR with quarantine suggestions'
+        required: false
+        default: 'true'
+        type: boolean
+      similarity_threshold:
+        description: 'Semantic similarity threshold (0.0-1.0)'
+        required: false
+        default: '0.3'
+        type: string
+      relevance_threshold:
+        description: 'Relevance score threshold for quarantine (0.0-1.0)'
+        required: false
+        default: '0.2'
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  analyze:
+    name: Analyze Repository
+    runs-on: ubuntu-latest
+    
+    outputs:
+      quarantine_count: ${{ steps.analyze.outputs.quarantine_count }}
+      orphaned_count: ${{ steps.analyze.outputs.orphaned_count }}
+      report_md: ${{ steps.analyze.outputs.report_md }}
+      has_changes: ${{ steps.check_changes.outputs.has_changes }}
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pyyaml
+          
+      - name: Run repository analysis
+        id: analyze
+        env:
+          SIMILARITY_THRESHOLD: ${{ inputs.similarity_threshold }}
+          RELEVANCE_THRESHOLD: ${{ inputs.relevance_threshold }}
+        run: |
+          cd $GITHUB_WORKSPACE
+          python .github/workflows/scripts/repository_analyzer.py \
+            --repo . \
+            --output .github/cleanup_reports
+            
+      - name: Upload analysis reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: analysis-reports
+          path: .github/cleanup_reports/
+          retention-days: 30
+          
+      - name: Check for quarantine candidates
+        id: check_changes
+        run: |
+          QUARANTINE_COUNT=$(cat $GITHUB_OUTPUT | grep quarantine_count | cut -d= -f2 || echo "0")
+          if [ "$QUARANTINE_COUNT" -gt "0" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+  quarantine:
+    name: Move Files to Quarantine
+    runs-on: ubuntu-latest
+    needs: analyze
+    if: |
+      needs.analyze.outputs.has_changes == 'true' && 
+      github.event.inputs.dry_run == 'false'
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          pip install pyyaml
+          
+      - name: Download analysis reports
+        uses: actions/download-artifact@v4
+        with:
+          name: analysis-reports
+          path: .github/cleanup_reports/
+          
+      - name: Create cleanup branch
+        run: |
+          BRANCH_NAME="cleanup-suggestion-$(date +%Y%m%d-%H%M%S)"
+          git checkout -b $BRANCH_NAME
+          echo "CLEANUP_BRANCH=$BRANCH_NAME" >> $GITHUB_ENV
+          
+      - name: Move files to quarantine
+        run: |
+          cd $GITHUB_WORKSPACE
+          python .github/workflows/scripts/repository_analyzer.py \
+            --repo . \
+            --quarantine \
+            --output .github/cleanup_reports
+            
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add -A
+          
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          git commit -m "chore: quarantine unused/orphaned files
+
+          Automated cleanup analysis identified files for review.
+          See the attached report for details on why each file was flagged.
+          
+          Files can be restored using the restore script in the quarantine folder."
+          
+          git push origin $CLEANUP_BRANCH
+          
+      - name: Generate PR body
+        id: pr_body
+        run: |
+          # Find latest report
+          REPORT=$(ls -t .github/cleanup_reports/analysis_*.md 2>/dev/null | head -1)
+          
+          if [ -f "$REPORT" ]; then
+            # Truncate if too long for PR body
+            head -c 60000 "$REPORT" > /tmp/pr_body.md
+            
+            # Add footer
+            echo "" >> /tmp/pr_body.md
+            echo "---" >> /tmp/pr_body.md
+            echo "📊 Full report available in workflow artifacts" >> /tmp/pr_body.md
+            echo "🔄 To restore files, use the restore script in the quarantine folder" >> /tmp/pr_body.md
+          else
+            echo "## Repository Cleanup Suggestions" > /tmp/pr_body.md
+            echo "" >> /tmp/pr_body.md
+            echo "Analysis complete. See workflow artifacts for detailed report." >> /tmp/pr_body.md
+          fi
+          
+          # Output file path for PR action
+          echo "body_file=/tmp/pr_body.md" >> $GITHUB_OUTPUT
+          
+      - name: Create Pull Request
+        if: github.event.inputs.create_pr == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ env.CLEANUP_BRANCH }}
+          base: ${{ github.ref_name }}
+          title: "🧹 Repository Cleanup: Quarantine Suggestions"
+          body-path: /tmp/pr_body.md
+          labels: |
+            cleanup
+            automated
+            needs-review
+          assignees: ${{ github.actor }}
+          draft: true
+
+  summary:
+    name: Generate Summary
+    runs-on: ubuntu-latest
+    needs: [analyze, quarantine]
+    if: always()
+    
+    steps:
+      - name: Download reports
+        uses: actions/download-artifact@v4
+        with:
+          name: analysis-reports
+          path: reports/
+        continue-on-error: true
+          
+      - name: Create job summary
+        run: |
+          echo "# 🔍 Repository Analysis Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          echo "## Configuration" >> $GITHUB_STEP_SUMMARY
+          echo "| Setting | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|---------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Dry Run | ${{ inputs.dry_run }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Create PR | ${{ inputs.create_pr }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Similarity Threshold | ${{ inputs.similarity_threshold }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Relevance Threshold | ${{ inputs.relevance_threshold }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          echo "## Results" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Count |" >> $GITHUB_STEP_SUMMARY
+          echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Orphaned Files | ${{ needs.analyze.outputs.orphaned_count || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Quarantine Candidates | ${{ needs.analyze.outputs.quarantine_count || 'N/A' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f "reports/analysis_*.md" ]; then
+            echo "## Detailed Report" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "<details>" >> $GITHUB_STEP_SUMMARY
+            echo "<summary>Click to expand full report</summary>" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            head -c 50000 reports/analysis_*.md >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "</details>" >> $GITHUB_STEP_SUMMARY
+          fi
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "📦 Full reports available in workflow artifacts" >> $GITHUB_STEP_SUMMARY
