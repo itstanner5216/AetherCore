@@ -56,7 +56,7 @@ export async function geminiHybridInvoke(payload = {}) {
 
   // Log model selection reasoning if context provided
   const modelSelectionReason =
-    context.attempts >= 2 || context.depth === "deep"
+    context && (context.attempts >= 2 || context.depth === "deep")
       ? "pro_escalation"
       : "flash_default";
 
@@ -165,7 +165,7 @@ export async function geminiHybridInvoke(payload = {}) {
         response_tokens: json?.usageMetadata?.candidatesTokenCount || null,
         response_time_ms: responseTime,
         timestamp: Date.now(),
-        context_provided: Object.keys(context).length > 0,
+        context_provided: Object.keys(context || {}).length > 0,
       },
     };
   } catch (err) {
