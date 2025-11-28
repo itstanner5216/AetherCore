@@ -4,8 +4,10 @@ Koyeb Deployment Script for AetherCore Gateway
 
 Automates deployment to Koyeb's free tier using the Koyeb REST API.
 
-Usage:
-    python deploy_koyeb.py
+USAGE:
+1. Copy this file to deploy_koyeb.py
+2. Replace all placeholder values with your actual API keys
+3. Run: python deploy_koyeb.py
 """
 
 import os
@@ -16,7 +18,7 @@ import time
 from typing import Dict, Any
 
 # Configuration from environment
-KOYEB_API_KEY = os.getenv("KOYEB_API_KEY", "5ue0i50v18viyfdrjgm7rea3x7xnjeqe3h57z0idxh7o62vdq9oiyux5y7b5kfjf").strip()
+KOYEB_API_KEY = os.getenv("KOYEB_API_KEY", "YOUR_KOYEB_API_KEY_HERE").strip()
 GITHUB_REPO = "github.com/itstanner5216/AetherCore"
 SERVICE_NAME = "aethercore-gateway"
 APP_NAME = "aethercore"
@@ -31,14 +33,14 @@ SERVICE_ENV_VARS = [
     {"key": "CORS_ORIGINS", "value": "https://chat.openai.com,https://chatgpt.com"},
     {"key": "RATE_LIMIT_REQUESTS", "value": "100"},
     {"key": "RATE_LIMIT_WINDOW", "value": "3600"},
-    {"key": "SKILLS_CONFIG_PATH", "value": "skills_config.json"},
-    {"key": "API_KEY", "value": "f3a0c4b7e1d9c0f247a6df81b2439e57c1d84e3ab9a92f7db08f6c2cd41e5af0"},
-    {"key": "GOOGLE_API_KEY", "value": "AIzaSyDLSW6qz4tC9Aq0p2yO0gbmrrIBeKjGdBs"},
-    {"key": "GOOGLE_CSE_ID", "value": "739bdcbb2b51b4409"},
-    {"key": "BRAVE_API", "value": "BSAUZcHnbsKgi9GTsu4wQV2SPEeZ3wy"},
-    {"key": "SERPER_API_KEY", "value": "8b0733a1da1ace1e16a34f5a396b48e4daa4d88e"},
-    {"key": "WEBSCRAPING_API_KEY", "value": "DXXGG7k1XgDQI1EPvq2ZCobU3N1uksPo"},
-    {"key": "SCRAPINGANT_API_KEY", "value": "0f53dcf52bc3454687ff777304dbd583"},
+    {"key": "SKILLS_CONFIG_PATH", "value": "../skills_config.json"},
+    {"key": "API_KEY", "value": "YOUR_API_KEY_HERE"},
+    {"key": "GOOGLE_API_KEY", "value": "YOUR_GOOGLE_API_KEY_HERE"},
+    {"key": "GOOGLE_CSE_ID", "value": "YOUR_GOOGLE_CSE_ID_HERE"},
+    {"key": "BRAVE_API", "value": "YOUR_BRAVE_API_KEY_HERE"},
+    {"key": "SERPER_API_KEY", "value": "YOUR_SERPER_API_KEY_HERE"},
+    {"key": "WEBSCRAPING_API_KEY", "value": "YOUR_WEBSCRAPING_API_KEY_HERE"},
+    {"key": "SCRAPINGANT_API_KEY", "value": "YOUR_SCRAPINGANT_API_KEY_HERE"},
 ]
 
 API_BASE = "https://app.koyeb.com/v1"
@@ -205,8 +207,9 @@ def main():
     print("AetherCore Gateway - Koyeb Deployment (Free Tier)")
     print("=" * 60)
 
-    if not KOYEB_API_KEY:
+    if not KOYEB_API_KEY or KOYEB_API_KEY == "YOUR_KOYEB_API_KEY_HERE":
         print("\n[FAIL] Error: KOYEB_API_KEY not set")
+        print("Please set your Koyeb API key in the script or environment variable")
         sys.exit(1)
 
     print(f"\nGitHub Repo: {GITHUB_REPO}")

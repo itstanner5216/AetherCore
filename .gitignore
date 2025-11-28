@@ -16,6 +16,11 @@ providers.json
 *.secrets.json
 koyeb.secrets.json
 
+# Deployment scripts with secrets (use .example versions)
+Aethercore.Gateway/deploy.py
+Aethercore.Gateway/deploy_koyeb.py
+Aethercore.Gateway/koyeb_deploy.sh
+
 # Python
 __pycache__/
 *.pyc

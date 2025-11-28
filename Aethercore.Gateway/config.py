@@ -42,7 +42,7 @@ class Config:
         # Skills configuration
         self.skills_config_path = os.getenv(
             "SKILLS_CONFIG_PATH",
-            "skills_config.json"
+            "../skills_config.json"
         )
         
         # Rate limiting

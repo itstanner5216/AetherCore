@@ -1,5 +1,6 @@
 # AetherCore Gateway - Production Dockerfile (Koyeb Compatible)
 # Multi-stage build for optimized container size
+# NOTE: Build this from the repository root with: docker build -f Aethercore.Gateway/Dockerfile .
 
 FROM python:3.11-slim as builder
 
@@ -12,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements first for layer caching
-COPY requirements.txt .
+COPY Aethercore.Gateway/requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir --user -r requirements.txt
@@ -34,14 +35,21 @@ RUN useradd --create-home --shell /bin/bash appuser && \
 # Copy Python dependencies from builder
 COPY --from=builder /root/.local /home/appuser/.local
 
-# Copy application code
-COPY --chown=appuser:appuser . .
+# Copy Gateway application code
+COPY --chown=appuser:appuser Aethercore.Gateway/ ./Aethercore.Gateway/
+
+# Copy skills directory and config
+COPY --chown=appuser:appuser skills/ ./skills/
+COPY --chown=appuser:appuser skills_config.json ./
 
 # Switch to non-root user
 USER appuser
 
 # Add local Python packages to PATH
 ENV PATH=/home/appuser/.local/bin:$PATH
+
+# Set working directory to Gateway
+WORKDIR /app/Aethercore.Gateway
 
 # Expose port (Koyeb will map this)
 EXPOSE 8000

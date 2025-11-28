@@ -2,6 +2,11 @@
 """
 AetherCore Gateway - Koyeb Deployment Launcher
 Simple, reliable deployment using Koyeb REST API
+
+USAGE:
+1. Copy this file to deploy.py
+2. Replace all placeholder values with your actual API keys
+3. Run: python deploy.py
 """
 
 import os
@@ -19,7 +24,7 @@ except ImportError:
     import requests
 
 # Configuration
-API_KEY = os.getenv("KOYEB_PERSONAL_ACCESS_TOKEN", "b21eh3tz8wtv15x6sz8oh46trgp39uqsa017e39j2lirttdzpubjvbyrwyl8z0um").strip()
+API_KEY = os.getenv("KOYEB_PERSONAL_ACCESS_TOKEN", "YOUR_KOYEB_PERSONAL_ACCESS_TOKEN_HERE").strip()
 API_BASE = "https://app.koyeb.com/v1"
 APP_NAME = "aethercore"
 SERVICE_NAME = "aethercore-gateway"
@@ -34,14 +39,14 @@ ENV_VARS = {
     "CORS_ORIGINS": "https://chat.openai.com,https://chatgpt.com",
     "RATE_LIMIT_REQUESTS": "100",
     "RATE_LIMIT_WINDOW": "3600",
-    "SKILLS_CONFIG_PATH": "skills_config.json",
-    "API_KEY": "f3a0c4b7e1d9c0f247a6df81b2439e57c1d84e3ab9a92f7db08f6c2cd41e5af0",
-    "GOOGLE_API_KEY": "AIzaSyDLSW6qz4tC9Aq0p2yO0gbmrrIBeKjGdBs",
-    "GOOGLE_CSE_ID": "739bdcbb2b51b4409",
-    "BRAVE_API": "BSAUZcHnbsKgi9GTsu4wQV2SPEeZ3wy",
-    "SERPER_API_KEY": "8b0733a1da1ace1e16a34f5a396b48e4daa4d88e",
-    "WEBSCRAPING_API_KEY": "DXXGG7k1XgDQI1EPvq2ZCobU3N1uksPo",
-    "SCRAPINGANT_API_KEY": "0f53dcf52bc3454687ff777304dbd583",
+    "SKILLS_CONFIG_PATH": "../skills_config.json",
+    "API_KEY": "YOUR_API_KEY_HERE",
+    "GOOGLE_API_KEY": "YOUR_GOOGLE_API_KEY_HERE",
+    "GOOGLE_CSE_ID": "YOUR_GOOGLE_CSE_ID_HERE",
+    "BRAVE_API": "YOUR_BRAVE_API_KEY_HERE",
+    "SERPER_API_KEY": "YOUR_SERPER_API_KEY_HERE",
+    "WEBSCRAPING_API_KEY": "YOUR_WEBSCRAPING_API_KEY_HERE",
+    "SCRAPINGANT_API_KEY": "YOUR_SCRAPINGANT_API_KEY_HERE",
 }
 
 
