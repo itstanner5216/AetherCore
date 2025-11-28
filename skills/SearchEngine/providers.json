@@ -1,0 +1,99 @@
+{
+  "search_providers": {
+    "google": {
+      "name": "Google Custom Search",
+      "api_key": "AIzaSyDkaJM2TzzC0ZRNoisOQhXscIS99dimzm8",
+      "cx": "739bdcbb2b51b4409",
+      "base_url": "https://www.googleapis.com/customsearch/v1",
+      "quota": {
+        "limit": 100,
+        "window": "day",
+        "reset_time": "00:00 UTC"
+      },
+      "priority": 1
+    },
+    "brave": {
+      "name": "Brave Search",
+      "api_key": "BSAUZcHnbsKgi9GTsu4wQV2SPEeZ3wy",
+      "base_url": "https://api.search.brave.com/res/v1/web/search",
+      "quota": {
+        "limit": 2000,
+        "window": "month",
+        "reset_time": "1st of month"
+      },
+      "priority": 2
+    },
+    "serper": {
+      "name": "Serper.dev",
+      "api_key": "8b0733a1da1ace1e16a34f5a396b48e4daa4d88e",
+      "base_url": "https://google.serper.dev/search",
+      "quota": {
+        "limit": 2000,
+        "window": "month",
+        "reset_time": "1st of month"
+      },
+      "priority": 3
+    }
+  },
+
+  "scrape_providers": {
+    "webscraping_api": {
+      "name": "Webscraping API",
+      "api_key": "DXXGG7k1XgDQI1EPvq2ZCobU3N1uksPo",
+      "base_url": "https://api.webscraping.ai/html",
+      "quota": {
+        "limit": 5000,
+        "window": "month",
+        "reset_time": "1st of month"
+      },
+      "priority": 1
+    },
+    "scrapingant": {
+      "name": "ScrapingAnt",
+      "api_key": "0f53dcf52bc3454687ff777304dbd583",
+      "base_url": "https://api.scrapingant.com/v2/general",
+      "quota": {
+        "limit": 10000,
+        "window": "month",
+        "reset_time": "1st of month",
+        "credit_based": true
+      },
+      "priority": 2,
+      "credit_costs": {
+        "simple_datacenter": 1,
+        "headless_no_js": 2,
+        "js_rendering": 10,
+        "simple_premium": 25,
+        "headless_premium": 50,
+        "js_premium": 125,
+        "google_datacenter": 10
+      }
+    }
+  },
+
+  "failover": {
+    "enabled": true,
+    "max_retries": 3,
+    "retry_delay_ms": 1000,
+    "strategies": {
+      "on_quota_exhausted": "next_provider",
+      "on_rate_limit": "backoff_retry",
+      "on_error": "continue_with_warning",
+      "on_timeout": "next_provider"
+    }
+  },
+
+  "telemetry": {
+    "enabled": true,
+    "emit_channels": ["optimization-events", "research-updates"],
+    "log_events": [
+      "quota_usage",
+      "provider_failover",
+      "provider_deactivation",
+      "quota_reset",
+      "error_handling",
+      "search_completed",
+      "scrape_completed"
+    ]
+  }
+}
