@@ -13,7 +13,7 @@
  - @param {number} [payload.max_tokens=4096] - Maximum output tokens
  - @param {number} [payload.temperature=0.4] - Temperature for generation
  - @param {Object} [payload.context] - Additional context from orchestrator
- - @returns {Promise        } Structured response with status, evidence, and metadata
+ - @returns {Promise<Object>} Structured response with status, evidence, and metadata
  */
 export async function geminiHybridInvoke(payload = {}) {
   const {
