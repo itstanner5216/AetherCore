@@ -39,8 +39,12 @@ ENV_VARS = {
     "CORS_ORIGINS": "https://chat.openai.com,https://chatgpt.com",
     "RATE_LIMIT_REQUESTS": "100",
     "RATE_LIMIT_WINDOW": "3600",
-    "SKILLS_CONFIG_PATH": "../skills_config.json",
+    "SKILLS_CONFIG_PATH": "../AetherCore.System/skills_config.json",
+    "SEARCH_ENGINE_SERVER_URL": "http://localhost:3000",
     "API_KEY": "YOUR_API_KEY_HERE",
+    "GATEWAY_API_KEY": "YOUR_API_KEY_HERE",
+    "UPSTASH_REDIS_REST_URL": "YOUR_UPSTASH_REDIS_REST_URL",
+    "UPSTASH_REDIS_REST_TOKEN": "YOUR_UPSTASH_REDIS_REST_TOKEN",
     "GOOGLE_API_KEY": "YOUR_GOOGLE_API_KEY_HERE",
     "GOOGLE_CSE_ID": "YOUR_GOOGLE_CSE_ID_HERE",
     "BRAVE_API": "YOUR_BRAVE_API_KEY_HERE",
@@ -114,11 +118,17 @@ def main():
                 "branch": "main"
             },
             "docker": {
-                "dockerfile": "Dockerfile"
+                "dockerfile": "Aethercore.Gateway/Dockerfile"
             },
             "instance_types": [{"type": "nano"}],
-            "ports": [{"port": 8000, "protocol": "http"}],
-            "routes": [{"port": 8000, "path": "/"}],
+            "ports": [
+                {"port": 8000, "protocol": "http"},
+                {"port": 3000, "protocol": "http"}
+            ],
+            "routes": [
+                {"port": 8000, "path": "/aethercore"},
+                {"port": 3000, "path": "/search"}
+            ],
             "env": [{"key": k, "value": v} for k, v in ENV_VARS.items()],
             "health_checks": [{
                 "http": {
@@ -154,9 +164,9 @@ def main():
         print("Visit https://app.koyeb.com/ and deploy manually with these settings:")
         print(f"  - Repository: {GITHUB_REPO}")
         print(f"  - Branch: main")
-        print(f"  - Dockerfile: Dockerfile")
-        print(f"  - Instance: Nano (free)")
-        print(f"  - Port: 8000")
+        print(f"  - Dockerfile: Aethercore.Gateway/Dockerfile (context: repo root)")
+        print(f"  - Instance: Nano (free, 0.1 vCPU / 512MB RAM / 2GB disk)")
+        print(f"  - Routes: /aethercore -> 8000, /search -> 3000")
         sys.exit(1)
 
     # Step 3: Wait for deployment

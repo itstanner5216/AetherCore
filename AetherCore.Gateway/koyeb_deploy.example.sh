@@ -42,9 +42,9 @@ koyeb service create aethercore-gateway \
   --git github.com/itstanner5216/AetherCore \
   --git-branch main \
   --git-builder docker \
-  --docker-dockerfile Dockerfile \
-  --ports 8000:http \
-  --routes /:8000 \
+  --docker-dockerfile Aethercore.Gateway/Dockerfile \
+  --ports 8000:http --ports 3000:http \
+  --routes /aethercore:8000 --routes /search:3000 \
   --instance-type nano \
   --region was \
   --env ENVIRONMENT=production \
@@ -55,8 +55,12 @@ koyeb service create aethercore-gateway \
   --env CORS_ORIGINS=https://chat.openai.com,https://chatgpt.com \
   --env RATE_LIMIT_REQUESTS=100 \
   --env RATE_LIMIT_WINDOW=3600 \
-  --env SKILLS_CONFIG_PATH=../skills_config.json \
+  --env SKILLS_CONFIG_PATH=../AetherCore.System/skills_config.json \
+  --env SEARCH_ENGINE_SERVER_URL=http://localhost:3000 \
   --env API_KEY=YOUR_API_KEY_HERE \
+  --env GATEWAY_API_KEY=YOUR_API_KEY_HERE \
+  --env UPSTASH_REDIS_REST_URL=YOUR_UPSTASH_REDIS_REST_URL \
+  --env UPSTASH_REDIS_REST_TOKEN=YOUR_UPSTASH_REDIS_REST_TOKEN \
   --env GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY_HERE \
   --env GOOGLE_CSE_ID=YOUR_GOOGLE_CSE_ID_HERE \
   --env BRAVE_API=YOUR_BRAVE_API_KEY_HERE \

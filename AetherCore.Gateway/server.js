@@ -6,6 +6,28 @@ const { Ratelimit } = require('@upstash/ratelimit');
 const app = express();
 app.use(express.json());
 
+const API_KEY = process.env.GATEWAY_API_KEY || process.env.API_KEY;
+
+const authMiddleware = (req, res, next) => {
+  if (!API_KEY) {
+    return res.status(503).json({ error: 'API key not configured on gateway' });
+  }
+
+  const authHeader = req.headers['authorization'] || '';
+  const bearerMatch = authHeader.match(/^Bearer (.+)$/i);
+  const candidate =
+    (bearerMatch && bearerMatch[1]) ||
+    req.headers['x-api-key'] ||
+    req.query.api_key;
+
+  if (candidate !== API_KEY) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  return next();
+};
+
+app.use(authMiddleware);
+
 // Validate Redis connection first
 const redisUrl = process.env.UPSTASH_REDIS_REST_URL;
 const redisToken = process.env.UPSTASH_REDIS_REST_TOKEN;

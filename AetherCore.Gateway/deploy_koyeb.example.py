@@ -33,8 +33,12 @@ SERVICE_ENV_VARS = [
     {"key": "CORS_ORIGINS", "value": "https://chat.openai.com,https://chatgpt.com"},
     {"key": "RATE_LIMIT_REQUESTS", "value": "100"},
     {"key": "RATE_LIMIT_WINDOW", "value": "3600"},
-    {"key": "SKILLS_CONFIG_PATH", "value": "../skills_config.json"},
+    {"key": "SKILLS_CONFIG_PATH", "value": "../AetherCore.System/skills_config.json"},
+    {"key": "SEARCH_ENGINE_SERVER_URL", "value": "http://localhost:3000"},
     {"key": "API_KEY", "value": "YOUR_API_KEY_HERE"},
+    {"key": "GATEWAY_API_KEY", "value": "YOUR_API_KEY_HERE"},
+    {"key": "UPSTASH_REDIS_REST_URL", "value": "YOUR_UPSTASH_REDIS_REST_URL"},
+    {"key": "UPSTASH_REDIS_REST_TOKEN", "value": "YOUR_UPSTASH_REDIS_REST_TOKEN"},
     {"key": "GOOGLE_API_KEY", "value": "YOUR_GOOGLE_API_KEY_HERE"},
     {"key": "GOOGLE_CSE_ID", "value": "YOUR_GOOGLE_CSE_ID_HERE"},
     {"key": "BRAVE_API", "value": "YOUR_BRAVE_API_KEY_HERE"},
@@ -128,7 +132,7 @@ def create_service(app_id: str):
                 "branch": "main"
             },
             "docker": {
-                "dockerfile": "Dockerfile",
+                "dockerfile": "Aethercore.Gateway/Dockerfile",
                 "target": ""
             },
             "instance_types": [{
@@ -137,10 +141,16 @@ def create_service(app_id: str):
             "ports": [{
                 "port": 8000,
                 "protocol": "http"
+            }, {
+                "port": 3000,
+                "protocol": "http"
             }],
             "routes": [{
                 "port": 8000,
-                "path": "/"
+                "path": "/aethercore"
+            }, {
+                "port": 3000,
+                "path": "/search"
             }],
             "env": SERVICE_ENV_VARS,
             "health_checks": [{

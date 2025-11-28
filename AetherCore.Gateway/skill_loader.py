@@ -97,7 +97,7 @@ class SkillLoader:
 
     # ============================================================
 
-    def __init__(self, config_path: str = "../skills_config.json"):
+    def __init__(self, config_path: str = "../AetherCore.System/skills_config.json"):
         self.config_path = config_path
         self.skills: Dict[str, Dict] = {}
         self.skill_handlers: Dict[str, Any] = {}
@@ -799,16 +799,14 @@ class SkillLoader:
         SearchEngine skill handler with multi-provider search and scraping.
         Integrates with server.js API for quota management and search execution.
         """
-        import urllib.request
-        import urllib.error
-        import urllib.parse
+        import aiohttp
         import json
         import os
 
         context_id = context.get("context_id") if context else None
 
-        # Get server URL from environment or use default
-        server_url = os.getenv('SEARCH_ENGINE_SERVER_URL', 'http://localhost:8000')
+        # Get server URL from environment or use default (align with server.js default port 3000)
+        server_url = os.getenv('SEARCH_ENGINE_SERVER_URL', 'http://localhost:3000')
 
         if tool == "search":
             query = parameters.get("query", "")
@@ -834,55 +832,40 @@ class SkillLoader:
                         return cached["result"]
 
             try:
-                # Call server.js API
                 url = f"{server_url}/api/search"
-                data = json.dumps({
+                payload = {
                     "query": query,
                     "max_results": max_results,
                     "provider": provider
-                }).encode('utf-8')
+                }
+                timeout = aiohttp.ClientTimeout(total=30)
+                async with aiohttp.ClientSession(timeout=timeout) as session:
+                    async with session.post(url, json=payload) as resp:
+                        text = await resp.text()
+                        try:
+                            result = json.loads(text)
+                        except json.JSONDecodeError:
+                            result = {"error": f"Invalid JSON from search service: {text[:200]}"}
 
-                req = urllib.request.Request(
-                    url,
-                    data=data,
-                    headers={'Content-Type': 'application/json'},
-                    method='POST'
-                )
+                        if resp.status >= 400:
+                            error_msg = result.get("error", f"HTTP {resp.status}")
+                            if resp.status == 429:
+                                return {"success": False, "error": error_msg, "context_id": context_id}
+                            return {"success": False, "error": f"Search API error: {error_msg}", "context_id": context_id}
 
-                with urllib.request.urlopen(req, timeout=30) as resp:
-                    result = json.loads(resp.read().decode('utf-8'))
-                    result["context_id"] = context_id
+                        result["context_id"] = context_id
 
-                    # Cache successful result (15 min TTL)
-                    if not hasattr(self, '_search_cache'):
-                        self._search_cache = {}
-                    cache_key = hashlib.md5(f"{query}:{max_results}:{provider}".encode()).hexdigest()
-                    self._search_cache[cache_key] = {
-                        "result": result.copy(),
-                        "expires": datetime.now() + timedelta(minutes=15)
-                    }
+                        # Cache successful result (15 min TTL)
+                        if not hasattr(self, '_search_cache'):
+                            self._search_cache = {}
+                        cache_key = hashlib.md5(f"{query}:{max_results}:{provider}".encode()).hexdigest()
+                        self._search_cache[cache_key] = {
+                            "result": result.copy(),
+                            "expires": datetime.now() + timedelta(minutes=15)
+                        }
 
-                    return result
+                        return result
 
-            except urllib.error.HTTPError as e:
-                error_body = e.read().decode('utf-8')
-                try:
-                    error_data = json.loads(error_body)
-                except:
-                    error_data = {"error": f"HTTP {e.code}"}
-
-                if e.code == 429:
-                    return {
-                        "success": False,
-                        "error": error_data.get("error", "Quota exhausted"),
-                        "context_id": context_id
-                    }
-                else:
-                    return {
-                        "success": False,
-                        "error": f"Search API error: {error_data.get('error', f'HTTP {e.code}')}",
-                        "context_id": context_id
-                    }
             except Exception as e:
                 logger.error(f"Search API call failed: {str(e)}")
                 return {
@@ -904,38 +887,32 @@ class SkillLoader:
                 }
 
             try:
-                # Call server.js scrape API
                 api_url = f"{server_url}/api/scrape"
-                data = json.dumps({
+                payload = {
                     "url": url,
                     "render_js": render_js,
                     "use_premium_proxy": use_premium
-                }).encode('utf-8')
-
-                req = urllib.request.Request(
-                    api_url,
-                    data=data,
-                    headers={'Content-Type': 'application/json'},
-                    method='POST'
-                )
-
-                with urllib.request.urlopen(req, timeout=60) as resp:
-                    result = json.loads(resp.read().decode('utf-8'))
-                    result["context_id"] = context_id
-                    return result
-
-            except urllib.error.HTTPError as e:
-                error_body = e.read().decode('utf-8')
-                try:
-                    error_data = json.loads(error_body)
-                except:
-                    error_data = {"error": f"HTTP {e.code}"}
-
-                return {
-                    "success": False,
-                    "error": f"Scrape API error: {error_data.get('error', f'HTTP {e.code}')}",
-                    "context_id": context_id
                 }
+                timeout = aiohttp.ClientTimeout(total=60)
+                async with aiohttp.ClientSession(timeout=timeout) as session:
+                    async with session.post(api_url, json=payload) as resp:
+                        text = await resp.text()
+                        try:
+                            result = json.loads(text)
+                        except json.JSONDecodeError:
+                            result = {"error": f"Invalid JSON from scrape service: {text[:200]}"}
+
+                        if resp.status >= 400:
+                            error_msg = result.get("error", f"HTTP {resp.status}")
+                            return {
+                                "success": False,
+                                "error": f"Scrape API error: {error_msg}",
+                                "context_id": context_id
+                            }
+
+                        result["context_id"] = context_id
+                        return result
+
             except Exception as e:
                 logger.error(f"Scrape API call failed: {str(e)}")
                 return {
@@ -946,26 +923,26 @@ class SkillLoader:
 
         elif tool == "quota_status":
             try:
-                # Call server.js quota status API
-                req = urllib.request.Request(f"{server_url}/api/quotas", method='GET')
+                timeout = aiohttp.ClientTimeout(total=10)
+                async with aiohttp.ClientSession(timeout=timeout) as session:
+                    async with session.get(f"{server_url}/api/quotas") as resp:
+                        text = await resp.text()
+                        try:
+                            result = json.loads(text)
+                        except json.JSONDecodeError:
+                            result = {"error": f"Invalid JSON from quota service: {text[:200]}"}
 
-                with urllib.request.urlopen(req, timeout=10) as resp:
-                    result = json.loads(resp.read().decode('utf-8'))
-                    result["context_id"] = context_id
-                    return result
+                        if resp.status >= 400:
+                            error_msg = result.get("error", f"HTTP {resp.status}")
+                            return {
+                                "success": False,
+                                "error": f"Quota API error: {error_msg}",
+                                "context_id": context_id
+                            }
 
-            except urllib.error.HTTPError as e:
-                error_body = e.read().decode('utf-8')
-                try:
-                    error_data = json.loads(error_body)
-                except:
-                    error_data = {"error": f"HTTP {e.code}"}
+                        result["context_id"] = context_id
+                        return result
 
-                return {
-                    "success": False,
-                    "error": f"Quota API error: {error_data.get('error', f'HTTP {e.code}')}",
-                    "context_id": context_id
-                }
             except Exception as e:
                 logger.error(f"Quota status API call failed: {str(e)}")
                 return {
@@ -978,34 +955,28 @@ class SkillLoader:
             provider = parameters.get("provider", "all")
 
             try:
-                # Call server.js quota reset API
                 api_url = f"{server_url}/api/reset-quotas"
-                data = json.dumps({"provider": provider}).encode('utf-8')
+                payload = {"provider": provider}
+                timeout = aiohttp.ClientTimeout(total=10)
+                async with aiohttp.ClientSession(timeout=timeout) as session:
+                    async with session.post(api_url, json=payload) as resp:
+                        text = await resp.text()
+                        try:
+                            result = json.loads(text)
+                        except json.JSONDecodeError:
+                            result = {"error": f"Invalid JSON from reset service: {text[:200]}"}
 
-                req = urllib.request.Request(
-                    api_url,
-                    data=data,
-                    headers={'Content-Type': 'application/json'},
-                    method='POST'
-                )
+                        if resp.status >= 400:
+                            error_msg = result.get("error", f"HTTP {resp.status}")
+                            return {
+                                "success": False,
+                                "error": f"Reset API error: {error_msg}",
+                                "context_id": context_id
+                            }
 
-                with urllib.request.urlopen(req, timeout=10) as resp:
-                    result = json.loads(resp.read().decode('utf-8'))
-                    result["context_id"] = context_id
-                    return result
+                        result["context_id"] = context_id
+                        return result
 
-            except urllib.error.HTTPError as e:
-                error_body = e.read().decode('utf-8')
-                try:
-                    error_data = json.loads(error_body)
-                except:
-                    error_data = {"error": f"HTTP {e.code}"}
-
-                return {
-                    "success": False,
-                    "error": f"Reset API error: {error_data.get('error', f'HTTP {e.code}')}",
-                    "context_id": context_id
-                }
             except Exception as e:
                 logger.error(f"Quota reset API call failed: {str(e)}")
                 return {

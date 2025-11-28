@@ -15,28 +15,32 @@
 2. **Create Web Service**
    - Click **"Create Web Service"**
    - Select **"GitHub"** as the source
+   - Choose **Docker** explicitly (the repo layout prevents autodetection)
 
 3. **Repository Settings**
    ```
-   Repository: itstanner5216/AetherCore
-   Branch: main
-   Builder: Dockerfile
-   Dockerfile path: /Dockerfile
-   ```
+Repository: itstanner5216/AetherCore
+Branch: main
+Builder: Dockerfile
+Docker build context: /       # repo root so Gateway + skills are visible
+Dockerfile path: Aethercore.Gateway/Dockerfile
+```
 
 4. **Instance Configuration**
    ```
-   Service name: aethercore-gateway
-   Instance type: Nano (512MB RAM - Free Tier)
-   Region: Washington D.C. (was) OR Frankfurt (fra)
-   Scaling: Min 1, Max 1
-   ```
+Service name: aethercore-gateway
+Instance type: Nano (0.1 vCPU / 512MB RAM / 2GB disk) - Free Tier
+Region: Washington D.C. (was)   # only free region
+Scaling: Min 1, Max 1
+```
 
-5. **Port Configuration**
+5. **Port Configuration (Advanced ƒ+' Service ports)**
    ```
-   Port: 8000
-   Protocol: HTTP
+   External path prefix  Target internal port  Protocol
+   /aethercore          8000                   HTTP   # FastAPI
+   /search              3000                   HTTP   # Node helper
    ```
+   - Both ports share the same service URL; the path prefix maps requests to the correct process.
 
 6. **Environment Variables**
 
@@ -51,27 +55,31 @@
    CORS_ORIGINS=https://chat.openai.com,https://chatgpt.com
    RATE_LIMIT_REQUESTS=100
    RATE_LIMIT_WINDOW=3600
-   SKILLS_CONFIG_PATH=skills_config.json
+   SKILLS_CONFIG_PATH=../AetherCore.System/skills_config.json
 
-   # Gateway API Key
-   API_KEY=f3a0c4b7e1d9c0f247a6df81b2439e57c1d84e3ab9a92f7db08f6c2cd41e5af0
+   # Gateway + helper auth (must match)
+   API_KEY=your_gateway_api_key
+   GATEWAY_API_KEY=your_gateway_api_key
 
-   # Google APIs
-   GOOGLE_API_KEY=AIzaSyDLSW6qz4tC9Aq0p2yO0gbmrrIBeKjGdBs
-   GOOGLE_CSE_ID=739bdcbb2b51b4409
+   # Search helper URL (internal)
+   SEARCH_ENGINE_SERVER_URL=http://localhost:3000
 
-   # Search APIs
-   BRAVE_API=BSAUZcHnbsKgi9GTsu4wQV2SPEeZ3wy
-   SERPER_API_KEY=8b0733a1da1ace1e16a34f5a396b48e4daa4d88e
+   # Upstash Redis (required for quotas)
+   UPSTASH_REDIS_REST_URL=your_upstash_url
+   UPSTASH_REDIS_REST_TOKEN=your_upstash_token
 
-   # Scraping APIs
-   WEBSCRAPING_API_KEY=DXXGG7k1XgDQI1EPvq2ZCobU3N1uksPo
-   SCRAPINGANT_API_KEY=0f53dcf52bc3454687ff777304dbd583
+   # Provider keys (optional but recommended)
+   GOOGLE_API_KEY=...
+   GOOGLE_CSE_ID=...
+   BRAVE_API=...
+   SERPER_API_KEY=...
+   WEBSCRAPING_API_KEY=...
+   SCRAPINGANT_API_KEY=...
    ```
 
 7. **Health Check**
    ```
-   Path: /health
+   Path: /health   # container path; externally /aethercore/health
    Port: 8000
    Grace period: 60 seconds
    Interval: 30 seconds
@@ -88,7 +96,8 @@
 
 10. **Test Deployment**
     ```bash
-    curl https://your-service.koyeb.app/health
+    curl https://your-service.koyeb.app/aethercore/health
+    curl -H "Authorization: Bearer $API_KEY" https://your-service.koyeb.app/search/api/quotas
     ```
 
     Expected response:
@@ -174,12 +183,12 @@ https://app.koyeb.com/services/aethercore-gateway
 
 ### Build Fails
 - Check Koyeb logs for Docker build errors
-- Verify Dockerfile is in repository root
+- Verify Dockerfile path is set to `Aethercore.Gateway/Dockerfile` with context `/`
 - Ensure all dependencies in requirements.txt
 
 ### Service Won't Start
 - Check environment variables are set correctly
-- Verify port 8000 is exposed
+- Verify ports 8000 and 3000 are exposed and mapped to /aethercore and /search
 - Check health check endpoint returns 200
 
 ### Out of Memory
@@ -190,6 +199,10 @@ https://app.koyeb.com/services/aethercore-gateway
 - Increase grace period to 90 seconds
 - Check `/health` endpoint locally first
 - Verify uvicorn binds to 0.0.0.0, not 127.0.0.1
+
+### Render still deploying
+- Disable or lock the Render service, or remove its GitHub webhook, so only Koyeb redeploys on push
+- Remove any Render-specific GitHub Actions if they auto-trigger builds
 
 ---
 
@@ -208,10 +221,10 @@ https://app.koyeb.com/services/aethercore-gateway
 
 1. **Test all endpoints**
    ```bash
-   curl https://your-service.koyeb.app/
-   curl https://your-service.koyeb.app/health
-   curl https://your-service.koyeb.app/docs
-   curl https://your-service.koyeb.app/openapi.json
+   curl https://your-service.koyeb.app/aethercore/health
+   curl https://your-service.koyeb.app/aethercore/docs
+   curl https://your-service.koyeb.app/aethercore/openapi.json
+   curl -H "Authorization: Bearer $API_KEY" https://your-service.koyeb.app/search/api/quotas
    ```
 
 2. **Update Custom GPT**

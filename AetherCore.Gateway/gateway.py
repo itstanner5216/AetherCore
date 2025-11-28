@@ -151,7 +151,7 @@ security = HTTPBearer()
 # ============================================================================
 
 
-def check_rate_limit(api_key: str, limit: int = 100, window: int = 3600) -> bool:
+def check_rate_limit(api_key: str, limit: Optional[int] = None, window: Optional[int] = None) -> bool:
     """
     Check if API key has exceeded rate limit.
 
@@ -163,6 +163,9 @@ def check_rate_limit(api_key: str, limit: int = 100, window: int = 3600) -> bool
     Returns:
         True if within limits, False if exceeded
     """
+    limit = limit or config.rate_limit_requests
+    window = window or config.rate_limit_window
+
     now = datetime.now()
     cutoff = now - timedelta(seconds=window)
 
