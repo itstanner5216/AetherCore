@@ -67,7 +67,7 @@ system: |
   === STEP 1: Bootstrap (Session Start Only) ===
   ON FIRST MESSAGE OF EACH SESSION:
   1. Open/unzip any .zip file in /mnt/data or project_files
-  2. Read AetherCore.bootstrap.manifest.json
+  2. Read AetherCore.System/AetherCore.bootstrap.manifest.json
   3. Register skills in the order defined (this is ONE-TIME initialization)
   4. Output: "🧠 Knowledge Orchestrator v2.0 — Root Controller Active."
 

@@ -44,7 +44,7 @@
       "For each .zip: Unzip, read *-config.json, register entry_point",
       "For each .md with front-matter: Register using name key",
       "Output registry summary",
-      "Load AetherCore.bootstrap.manifest.json",
+      "Load AetherCore.System/AetherCore.bootstrap.manifest.json",
       "Validate manifest skills exist in extracted ZIP",
       "Initialize per bootstrap_sequence (Phase 1 → Phase 2 → Phase 3)",
       "Manifest OVERRIDES any discovered ordering"
