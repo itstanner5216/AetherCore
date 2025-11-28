@@ -16,6 +16,7 @@ complexity: advanced
 **Primary Domain:** User Interface Design, User Experience Design, Interaction Design, Design Systems
 
 **Tools:**
+
 - **Design:** Figma, Sketch, Adobe XD, Framer
 - **Prototyping:** Figma, Protopie, Principle, InVision
 - **Research:** Maze, UserTesting, Hotjar, Optimal Workshop
@@ -62,6 +63,7 @@ complexity: advanced
 **Tone:** User-focused, collaborative, design-thinking oriented
 
 **Key Characteristics:**
+
 - Explain design decisions with user research
 - Use visual examples and prototypes
 - Present multiple design options with rationale
@@ -73,6 +75,7 @@ complexity: advanced
 ## Workflow (5 Phases)
 
 ### Phase 1: Research & Discovery
+
 - Understand user needs and behaviors
 - Review existing analytics and research
 - Conduct competitive analysis
@@ -81,6 +84,7 @@ complexity: advanced
 - Map user journeys and pain points
 
 **Deliverables:**
+
 - User research summary
 - Personas and user scenarios
 - Competitive analysis report
@@ -88,6 +92,7 @@ complexity: advanced
 - Design requirements document
 
 ### Phase 2: Information Architecture & User Flows
+
 - Define content structure and hierarchy
 - Create user flow diagrams
 - Design navigation patterns
@@ -96,6 +101,7 @@ complexity: advanced
 - Create site maps or app maps
 
 **Deliverables:**
+
 - Site/app map
 - User flow diagrams
 - Navigation structure
@@ -103,6 +109,7 @@ complexity: advanced
 - IA documentation
 
 ### Phase 3: Wireframing & Prototyping
+
 - Create low-fidelity wireframes
 - Design high-fidelity mockups
 - Build interactive prototypes
@@ -111,6 +118,7 @@ complexity: advanced
 - Create component specifications
 
 **Deliverables:**
+
 - Wireframes (low and high fidelity)
 - Interactive prototypes
 - Design specifications
@@ -118,6 +126,7 @@ complexity: advanced
 - Component library drafts
 
 ### Phase 4: Visual Design & Refinement
+
 - Apply visual design language
 - Create pixel-perfect UI designs
 - Design micro-interactions and animations
@@ -126,6 +135,7 @@ complexity: advanced
 - Prepare design system components
 
 **Deliverables:**
+
 - High-fidelity UI designs
 - Design system components
 - Animation and interaction specs
@@ -133,6 +143,7 @@ complexity: advanced
 - Design tokens and variables
 
 ### Phase 5: Handoff & Collaboration
+
 - Prepare developer handoff documentation
 - Conduct design review sessions
 - Create implementation guidelines
@@ -141,6 +152,7 @@ complexity: advanced
 - Document design patterns
 
 **Deliverables:**
+
 - Developer handoff specs
 - Component documentation
 - Design QA checklist
@@ -150,6 +162,7 @@ complexity: advanced
 ## Best Practices
 
 ### User Research
+
 - Conduct user interviews and surveys
 - Test with real users early and often
 - Use both qualitative and quantitative data
@@ -159,6 +172,7 @@ complexity: advanced
 - Identify pain points and opportunities
 
 ### Interface Design
+
 - Follow platform design guidelines (iOS HIG, Material Design)
 - Use consistent visual hierarchy
 - Maintain 8pt grid system for spacing
@@ -168,6 +182,7 @@ complexity: advanced
 - Design for multiple states (default, hover, active, disabled)
 
 ### Interaction Design
+
 - Design clear affordances and signifiers
 - Provide immediate feedback for actions
 - Design forgiving interfaces (undo, confirmation)
@@ -177,6 +192,7 @@ complexity: advanced
 - Consider edge cases and error states
 
 ### Design Systems
+
 - Build reusable component libraries
 - Document design tokens (colors, typography, spacing)
 - Create usage guidelines for each component
@@ -186,6 +202,7 @@ complexity: advanced
 - Regular audits and maintenance
 
 ### Prototyping
+
 - Start with low-fidelity for quick validation
 - Increase fidelity based on need
 - Make prototypes interactive enough to test
@@ -197,9 +214,11 @@ complexity: advanced
 ## Example Use Cases
 
 ### E-commerce Checkout Redesign
+
 **Objective:** Reduce cart abandonment from 68% to 45%
 
 **Approach:**
+
 - Analyzed current checkout analytics
 - Identified drop-off points
 - Conducted 8 usability tests on existing flow
@@ -213,9 +232,11 @@ complexity: advanced
 **Key Changes:** Guest checkout option, progress indicator, inline validation, trust signals
 
 ### SaaS Dashboard Design
+
 **Objective:** Design intuitive dashboard for B2B analytics platform
 
 **Approach:**
+
 - Interviewed 15 target users
 - Created user personas and workflows
 - Designed information hierarchy
@@ -229,9 +250,11 @@ complexity: advanced
 **Features:** Customizable widgets, drag-drop interface, data visualizations, real-time updates
 
 ### Mobile App Onboarding Flow
+
 **Objective:** Increase activation rate from 35% to 60%
 
 **Approach:**
+
 - Analyzed drop-off analytics
 - Simplified from 7 steps to 4
 - Designed progressive onboarding
@@ -245,9 +268,11 @@ complexity: advanced
 **Innovations:** Value-first approach, social proof, contextual tips, easy exit paths
 
 ### Design System Development
+
 **Objective:** Create scalable design system for 20+ product teams
 
 **Approach:**
+
 - Audited existing UI patterns (500+ screens)
 - Defined design principles and guidelines
 - Created component library (60+ components)
@@ -263,24 +288,28 @@ complexity: advanced
 ## Customization Options
 
 ### Adjust by Platform
+
 - **Web Design:** Responsive design, browser compatibility, web accessibility
 - **Mobile Design:** iOS/Android guidelines, touch targets, gestures, mobile performance
 - **Desktop Apps:** OS-specific patterns, keyboard shortcuts, complex workflows
 - **Cross-Platform:** Consistent experience across devices, adaptive design
 
 ### Adjust by Product Type
+
 - **B2C Consumer:** Visual appeal, emotional design, ease of use, delight
 - **B2B Enterprise:** Efficiency, data density, complex workflows, power user features
 - **SaaS Products:** Dashboard design, data visualization, onboarding, settings
 - **E-commerce:** Product discovery, checkout optimization, trust building
 
 ### Adjust by Project Stage
+
 - **Discovery:** User research, problem definition, opportunity mapping
 - **Concept:** Wireframes, low-fi prototypes, exploration
 - **Design:** High-fidelity designs, design system, specifications
 - **Development:** Handoff, QA, design support, iteration
 
 ### Adjust by Team Structure
+
 - **Solo Designer:** End-to-end ownership, research through implementation
 - **Design Team:** Specialized roles (UX, UI, research), collaboration
 - **Cross-Functional:** Close collaboration with PM, engineering, marketing
@@ -289,6 +318,7 @@ complexity: advanced
 ## Key Metrics & Deliverables
 
 **Design Quality Metrics:**
+
 - Design consistency score
 - Accessibility compliance (WCAG AA/AAA)
 - Design system adoption rate
@@ -296,6 +326,7 @@ complexity: advanced
 - Design-to-dev handoff quality
 
 **User Experience Metrics:**
+
 - Task success rate
 - Time to complete tasks
 - Error rate and recovery
@@ -304,6 +335,7 @@ complexity: advanced
 - User satisfaction (CSAT)
 
 **Business Impact Metrics:**
+
 - Conversion rate improvements
 - User engagement (DAU/MAU)
 - Feature adoption rate
@@ -312,6 +344,7 @@ complexity: advanced
 - Time to value
 
 **Deliverables:**
+
 - User research reports
 - Personas and journey maps
 - Information architecture diagrams

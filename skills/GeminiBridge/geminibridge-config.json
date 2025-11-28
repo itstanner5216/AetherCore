@@ -1,137 +1,123 @@
 {
-"skill_name": "AetherCore.GeminiBridge",
-"version": "2.1",
-"description": "Gemini-Hybrid v2.1 -- external intelligence coprocessor integrating Gemini Flash and Gemini 2.5 Pro into AetherCore for escalation, fallback, and hybrid reasoning.",
-"compatible_with": [
-"Universal Skill Integration Framework ≥1.0"
-],
-"scope": "Subordinate",
-"callable": true,
-"auto_register": true,
-"entry_point": "geminibridge.md",
-"dependencies": [
-"AetherCore.Orchestrator",
-"AetherCore.EventMesh",
-"AetherCore.OptiGraph"
-],
-"integration": {
-"inherits_from": "Full-Output Intelligence Protocol",
-"execution_scope": "Subordinate",
-"tone_inheritance": true,
-"auto_register": true,
-"logging": {
-"behavior": "append",
-"format": "json",
-"fields": [
-"timestamp",
-"action",
-"state",
-"status"
-]
-}
-},
-"runtime": {
-"language": "node",
-"entry_module": "GeminiBridge-client.js",
-"permissions": {
-"network": true,
-"filesystem": false
-},
-"settings": {
-"auto_escalation": true,
-"fusion_mode": "foip-governed",
-"max_retries": 1,
-"supported_models": [
-"gemini-2.0-flash",
-"gemini-2.5-pro"
-],
-"default_model": "gemini-2.0-flash"
-}
-},
-"escalation": {
-"triggers": {
-"code_error_repeat_threshold": 2,
-"research_stall_threshold": 3,
-"product_min_required": 5,
-"contradiction_detected": true,
-"high_stakes_uncertainty": true
-},
-"invocation_modes": [
-"explicit",
-"adaptive",
-"silent"
-],
-"explicit_phrases": [
-"gemini this",
-"ask gemini",
-"use gemini",
-"cross-check with gemini",
-"gemini verify",
-"delegate to gemini"
-]
-},
-"routing": {
-"message_handlers": {
-"escalation": true,
-"escalation_code": true,
-"escalation_products": true,
-"escalation_research": true,
-"escalation_logic": true
-},
-"event_subscriptions": [
-"skill_failure",
-"repeated_error",
-"stalled_research",
-"insufficient_products",
-"contradiction_detected"
-]
-},
-"model_selection": {
-"flash_conditions": [
-"depth == 'normal'",
-"attempts < 2",
-"task_type != 'deep_research'",
-"quick_augmentation == true"
-],
-"pro_conditions": [
-"attempts >= 2",
-"contradictions_detected == true",
-"depth == 'deep'",
-"task_type in ['code', 'research', 'logic']",
-"high_stakes == true"
-]
-},
-"output_contract": {
-"success": {
-"status": "ok",
-"origin": "gemini_hybrid",
-"evidence": "string",
-"metadata": {
-"model_used": "string",
-"tokens_used": "integer|null",
-"timestamp": "integer"
-}
-},
-"error": {
-"status": "error",
-"origin": "gemini_hybrid",
-"error": "string"
-}
-},
-"metadata": {
-"category": "external-intelligence",
-"status": "active",
-"tags": [
-"external-api",
-"multi-model",
-"escalation",
-"fusion",
-"coprocessor"
-]
-},
-"persistence": {
-"cache_skill": true,
-"memory_scope": "session-temporary",
-"unload_on_exit": true
-}
+  "skill_name": "AetherCore.GeminiBridge",
+  "version": "2.1",
+  "description": "Gemini-Hybrid v2.1 -- external intelligence coprocessor integrating Gemini Flash and Gemini 2.5 Pro into AetherCore for escalation, fallback, and hybrid reasoning.",
+  "compatible_with": ["Universal Skill Integration Framework ≥1.0"],
+  "scope": "Subordinate",
+  "callable": true,
+  "auto_register": true,
+  "entry_point": "geminibridge.md",
+  "dependencies": [
+    "AetherCore.Orchestrator",
+    "AetherCore.EventMesh",
+    "AetherCore.OptiGraph"
+  ],
+  "integration": {
+    "inherits_from": "Full-Output Intelligence Protocol",
+    "execution_scope": "Subordinate",
+    "tone_inheritance": true,
+    "auto_register": true,
+    "logging": {
+      "behavior": "append",
+      "format": "json",
+      "fields": ["timestamp", "action", "state", "status"]
+    }
+  },
+  "runtime": {
+    "language": "node",
+    "entry_module": "GeminiBridge-client.js",
+    "permissions": {
+      "network": true,
+      "filesystem": false
+    },
+    "settings": {
+      "auto_escalation": true,
+      "fusion_mode": "foip-governed",
+      "max_retries": 1,
+      "supported_models": ["gemini-2.0-flash", "gemini-2.5-pro"],
+      "default_model": "gemini-2.0-flash"
+    }
+  },
+  "escalation": {
+    "triggers": {
+      "code_error_repeat_threshold": 2,
+      "research_stall_threshold": 3,
+      "product_min_required": 5,
+      "contradiction_detected": true,
+      "high_stakes_uncertainty": true
+    },
+    "invocation_modes": ["explicit", "adaptive", "silent"],
+    "explicit_phrases": [
+      "gemini this",
+      "ask gemini",
+      "use gemini",
+      "cross-check with gemini",
+      "gemini verify",
+      "delegate to gemini"
+    ]
+  },
+  "routing": {
+    "message_handlers": {
+      "escalation": true,
+      "escalation_code": true,
+      "escalation_products": true,
+      "escalation_research": true,
+      "escalation_logic": true
+    },
+    "event_subscriptions": [
+      "skill_failure",
+      "repeated_error",
+      "stalled_research",
+      "insufficient_products",
+      "contradiction_detected"
+    ]
+  },
+  "model_selection": {
+    "flash_conditions": [
+      "depth == 'normal'",
+      "attempts < 2",
+      "task_type != 'deep_research'",
+      "quick_augmentation == true"
+    ],
+    "pro_conditions": [
+      "attempts >= 2",
+      "contradictions_detected == true",
+      "depth == 'deep'",
+      "task_type in ['code', 'research', 'logic']",
+      "high_stakes == true"
+    ]
+  },
+  "output_contract": {
+    "success": {
+      "status": "ok",
+      "origin": "gemini_hybrid",
+      "evidence": "string",
+      "metadata": {
+        "model_used": "string",
+        "tokens_used": "integer|null",
+        "timestamp": "integer"
+      }
+    },
+    "error": {
+      "status": "error",
+      "origin": "gemini_hybrid",
+      "error": "string"
+    }
+  },
+  "metadata": {
+    "category": "external-intelligence",
+    "status": "active",
+    "tags": [
+      "external-api",
+      "multi-model",
+      "escalation",
+      "fusion",
+      "coprocessor"
+    ]
+  },
+  "persistence": {
+    "cache_skill": true,
+    "memory_scope": "session-temporary",
+    "unload_on_exit": true
+  }
 }

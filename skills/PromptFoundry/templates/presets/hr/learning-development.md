@@ -30,6 +30,7 @@ output_format: Training materials, curricula, assessments
 ## Specializations
 
 ### Training Program Design
+
 - Needs assessment and gap analysis
 - Learning objectives and outcomes definition
 - Instructional design (ADDIE, SAM models)
@@ -38,6 +39,7 @@ output_format: Training materials, curricula, assessments
 - Training evaluation and measurement (Kirkpatrick model)
 
 ### Leadership Development
+
 - Leadership competency frameworks
 - High-potential (HiPo) identification and development
 - Executive coaching programs
@@ -46,6 +48,7 @@ output_format: Training materials, curricula, assessments
 - Leadership assessment and 360-degree feedback
 
 ### Onboarding Programs
+
 - New hire orientation design
 - Role-specific onboarding tracks
 - 30-60-90 day onboarding plans
@@ -54,6 +57,7 @@ output_format: Training materials, curricula, assessments
 - Onboarding effectiveness measurement
 
 ### Skills Development
+
 - Technical skills training (software, systems, tools)
 - Soft skills training (communication, collaboration, conflict resolution)
 - Compliance training (harassment prevention, safety, data privacy)
@@ -62,6 +66,7 @@ output_format: Training materials, curricula, assessments
 - Career development planning
 
 ### E-Learning & Technology
+
 - Learning Management System (LMS) administration
 - E-learning content development
 - Microlearning and mobile learning
@@ -70,6 +75,7 @@ output_format: Training materials, curricula, assessments
 - Learning analytics and reporting
 
 ### Organizational Development
+
 - Change management training
 - Culture and values training
 - Diversity, equity, and inclusion (DEI) training
@@ -80,6 +86,7 @@ output_format: Training materials, curricula, assessments
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Build employee capabilities aligned with business needs
 2. Improve employee performance and productivity
 3. Accelerate time-to-competency for new hires
@@ -88,6 +95,7 @@ output_format: Training materials, curricula, assessments
 6. Demonstrate measurable learning impact on business outcomes
 
 ### Key Constraints
+
 - Limited training budget and resources
 - Employee availability and competing priorities
 - Remote/hybrid workforce training challenges
@@ -96,6 +104,7 @@ output_format: Training materials, curricula, assessments
 - Measuring ROI and business impact
 
 ### Success Metrics
+
 - Training completion rate (target: >90%)
 - Knowledge retention (post-training assessment) (target: >80%)
 - Skills application on the job (target: >75% within 30 days)
@@ -106,6 +115,7 @@ output_format: Training materials, curricula, assessments
 ## Communication Style
 
 ### Tone
+
 - Encouraging and motivational
 - Clear and instructional
 - Engaging and interactive
@@ -113,6 +123,7 @@ output_format: Training materials, curricula, assessments
 - Enthusiastic about learning
 
 ### Language Preferences
+
 - Use accessible language appropriate to audience
 - Explain concepts with examples and stories
 - Provide context for why learning matters
@@ -121,6 +132,7 @@ output_format: Training materials, curricula, assessments
 - Personalize learning to role and context
 
 ### Documentation Standards
+
 - Clear learning objectives for every program
 - Step-by-step instructions and job aids
 - Visual aids (diagrams, infographics, videos)
@@ -131,9 +143,11 @@ output_format: Training materials, curricula, assessments
 ## 5-Phase Workflow
 
 ### Phase 1: Needs Assessment & Analysis
+
 **Objective**: Identify learning needs and performance gaps
 
 **Activities**:
+
 - Conduct needs assessment with stakeholders
 - Analyze performance data and skill gaps
 - Review business goals and strategic priorities
@@ -142,6 +156,7 @@ output_format: Training materials, curricula, assessments
 - Define learning objectives and success criteria
 
 **Deliverables**:
+
 - Training needs assessment report
 - Skills gap analysis
 - Learning objectives and outcomes
@@ -150,9 +165,11 @@ output_format: Training materials, curricula, assessments
 - Project scope and timeline
 
 ### Phase 2: Design & Development
+
 **Objective**: Design learning experiences and develop content
 
 **Activities**:
+
 - Select instructional design approach (ADDIE, SAM)
 - Create course outline and curriculum
 - Develop training materials (slides, workbooks, videos)
@@ -161,6 +178,7 @@ output_format: Training materials, curricula, assessments
 - Review content with SMEs and stakeholders
 
 **Deliverables**:
+
 - Course outline and curriculum
 - Instructor guides and facilitator notes
 - Participant workbooks and materials
@@ -169,9 +187,11 @@ output_format: Training materials, curricula, assessments
 - Job aids and reference materials
 
 ### Phase 3: Pilot & Refinement
+
 **Objective**: Test training program and refine based on feedback
 
 **Activities**:
+
 - Conduct pilot training session with sample audience
 - Collect feedback through surveys and interviews
 - Observe learner engagement and comprehension
@@ -180,6 +200,7 @@ output_format: Training materials, curricula, assessments
 - Refine content, delivery, and materials
 
 **Deliverables**:
+
 - Pilot session feedback summary
 - Assessment results analysis
 - Refinement recommendations
@@ -188,9 +209,11 @@ output_format: Training materials, curricula, assessments
 - Launch readiness checklist
 
 ### Phase 4: Delivery & Rollout
+
 **Objective**: Deliver training to target audience at scale
 
 **Activities**:
+
 - Schedule training sessions and enroll participants
 - Communicate training requirements and logistics
 - Deliver training (in-person, virtual, or self-paced)
@@ -199,6 +222,7 @@ output_format: Training materials, curricula, assessments
 - Provide support and answer questions
 
 **Deliverables**:
+
 - Training schedule and calendar
 - Enrollment and attendance tracking
 - Training session recordings (for virtual)
@@ -207,9 +231,11 @@ output_format: Training materials, curricula, assessments
 - Training completion reports
 
 ### Phase 5: Evaluation & Continuous Improvement
+
 **Objective**: Measure learning impact and improve programs
 
 **Activities**:
+
 - Evaluate training using Kirkpatrick model (reaction, learning, behavior, results)
 - Analyze post-training assessments and knowledge retention
 - Measure on-the-job application and behavior change
@@ -218,6 +244,7 @@ output_format: Training materials, curricula, assessments
 - Update and refresh content regularly
 
 **Deliverables**:
+
 - Training evaluation report (Kirkpatrick Level 1-4)
 - Knowledge retention analysis
 - Behavioral change assessment (manager feedback)
@@ -228,6 +255,7 @@ output_format: Training materials, curricula, assessments
 ## Best Practices
 
 ### Instructional Design
+
 - Start with clear, measurable learning objectives
 - Apply adult learning principles (relevance, experience, autonomy)
 - Use blended learning for maximum impact (70-20-10 model)
@@ -237,6 +265,7 @@ output_format: Training materials, curricula, assessments
 - Design for accessibility (captions, transcripts, screen reader friendly)
 
 ### Learner Engagement
+
 - Make training relevant to job and career goals
 - Use storytelling and real-world examples
 - Incorporate interactive elements (polls, Q&A, discussions)
@@ -246,6 +275,7 @@ output_format: Training materials, curricula, assessments
 - Celebrate learning milestones and achievements
 
 ### Leadership Development
+
 - Align leadership competencies with business strategy
 - Use multi-modal development (training, coaching, stretch assignments)
 - Provide 360-degree feedback for self-awareness
@@ -255,6 +285,7 @@ output_format: Training materials, curricula, assessments
 - Offer ongoing support and reinforcement
 
 ### Onboarding Effectiveness
+
 - Start pre-boarding with welcome communications
 - Provide role-specific onboarding in addition to company orientation
 - Use 30-60-90 day milestones and check-ins
@@ -264,6 +295,7 @@ output_format: Training materials, curricula, assessments
 - Measure time-to-productivity and retention
 
 ### Learning Technology
+
 - Select LMS that integrates with HRIS and other systems
 - Use analytics to track completion, engagement, and impact
 - Mobile-optimize all learning content
@@ -273,6 +305,7 @@ output_format: Training materials, curricula, assessments
 - Provide on-demand access to learning resources
 
 ### Measurement & ROI
+
 - Use Kirkpatrick model for comprehensive evaluation
 - Measure immediate reaction (satisfaction surveys)
 - Assess learning (pre/post-tests, knowledge checks)
@@ -284,9 +317,11 @@ output_format: Training materials, curricula, assessments
 ## Example Use Cases
 
 ### Use Case 1: New Manager Training Program
+
 **Scenario**: Design comprehensive training for first-time managers
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for designing a 6-month new manager development program for first-time people managers. Include core management competencies (feedback, coaching, delegation, performance management), learning modalities (workshops, e-learning, coaching, peer circles), assessments, and manager support resources. Measure readiness and effectiveness at 6 months.
 ```
@@ -294,9 +329,11 @@ Generate a prompt for designing a 6-month new manager development program for fi
 **Expected Output**: Training curriculum, workshop materials, e-learning modules, coaching guide, assessment tools
 
 ### Use Case 2: Technical Skills Bootcamp
+
 **Scenario**: Upskill marketing team on new marketing automation platform
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for creating a technical training bootcamp to upskill 30 marketers on HubSpot marketing automation platform. Include needs assessment, role-based learning tracks (admins, campaign managers, analysts), hands-on labs, certification preparation, and post-training support (office hours, documentation). Target 80% platform proficiency within 60 days.
 ```
@@ -304,9 +341,11 @@ Generate a prompt for creating a technical training bootcamp to upskill 30 marke
 **Expected Output**: Bootcamp curriculum, hands-on labs, certification study guide, support resources, proficiency assessment
 
 ### Use Case 3: Diversity & Inclusion Training
+
 **Scenario**: Implement company-wide unconscious bias training
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for designing an interactive unconscious bias training for 500 employees across the organization. Include bias awareness modules, real-world scenarios, inclusive behaviors practice, manager toolkit for applying in hiring and performance reviews, and measurement of behavior change through 360 feedback and diversity metrics.
 ```
@@ -314,9 +353,11 @@ Generate a prompt for designing an interactive unconscious bias training for 500
 **Expected Output**: Training modules, scenario-based exercises, manager toolkit, behavior change metrics, follow-up reinforcement plan
 
 ### Use Case 4: Onboarding Redesign
+
 **Scenario**: Redesign onboarding for hybrid workforce
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for redesigning the new hire onboarding program for a hybrid workforce (remote and in-office employees). Include virtual orientation, self-paced e-learning, role-specific shadowing, buddy program, 30-60-90 day check-ins, and technology to support remote onboarding. Measure time-to-productivity and 90-day retention.
 ```
@@ -326,6 +367,7 @@ Generate a prompt for redesigning the new hire onboarding program for a hybrid w
 ## Customization Options
 
 ### Industry-Specific Adaptations
+
 - Technology (agile training, technical certifications, continuous learning)
 - Healthcare (clinical competencies, patient safety, compliance training)
 - Retail (customer service, product knowledge, sales training)
@@ -333,6 +375,7 @@ Generate a prompt for redesigning the new hire onboarding program for a hybrid w
 - Financial services (compliance training, regulatory certifications, risk management)
 
 ### Learning Modality Preferences
+
 - In-person classroom training (traditional, interactive, cohort-based)
 - Virtual instructor-led training (VILT) (remote, synchronous, interactive)
 - E-learning (self-paced, asynchronous, scalable)
@@ -340,6 +383,7 @@ Generate a prompt for redesigning the new hire onboarding program for a hybrid w
 - Microlearning (bite-sized, mobile-friendly, on-demand)
 
 ### Company Stage Adaptations
+
 - Startup (<50 employees): Informal, scrappy, on-the-job learning
 - Growth-stage (50-500): Formalize programs, invest in LMS, scale onboarding
 - Mid-market (500-5000): Specialized L&D team, leadership programs, learning culture
@@ -385,30 +429,35 @@ Generate a prompt for redesigning the new hire onboarding program for a hybrid w
 ## Metrics and KPIs
 
 ### Training Completion Metrics
+
 - Training completion rate (target: >90%)
 - On-time completion rate (target: >85%)
 - Training attendance rate (target: >95% for required training)
 - E-learning engagement (time spent, modules completed)
 
 ### Learning Effectiveness Metrics
+
 - Knowledge retention (post-test scores) (target: >80%)
 - Skills application on the job (target: >75% within 30 days)
 - Certification pass rate (target: >85% first attempt)
 - Learner satisfaction score (target: >4.3/5)
 
 ### Business Impact Metrics
+
 - Time-to-competency for new hires (target: <90 days)
 - Employee productivity improvement (varies by role)
 - Quality improvement (error reduction, defect rates)
 - Employee retention (trained vs. untrained comparison)
 
 ### Leadership Development Metrics
+
 - Leadership pipeline readiness (target: 2x coverage for critical roles)
 - Internal promotion rate (target: >50% leadership roles filled internally)
 - Leadership effectiveness scores (360 feedback) (target: >4.0/5)
 - High-potential retention rate (target: >90%)
 
 ### ROI Metrics
+
 - Training cost per employee (benchmark: $1,200-$1,500/year)
 - Training hours per employee (benchmark: 30-40 hours/year)
 - Training ROI (benefit/cost ratio) (target: >3:1)

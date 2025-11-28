@@ -21,11 +21,13 @@
 ### 30-Second Start
 
 **Want a preset?**
+
 ```
 "Use the Senior Full-Stack Engineer preset"
 ```
 
 **Want custom?**
+
 ```
 "Create a prompt for [your role/need]"
 ```
@@ -37,13 +39,16 @@ That's it! Answer max 7 questions → Get validated mega-prompt.
 ## What You Get
 
 ### Core Mode (Default)
+
 - ✅ Complete mega-prompt (~5K tokens)
 - ✅ Usage instructions for your LLM
 - ✅ 2-3 example interactions
 - ✅ Ready to use immediately
 
 ### Advanced Mode
+
 Everything in Core **PLUS**:
+
 - ✅ 5 testing scenarios
 - ✅ 3 prompt variations (concise/balanced/comprehensive)
 - ✅ Optimization tips
@@ -56,6 +61,7 @@ Everything in Core **PLUS**:
 **Total:** 69 presets across 15 professional domains. See [SKILL.md](SKILL.md) for complete list.
 
 ### Technical (5)
+
 1. Senior Full-Stack Engineer (React/Node.js/PostgreSQL/AWS)
 2. ML Engineer (Python/PyTorch/MLOps)
 3. DevOps Engineer (AWS/Kubernetes/Terraform)
@@ -63,17 +69,20 @@ Everything in Core **PLUS**:
 5. Solutions Architect (Cloud/Enterprise)
 
 ### Business (4)
+
 6. Product Manager (Tech Products)
 7. Marketing Strategist (B2B SaaS/Growth)
 8. Business Analyst (Data-Driven Strategy)
 9. Operations Manager (Process Optimization)
 
 ### Creative (3)
+
 10. Content Strategist (SEO/Multi-Channel)
 11. UX Designer (User-Centered Design)
 12. Technical Writer (API Documentation)
 
 ### Specialized (3)
+
 13. Healthcare Tech Consultant (HIPAA/Clinical)
 14. FinTech Advisor (Compliance/Trading)
 15. Legal Tech Specialist (Contract Analysis)
@@ -149,11 +158,13 @@ AetherCore.PromptFoundry/
 ### Example 1: Using a Preset (30 sec)
 
 **You:**
+
 ```
 "Use the Marketing Strategist preset"
 ```
 
 **Prompt Factory:**
+
 ```
 📋 Loaded: Marketing Strategist
 - Domain: B2B SaaS Growth
@@ -169,11 +180,13 @@ Mode? core
 ### Example 2: Custom Prompt (2 min)
 
 **You:**
+
 ```
 "Create custom prompt for cryptocurrency trading analysis"
 ```
 
 **Prompt Factory:**
+
 ```
 7 Questions (with example answers):
 1. Role? → "Crypto Trading Analyst"
@@ -243,6 +256,7 @@ Every prompt passes **7 validation gates**:
 ## Use Cases
 
 ### Technical Development
+
 - API design and implementation
 - ML model development
 - Infrastructure automation
@@ -250,6 +264,7 @@ Every prompt passes **7 validation gates**:
 - System architecture
 
 ### Business Strategy
+
 - Product roadmaps
 - Marketing campaigns
 - Business analysis
@@ -257,6 +272,7 @@ Every prompt passes **7 validation gates**:
 - Growth strategies
 
 ### Creative Work
+
 - Content creation
 - UX design
 - Technical writing
@@ -264,6 +280,7 @@ Every prompt passes **7 validation gates**:
 - SEO optimization
 
 ### Specialized Domains
+
 - Healthcare compliance
 - Financial systems
 - Legal technology
@@ -275,24 +292,28 @@ Every prompt passes **7 validation gates**:
 ## Key Features
 
 ### Smart Question Flow
+
 - **Max 7 questions** (vs 14-16 in other tools)
 - **Example answers** guide your responses
 - **Dynamic skipping** of obvious questions
 - **2 minute** average completion time
 
 ### Quality Validation
+
 - **Pre-delivery checks** ensure quality
 - **Token optimization** prevents bloat
 - **Structure validation** catches errors
 - **Best practice enforcement** maintains standards
 
 ### Contextual Intelligence
+
 - **Auto-detects intent** from your request
 - **Applies relevant practices** for role/domain/task
 - **Synthesizes templates** when no preset matches
 - **Optimizes for LLM** you're targeting
 
 ### Multi-Format Support
+
 - **XML:** Universal, structured
 - **Claude:** Conversation-optimized
 - **ChatGPT:** Custom instructions ready
@@ -303,29 +324,32 @@ Every prompt passes **7 validation gates**:
 
 ## Performance Benchmarks
 
-| Metric | Prompt Factory | Other Tools |
-|--------|----------------|-------------|
-| Questions | 5-7 | 14-16 |
-| Time to prompt | < 2 min | 5-10 min |
-| Presets | 69 | 0-5 |
-| Formats | 5 | 1-2 |
-| Validation | 7-point | None |
-| Token efficiency | High | Variable |
-| Iteration required | Zero | 2-3 rounds |
+| Metric             | Prompt Factory | Other Tools |
+| ------------------ | -------------- | ----------- |
+| Questions          | 5-7            | 14-16       |
+| Time to prompt     | < 2 min        | 5-10 min    |
+| Presets            | 69             | 0-5         |
+| Formats            | 5              | 1-2         |
+| Validation         | 7-point        | None        |
+| Token efficiency   | High           | Variable    |
+| Iteration required | Zero           | 2-3 rounds  |
 
 ---
 
 ## Comparison
 
 ### vs. Manual Prompt Writing
+
 - ❌ Manual: Hours of trial and error, inconsistent quality
 - ✅ Prompt Factory: 2 minutes, validated quality
 
 ### vs. Generic Templates
+
 - ❌ Templates: One-size-fits-all, requires heavy editing
 - ✅ Prompt Factory: Contextually customized, ready to use
 
 ### vs. Other Prompt Tools
+
 - ❌ Others: Many questions, single format, no validation
 - ✅ Prompt Factory: Max 7 questions, multi-format, 7-point validation
 
@@ -336,6 +360,7 @@ Every prompt passes **7 validation gates**:
 ### For Power Users
 
 **Python API:**
+
 ```python
 from prompt_factory import PromptGenerator
 
@@ -350,6 +375,7 @@ prompt = generator.generate(
 ```
 
 **Batch Operations:**
+
 ```bash
 # Generate 50 prompts for entire team
 python scripts/batch_generator.py \
@@ -359,6 +385,7 @@ python scripts/batch_generator.py \
 ```
 
 **Quality Monitoring:**
+
 ```bash
 # Validate all team prompts
 python scripts/validator.py \
@@ -372,12 +399,14 @@ python scripts/validator.py \
 ## Support & Community
 
 ### Documentation
+
 - **Quick Start:** This README
 - **Comprehensive Guide:** [HOW_TO_USE.md](HOW_TO_USE.md)
 - **Reference:** [references/](references/)
 - **Examples:** [examples/](examples/)
 
 ### Getting Help
+
 - **Issues:** [GitHub Issues](https://github.com/your-repo/AetherCore.PromptFoundry/issues)
 - **Discussions:** [Community Forum](https://forum.example.com)
 - **Updates:** [Changelog](CHANGELOG.md)
@@ -400,15 +429,15 @@ python scripts/validator.py \
 
 ## Quick Reference Card
 
-| Task | Command |
-|------|---------|
-| Use preset | `"Use [preset name] preset"` |
-| Create custom | `"Create prompt for [role/need]"` |
-| XML format | Default, no action needed |
-| Claude format | `format: claude` |
-| ChatGPT format | `format: chatgpt` |
-| Advanced mode | `mode: advanced` |
-| All formats | `format: all` |
+| Task           | Command                           |
+| -------------- | --------------------------------- |
+| Use preset     | `"Use [preset name] preset"`      |
+| Create custom  | `"Create prompt for [role/need]"` |
+| XML format     | Default, no action needed         |
+| Claude format  | `format: claude`                  |
+| ChatGPT format | `format: chatgpt`                 |
+| Advanced mode  | `mode: advanced`                  |
+| All formats    | `format: all`                     |
 
 ---
 

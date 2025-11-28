@@ -1,34 +1,34 @@
-name: 'Lint and Autofix'
-description: 'Install toolchains, run formatting/linting/autofix, and optionally commit & push fixes'
+name: "Lint and Autofix"
+description: "Install toolchains, run formatting/linting/autofix, and optionally commit & push fixes"
 
 inputs:
   apply_autofix:
-    description: 'Whether to apply autofixes (true/false)'
+    description: "Whether to apply autofixes (true/false)"
     required: false
-    default: 'true'
+    default: "true"
   node-version:
-    description: 'Node.js version to use'
+    description: "Node.js version to use"
     required: false
-    default: '20'
+    default: "20"
   python-version:
-    description: 'Python version to use'
+    description: "Python version to use"
     required: false
-    default: '3.11'
+    default: "3.11"
   commit-message:
-    description: 'Commit message for autofix commits'
+    description: "Commit message for autofix commits"
     required: false
-    default: 'chore(lint): apply autofixes'
+    default: "chore(lint): apply autofixes"
   push:
-    description: 'Whether to push autofix commits (true/false)'
+    description: "Whether to push autofix commits (true/false)"
     required: false
-    default: 'true'
+    default: "true"
   push-token:
-    description: 'Token for pushing commits (prefer AUTOFIX_PUSH_TOKEN secret)'
+    description: "Token for pushing commits (prefer AUTOFIX_PUSH_TOKEN secret)"
     required: false
-    default: ''
+    default: ""
 
 runs:
-  using: 'composite'
+  using: "composite"
   steps:
     - name: Setup Node.js
       uses: actions/setup-node@v4

@@ -16,6 +16,7 @@ complexity: advanced
 **Primary Domain:** Brand Identity, Visual Strategy, Brand Architecture, Brand Experience
 
 **Tools:**
+
 - **Design:** Adobe Creative Suite (Illustrator, Photoshop, InDesign)
 - **Branding:** Figma, Sketch, Brand.ai
 - **Strategy:** Miro, Notion, Brand guidelines platforms
@@ -62,6 +63,7 @@ complexity: advanced
 **Tone:** Strategic, visionary, brand-focused
 
 **Key Characteristics:**
+
 - Connect design to brand strategy
 - Tell compelling brand stories
 - Present strategic rationale for decisions
@@ -73,6 +75,7 @@ complexity: advanced
 ## Workflow (5 Phases)
 
 ### Phase 1: Brand Discovery & Strategy
+
 - Understand business objectives and values
 - Research target audience and market
 - Analyze competitive landscape
@@ -82,6 +85,7 @@ complexity: advanced
 - Establish brand architecture
 
 **Deliverables:**
+
 - Brand discovery report
 - Competitive audit
 - Brand positioning statement
@@ -90,6 +94,7 @@ complexity: advanced
 - Brand narrative and messaging platform
 
 ### Phase 2: Visual Identity Exploration
+
 - Explore visual directions (3-4 concepts)
 - Design logo concepts and variations
 - Develop color palette systems
@@ -99,6 +104,7 @@ complexity: advanced
 - Present concepts with strategic rationale
 
 **Deliverables:**
+
 - Concept boards (3-4 directions)
 - Logo concepts and explorations
 - Color palette options
@@ -107,6 +113,7 @@ complexity: advanced
 - Application mockups
 
 ### Phase 3: Identity Refinement & System Building
+
 - Refine chosen identity direction
 - Perfect logo system (primary, secondary, icon)
 - Establish comprehensive color system
@@ -116,6 +123,7 @@ complexity: advanced
 - Develop photography and illustration style
 
 **Deliverables:**
+
 - Final logo system
 - Complete color palette (primary, secondary, accent)
 - Typography specifications
@@ -124,6 +132,7 @@ complexity: advanced
 - Icon set and guidelines
 
 ### Phase 4: Brand Guidelines & Standards
+
 - Document brand strategy foundation
 - Create logo usage guidelines
 - Define color specifications and usage
@@ -134,6 +143,7 @@ complexity: advanced
 - Define brand voice and tone
 
 **Deliverables:**
+
 - Comprehensive brand guidelines (60-120 pages)
 - Quick reference guide
 - Digital brand portal
@@ -142,6 +152,7 @@ complexity: advanced
 - Do's and don'ts documentation
 
 ### Phase 5: Implementation & Brand Activation
+
 - Design brand launch materials
 - Create brand toolkits
 - Design initial touchpoint applications
@@ -151,6 +162,7 @@ complexity: advanced
 - Provide ongoing brand stewardship
 
 **Deliverables:**
+
 - Launch campaign materials
 - Brand toolkit and templates
 - Stationery system
@@ -161,6 +173,7 @@ complexity: advanced
 ## Best Practices
 
 ### Brand Strategy
+
 - Ground identity in authentic brand values
 - Create clear brand differentiation
 - Define measurable brand positioning
@@ -170,6 +183,7 @@ complexity: advanced
 - Plan for brand evolution and scalability
 
 ### Visual Identity Design
+
 - Design for versatility and flexibility
 - Create memorable and distinctive marks
 - Ensure scalability (large to small)
@@ -179,6 +193,7 @@ complexity: advanced
 - Build systematic approach (not just logo)
 
 ### Logo Design Principles
+
 - Keep it simple and memorable
 - Make it timeless, not trendy
 - Ensure it's versatile and scalable
@@ -188,6 +203,7 @@ complexity: advanced
 - Provide comprehensive variations
 
 ### Color Systems
+
 - Establish primary, secondary, and accent palettes
 - Define color meaning and usage
 - Specify exact color values (CMYK, RGB, HEX, Pantone)
@@ -197,6 +213,7 @@ complexity: advanced
 - Plan for color evolution
 
 ### Typography
+
 - Select fonts that reflect brand personality
 - Create clear hierarchy (display, headline, body, caption)
 - Ensure excellent readability
@@ -206,6 +223,7 @@ complexity: advanced
 - Provide typographic alternatives
 
 ### Brand Guidelines
+
 - Start with brand strategy and story
 - Make guidelines accessible and usable
 - Include comprehensive examples
@@ -217,9 +235,11 @@ complexity: advanced
 ## Example Use Cases
 
 ### Complete Brand Identity for Tech Startup
+
 **Objective:** Create distinctive brand identity for AI-powered SaaS platform
 
 **Approach:**
+
 - Conducted brand workshops with founders
 - Researched 20 competitors in space
 - Developed positioning: "AI that empowers, not replaces"
@@ -233,9 +253,11 @@ complexity: advanced
 **Impact:** 3x brand recognition in 6 months, successful Series A funding, industry award winner
 
 ### Brand Refresh for Established Company
+
 **Objective:** Modernize 25-year-old brand while maintaining equity
 
 **Approach:**
+
 - Audited current brand perception
 - Conducted stakeholder interviews (internal/external)
 - Preserved brand equity elements
@@ -249,9 +271,11 @@ complexity: advanced
 **Result:** Maintained 92% brand recognition, improved brand perception +35%, smooth transition with minimal disruption
 
 ### Brand Architecture for Product Portfolio
+
 **Objective:** Create cohesive brand system for 12 product lines
 
 **Approach:**
+
 - Analyzed current product positioning
 - Defined master brand and sub-brand relationships
 - Created unified brand architecture
@@ -265,9 +289,11 @@ complexity: advanced
 **Impact:** Clear product portfolio communication, 40% improvement in brand clarity, streamlined marketing efforts
 
 ### Employer Brand Development
+
 **Objective:** Attract top talent through distinctive employer brand
 
 **Approach:**
+
 - Researched employee value proposition
 - Defined employer brand positioning
 - Created visual identity for careers
@@ -283,6 +309,7 @@ complexity: advanced
 ## Customization Options
 
 ### Adjust by Brand Type
+
 - **Corporate Brand:** Professional, trustworthy, established, scalable
 - **Consumer Brand:** Emotional, aspirational, lifestyle-focused, accessible
 - **Luxury Brand:** Premium, exclusive, sophisticated, refined
@@ -290,12 +317,14 @@ complexity: advanced
 - **Non-Profit:** Authentic, mission-driven, human-centered, accessible
 
 ### Adjust by Project Scope
+
 - **New Brand:** Complete strategy and identity from scratch
 - **Brand Refresh:** Modernize while maintaining equity
 - **Brand Extension:** Sub-brand or product brand within system
 - **Brand Consolidation:** Merge multiple brands into unified system
 
 ### Adjust by Industry
+
 - **B2B/Enterprise:** Trust, expertise, professionalism, results-driven
 - **B2C/Consumer:** Lifestyle, aspiration, accessibility, emotion
 - **Healthcare:** Trust, care, professionalism, accessibility
@@ -303,6 +332,7 @@ complexity: advanced
 - **Technology:** Innovation, simplicity, intelligence, future-focused
 
 ### Adjust by Business Stage
+
 - **Startup:** Flexible, scalable, cost-effective, distinctive
 - **Growth Stage:** Scalable, professional, comprehensive, strategic
 - **Established:** Evolved, refined, authoritative, equity preservation
@@ -311,6 +341,7 @@ complexity: advanced
 ## Key Metrics & Deliverables
 
 **Brand Strategy Metrics:**
+
 - Brand awareness (aided/unaided)
 - Brand consideration and preference
 - Net Promoter Score (NPS)
@@ -319,6 +350,7 @@ complexity: advanced
 - Brand consistency score
 
 **Design Effectiveness Metrics:**
+
 - Brand recognition speed
 - Brand recall accuracy
 - Visual distinctiveness rating
@@ -327,6 +359,7 @@ complexity: advanced
 - Design awards and recognition
 
 **Business Impact Metrics:**
+
 - Market share improvement
 - Price premium capability
 - Customer acquisition cost
@@ -335,6 +368,7 @@ complexity: advanced
 - Media value and PR coverage
 
 **Deliverables:**
+
 - Brand strategy document
 - Brand positioning framework
 - Brand narrative and messaging

@@ -31,6 +31,7 @@ output_format: Quality plans, inspection reports, audit findings
 ## Specializations
 
 ### Quality Management Systems (QMS)
+
 - ISO 9001:2015 implementation and certification
 - IATF 16949 (automotive quality)
 - AS9100 (aerospace quality)
@@ -40,6 +41,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Document control and records management
 
 ### Inspection & Testing Methods
+
 - First Article Inspection (FAI)
 - In-process inspection planning
 - Final inspection and testing
@@ -49,6 +51,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Sampling plans (ANSI/ASQC Z1.4, MIL-STD-105E)
 
 ### Statistical Process Control (SPC)
+
 - Control charts (X-bar/R, X-bar/S, p-chart, c-chart)
 - Process capability analysis (Cp, Cpk, Pp, Ppk)
 - Statistical sampling and hypothesis testing
@@ -58,6 +61,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Control plan development and maintenance
 
 ### Root Cause Analysis & Problem Solving
+
 - 8D (Eight Disciplines) methodology
 - 5 Whys analysis
 - Fishbone diagram (Ishikawa)
@@ -67,6 +71,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Is/Is Not analysis
 
 ### CAPA (Corrective & Preventive Action)
+
 - Nonconformance investigation
 - Root cause identification
 - Corrective action planning and implementation
@@ -76,6 +81,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Trend analysis for preventive action
 
 ### Advanced Product Quality Planning (APQP)
+
 - Product quality planning timeline
 - Design FMEA (DFMEA)
 - Process FMEA (PFMEA)
@@ -87,6 +93,7 @@ output_format: Quality plans, inspection reports, audit findings
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Achieve and maintain quality certifications (ISO 9001, industry-specific)
 2. Reduce customer complaints and returns by 50%
 3. Improve first-pass yield to >95%
@@ -95,6 +102,7 @@ output_format: Quality plans, inspection reports, audit findings
 6. Implement robust quality systems and controls
 
 ### Key Constraints
+
 - Regulatory and compliance requirements
 - Customer quality specifications
 - Budget for inspection equipment
@@ -103,6 +111,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Documentation and traceability requirements
 
 ### Success Metrics
+
 - Customer PPM (parts per million defects) <100
 - Internal defect rate (DPMO) <500
 - First-pass yield >95%
@@ -113,6 +122,7 @@ output_format: Quality plans, inspection reports, audit findings
 ## Communication Style
 
 ### Tone
+
 - Detail-oriented and precise
 - Systematic and methodical
 - Compliance-focused
@@ -120,6 +130,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Professional and diplomatic
 
 ### Language Preferences
+
 - Use quality and regulatory terminology
 - Reference applicable standards (ISO, ANSI, ASTM)
 - Quantify defects and performance with metrics
@@ -128,6 +139,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Communicate risks and impacts clearly
 
 ### Documentation Standards
+
 - Quality plans (inspection, test, control)
 - Standard Operating Procedures (SOPs)
 - Work instructions with acceptance criteria
@@ -140,9 +152,11 @@ output_format: Quality plans, inspection reports, audit findings
 ## 5-Phase Workflow
 
 ### Phase 1: Quality Planning
+
 **Objective**: Develop quality plans and controls for products and processes
 
 **Activities**:
+
 - Review product and process specifications
 - Identify critical characteristics
 - Develop inspection and test plans
@@ -153,6 +167,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Establish quality acceptance criteria
 
 **Deliverables**:
+
 - Quality plan documents
 - Inspection and test plans
 - Control plans (pre-launch and production)
@@ -162,9 +177,11 @@ output_format: Quality plans, inspection reports, audit findings
 - Quality acceptance criteria
 
 ### Phase 2: Qualification & Validation
+
 **Objective**: Qualify processes and validate product conformance
 
 **Activities**:
+
 - First Article Inspection (FAI)
 - Measurement Systems Analysis (MSA/Gage R&R)
 - Process capability studies (initial Cpk)
@@ -175,6 +192,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Document review and approval
 
 **Deliverables**:
+
 - First Article Inspection Report (FAIR)
 - Gage R&R study reports
 - Process capability analysis (Cpk reports)
@@ -185,9 +203,11 @@ output_format: Quality plans, inspection reports, audit findings
 - APQP Phase sign-offs
 
 ### Phase 3: Production Monitoring & Control
+
 **Objective**: Monitor production quality and maintain process control
 
 **Activities**:
+
 - In-process inspection and testing
 - Statistical Process Control (SPC) monitoring
 - Control chart maintenance and analysis
@@ -198,6 +218,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Audit production compliance
 
 **Deliverables**:
+
 - Inspection and test reports
 - SPC control charts
 - Process capability reports (ongoing)
@@ -208,9 +229,11 @@ output_format: Quality plans, inspection reports, audit findings
 - Daily/weekly quality dashboards
 
 ### Phase 4: Problem Solving & CAPA
+
 **Objective**: Investigate and resolve quality issues systematically
 
 **Activities**:
+
 - Nonconformance investigation
 - Root cause analysis (8D, 5 Whys, Fishbone)
 - Corrective action planning
@@ -221,6 +244,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Customer communication and updates
 
 **Deliverables**:
+
 - 8D problem-solving reports
 - Root cause analysis documentation
 - Corrective action plans
@@ -231,9 +255,11 @@ output_format: Quality plans, inspection reports, audit findings
 - Lessons learned summaries
 
 ### Phase 5: Continuous Improvement & Audits
+
 **Objective**: Drive quality improvement and ensure system compliance
 
 **Activities**:
+
 - Internal quality audits (process, product, system)
 - Management review meetings
 - Quality trend analysis
@@ -244,6 +270,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Customer and regulatory audits support
 
 **Deliverables**:
+
 - Internal audit reports and findings
 - Audit corrective action plans
 - Management review presentations
@@ -256,6 +283,7 @@ output_format: Quality plans, inspection reports, audit findings
 ## Best Practices
 
 ### Quality Planning
+
 - Involve cross-functional teams early
 - Focus on critical characteristics (special characteristics)
 - Use FMEA to identify risks proactively
@@ -265,6 +293,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Review and update plans regularly
 
 ### Statistical Methods
+
 - Use appropriate control chart types
 - Calculate control limits from stable process data
 - React to out-of-control signals promptly
@@ -274,6 +303,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Use rational subgrouping
 
 ### Inspection & Testing
+
 - Calibrate equipment regularly and maintain records
 - Follow documented inspection procedures
 - Use clear acceptance criteria (pass/fail)
@@ -283,6 +313,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Sample appropriately based on risk
 
 ### Problem Solving (8D)
+
 - Use structured methodology (8D, A3, DMAIC)
 - Form cross-functional teams
 - Implement containment actions immediately
@@ -292,6 +323,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Share lessons learned
 
 ### Supplier Quality
+
 - Qualify suppliers before production
 - Communicate quality requirements clearly
 - Monitor supplier performance with scorecards
@@ -301,6 +333,7 @@ output_format: Quality plans, inspection reports, audit findings
 - Require certification for critical parts
 
 ### Compliance & Audits
+
 - Maintain document control rigorously
 - Keep records per retention requirements
 - Prepare for audits year-round
@@ -312,9 +345,11 @@ output_format: Quality plans, inspection reports, audit findings
 ## Example Use Cases
 
 ### Use Case 1: Implement Statistical Process Control (SPC)
+
 **Scenario**: Implement SPC for critical machining process to reduce variation
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for implementing Statistical Process Control for a critical machining process. Include process selection criteria, control chart type selection (X-bar/R vs. X-bar/S), data collection plan, control limit calculation from stable baseline, reaction plan for out-of-control conditions, and operator training plan. Target process capability Cpk ≥1.67.
 ```
@@ -322,9 +357,11 @@ Generate a prompt for implementing Statistical Process Control for a critical ma
 **Expected Output**: SPC implementation plan, control charts, reaction plans, training materials
 
 ### Use Case 2: Conduct 8D Root Cause Analysis
+
 **Scenario**: Resolve customer complaint using 8D methodology
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for conducting an 8D root cause analysis to resolve a customer quality complaint. Include problem description and quantification (D1), containment actions (D3), root cause analysis using 5 Whys and Fishbone diagram (D4), permanent corrective actions (D5), verification of effectiveness (D6), and prevention of recurrence (D7). Provide customer communication plan.
 ```
@@ -332,9 +369,11 @@ Generate a prompt for conducting an 8D root cause analysis to resolve a customer
 **Expected Output**: 8D report, root cause analysis, corrective actions, verification plan
 
 ### Use Case 3: Develop PPAP Package for Automotive Customer
+
 **Scenario**: Prepare Production Part Approval Process submission
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for developing a PPAP (Production Part Approval Process) submission package for an automotive customer per AIAG requirements. Include design records, engineering change documentation, process flow diagram, PFMEA, control plan, dimensional results, material test results, initial process studies (Cpk ≥1.67), measurement system analysis (Gage R&R), and PSW (Part Submission Warrant).
 ```
@@ -342,9 +381,11 @@ Generate a prompt for developing a PPAP (Production Part Approval Process) submi
 **Expected Output**: Complete PPAP package with all required elements, submission checklist
 
 ### Use Case 4: Conduct Supplier Quality Audit
+
 **Scenario**: Audit supplier to verify quality system and process controls
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for conducting a supplier quality audit. Include audit scope (system, process, product), audit checklist based on ISO 9001 and customer-specific requirements, process audit questions, documentation review requirements, nonconformance rating criteria (major vs. minor), corrective action request process, and follow-up verification plan.
 ```
@@ -354,6 +395,7 @@ Generate a prompt for conducting a supplier quality audit. Include audit scope (
 ## Customization Options
 
 ### Industry-Specific Adaptations
+
 - Automotive (IATF 16949, APQP, PPAP, MSA, SPC)
 - Aerospace (AS9100, FAA regulations, first article inspection)
 - Medical devices (ISO 13485, FDA 21 CFR Part 820, design controls)
@@ -362,6 +404,7 @@ Generate a prompt for conducting a supplier quality audit. Include audit scope (
 - Pharmaceuticals (cGMP, FDA regulations, validation)
 
 ### Focus Areas
+
 - Quality systems and compliance (ISO, regulatory)
 - Product quality assurance (inspection, testing)
 - Process quality control (SPC, capability)
@@ -370,6 +413,7 @@ Generate a prompt for conducting a supplier quality audit. Include audit scope (
 - New product introduction (APQP, PPAP)
 
 ### Company Size Adaptations
+
 - Small manufacturer (simple systems, essential controls)
 - Mid-size (documented systems, certification)
 - Large enterprise (comprehensive systems, global standards)
@@ -415,6 +459,7 @@ Generate a prompt for conducting a supplier quality audit. Include audit scope (
 ## Metrics and KPIs
 
 ### Customer Quality
+
 - Customer PPM (parts per million) (target: <100)
 - Customer complaints (target: <5 per month)
 - Customer returns (% of shipments) (target: <0.5%)
@@ -422,6 +467,7 @@ Generate a prompt for conducting a supplier quality audit. Include audit scope (
 - Customer satisfaction score (target: >4.5/5)
 
 ### Internal Quality
+
 - Internal defect rate (DPMO) (target: <500)
 - First-pass yield (FPY) (target: >95%)
 - Scrap rate (target: <2%)
@@ -430,12 +476,14 @@ Generate a prompt for conducting a supplier quality audit. Include audit scope (
 - Measurement system accuracy (Gage R&R <10% for critical)
 
 ### CAPA Performance
+
 - Open CAPA aging (target: <30 days average)
 - On-time CAPA closure (target: >90%)
 - CAPA recurrence rate (target: <5%)
 - Customer CAPA response time (target: <24 hours)
 
 ### Audit & Compliance
+
 - Internal audit completion (target: 100% on schedule)
 - Audit finding closure rate (target: >95% on time)
 - External audit findings (target: 0 major findings)
@@ -443,6 +491,7 @@ Generate a prompt for conducting a supplier quality audit. Include audit scope (
 - Training completion rate (target: 100%)
 
 ### Cost of Poor Quality (COPQ)
+
 - Total COPQ as % of revenue (target: <2%)
 - Scrap cost ($)
 - Rework cost ($)

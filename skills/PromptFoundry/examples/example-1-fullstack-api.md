@@ -1,6 +1,7 @@
 # Example 1: Full-Stack Engineer - E-commerce REST API
 
 ## User Input
+
 **Preset:** fullstack-engineer
 **Use Case:** Build REST API for e-commerce platform
 **Mode:** Core
@@ -87,41 +88,43 @@ Modern e-commerce platforms require robust backend systems that can handle:
 Provide a complete implementation including:
 
 1. **Project Structure**
-   ```
-   ecommerce-api/
-   ├── src/
-   │   ├── controllers/    # Route handlers
-   │   ├── services/       # Business logic
-   │   ├── models/         # Database models
-   │   ├── middleware/     # Auth, validation, error handling
-   │   ├── routes/         # API routes
-   │   ├── utils/          # Helper functions
-   │   └── config/         # Configuration files
-   ├── tests/
-   ├── docker/
-   └── docs/
-   ```
+```
+
+ecommerce-api/
+├── src/
+│ ├── controllers/ # Route handlers
+│ ├── services/ # Business logic
+│ ├── models/ # Database models
+│ ├── middleware/ # Auth, validation, error handling
+│ ├── routes/ # API routes
+│ ├── utils/ # Helper functions
+│ └── config/ # Configuration files
+├── tests/
+├── docker/
+└── docs/
+
+````
 
 2. **Core API Endpoints**
-   - Authentication: POST /api/auth/register, POST /api/auth/login
-   - Products: GET/POST/PUT/DELETE /api/products
-   - Cart: GET/POST/PUT/DELETE /api/cart
-   - Orders: GET/POST /api/orders
-   - Payments: POST /api/payments/stripe
+- Authentication: POST /api/auth/register, POST /api/auth/login
+- Products: GET/POST/PUT/DELETE /api/products
+- Cart: GET/POST/PUT/DELETE /api/cart
+- Orders: GET/POST /api/orders
+- Payments: POST /api/payments/stripe
 
 3. **Database Schema**
-   - users, products, categories, cart_items, orders, order_items, payments tables
-   - Proper indexes for query optimization
-   - Foreign key relationships and constraints
+- users, products, categories, cart_items, orders, order_items, payments tables
+- Proper indexes for query optimization
+- Foreign key relationships and constraints
 
 4. **Implementation Files**
-   - Complete TypeScript code for all controllers
-   - Service layer with business logic
-   - Sequelize/TypeORM models
-   - Jest tests for critical flows
-   - OpenAPI documentation
-   - Docker Compose setup
-   - AWS deployment guide
+- Complete TypeScript code for all controllers
+- Service layer with business logic
+- Sequelize/TypeORM models
+- Jest tests for critical flows
+- OpenAPI documentation
+- Docker Compose setup
+- AWS deployment guide
 </structure>
 
 <format>
@@ -271,40 +274,41 @@ import { ApiError } from '../utils/ApiError';
 import { asyncHandler } from '../middleware/async';
 
 export class ProductController {
-  constructor(private productService: ProductService) {}
+constructor(private productService: ProductService) {}
 
-  getProducts = asyncHandler(async (req: Request, res: Response) => {
-    const { page = 1, limit = 20, category, search } = req.query;
+getProducts = asyncHandler(async (req: Request, res: Response) => {
+ const { page = 1, limit = 20, category, search } = req.query;
 
-    const result = await this.productService.getProducts({
-      page: Number(page),
-      limit: Number(limit),
-      category: category as string,
-      search: search as string
-    });
+ const result = await this.productService.getProducts({
+   page: Number(page),
+   limit: Number(limit),
+   category: category as string,
+   search: search as string
+ });
 
-    res.json({
-      success: true,
-      data: result.products,
-      pagination: {
-        page: result.page,
-        limit: result.limit,
-        total: result.total,
-        pages: Math.ceil(result.total / result.limit)
-      }
-    });
-  });
+ res.json({
+   success: true,
+   data: result.products,
+   pagination: {
+     page: result.page,
+     limit: result.limit,
+     total: result.total,
+     pages: Math.ceil(result.total / result.limit)
+   }
+ });
+});
 
-  createProduct = asyncHandler(async (req: Request, res: Response) => {
-    const product = await this.productService.createProduct(req.body);
+createProduct = asyncHandler(async (req: Request, res: Response) => {
+ const product = await this.productService.createProduct(req.body);
 
-    res.status(201).json({
-      success: true,
-      data: product
-    });
-  });
+ res.status(201).json({
+   success: true,
+   data: product
+ });
+});
 }
-```
+````
+
 </example>
 
 <example name="Authentication Middleware">
@@ -316,16 +320,16 @@ import { ApiError } from '../utils/ApiError';
 import { UserService } from '../services/user.service';
 
 interface JwtPayload {
-  userId: string;
+userId: string;
 }
 
 export const authenticate = async (
-  req: Request,
-  res: Response,
-  next: NextFunction
+req: Request,
+res: Response,
+next: NextFunction
 ) => {
-  try {
-    const token = req.headers.authorization?.replace('Bearer ', '');
+try {
+const token = req.headers.authorization?.replace('Bearer ', '');
 
     if (!token) {
       throw new ApiError(401, 'Authentication required');
@@ -344,11 +348,13 @@ export const authenticate = async (
 
     req.user = user;
     next();
-  } catch (error) {
-    next(new ApiError(401, 'Invalid token'));
-  }
+
+} catch (error) {
+next(new ApiError(401, 'Invalid token'));
+}
 };
-```
+
+````
 </example>
 
 <example name="Order Service">
@@ -420,7 +426,8 @@ export class OrderService {
     }
   }
 }
-```
+````
+
 </example>
 </examples>
 
@@ -439,6 +446,7 @@ export class OrderService {
 
 <validation_checklist>
 Before considering this API complete, verify:
+
 - [ ] All endpoints documented in OpenAPI spec
 - [ ] Authentication and authorization work correctly
 - [ ] Input validation prevents invalid data
@@ -451,7 +459,8 @@ Before considering this API complete, verify:
 - [ ] README includes complete setup instructions
 - [ ] Load tests meet performance requirements
 - [ ] Security scan (npm audit) shows no critical issues
-</validation_checklist>
+      </validation_checklist>
+
 ```
 
 ## Why This Example Works
@@ -470,3 +479,4 @@ Before considering this API complete, verify:
 - **Token Count:** ~4,200 tokens (Core mode)
 - **Implementation Time:** 40-60 hours for complete implementation
 - **Lines of Code:** ~5,000-7,000 LOC including tests
+```

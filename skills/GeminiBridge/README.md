@@ -5,7 +5,7 @@
 **Author:** Tanner / ProjectGPT Ecosystem  
 **Compatibility:** Universal Skill Integration Framework ≥1.0
 
------
+---
 
 ## Overview
 
@@ -20,7 +20,7 @@ Its purpose is to give ProjectGPT the ability to:
 
 AetherCore.GeminiBridge is not a research skill, not a code skill, not a product skill. It is a **cross-domain external coprocessor** used intelligently by ProjectGPT.
 
------
+---
 
 ## What Is AetherCore.GeminiBridge? (Purpose & Vision)
 
@@ -35,7 +35,7 @@ AetherCore.GeminiBridge is built to solve the systemic gaps of purely internal L
 
 It enables **multi-model cognition**, where ProjectGPT becomes the integrator and Gemini becomes a worker node.
 
------
+---
 
 ## Why This Skill Exists
 
@@ -50,7 +50,7 @@ Traditional skills handle narrow, predefined tasks. But ProjectGPT requires a su
 
 AetherCore.GeminiBridge provides the missing layer: **adaptive delegation intelligence**.
 
------
+---
 
 ## Core Capabilities
 
@@ -88,7 +88,7 @@ AetherCore.GeminiBridge provides the missing layer: **adaptive delegation intell
 
 **AetherCore.GeminiBridge is not tied to a domain** — it is a general-purpose augmentation engine.
 
------
+---
 
 ## Architecture Overview
 
@@ -131,7 +131,7 @@ If FOIP and Gemini disagree:
 - Selects or merges the best elements
 - Documents remaining uncertainty
 
------
+---
 
 ## Automatic Delegation Triggers
 
@@ -172,7 +172,7 @@ If FOIP and Gemini disagree:
 - “Have Gemini work on it”
 - “Cross-check with Gemini”
 
------
+---
 
 ## Delegation Modes
 
@@ -192,7 +192,7 @@ Gemini is used only for specific domains: code, products, research, logic
 
 If FOIP encounters a logic dead-end, repeated failures, or insufficient data, Gemini-Hybrid becomes the escalation route
 
------
+---
 
 ## Model Selection
 
@@ -217,7 +217,7 @@ If FOIP encounters a logic dead-end, repeated failures, or insufficient data, Ge
 
 The **AetherCore.OptiGraph and AetherCore.Orchestrator** automatically select the appropriate model based on task context and failure patterns.
 
------
+---
 
 ## Input/Output Structure
 
@@ -265,7 +265,7 @@ The **AetherCore.OptiGraph and AetherCore.Orchestrator** automatically select th
 }
 ```
 
------
+---
 
 ## FOIP Integration
 
@@ -298,7 +298,7 @@ Defines how Gemini’s results are:
 - Merged
 - Finalized
 
------
+---
 
 ## File Structure
 
@@ -310,7 +310,7 @@ AetherCore/GeminiBridge/
 └── README.md                # This file
 ```
 
------
+---
 
 ## Installation & Auto-Bootstrap
 
@@ -345,7 +345,7 @@ You will see logs indicating:
 AetherCore.GeminiBridge delegation engine active
 ```
 
------
+---
 
 ## Usage Examples
 
@@ -391,7 +391,7 @@ User: "Gemini, rewrite this function."
 → Output returned
 ```
 
------
+---
 
 ## Limitations
 
@@ -401,7 +401,7 @@ User: "Gemini, rewrite this function."
 - External model output is never accepted blindly
 - No long-term external state persistence
 
------
+---
 
 ## Roadmap
 
@@ -414,7 +414,7 @@ User: "Gemini, rewrite this function."
 - Multi-phase delegated pipelines
 - Tertiary fallback engines (Claude, GPT-4, etc.)
 
------
+---
 
 ## Support & Troubleshooting
 
@@ -432,7 +432,7 @@ User: "Gemini, rewrite this function."
 **Issue:** “Skill not registered”  
 **Solution:** Verify file structure matches expected layout in `AetherCore/GeminiBridge/`
 
------
+---
 
 ## Configuration Reference
 
@@ -444,7 +444,7 @@ See `geminibridge-config.json` for full configuration options including:
 - Routing handlers
 - Output contracts
 
------
+---
 
 ## License & Terms
 
@@ -454,7 +454,7 @@ This module must comply with:
 - FOIP system constraints
 - Gemini API usage and safety guidelines
 
------
+---
 
 ## Status
 
@@ -470,12 +470,12 @@ This module must comply with:
 
 **Known Issues:** None
 
------
+---
 
 **Last Updated:** November 13, 2025  
 **Maintainer:** ProjectGPT Core Team  
 **Support:** Check ProjectGPT system documentation or runtime logs
 
------
+---
 
 **End of README**

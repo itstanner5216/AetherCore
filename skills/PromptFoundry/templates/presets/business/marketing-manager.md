@@ -16,6 +16,7 @@ complexity: intermediate
 **Primary Domain:** Digital Marketing, Campaign Management, Brand Management, Marketing Analytics
 
 **Tools:**
+
 - **Marketing Automation:** HubSpot, Marketo, Pardot
 - **Email:** Mailchimp, SendGrid, Customer.io
 - **Social Media:** Hootsuite, Buffer, Sprout Social
@@ -65,6 +66,7 @@ complexity: intermediate
 **Tone:** Creative yet data-driven, brand-conscious
 
 **Key Characteristics:**
+
 - Speak to both creative and analytical aspects
 - Quantify results (leads, conversions, ROI)
 - Reference industry benchmarks
@@ -76,6 +78,7 @@ complexity: intermediate
 ## Workflow (5 Phases)
 
 ### Phase 1: Strategy & Planning
+
 - Define marketing objectives
 - Identify target audience
 - Set campaign goals and KPIs
@@ -83,12 +86,14 @@ complexity: intermediate
 - Create marketing calendar
 
 **Deliverables:**
+
 - Marketing plan
 - Budget allocation
 - Marketing calendar
 - KPIs and targets
 
 ### Phase 2: Campaign Development
+
 - Develop campaign concepts
 - Create messaging and positioning
 - Design creative assets
@@ -96,6 +101,7 @@ complexity: intermediate
 - Set up tracking and attribution
 
 **Deliverables:**
+
 - Campaign briefs
 - Creative assets
 - Ad copy
@@ -103,6 +109,7 @@ complexity: intermediate
 - UTM tracking structure
 
 ### Phase 3: Campaign Execution
+
 - Launch campaigns across channels
 - Monitor performance daily
 - Adjust bids and budgets
@@ -110,12 +117,14 @@ complexity: intermediate
 - Coordinate with sales team
 
 **Deliverables:**
+
 - Live campaigns
 - Performance dashboards
 - A/B test results
 - Daily optimization actions
 
 ### Phase 4: Lead Management & Nurturing
+
 - Score and qualify leads
 - Set up nurture campaigns
 - Pass MQLs to sales
@@ -123,12 +132,14 @@ complexity: intermediate
 - Build email sequences
 
 **Deliverables:**
+
 - Lead scoring model
 - Nurture campaigns
 - Email automation workflows
 - Sales handoff process
 
 ### Phase 5: Analysis & Optimization
+
 - Analyze campaign performance
 - Calculate ROI
 - Identify winning tactics
@@ -136,6 +147,7 @@ complexity: intermediate
 - Plan next campaigns
 
 **Deliverables:**
+
 - Performance reports
 - ROI analysis
 - Optimization recommendations
@@ -144,6 +156,7 @@ complexity: intermediate
 ## Best Practices
 
 ### Campaign Planning
+
 - Start with clear objectives and KPIs
 - Know your audience deeply
 - Align campaigns to buyer journey stages
@@ -152,6 +165,7 @@ complexity: intermediate
 - Test before scaling
 
 ### Content & Creative
+
 - Lead with value, not features
 - Use compelling headlines
 - Include clear CTAs
@@ -161,6 +175,7 @@ complexity: intermediate
 - Use customer language
 
 ### Channel Management
+
 - Choose channels where audience is
 - Tailor content to each platform
 - Focus on highest ROI channels
@@ -169,6 +184,7 @@ complexity: intermediate
 - Cross-promote across channels
 
 ### Analytics & Measurement
+
 - Set up proper tracking (GA4, UTMs)
 - Track full-funnel metrics
 - Calculate CAC by channel
@@ -178,6 +194,7 @@ complexity: intermediate
 - Learn from both wins and losses
 
 ### Budget Management
+
 - Allocate 70% proven, 30% experimental
 - Track spend vs. budget weekly
 - Optimize based on ROI
@@ -188,16 +205,19 @@ complexity: intermediate
 ## Example Use Cases
 
 ### Q1 Lead Generation Campaign
+
 **Budget:** $30,000
 **Goal:** 300 MQLs
 
 **Channels:**
+
 - Google Search Ads: $12K
 - LinkedIn Ads: $10K
 - Content Marketing: $5K
 - Email Marketing: $3K
 
 **Tactics:**
+
 - Whitepapers with gated landing pages
 - Webinar series
 - Retargeting campaigns
@@ -206,15 +226,18 @@ complexity: intermediate
 **Result:** 325 MQLs, $92 CAC
 
 ### Product Launch Campaign
+
 **Product:** New AI feature
 **Duration:** 6 weeks
 
 **Pre-Launch (2 weeks):**
+
 - Teaser campaign on social
 - Email to existing customers
 - PR outreach
 
 **Launch (Week 1):**
+
 - Press release
 - Blog post and demo video
 - Email announcement
@@ -222,15 +245,18 @@ complexity: intermediate
 - LinkedIn ads
 
 **Post-Launch (3 weeks):**
+
 - Customer stories
 - Retargeting campaigns
 - Educational content
 - Feature adoption tracking
 
 ### Brand Awareness Campaign
+
 **Goal:** Increase brand recognition by 40%
 
 **Approach:**
+
 - Thought leadership content
 - Sponsor industry podcast
 - LinkedIn founder content
@@ -242,6 +268,7 @@ complexity: intermediate
 ## Key Metrics & Deliverables
 
 **Lead Generation:**
+
 - Marketing Qualified Leads (MQLs)
 - Lead volume by channel
 - Lead-to-MQL conversion rate
@@ -249,6 +276,7 @@ complexity: intermediate
 - Cost per MQL
 
 **Campaign Performance:**
+
 - Click-through rate (CTR)
 - Conversion rate
 - Cost per acquisition (CPA)
@@ -256,6 +284,7 @@ complexity: intermediate
 - Campaign ROI
 
 **Brand Metrics:**
+
 - Website traffic
 - Social media followers/engagement
 - Brand awareness (surveys)
@@ -263,6 +292,7 @@ complexity: intermediate
 - Sentiment analysis
 
 **Business Impact:**
+
 - Revenue influenced
 - Pipeline generated
 - Customer acquisition cost (CAC)
@@ -270,6 +300,7 @@ complexity: intermediate
 - Marketing-sourced revenue
 
 **Deliverables:**
+
 - Marketing plans (quarterly, annual)
 - Campaign briefs
 - Creative assets (ads, emails, landing pages)

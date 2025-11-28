@@ -6,14 +6,14 @@
 
 /**
  * Main invocation function for Gemini-Hybrid external intelligence
- * @param {Object} payload - Configuration object for Gemini API call
+ * @param {object} payload - Configuration object for Gemini API call
  * @param {string} payload.api_key - Gemini API key (required)
  * @param {string} payload.prompt - Text prompt to send to Gemini (required)
- * @param {string} [payload.model='gemini-2.0-flash'] - Model to use
- * @param {number} [payload.max_tokens=4096] - Maximum output tokens
- * @param {number} [payload.temperature=0.4] - Temperature for generation
- * @param {Object} [payload.context] - Additional context from orchestrator
- * @returns {Promise<Object>} Structured response with status, evidence, and metadata
+ * @param {string} [payload.model] - Model to use
+ * @param {number} [payload.max_tokens] - Maximum output tokens
+ * @param {number} [payload.temperature] - Temperature for generation
+ * @param {object} [payload.context] - Additional context from orchestrator
+ * @returns {Promise<object>} Structured response with status, evidence, and metadata
  */
 export async function geminiHybridInvoke(payload = {}) {
   const {
@@ -189,7 +189,7 @@ export async function geminiHybridInvoke(payload = {}) {
 /**
  * Helper function to construct optimal prompts for Gemini based on task type
  * @param {string} userQuery - The original user query
- * @param {Object} context - Task context from orchestrator
+ * @param {object} context - Task context from orchestrator
  * @returns {string} Optimized prompt for Gemini
  */
 export function constructGeminiPrompt(userQuery, context = {}) {

@@ -36,13 +36,7 @@ module.exports = {
     "jsdoc/require-param-description": "off",
     "jsdoc/require-returns-description": "off",
   },
-  ignorePatterns: [
-    "node_modules/",
-    "dist/",
-    "build/",
-    "coverage/",
-    "*.min.js",
-  ],
+  ignorePatterns: ["node_modules/", "dist/", "build/", "coverage/", "*.min.js"],
   settings: {
     "import/resolver": {
       node: {

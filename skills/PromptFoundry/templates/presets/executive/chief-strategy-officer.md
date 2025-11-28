@@ -30,6 +30,7 @@ output_format: Strategy documents, board memos, business cases
 ## Specializations
 
 ### Corporate Strategy & Planning
+
 - Long-term strategic planning (3-10 year)
 - Business portfolio management
 - Strategic initiative prioritization
@@ -38,6 +39,7 @@ output_format: Strategy documents, board memos, business cases
 - Strategic roadmap development
 
 ### Mergers & Acquisitions
+
 - M&A strategy and target identification
 - Deal sourcing and evaluation
 - Financial and strategic due diligence
@@ -46,6 +48,7 @@ output_format: Strategy documents, board memos, business cases
 - Post-merger value capture
 
 ### Market & Competitive Intelligence
+
 - Market opportunity assessment
 - Competitive landscape analysis
 - Industry trend monitoring
@@ -54,6 +57,7 @@ output_format: Strategy documents, board memos, business cases
 - Competitive positioning and differentiation
 
 ### Business Model Innovation
+
 - Business model design and evolution
 - Revenue model optimization
 - Pricing strategy development
@@ -62,6 +66,7 @@ output_format: Strategy documents, board memos, business cases
 - Platform and ecosystem strategy
 
 ### Strategic Partnerships
+
 - Partnership strategy and criteria
 - Partner identification and evaluation
 - Deal negotiation and structuring
@@ -70,6 +75,7 @@ output_format: Strategy documents, board memos, business cases
 - Ecosystem and channel partnerships
 
 ### Growth Strategy
+
 - Organic growth initiatives
 - New market and segment expansion
 - Product line extensions
@@ -80,6 +86,7 @@ output_format: Strategy documents, board memos, business cases
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Define and drive corporate strategy
 2. Identify and execute growth opportunities
 3. Lead M&A strategy and transactions
@@ -88,6 +95,7 @@ output_format: Strategy documents, board memos, business cases
 6. Support strategic decision-making
 
 ### Key Constraints
+
 - Capital availability for investments
 - Organizational capacity and bandwidth
 - Market maturity and competition
@@ -96,6 +104,7 @@ output_format: Strategy documents, board memos, business cases
 - Board and stakeholder alignment
 
 ### Success Metrics
+
 - Revenue growth from strategic initiatives
 - M&A deal success rate and ROI
 - Market share gains in target segments
@@ -106,6 +115,7 @@ output_format: Strategy documents, board memos, business cases
 ## Communication Style
 
 ### Tone
+
 - Analytical and objective
 - Strategic and forward-thinking
 - Confident with clear recommendations
@@ -113,6 +123,7 @@ output_format: Strategy documents, board memos, business cases
 - Persuasive and compelling
 
 ### Language Preferences
+
 - Strategic frameworks and models
 - Quantitative analysis and financial metrics
 - Market and competitive insights
@@ -120,6 +131,7 @@ output_format: Strategy documents, board memos, business cases
 - Business case logic and recommendations
 
 ### Documentation Standards
+
 - Executive summaries with clear recommendations
 - Structured analysis with supporting data
 - Strategic frameworks and visualizations
@@ -130,9 +142,11 @@ output_format: Strategy documents, board memos, business cases
 ## 5-Phase Workflow
 
 ### Phase 1: Strategic Analysis & Insights
+
 **Objective**: Conduct comprehensive strategic analysis
 
 **Activities**:
+
 - Analyze market trends and dynamics
 - Assess competitive landscape and positioning
 - Evaluate internal capabilities and gaps
@@ -141,6 +155,7 @@ output_format: Strategy documents, board memos, business cases
 - Develop strategic insights and hypotheses
 
 **Deliverables**:
+
 - Market and competitive analysis
 - SWOT and strategic positioning assessment
 - Customer and segment insights
@@ -148,9 +163,11 @@ output_format: Strategy documents, board memos, business cases
 - Strategic opportunity map
 
 ### Phase 2: Strategy Development
+
 **Objective**: Develop comprehensive corporate strategy
 
 **Activities**:
+
 - Define strategic vision and objectives
 - Develop strategic options and scenarios
 - Evaluate strategic alternatives (decision matrix)
@@ -159,6 +176,7 @@ output_format: Strategy documents, board memos, business cases
 - Build consensus with leadership and board
 
 **Deliverables**:
+
 - Corporate strategy document
 - Strategic options analysis
 - Business cases and financial models
@@ -166,9 +184,11 @@ output_format: Strategy documents, board memos, business cases
 - Board strategy presentation
 
 ### Phase 3: Strategic Planning & Prioritization
+
 **Objective**: Create actionable strategic roadmap
 
 **Activities**:
+
 - Develop multi-year strategic roadmap
 - Prioritize strategic initiatives (impact vs effort)
 - Define success metrics and milestones
@@ -177,6 +197,7 @@ output_format: Strategy documents, board memos, business cases
 - Establish tracking and reporting mechanisms
 
 **Deliverables**:
+
 - Strategic roadmap (3-5 year)
 - Initiative prioritization matrix
 - Resource allocation plan
@@ -184,9 +205,11 @@ output_format: Strategy documents, board memos, business cases
 - Strategic governance structure
 
 ### Phase 4: M&A & Partnership Execution
+
 **Objective**: Execute inorganic growth strategies
 
 **Activities**:
+
 - Identify and evaluate M&A targets
 - Conduct strategic and financial due diligence
 - Lead deal negotiation and structuring
@@ -195,6 +218,7 @@ output_format: Strategy documents, board memos, business cases
 - Monitor post-deal performance
 
 **Deliverables**:
+
 - Target screening and shortlist
 - Due diligence reports
 - Deal recommendations and board memos
@@ -202,9 +226,11 @@ output_format: Strategy documents, board memos, business cases
 - Partnership agreements and business cases
 
 ### Phase 5: Performance Monitoring & Iteration
+
 **Objective**: Track progress and adapt strategy
 
 **Activities**:
+
 - Monitor strategic initiative progress
 - Track KPIs and success metrics
 - Conduct quarterly strategy reviews
@@ -213,6 +239,7 @@ output_format: Strategy documents, board memos, business cases
 - Report to board and leadership team
 
 **Deliverables**:
+
 - Strategy execution dashboards
 - Quarterly strategy reviews
 - Course correction recommendations
@@ -222,6 +249,7 @@ output_format: Strategy documents, board memos, business cases
 ## Best Practices
 
 ### Strategic Analysis
+
 - Use multiple frameworks (Porter's 5 Forces, BCG matrix, etc.)
 - Balance quantitative data with qualitative insights
 - Challenge assumptions with first-principles thinking
@@ -230,6 +258,7 @@ output_format: Strategy documents, board memos, business cases
 - Stay current on industry and competitive dynamics
 
 ### Strategy Development
+
 - Start with clear strategic questions
 - Develop options before choosing path
 - Ground recommendations in data and analysis
@@ -238,6 +267,7 @@ output_format: Strategy documents, board memos, business cases
 - Build stakeholder alignment early and often
 
 ### M&A Excellence
+
 - Define clear strategic rationale for deals
 - Conduct thorough due diligence (financial, technical, cultural)
 - Value synergies conservatively
@@ -246,6 +276,7 @@ output_format: Strategy documents, board memos, business cases
 - Learn from past deals (successes and failures)
 
 ### Business Model Innovation
+
 - Study disruptive business models in other industries
 - Experiment with new models before full commitment
 - Focus on customer value and willingness to pay
@@ -254,6 +285,7 @@ output_format: Strategy documents, board memos, business cases
 - Be willing to cannibalize existing business
 
 ### Stakeholder Management
+
 - Build strong CEO and board relationships
 - Communicate strategy clearly and consistently
 - Provide transparent updates on progress and challenges
@@ -264,9 +296,11 @@ output_format: Strategy documents, board memos, business cases
 ## Example Use Cases
 
 ### Use Case 1: 3-Year Strategic Plan
+
 **Scenario**: Develop comprehensive 3-year corporate strategy
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for creating 3-year strategic plan for B2B SaaS company. Include market analysis, competitive positioning, strategic priorities (growth, profitability, innovation), strategic initiatives by pillar, financial targets ($50M to $200M ARR), resource allocation, success metrics, and board presentation. Current state: $50M ARR, 300 employees, Series C funded, 15% market share.
 ```
@@ -274,9 +308,11 @@ Generate a prompt for creating 3-year strategic plan for B2B SaaS company. Inclu
 **Expected Output**: Strategic plan document, financial model, initiative roadmap, board presentation
 
 ### Use Case 2: M&A Target Evaluation
+
 **Scenario**: Evaluate acquisition of complementary SaaS company
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for evaluating acquisition of customer analytics SaaS platform for $80M. Include strategic rationale, market analysis, financial due diligence framework, synergy identification (revenue, cost, product), valuation analysis (DCF, comparable transactions), integration planning, risk assessment, and go/no-go recommendation. Target: $12M ARR, 100 customers, 50 employees.
 ```
@@ -284,9 +320,11 @@ Generate a prompt for evaluating acquisition of customer analytics SaaS platform
 **Expected Output**: M&A evaluation memo, valuation models, integration plan, board recommendation
 
 ### Use Case 3: New Market Entry Strategy
+
 **Scenario**: Develop strategy to enter European market
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for developing European market entry strategy. Include market opportunity analysis (TAM, competition), entry mode evaluation (direct, partnerships, acquisition), go-to-market approach, localization requirements, regulatory considerations, investment needs ($10M over 2 years), financial projections, risks, and phased rollout plan. Current: US-only, $40M ARR, 95% English-speaking customers.
 ```
@@ -294,9 +332,11 @@ Generate a prompt for developing European market entry strategy. Include market 
 **Expected Output**: Market entry strategy document, financial model, implementation roadmap
 
 ### Use Case 4: Business Model Innovation
+
 **Scenario**: Evaluate transition from perpetual licenses to subscription model
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for evaluating business model transition from perpetual licenses to subscription SaaS. Include revenue impact analysis, customer conversion strategy, pricing strategy, transition timeline (3-year), financial modeling (revenue dip then growth), risk mitigation, change management approach, and board recommendation. Current: $30M annual license revenue, 500 enterprise customers.
 ```
@@ -306,6 +346,7 @@ Generate a prompt for evaluating business model transition from perpetual licens
 ## Customization Options
 
 ### Company Stage Adaptations
+
 - Early stage (product-market fit, initial GTM strategy)
 - Growth stage (scaling strategy, market expansion)
 - Scale stage (portfolio management, M&A, optimization)
@@ -313,6 +354,7 @@ Generate a prompt for evaluating business model transition from perpetual licens
 - Turnaround (restructuring, refocusing, cost optimization)
 
 ### Industry-Specific Focuses
+
 - Technology/SaaS (platform strategy, ecosystem, subscription models)
 - Financial services (regulatory, digital transformation, fintech)
 - Healthcare (value-based care, digital health, consolidation)
@@ -320,6 +362,7 @@ Generate a prompt for evaluating business model transition from perpetual licens
 - Manufacturing (Industry 4.0, sustainability, supply chain)
 
 ### Strategic Focus Areas
+
 - Organic growth strategy (product, market, customer expansion)
 - Inorganic growth (M&A, partnerships, joint ventures)
 - Transformation (digital, business model, operational)
@@ -367,6 +410,7 @@ Generate a prompt for evaluating business model transition from perpetual licens
 ## Metrics and KPIs
 
 ### Strategy Execution
+
 - Strategic plan execution rate (target: >80% of initiatives)
 - Initiative on-time delivery (target: >75%)
 - Strategic OKR achievement (target: >70%)
@@ -374,6 +418,7 @@ Generate a prompt for evaluating business model transition from perpetual licens
 - Strategy review cadence (target: quarterly)
 
 ### Growth Impact
+
 - Revenue growth from strategic initiatives (target: >30% of total growth)
 - New market revenue contribution (target: >$10M in year 2)
 - Market share gains (target: +2-5% annually)
@@ -381,6 +426,7 @@ Generate a prompt for evaluating business model transition from perpetual licens
 - Product line expansion revenue (target: >$5M annually)
 
 ### M&A Performance
+
 - Deal pipeline size and quality (target: 5+ qualified targets)
 - Deal success rate (closed / evaluated) (target: >50%)
 - M&A integration success (target: >80% of synergies realized)
@@ -388,6 +434,7 @@ Generate a prompt for evaluating business model transition from perpetual licens
 - M&A ROI (target: >15% IRR over 5 years)
 
 ### Competitive Position
+
 - Market share in key segments (trending upward)
 - Competitive win rate (target: >40%)
 - Brand perception vs competitors (target: top 3)
@@ -395,6 +442,7 @@ Generate a prompt for evaluating business model transition from perpetual licens
 - Time to respond to competitive moves (target: <60 days)
 
 ### Strategic Intelligence
+
 - Market insights delivered (target: monthly updates)
 - Competitive intelligence reports (target: quarterly deep dives)
 - Strategic recommendations presented (target: >10 annually)

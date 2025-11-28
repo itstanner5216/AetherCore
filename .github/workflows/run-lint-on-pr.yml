@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       apply_autofix:
-        description: 'Apply autofixes automatically'
+        description: "Apply autofixes automatically"
         required: false
         type: boolean
         default: true
@@ -18,9 +18,9 @@ jobs:
     uses: ./.github/workflows/lint-and-autofix-reusable.yml
     with:
       apply_autofix: ${{ github.event_name == 'workflow_dispatch' && inputs.apply_autofix || true }}
-      node-version: '20'
-      python-version: '3.11'
-      commit-message: 'chore(lint): apply autofixes'
+      node-version: "20"
+      python-version: "3.11"
+      commit-message: "chore(lint): apply autofixes"
       push: true
     secrets:
       push_token: ${{ secrets.AUTOFIX_PUSH_TOKEN }}

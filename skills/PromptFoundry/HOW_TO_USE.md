@@ -48,15 +48,19 @@
 ### 30-Second Start
 
 **Want a preset?**
+
 ```
 "I need a prompt for Senior Full-Stack Engineer"
 ```
+
 → Get customizable template immediately
 
 **Want custom?**
+
 ```
 "Help me create a prompt for [your role/need]"
 ```
+
 → Answer max 7 questions → Get validated prompt
 
 ---
@@ -66,6 +70,7 @@
 ### When to Use Presets
 
 Use presets when you need a prompt for:
+
 - **Common technical roles** (developer, architect, ML engineer, etc.)
 - **Standard business roles** (product manager, marketer, analyst, etc.)
 - **Creative positions** (designer, writer, strategist, etc.)
@@ -76,11 +81,13 @@ Use presets when you need a prompt for:
 #### Step 1: Request a Preset
 
 **Simple format:**
+
 ```
 "Use the [preset name] preset"
 ```
 
 **Examples:**
+
 - "Use the Senior Full-Stack Engineer preset"
 - "I need the Marketing Strategist preset"
 - "Load the DevOps Engineer template"
@@ -88,6 +95,7 @@ Use presets when you need a prompt for:
 #### Step 2: Review & Customize (Optional)
 
 The skill will show you:
+
 ```
 📋 **[Preset Name] Preset Loaded**
 
@@ -135,26 +143,31 @@ Below are highlighted examples. For the complete list of all 69 presets, see [SK
 #### Technical Presets (8 total - showing 5 examples)
 
 **1. Senior Full-Stack Engineer**
+
 - **Stack:** React, Node.js, PostgreSQL, AWS
 - **Best for:** Web application development, API design, full-stack projects
 - **Output:** Production-ready code with tests
 
 **2. ML Engineer**
+
 - **Stack:** Python, PyTorch/TensorFlow, MLOps tools
 - **Best for:** Machine learning pipelines, model training, deployment
 - **Output:** ML code, experiments, production pipelines
 
 **3. DevOps Engineer**
+
 - **Stack:** AWS/GCP/Azure, Kubernetes, Terraform, CI/CD
 - **Best for:** Infrastructure automation, deployments, reliability
 - **Output:** IaC templates, pipeline configs, documentation
 
 **4. Mobile Engineer**
+
 - **Stack:** React Native, Flutter, iOS/Android native
 - **Best for:** Cross-platform mobile apps, native features
 - **Output:** Mobile app code, platform-specific solutions
 
 **5. Solutions Architect**
+
 - **Stack:** Cloud platforms, enterprise systems, scalability patterns
 - **Best for:** System architecture, technical strategy, scaling
 - **Output:** Architecture diagrams, technical specs, decisions
@@ -162,21 +175,25 @@ Below are highlighted examples. For the complete list of all 69 presets, see [SK
 #### Business Presets (8 total - showing 4 examples)
 
 **6. Product Manager**
+
 - **Focus:** Tech product strategy, roadmaps, user stories
 - **Best for:** Product planning, requirement docs, prioritization
 - **Output:** PRDs, roadmaps, user stories, strategies
 
 **7. Marketing Strategist**
+
 - **Focus:** B2B SaaS growth, digital marketing, content strategy
 - **Best for:** Marketing campaigns, growth strategies, content plans
 - **Output:** Marketing strategies, campaign plans, content calendars
 
 **8. Business Analyst**
+
 - **Focus:** Data-driven analysis, requirements gathering, business strategy
 - **Best for:** Business analysis, requirements, process improvement
 - **Output:** Analysis reports, requirements docs, recommendations
 
 **9. Operations Manager**
+
 - **Focus:** Process optimization, efficiency, operational excellence
 - **Best for:** Process design, operational improvements, workflows
 - **Output:** Process docs, optimization plans, SOPs
@@ -184,16 +201,19 @@ Below are highlighted examples. For the complete list of all 69 presets, see [SK
 #### Creative & Design Presets (multiple domains - showing 3 examples)
 
 **10. Content Strategist**
+
 - **Focus:** SEO optimization, multi-channel content, audience targeting
 - **Best for:** Content marketing, editorial planning, SEO strategy
 - **Output:** Content strategies, editorial calendars, SEO plans
 
 **11. UX Designer**
+
 - **Focus:** User-centered design, accessibility, design systems
 - **Best for:** UX research, interface design, user flows
 - **Output:** Design specs, user flows, accessibility guidelines
 
 **12. Technical Writer**
+
 - **Focus:** API documentation, developer guides, technical content
 - **Best for:** Documentation projects, technical writing, guides
 - **Output:** Documentation, API references, tutorials
@@ -201,16 +221,19 @@ Below are highlighted examples. For the complete list of all 69 presets, see [SK
 #### Specialized Industry Presets (Legal, Finance, Healthcare, etc. - showing 3 examples)
 
 **13. Healthcare Tech Consultant**
+
 - **Focus:** HIPAA compliance, clinical systems, health data
 - **Best for:** Healthcare software, medical devices, compliance
 - **Output:** Compliant solutions, healthcare architecture, docs
 
 **14. FinTech Advisor**
+
 - **Focus:** Financial compliance, payment systems, trading platforms
 - **Best for:** Financial applications, payment processing, compliance
 - **Output:** Compliant financial solutions, architecture, specs
 
 **15. Legal Tech Specialist**
+
 - **Focus:** Contract analysis, legal compliance, regulatory systems
 - **Best for:** Legal software, compliance tools, contract management
 - **Output:** Legal tech solutions, compliance frameworks, analysis
@@ -222,6 +245,7 @@ Below are highlighted examples. For the complete list of all 69 presets, see [SK
 ### When to Use Custom Path
 
 Use custom creation when:
+
 - Your role doesn't match any preset
 - You need a highly specialized prompt
 - You're combining multiple domains
@@ -234,11 +258,13 @@ The skill asks **maximum 7 questions** with example answers to guide you.
 #### Example Session: Creating a Custom Prompt
 
 **User says:**
+
 ```
 "I need a custom prompt for analyzing cryptocurrency trading patterns"
 ```
 
 **Skill responds:**
+
 ```
 I'll create a custom prompt for you! Please answer these questions (max 7):
 
@@ -332,12 +358,15 @@ Your choice: 2
 The skill intelligently adapts questions based on your answers:
 
 **If you mention tech stack in Q3:**
+
 - Skips Q5 (tech stack question)
 
 **If domain is obvious from role:**
+
 - Skips Q2 (domain question)
 
 **If no special constraints needed:**
+
 - Skips Q6 (constraints question)
 
 **Result:** Often 5-6 questions instead of 7!
@@ -351,6 +380,7 @@ The skill intelligently adapts questions based on your answers:
 **Best for:** All LLMs, maximum compatibility, clear structure
 
 **Structure:**
+
 ```xml
 <mega_prompt>
   <role>...</role>
@@ -367,12 +397,14 @@ The skill intelligently adapts questions based on your answers:
 ```
 
 **How to use:**
+
 1. Copy entire `<mega_prompt>` block
 2. Paste into your LLM conversation
 3. Follow with your specific request
 4. LLM responds according to prompt
 
 **Pros:**
+
 - ✅ Clear hierarchical structure
 - ✅ Easy to modify specific sections
 - ✅ Works with all LLMs
@@ -385,30 +417,36 @@ The skill intelligently adapts questions based on your answers:
 **Best for:** Claude conversations, system-level configuration
 
 **Structure:**
+
 ```markdown
 # System Configuration: [Role]
 
 You are [role]...
 
 ## Your Expertise
+
 [...]
 
 ## Your Workflow
+
 [...]
 
 ## Output Standards
+
 [...]
 
 Execute your role now.
 ```
 
 **How to use:**
+
 1. Copy entire prompt
 2. Paste as system prompt or start of conversation
 3. Claude maintains this configuration throughout
 4. Optimal for long conversations
 
 **Pros:**
+
 - ✅ Optimized for Claude's format preferences
 - ✅ Natural language structure
 - ✅ Great for extended conversations
@@ -420,6 +458,7 @@ Execute your role now.
 **Best for:** ChatGPT persistent configuration
 
 **Structure:**
+
 ```
 **What would you like ChatGPT to know about you?**
 [Context about user and domain]
@@ -429,12 +468,14 @@ Execute your role now.
 ```
 
 **How to use:**
+
 1. Go to ChatGPT Settings → Personalization → Custom Instructions
 2. Paste first section in "What would you like..." box
 3. Paste second section in "How would you like..." box
 4. Save - applies to all conversations
 
 **Pros:**
+
 - ✅ Persistent across all chats
 - ✅ No need to re-paste
 - ✅ Fits ChatGPT's UI perfectly
@@ -446,26 +487,32 @@ Execute your role now.
 **Best for:** Google Gemini conversations
 
 **Structure:**
+
 ```markdown
 ## Role Configuration
+
 You are: [role]
 
 ## Task Approach
+
 [workflow]
 
 ## Output Format
+
 [format specs]
 
 Apply this to all responses.
 ```
 
 **How to use:**
+
 1. Copy entire prompt
 2. Paste at start of Gemini conversation
 3. Gemini maintains configuration
 4. Optimized for Gemini's style
 
 **Pros:**
+
 - ✅ Streamlined for Gemini
 - ✅ Concise format
 - ✅ Quick setup
@@ -477,6 +524,7 @@ Apply this to all responses.
 **Best for:** Testing across LLMs, team distribution
 
 Generates all 4 formats in one delivery:
+
 - XML version
 - Claude version
 - ChatGPT version
@@ -491,12 +539,14 @@ Generates all 4 formats in one delivery:
 ### Core Mode (Default)
 
 **What you get:**
+
 - ✅ Complete mega-prompt (~5K tokens)
 - ✅ Usage instructions for your chosen format
 - ✅ 2-3 example interactions showing expected behavior
 - ✅ Quick customization notes
 
 **Best for:**
+
 - Most use cases
 - Quick turnaround
 - Standard requirements
@@ -509,6 +559,7 @@ Generates all 4 formats in one delivery:
 ### Advanced Mode
 
 **What you get (Core PLUS):**
+
 - ✅ Everything in Core mode
 - ✅ **5 testing scenarios** - Validate prompt behavior
 - ✅ **3 prompt variations** - Concise, Balanced, Comprehensive
@@ -516,6 +567,7 @@ Generates all 4 formats in one delivery:
 - ✅ **Iteration guidelines** - How to refine the prompt
 
 **Best for:**
+
 - Critical use cases
 - Complex requirements
 - Team-wide deployment
@@ -532,6 +584,7 @@ Generates all 4 formats in one delivery:
 **Purpose:** Validate your prompt works as expected
 
 **Example:**
+
 ```xml
 <testing_scenarios>
 ## Test Case 1: Simple Request
@@ -551,6 +604,7 @@ Generates all 4 formats in one delivery:
 ```
 
 **How to use:**
+
 1. Test your prompt with each scenario
 2. Verify expected behavior matches actual
 3. If gaps found, refine specific prompt sections
@@ -563,18 +617,21 @@ Generates all 4 formats in one delivery:
 **Purpose:** Choose the right prompt size for your needs
 
 **Variation 1: Concise (~3K tokens)**
+
 - Minimal version
 - Essential instructions only
 - Fast, token-efficient
 - Use when: Token limits tight, simple use cases
 
 **Variation 2: Balanced (~5K tokens)** ← DEFAULT
+
 - Standard version
 - Core guidance included
 - Good balance of detail and efficiency
 - Use when: Most scenarios
 
 **Variation 3: Comprehensive (~8K tokens)**
+
 - Detailed version
 - Extensive examples and edge cases
 - Maximum guidance
@@ -590,6 +647,7 @@ Start with Balanced. Switch to Concise if you hit token limits. Use Comprehensiv
 **Purpose:** Improve your prompt after initial use
 
 **Example:**
+
 ```xml
 <optimization_tips>
 ## Token Optimization
@@ -621,6 +679,7 @@ After testing:
 ```
 
 **How to use:**
+
 1. Use prompt for 5-10 real queries
 2. Note what works and what doesn't
 3. Apply suggested optimizations
@@ -636,11 +695,13 @@ After testing:
 **Scenario:** Need a prompt for backend API development
 
 **User:**
+
 ```
 "Use the Senior Full-Stack Engineer preset"
 ```
 
 **Skill:**
+
 ```
 📋 **Senior Full-Stack Engineer Preset Loaded**
 
@@ -678,11 +739,13 @@ Copy the <mega_prompt> block and paste into your LLM...
 **Scenario:** Building AI for legal document analysis
 
 **User:**
+
 ```
 "Create a custom prompt for analyzing legal contracts"
 ```
 
 **Skill asks 7 questions:**
+
 1. Role: Legal AI Specialist
 2. Domain: Contract Law / Legal Tech
 3. Goal: Analyze contracts, identify risks, suggest revisions
@@ -695,6 +758,7 @@ Copy the <mega_prompt> block and paste into your LLM...
 **Mode:** advanced
 
 **Result:**
+
 - Complete XML prompt
 - 5 testing scenarios (simple contract, complex M&A deal, etc.)
 - 3 variations (3K, 5K, 8K tokens)
@@ -710,11 +774,13 @@ Copy the <mega_prompt> block and paste into your LLM...
 **Scenario:** Marketing team needs standardized AI assistance
 
 **User:**
+
 ```
 "Use Marketing Strategist preset, generate for all formats, advanced mode"
 ```
 
 **Result:**
+
 - XML version (for technical team)
 - Claude version (for Claude users)
 - ChatGPT version (for ChatGPT users)
@@ -723,6 +789,7 @@ Copy the <mega_prompt> block and paste into your LLM...
 - 3 variations for different use cases
 
 **Distribution:**
+
 - Technical marketers: Use XML or Claude format
 - Content writers: Use ChatGPT custom instructions
 - Analysts: Use Gemini format
@@ -739,6 +806,7 @@ Copy the <mega_prompt> block and paste into your LLM...
 **Purpose:** Generate prompts programmatically
 
 **Usage:**
+
 ```bash
 python scripts/generate_prompt.py \
   --responses responses.json \
@@ -748,6 +816,7 @@ python scripts/generate_prompt.py \
 ```
 
 **responses.json example:**
+
 ```json
 {
   "role": "Senior Data Engineer",
@@ -775,6 +844,7 @@ python scripts/generate_prompt.py \
 **Purpose:** Generate multiple prompts at once
 
 **Usage:**
+
 ```bash
 python scripts/batch_generator.py \
   --input team-prompts.csv \
@@ -784,6 +854,7 @@ python scripts/batch_generator.py \
 ```
 
 **team-prompts.csv example:**
+
 ```csv
 name,role,domain,goal,output_type,tech_stack
 backend-api,Senior Backend Engineer,FinTech,Build secure APIs,code,"Python,FastAPI,PostgreSQL"
@@ -802,6 +873,7 @@ data-analyst,Data Analyst,FinTech,Analyze user behavior,analysis,"Python,pandas,
 **Purpose:** Validate prompt quality
 
 **Usage:**
+
 ```bash
 python scripts/validator.py \
   --prompt my-existing-prompt.md \
@@ -809,18 +881,23 @@ python scripts/validator.py \
 ```
 
 **validation-report.json example:**
+
 ```json
 {
   "overall_score": 6,
   "passed": false,
   "checks": {
-    "xml_structure": {"passed": true, "score": 1},
-    "completeness": {"passed": true, "score": 1},
-    "token_count": {"passed": true, "score": 1, "count": 4856},
-    "no_placeholders": {"passed": false, "score": 0, "issues": ["Found [TODO] at line 45"]},
-    "actionable_workflow": {"passed": true, "score": 1},
-    "best_practices": {"passed": true, "score": 1},
-    "examples_present": {"passed": true, "score": 1}
+    "xml_structure": { "passed": true, "score": 1 },
+    "completeness": { "passed": true, "score": 1 },
+    "token_count": { "passed": true, "score": 1, "count": 4856 },
+    "no_placeholders": {
+      "passed": false,
+      "score": 0,
+      "issues": ["Found [TODO] at line 45"]
+    },
+    "actionable_workflow": { "passed": true, "score": 1 },
+    "best_practices": { "passed": true, "score": 1 },
+    "examples_present": { "passed": true, "score": 1 }
   },
   "recommendations": [
     "Replace [TODO] placeholder at line 45 with actual content"
@@ -837,6 +914,7 @@ python scripts/validator.py \
 **Purpose:** Optimize existing prompts
 
 **Usage:**
+
 ```bash
 python scripts/optimizer.py \
   --prompt my-prompt.md \
@@ -846,6 +924,7 @@ python scripts/optimizer.py \
 ```
 
 **What it does:**
+
 1. Analyzes current prompt
 2. Identifies redundancies
 3. Suggests consolidations
@@ -853,6 +932,7 @@ python scripts/optimizer.py \
 5. Validates quality maintained
 
 **optimization-report.json example:**
+
 ```json
 {
   "original_tokens": 6234,
@@ -876,11 +956,14 @@ python scripts/optimizer.py \
 ### Getting the Best Results
 
 #### Tip 1: Be Specific in Questionnaire
+
 **❌ Bad:**
+
 - Role: "Developer"
 - Goal: "Write code"
 
 **✅ Good:**
+
 - Role: "Senior Backend Engineer specializing in payment systems"
 - Goal: "Build secure, PCI-compliant REST APIs for payment processing with sub-100ms latency"
 
@@ -889,10 +972,13 @@ python scripts/optimizer.py \
 ---
 
 #### Tip 2: Include Critical Constraints Early
+
 **❌ Bad:**
+
 - Constraints: "Make it good"
 
 **✅ Good:**
+
 - Constraints: "PCI-DSS Level 1 compliance required, 99.99% uptime SLA, <100ms API response time, budget $8K/month AWS"
 
 **Why:** Constraints guide architecture decisions and best practices selection.
@@ -900,11 +986,13 @@ python scripts/optimizer.py \
 ---
 
 #### Tip 3: Use Presets as Starting Points
+
 **Instead of:** Custom from scratch for common roles
 
 **Do this:** Start with preset, customize variables
 
 **Example:**
+
 ```
 "Use DevOps Engineer preset, but change domain to Healthcare and add HIPAA compliance constraint"
 ```
@@ -914,9 +1002,11 @@ python scripts/optimizer.py \
 ---
 
 #### Tip 4: Start with Core Mode
+
 **For first use:** Always use core mode
 
 **Switch to advanced when:**
+
 - Deploying to production
 - Training a team
 - Mission-critical application
@@ -927,13 +1017,16 @@ python scripts/optimizer.py \
 ---
 
 #### Tip 5: Test with Real Scenarios
+
 **After receiving prompt:**
+
 1. Test with 3-5 actual queries you'll use
 2. Note what works and what doesn't
 3. Request specific refinements (not wholesale rewrite)
 4. Re-test with same queries
 
 **Example refinement request:**
+
 ```
 "The prompt works well but responses are too verbose.
 Adjust communication_guidelines to be more concise."
@@ -946,17 +1039,20 @@ Adjust communication_guidelines to be more concise."
 ### Common Pitfalls to Avoid
 
 #### Pitfall 1: Over-Specifying in Questionnaire
+
 **Problem:** Answering every question with paragraphs of detail
 
 **Solution:** Concise answers with key points only
 
 **Example:**
+
 - ❌ "I need the AI to understand that in our company we use React with TypeScript and we have a design system called Acme UI which uses Tailwind and we follow Atomic Design principles and we use Storybook for component documentation and Jest for testing and..."
 - ✅ "React, TypeScript, Tailwind, Design System (Atomic Design)"
 
 ---
 
 #### Pitfall 2: Ignoring Example Answers
+
 **Problem:** Not looking at example answers, giving unclear responses
 
 **Solution:** Use examples as templates for your answers
@@ -966,6 +1062,7 @@ Adjust communication_guidelines to be more concise."
 ---
 
 #### Pitfall 3: Requesting "All Formats" Without Need
+
 **Problem:** Generating all formats when you only use one
 
 **Solution:** Pick the format you'll actually use
@@ -975,6 +1072,7 @@ Adjust communication_guidelines to be more concise."
 ---
 
 #### Pitfall 4: Skipping Testing Scenarios
+
 **Problem:** Not validating prompt works as expected
 
 **Solution:** If using advanced mode, actually run the test scenarios
@@ -984,11 +1082,13 @@ Adjust communication_guidelines to be more concise."
 ---
 
 #### Pitfall 5: Wholesale Rewrites Instead of Refinements
+
 **Problem:** "This doesn't work, regenerate everything"
 
 **Solution:** "Section X needs adjustment: [specific change]"
 
 **Example:**
+
 - ❌ "Regenerate the entire prompt, it's not working"
 - ✅ "The workflow section needs to emphasize security validation. Add a dedicated security review phase between design and execution."
 
@@ -1003,11 +1103,13 @@ Adjust communication_guidelines to be more concise."
 **Cause:** Vague questionnaire answers
 
 **Solution:**
+
 1. Regenerate with more specific domain/industry
 2. Add detailed constraints
 3. Request advanced mode with comprehensive examples
 
 **Example fix:**
+
 ```
 "Regenerate with these changes:
 - Domain: 'FinTech Payment Processing with PCI-DSS compliance'
@@ -1024,11 +1126,13 @@ Adjust communication_guidelines to be more concise."
 **Cause:** Using comprehensive variation or over-specified requirements
 
 **Solution:**
+
 1. Switch to concise variation
 2. Use optimizer.py script to reduce tokens
 3. Adjust communication_style to favor brevity
 
 **Example fix:**
+
 ```
 "The prompt is too detailed. Please:
 1. Use the concise variation (3K tokens)
@@ -1044,11 +1148,13 @@ Adjust communication_guidelines to be more concise."
 **Cause:** Domain not specific enough or missing constraints
 
 **Solution:**
+
 1. Specify exact sub-domain
 2. Add industry regulations as constraints
 3. Request advanced mode for specialized examples
 
 **Example fix:**
+
 ```
 "Add these domain specifics:
 - Sub-domain: 'Healthcare Telemedicine HIPAA-compliant systems'
@@ -1067,6 +1173,7 @@ Adjust communication_guidelines to be more concise."
 **Solution:** Refine communication_guidelines section only
 
 **Example fix:**
+
 ```
 "Adjust communication_guidelines:
 - Change tone from 'professional' to 'casual and friendly'
@@ -1083,11 +1190,13 @@ Adjust communication_guidelines to be more concise."
 **Cause:** LLM preference or XML structure issue
 
 **Solution:**
+
 1. Regenerate in LLM-specific format (claude/chatgpt/gemini)
 2. Validate XML structure with validator.py
 3. Check for unclosed tags
 
 **Example fix:**
+
 ```
 "Regenerate in Claude format instead of XML"
 ```
@@ -1101,11 +1210,13 @@ Adjust communication_guidelines to be more concise."
 **Cause:** Placeholder text, missing sections, or structural problems
 
 **Solution:**
+
 1. Review validation report for specific issues
 2. Run validator.py for detailed analysis
 3. Request regeneration with fixes
 
 **Example:**
+
 ```
 "Validation failed on:
 - No placeholders check: Found [TODO] at line 45
@@ -1140,6 +1251,7 @@ Please fix and regenerate."
 5. **Test with Scenarios:** Use testing scenarios from advanced mode
 
 **Advanced support:**
+
 - GitHub Issues: [repo link]
 - Documentation: `references/` folder
 - Community: [community link]
@@ -1151,14 +1263,17 @@ Please fix and regenerate."
 ### Simple 3-Step Process
 
 **Step 1: Choose Path**
+
 - **Preset?** → Pick from 15 templates → Customize → Generate
 - **Custom?** → Answer 7 questions → Generate
 
 **Step 2: Select Options**
+
 - **Format:** xml / claude / chatgpt / gemini / all
 - **Mode:** core / advanced
 
 **Step 3: Use & Refine**
+
 - Test with real queries
 - Note what works
 - Refine specific sections

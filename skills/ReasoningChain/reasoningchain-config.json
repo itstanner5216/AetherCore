@@ -11,23 +11,35 @@
   "tools": {
     "decompose": {
       "description": "Break complex query into atomic sub-questions",
-      "parameters": {"query": "string", "max_steps": "integer"},
-      "returns": {"steps": "array", "dependencies": "object"}
+      "parameters": { "query": "string", "max_steps": "integer" },
+      "returns": { "steps": "array", "dependencies": "object" }
     },
     "reason_step": {
       "description": "Execute reasoning for a single step with evidence",
-      "parameters": {"step_id": "string", "context": "object"},
-      "returns": {"conclusion": "string", "confidence": "number", "evidence": "array"}
+      "parameters": { "step_id": "string", "context": "object" },
+      "returns": {
+        "conclusion": "string",
+        "confidence": "number",
+        "evidence": "array"
+      }
     },
     "verify_step": {
       "description": "Validate reasoning step for logical consistency",
-      "parameters": {"step_id": "string", "conclusion": "string"},
-      "returns": {"valid": "boolean", "issues": "array", "suggestions": "array"}
+      "parameters": { "step_id": "string", "conclusion": "string" },
+      "returns": {
+        "valid": "boolean",
+        "issues": "array",
+        "suggestions": "array"
+      }
     },
     "synthesize": {
       "description": "Combine verified steps into final conclusion",
-      "parameters": {"steps": "array", "original_query": "string"},
-      "returns": {"conclusion": "string", "reasoning_trace": "array", "confidence": "number"}
+      "parameters": { "steps": "array", "original_query": "string" },
+      "returns": {
+        "conclusion": "string",
+        "reasoning_trace": "array",
+        "confidence": "number"
+      }
     }
   },
   "integration": {
