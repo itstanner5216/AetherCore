@@ -115,7 +115,12 @@
     "channels": [
       {
         "name": "optimization-events",
-        "subscribers": ["AetherCore.OptiGraph", "AetherCore.DeepForge", "AetherCore.MarketSweep", "AetherCore.PromptFoundry"]
+        "subscribers": [
+          "AetherCore.OptiGraph",
+          "AetherCore.DeepForge",
+          "AetherCore.MarketSweep",
+          "AetherCore.PromptFoundry"
+        ]
       },
       {
         "name": "telemetry",

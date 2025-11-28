@@ -5,6 +5,7 @@ ProjectGPT is a modular skillset ecosystem with an HTTP Gateway that exposes Aet
 ## Overview
 
 This repository contains:
+
 - **HTTP Gateway (FastAPI)**: REST API server with automatic OpenAPI generation
 - **10 Modular Skills**: Autonomous capabilities for research, search, commerce, reasoning, and more
 - **Event-Driven Architecture**: Skills communicate via messaging bus for complex workflows
@@ -27,11 +28,13 @@ This repository contains:
 The repository includes 10 AetherCore skills:
 
 ### Core Infrastructure (Priority 0-2)
+
 - **AetherCore.Orchestrator** - Root controller for skill routing, scheduling, and synthesis
 - **AetherCore.EventMesh** - Event routing fabric for inter-skill communication
 - **AetherCore.OptiGraph** - Performance optimization and quality validation
 
 ### Callable Skills (Priority 3-9)
+
 - **AetherCore.DeepForge** - Advanced research engine with source validation
 - **AetherCore.MarketSweep** - E-commerce product search and comparison
 - **AetherCore.GeminiBridge** - Gemini API integration for fallback/crosscheck
@@ -43,6 +46,7 @@ The repository includes 10 AetherCore skills:
 ## Quick Start
 
 ### Prerequisites
+
 - Python 3.11+
 - Docker (for containerized deployment)
 - Koyeb account (free tier available)
@@ -68,6 +72,7 @@ The repository includes 10 AetherCore skills:
 ## Deployment to Koyeb (100% Free)
 
 ### Why Koyeb?
+
 - **Free Tier**: 2 web services, 2 GB RAM, 2 vCPU shared
 - **No Credit Card Required**: Truly free deployment
 - **Auto-scaling**: Scales to zero when not in use
@@ -79,10 +84,12 @@ The repository includes 10 AetherCore skills:
 This project is configured for automatic deployment to Koyeb from GitHub:
 
 1. **Create Koyeb Account**
+
    - Sign up at https://app.koyeb.com (no credit card required)
    - Connect your GitHub account
 
 2. **Deploy from GitHub**
+
    - In Koyeb dashboard, click "Create Web Service"
    - Select "GitHub" as source
    - Choose repository: `itstanner5216/AetherCore`
@@ -94,6 +101,7 @@ This project is configured for automatic deployment to Koyeb from GitHub:
 
 3. **Configure Environment Variables**
    Add these in Koyeb dashboard under "Environment":
+
    ```
    ENVIRONMENT=production
    DEBUG=false
@@ -129,38 +137,46 @@ curl http://localhost:8000/health
 ## API Endpoints
 
 ### System Endpoints
+
 - `GET /` - API information
 - `GET /health` - Health check (public)
 - `GET /docs` - Interactive API documentation
 - `GET /openapi.json` - OpenAPI spec for Custom GPT Actions
 
 ### Skill Endpoints
+
 - `GET /skills` - List all available skills (requires auth)
 - `GET /skills/{skill_name}` - Get skill details (requires auth)
 - `POST /tools/{skill_name}/{tool_name}` - Execute skill tool (requires auth)
 - `POST /orchestrate` - Execute multi-skill workflows (requires auth)
 
 ### Monitoring
+
 - `GET /logs` - View telemetry logs (requires auth)
 
 ## Custom GPT Integration
 
 ### Step 1: Deploy to Koyeb
+
 Follow the deployment instructions above to get your live API URL.
 
 ### Step 2: Import OpenAPI Spec
+
 1. Open Custom GPT builder in ChatGPT
 2. Go to **Actions** → **Import from URL**
 3. Enter: `https://your-service-name.koyeb.app/openapi.json`
 4. Configure authentication with your API key
 
 ### Step 3: Test Integration
+
 Example Custom GPT prompt:
+
 ```
 Search for "best laptops 2025" using the searchengine skill
 ```
 
 The GPT will call:
+
 ```
 POST /tools/searchengine/search
 {
@@ -183,17 +199,20 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 ## Architecture
 
 ### Core Components
+
 - **Skill Registry**: Manages loaded skills and their metadata
 - **Messaging Bus**: Handles event routing between skills
 - **Automation Graph**: Orchestrates complex workflows and dependencies
 - **Telemetry Logger**: Automatic file-based logging (no GPT involvement)
 
 ### Execution Model
+
 Skills operate independently while coordinating via the EventMesh. The Orchestrator routes requests, manages dependencies, and synthesizes outputs from multiple skills.
 
 ## Development
 
 ### Project Structure
+
 ```
 Aethercore/
 ├── gateway.py              # FastAPI application
@@ -208,6 +227,7 @@ Aethercore/
 ```
 
 ### Adding New Skills
+
 1. Add skill configuration to `skills_config.json`
 2. Implement skill handler in `skill_loader.py`
 3. Update API documentation
@@ -218,11 +238,13 @@ Aethercore/
 See [dev.env.example](dev.env.example) for all required environment variables.
 
 ### Required
+
 - `API_KEY` - Gateway authentication key
 - `GOOGLE_API_KEY` - Google API key (for Gemini and CSE)
 - `GOOGLE_CSE_ID` - Google Custom Search Engine ID
 
 ### Optional
+
 - `BRAVE_API` - Brave Search API key
 - `SERPER_API_KEY` - Serper API key
 - `WEBSCRAPING_API_KEY` - Webscraping.ai API key
@@ -231,10 +253,12 @@ See [dev.env.example](dev.env.example) for all required environment variables.
 ## Monitoring & Logs
 
 Telemetry is automatically logged to `logs/` directory:
+
 - `logs/telemetry.jsonl` - Skill execution metrics
 - `logs/errors.jsonl` - Error tracking
 
 Access logs via the API:
+
 ```bash
 curl -H "Authorization: Bearer YOUR_API_KEY" \
   https://your-service-name.koyeb.app/logs?limit=50&log_type=all
@@ -243,6 +267,7 @@ curl -H "Authorization: Bearer YOUR_API_KEY" \
 ## Rate Limiting
 
 Default rate limits:
+
 - 100 requests per hour per API key
 - Rate limit headers included in responses
 - 429 status code when limit exceeded
@@ -259,22 +284,26 @@ Default rate limits:
 ## Troubleshooting
 
 ### Service Won't Start
+
 - Check environment variables are set correctly
 - Verify Dockerfile builds locally first
 - Check Koyeb logs for specific errors
 
 ### Health Check Failing
+
 - Ensure port 8000 is exposed
 - Verify `/health` endpoint returns 200 status
 - Check that uvicorn is binding to 0.0.0.0, not localhost
 
 ### Out of Memory
+
 - Reduce `--workers` in Dockerfile CMD to 1 for Nano instances
 - Consider upgrading to Eco instance if needed (still free)
 
 ## Support
 
 For issues or questions:
+
 - Check individual skill documentation in `skills/` directory
 - Review API documentation at `/docs` endpoint
 - Check Koyeb deployment logs

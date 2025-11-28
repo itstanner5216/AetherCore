@@ -15,30 +15,30 @@ Version: 1.0.0
 License: Proprietary
 """
 
-from fastapi import FastAPI, HTTPException, Depends, Request
-from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
-from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-from typing import Dict, List, Optional, Any
-from datetime import datetime, timedelta
-import uvicorn
-import logging
 import json
+import logging
 import os
 import uuid
 from collections import defaultdict
+from datetime import datetime, timedelta
+from typing import Any, Dict, List, Optional
+
+import uvicorn
+from auth import AuthManager
+from config import Config
+from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+from models import (
+    HealthResponse,
+    SkillInfo,
+    ToolRequest,
+    ToolResponse,
+)
 
 # Local imports
 from skill_loader import SkillLoader
-from auth import AuthManager
-from config import Config
-from models import (
-    ToolRequest,
-    ToolResponse,
-    HealthResponse,
-    SkillInfo,
-    ErrorResponse,
-)
 
 # ----------------------------------------------------------------------------
 # Logging
@@ -53,6 +53,7 @@ logger = logging.getLogger(__name__)
 # ----------------------------------------------------------------------------
 # Telemetry Logger (Auto file-based logging)
 # ----------------------------------------------------------------------------
+
 
 class TelemetryLogger:
     """Automatic file-based telemetry - no GPT involvement required."""
@@ -71,44 +72,66 @@ class TelemetryLogger:
         except Exception as e:
             logger.error(f"Failed to write telemetry: {e}")
 
-    def log_skill_execution(self, skill: str, tool: str, context_id: str,
-                           execution_time_ms: float, success: bool, result_summary: str = ""):
-        self._write(self.telemetry_file, {
-            "event": "skill_execution",
-            "skill": skill,
-            "tool": tool,
-            "context_id": context_id,
-            "execution_time_ms": execution_time_ms,
-            "success": success,
-            "result_summary": result_summary[:200] if result_summary else ""
-        })
+    def log_skill_execution(
+        self,
+        skill: str,
+        tool: str,
+        context_id: str,
+        execution_time_ms: float,
+        success: bool,
+        result_summary: str = "",
+    ):
+        self._write(
+            self.telemetry_file,
+            {
+                "event": "skill_execution",
+                "skill": skill,
+                "tool": tool,
+                "context_id": context_id,
+                "execution_time_ms": execution_time_ms,
+                "success": success,
+                "result_summary": result_summary[:200] if result_summary else "",
+            },
+        )
 
-    def log_error(self, skill: str, tool: str, context_id: str, error: str, error_type: str = "execution"):
-        self._write(self.errors_file, {
-            "event": "error",
-            "error_type": error_type,
-            "skill": skill,
-            "tool": tool,
-            "context_id": context_id,
-            "error": str(error)[:500]
-        })
+    def log_error(
+        self, skill: str, tool: str, context_id: str, error: str, error_type: str = "execution"
+    ):
+        self._write(
+            self.errors_file,
+            {
+                "event": "error",
+                "error_type": error_type,
+                "skill": skill,
+                "tool": tool,
+                "context_id": context_id,
+                "error": str(error)[:500],
+            },
+        )
 
     def log_quota_event(self, provider: str, event_type: str, details: dict = None):
-        self._write(self.telemetry_file, {
-            "event": "quota",
-            "provider": provider,
-            "event_type": event_type,
-            "details": details or {}
-        })
+        self._write(
+            self.telemetry_file,
+            {
+                "event": "quota",
+                "provider": provider,
+                "event_type": event_type,
+                "details": details or {},
+            },
+        )
 
     def log_request(self, endpoint: str, method: str, api_key_prefix: str, status_code: int):
-        self._write(self.telemetry_file, {
-            "event": "request",
-            "endpoint": endpoint,
-            "method": method,
-            "api_key_prefix": api_key_prefix,
-            "status_code": status_code
-        })
+        self._write(
+            self.telemetry_file,
+            {
+                "event": "request",
+                "endpoint": endpoint,
+                "method": method,
+                "api_key_prefix": api_key_prefix,
+                "status_code": status_code,
+            },
+        )
+
 
 telemetry = TelemetryLogger()
 
@@ -151,7 +174,9 @@ security = HTTPBearer()
 # ============================================================================
 
 
-def check_rate_limit(api_key: str, limit: Optional[int] = None, window: Optional[int] = None) -> bool:
+def check_rate_limit(
+    api_key: str, limit: Optional[int] = None, window: Optional[int] = None
+) -> bool:
     """
     Check if API key has exceeded rate limit.
 
@@ -170,9 +195,7 @@ def check_rate_limit(api_key: str, limit: Optional[int] = None, window: Optional
     cutoff = now - timedelta(seconds=window)
 
     # Clean old entries
-    rate_limit_store[api_key] = [
-        ts for ts in rate_limit_store[api_key] if ts > cutoff
-    ]
+    rate_limit_store[api_key] = [ts for ts in rate_limit_store[api_key] if ts > cutoff]
 
     # Check limit
     if len(rate_limit_store[api_key]) >= limit:
@@ -463,7 +486,7 @@ async def execute_tool(
             context_id=context_id,
             execution_time_ms=exec_time,
             success=True,
-            result_summary=str(result.get("results", result.get("findings", "")))[:200]
+            result_summary=str(result.get("results", result.get("findings", "")))[:200],
         )
 
         return {
@@ -487,8 +510,8 @@ async def execute_tool(
         telemetry.log_error(
             skill=canonical_skill_name,
             tool=canonical_tool_name,
-            context_id=context_id if 'context_id' in dir() else "unknown",
-            error=str(e)
+            context_id=context_id if "context_id" in dir() else "unknown",
+            error=str(e),
         )
         raise HTTPException(
             status_code=500,

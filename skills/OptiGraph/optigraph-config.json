@@ -2,9 +2,7 @@
   "skill_name": "AetherCore.OptiGraph",
   "version": "2.1",
   "description": "Dynamic performance tuner and calibration module for all ProjectGPT skills.",
-  "compatible_with": [
-    "Universal Skill Integration Framework \u22651.0"
-  ],
+  "compatible_with": ["Universal Skill Integration Framework \u22651.0"],
   "scope": "Subordinate",
   "callable": false,
   "auto_register": true,
@@ -19,24 +17,14 @@
     "logging": {
       "behavior": "append",
       "format": "json",
-      "fields": [
-        "timestamp",
-        "action",
-        "state",
-        "result_summary"
-      ],
+      "fields": ["timestamp", "action", "state", "result_summary"],
       "auto_flush": true
     }
   },
   "metadata": {
     "category": "performance",
     "status": "core",
-    "tags": [
-      "metrics",
-      "tuning",
-      "analytics",
-      "registry-optimization"
-    ],
+    "tags": ["metrics", "tuning", "analytics", "registry-optimization"],
     "notes": "Manages performance calibration, registry optimization, and runtime analytics."
   },
   "notes": "Manages performance calibration, registry optimization, and runtime analytics.",
@@ -70,30 +58,17 @@
   },
   "telemetry": {
     "emit_channel": "telemetry",
-    "fields": [
-      "skill_name",
-      "mean_latency",
-      "success_rate",
-      "token_efficiency"
-    ],
+    "fields": ["skill_name", "mean_latency", "success_rate", "token_efficiency"],
     "frequency": "on_skill_exit"
   },
   "cross_skill_learning": {
     "enabled": true,
-    "share_between": [
-      "AetherCore.DeepForge",
-      "AetherCore.PromptFoundry",
-      "AetherCore.MarketSweep"
-    ],
+    "share_between": ["AetherCore.DeepForge", "AetherCore.PromptFoundry", "AetherCore.MarketSweep"],
     "method": "weighted_average_of_best_runs"
   },
   "interactive_feedback": {
     "enabled": true,
-    "trigger_phrases": [
-      "too slow",
-      "optimize",
-      "retry with better accuracy"
-    ],
+    "trigger_phrases": ["too slow", "optimize", "retry with better accuracy"],
     "response_action": "recalibrate_and_retry(skill)"
   },
   "persistence": {

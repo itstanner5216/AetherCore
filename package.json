@@ -1,0 +1,15 @@
+{
+  "name": "aethercore-tooling",
+  "version": "0.0.0",
+  "private": true,
+  "devDependencies": {
+    "eslint": "^8.50.0",
+    "eslint-plugin-import": "^2.30.0",
+    "prettier": "^2.8.8"
+  },
+  "scripts": {
+    "lint:js": "eslint \"**/*.{js,mjs,cjs,jsx,ts,tsx}\" --max-warnings 0 || true",
+    "fix:js": "eslint \"**/*.{js,mjs,cjs,jsx,ts,tsx}\" --fix || true",
+    "format:js": "prettier --write \"**/*.{js,mjs,cjs,jsx,ts,tsx,json,md}\" || true"
+  }
+}

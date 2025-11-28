@@ -2,18 +2,12 @@
   "skill_name": "AetherCore.MarketSweep",
   "version": "1.0",
   "description": "Autonomous integration module that aggregates and compares product deals across multiple sources, optimized for use within ProjectGPT\u2019s modular intelligence framework.",
-  "compatible_with": [
-    "Universal Skill Integration Framework \u22651.0"
-  ],
+  "compatible_with": ["Universal Skill Integration Framework \u22651.0"],
   "execution_scope": "Subordinate",
   "callable": true,
   "auto_register": true,
   "entry_point": "marketsweep.md",
-  "dependencies": [
-    "AetherCore.Orchestrator",
-    "AetherCore.EventMesh",
-    "AetherCore.OptiGraph"
-  ],
+  "dependencies": ["AetherCore.Orchestrator", "AetherCore.EventMesh", "AetherCore.OptiGraph"],
   "integration": {
     "inherits_from": "Universal Skill Integration Framework",
     "tone_inheritance": true,
@@ -21,12 +15,7 @@
     "logging": {
       "behavior": "append",
       "format": "json",
-      "fields": [
-        "timestamp",
-        "action",
-        "state",
-        "result_summary"
-      ],
+      "fields": ["timestamp", "action", "state", "result_summary"],
       "auto_flush": true
     }
   },
@@ -43,12 +32,7 @@
   "metadata": {
     "category": "callable",
     "status": "active",
-    "tags": [
-      "ecommerce",
-      "comparison",
-      "market-scan",
-      "product-analysis"
-    ],
+    "tags": ["ecommerce", "comparison", "market-scan", "product-analysis"],
     "notes": "Scans live product listings, analyzes deals, and ranks best-value options."
   },
   "notes": "Scans live product listings, analyzes deals, and ranks best-value options.",
@@ -62,20 +46,7 @@
     "on_load": "Register deal-finder as active module.",
     "on_exit": "Unregister skill."
   },
-  "intents": [
-    "find",
-    "compare",
-    "buy",
-    "price",
-    "deal",
-    "product lookup"
-  ],
-  "keywords": [
-    "deal",
-    "price",
-    "product",
-    "sale",
-    "discount"
-  ],
+  "intents": ["find", "compare", "buy", "price", "deal", "product lookup"],
+  "keywords": ["deal", "price", "product", "sale", "discount"],
   "test_mode": false
 }

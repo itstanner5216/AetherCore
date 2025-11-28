@@ -49,6 +49,7 @@ register_skill --path AetherCore.MarketSweep/marketsweep-config.json
 The skill activates automatically when you mention products or purchase intent. Alternatively, use explicit commands:
 
 #### Automatic Activation Examples
+
 ```
 "Find me the cheapest GTX 4070 graphics card"
 "I need a gaming laptop under $1500"
@@ -56,6 +57,7 @@ The skill activates automatically when you mention products or purchase intent. 
 ```
 
 #### Explicit Activation
+
 ```
 "Activate AetherCore.MarketSweep and search for..."
 "Use AetherCore.MarketSweep: find me..."
@@ -67,11 +69,13 @@ The skill activates automatically when you mention products or purchase intent. 
 Provide as much detail as possible for optimal results:
 
 **Basic Query:**
+
 ```
 Find deals on mechanical keyboards
 ```
 
 **Optimized Query:**
+
 ```
 Find mechanical keyboards with:
 - Cherry MX switches
@@ -85,14 +89,14 @@ Find mechanical keyboards with:
 
 AetherCore.MarketSweep extracts these parameters automatically from your query:
 
-| Parameter | Description | Example |
-|-----------|-------------|---------|
-| **Product Type** | Category/item name | "gaming laptop", "USB-C cable" |
-| **Specifications** | Technical requirements | "RTX 4060", "32GB RAM", "1TB SSD" |
-| **Brand/Model** | Preferred manufacturers | "ASUS", "Sony WH-1000XM5" |
-| **Condition** | New/open-box only | "new in box", "sealed retail" |
-| **Budget** | Maximum price constraint | "under $500", "max $200" |
-| **Location** | ZIP code for shipping | "45701", "ship to Ohio" |
+| Parameter          | Description              | Example                           |
+| ------------------ | ------------------------ | --------------------------------- |
+| **Product Type**   | Category/item name       | "gaming laptop", "USB-C cable"    |
+| **Specifications** | Technical requirements   | "RTX 4060", "32GB RAM", "1TB SSD" |
+| **Brand/Model**    | Preferred manufacturers  | "ASUS", "Sony WH-1000XM5"         |
+| **Condition**      | New/open-box only        | "new in box", "sealed retail"     |
+| **Budget**         | Maximum price constraint | "under $500", "max $200"          |
+| **Location**       | ZIP code for shipping    | "45701", "ship to Ohio"           |
 
 ---
 
@@ -101,10 +105,13 @@ AetherCore.MarketSweep extracts these parameters automatically from your query:
 AetherCore.MarketSweep delivers structured results optimized for immediate purchasing decisions:
 
 ### 1. Top 5 Rankings
+
 Displays the cheapest listings meeting ALL specifications, sorted by total cost.
 
 ### 2. Detailed Listing Information
+
 For each option:
+
 - **Direct Purchase Link** (verified active)
 - **Brand & Model** (exact match)
 - **Key Specifications** (compliance confirmed)
@@ -115,12 +122,14 @@ For each option:
 - **Estimated Delivery**
 
 ### 3. Research Summary
+
 - Total marketplaces searched
 - Number of listings evaluated
 - Disqualification reasons
 - Notable findings/recommendations
 
 ### 4. Verification Statement
+
 - Link validation timestamp
 - Specification confirmation
 - Research date/time
@@ -143,11 +152,13 @@ All listings must pass these criteria:
 ## 🌐 Marketplace Coverage
 
 ### Tier 1 (Always Searched)
+
 - Amazon.com (US)
 - Newegg.com
 - eBay.com (US sellers only)
 
 ### Tier 2 (Extended Search)
+
 - BestBuy.com
 - Walmart.com
 - Target.com
@@ -155,10 +166,12 @@ All listings must pass these criteria:
 - Manufacturer direct stores
 
 ### Tier 3 (Specialty)
+
 - Category-specific retailers (auto-detected)
 - Regional specialty stores with online presence
 
 ### Excluded Platforms
+
 - AliExpress
 - Banggood
 - International sites
@@ -169,17 +182,20 @@ All listings must pass these criteria:
 ## 💰 Pricing Methodology
 
 **Total Cost Formula:**
+
 ```
 Total Cost = Item Price + Shipping Cost + Taxes (if applicable)
 ```
 
 ### Promotional Pricing
+
 - **Only verified, active promo codes** are applied
 - Sources: RetailMeNot, Honey, Slickdeals, vendor pages, Reddit
 - Codes must work TODAY (no expired codes)
 - No account creation/surveys required
 
 ### Special Considerations
+
 - Prime/free shipping offers included
 - Minimum purchase thresholds noted
 - Subscription discounts (if applicable to single purchase)
@@ -189,6 +205,7 @@ Total Cost = Item Price + Shipping Cost + Taxes (if applicable)
 ## ⚙️ Configuration
 
 ### Default Settings
+
 ```json
 {
   "geographic_restriction": "US only",
@@ -200,7 +217,9 @@ Total Cost = Item Price + Shipping Cost + Taxes (if applicable)
 ```
 
 ### Custom Overrides
+
 Specify in your query:
+
 ```
 "Include international sellers"
 "Allow refurbished items"
@@ -214,6 +233,7 @@ Specify in your query:
 **None.** AetherCore.MarketSweep is self-contained and requires no companion skills.
 
 ### Recommended Companions
+
 - `price-tracker`: Monitor price history over time
 - `review-analyzer`: Deep-dive into product reviews
 - `spec-validator`: Cross-reference manufacturer specifications
@@ -223,18 +243,22 @@ Specify in your query:
 ## 🔧 Troubleshooting
 
 ### Issue: Fewer than 5 results returned
+
 **Cause**: Strict specification requirements limiting available options  
 **Solution**: AetherCore.MarketSweep prioritizes compliance over quantity. Consider relaxing specs or checking "next-best alternatives" in research summary.
 
 ### Issue: Link becomes inactive
+
 **Action**: Automatically removed and replaced with next-best option  
 **Note**: Documented in research summary
 
 ### Issue: Promo code fails
+
 **Action**: Price calculated without code, noted in research notes  
 **Fallback**: Standard pricing used
 
 ### Issue: Specification ambiguity
+
 **Action**: Verification attempted via manufacturer source  
 **Failure**: Listing disqualified, documented in notes
 
@@ -249,20 +273,22 @@ A successful AetherCore.MarketSweep session achieves:
 ✅ 100% working links verified  
 ✅ Accurate, current pricing  
 ✅ Clear ranking by total cost  
-✅ Sufficient detail for immediate purchase  
+✅ Sufficient detail for immediate purchase
 
 ---
 
 ## 🧩 Integration Architecture
 
 ### Execution Flow
+
 ```
-User Query → Query Analysis → Specification Extraction → 
-Market Research → Quality Gates → Price Verification → 
+User Query → Query Analysis → Specification Extraction →
+Market Research → Quality Gates → Price Verification →
 Link Validation → Ranking Algorithm → Formatted Output
 ```
 
 ### Subordinate Execution
+
 - **Inherits tone** from parent protocol
 - **Session-temporary memory**: Unloads on exit
 - **Auto-registration**: No manual activation needed
@@ -276,6 +302,7 @@ Link Validation → Ranking Algorithm → Formatted Output
 "Find the cheapest RTX 4070 with at least 12GB VRAM, new condition, shipping to 45701"
 
 **AetherCore.MarketSweep Output:**
+
 ```
 🏆 TOP 5 RTX 4070 DEALS (12GB+ VRAM, New Condition)
 
@@ -303,6 +330,7 @@ Link Validation → Ranking Algorithm → Formatted Output
 ## 🔒 Operational Constraints
 
 ### Critical Rules
+
 - **NO assumptions** on specifications
 - **ZERO tolerance** for broken links
 - **Verified promo codes** only (working today)
@@ -330,6 +358,7 @@ Link Validation → Ranking Algorithm → Formatted Output
 ## 🚧 Roadmap
 
 ### Planned Features (v1.1+)
+
 - Historical price tracking integration
 - Multi-currency support
 - International seller option flag

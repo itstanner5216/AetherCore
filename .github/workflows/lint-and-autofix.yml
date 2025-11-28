@@ -1,0 +1,55 @@
+name: Lint and Autofix
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      apply_autofix:
+        description: "If true, run autofixers and push fixes back to branch"
+        required: false
+        default: "false"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+      - name: Install JS tooling
+        run: |
+          npm ci || npm install --no-audit --no-fund
+      - name: Run JS format
+        run: npm run format:js
+      - name: Run JS fix
+        run: npm run fix:js
+      - name: Run JS lint
+        run: npm run lint:js
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+      - name: Install Python tooling
+        run: pip install --upgrade ruff black isort
+      - name: Run Python autofix (ruff --fix)
+        run: ruff check . --fix || true
+      - name: Run Python format (black/isort)
+        run: |
+          isort . || true
+          black . || true
+      - name: Commit and push autofixes if requested
+        if: github.event_name == 'workflow_dispatch' && inputs.apply_autofix == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m "chore(lint): apply autofixes by CI" || echo "no changes to commit"
+            git push origin HEAD:${{ github.ref_name }}
+          else
+            echo "No changes to autofix"
+          fi

@@ -3,43 +3,52 @@
 ## Quick Deploy (Manual - Recommended)
 
 ### Prerequisites
+
 - Koyeb account (free): https://app.koyeb.com/
 - GitHub account connected to Koyeb
 
 ### Step-by-Step Deployment
 
 1. **Login to Koyeb**
+
    - Go to https://app.koyeb.com/
    - Connect your GitHub account if not already connected
 
 2. **Create Web Service**
+
    - Click **"Create Web Service"**
    - Select **"GitHub"** as the source
    - Choose **Docker** explicitly (the repo layout prevents autodetection)
 
 3. **Repository Settings**
    ```
-Repository: itstanner5216/AetherCore
-Branch: main
-Builder: Dockerfile
-Docker build context: /        # repo root so Gateway + skills are visible
-Dockerfile path: Aethercore.Gateway/Dockerfile
+   Repository: itstanner5216/AetherCore
+   Branch: main
+   Builder: Dockerfile
+   Docker build context: /        # repo root so Gateway + skills are visible
+   Dockerfile path: Aethercore.Gateway/Dockerfile
+   ```
+
 ```
 
 4. **Instance Configuration**
-   ```
-   Service name: aethercore-gateway
-   Instance type: Nano (0.1 vCPU / 512MB RAM / 2GB disk) - Free Tier
-   Region: Washington D.C. (was)   # only free region
-   Scaling: Min 1, Max 1
-   ```
+```
+
+Service name: aethercore-gateway
+Instance type: Nano (0.1 vCPU / 512MB RAM / 2GB disk) - Free Tier
+Region: Washington D.C. (was) # only free region
+Scaling: Min 1, Max 1
+
+```
 
 5. **Port Configuration (Advanced → Service ports)**
-   ```
-External path prefix  Target internal port  Protocol
-/aethercore          8000                   HTTP   # FastAPI
-/search              3000                   HTTP   # Node helper
 ```
+
+External path prefix Target internal port Protocol
+/aethercore 8000 HTTP # FastAPI
+/search 3000 HTTP # Node helper
+
+````
 - Both ports share the same service URL; the path prefix maps requests to the correct process.
 
 6. **Environment Variables**
@@ -75,9 +84,10 @@ External path prefix  Target internal port  Protocol
    SERPER_API_KEY=...
    WEBSCRAPING_API_KEY=...
    SCRAPINGANT_API_KEY=...
-   ```
+````
 
 7. **Health Check**
+
    ```
    Path: /health   # container path; externally /aethercore/health
    Port: 8000
@@ -86,11 +96,13 @@ External path prefix  Target internal port  Protocol
    ```
 
 8. **Deploy**
+
    - Click **"Deploy"**
    - Wait 5-10 minutes for build to complete
    - Monitor in Koyeb dashboard
 
 9. **Get Your URL**
+
    - The service domain will be shown by Koyeb, e.g. `https://aethercore-gateway-[org].koyeb.app`
    - FastAPI base: `https://.../aethercore`
    - Search helper base: `https://.../search`
@@ -108,16 +120,19 @@ External path prefix  Target internal port  Protocol
 ### Install Koyeb CLI
 
 **macOS:**
+
 ```bash
 brew install koyeb/tap/koyeb-cli
 ```
 
 **Linux:**
+
 ```bash
 curl -fsSL https://app.koyeb.com/install.sh | bash
 ```
 
 **Windows:**
+
 ```powershell
 scoop install koyeb-cli
 ```
@@ -133,6 +148,7 @@ bash koyeb_deploy.sh
 ```
 
 OR use the Python script:
+
 ```bash
 python deploy.py
 ```
@@ -142,11 +158,13 @@ python deploy.py
 ## Update Deployment
 
 ### Via Dashboard
+
 1. Go to https://app.koyeb.com/
 2. Find `aethercore-gateway` service
 3. Click "Redeploy" to pull latest from GitHub
 
 ### Via CLI
+
 ```bash
 koyeb service redeploy aethercore-gateway
 ```
@@ -156,16 +174,19 @@ koyeb service redeploy aethercore-gateway
 ## Monitoring
 
 ### View Logs
+
 ```bash
 koyeb service logs aethercore-gateway -f
 ```
 
 ### Check Status
+
 ```bash
 koyeb service get aethercore-gateway
 ```
 
 ### Dashboard
+
 https://app.koyeb.com/services/aethercore-gateway
 
 ---
@@ -173,25 +194,30 @@ https://app.koyeb.com/services/aethercore-gateway
 ## Troubleshooting
 
 ### Build Fails
+
 - Check Koyeb logs for Docker build errors
 - Verify Dockerfile path is set to `Aethercore.Gateway/Dockerfile` with context `/`
 - Ensure all dependencies in requirements.txt
 
 ### Service Won't Start
+
 - Check environment variables are set correctly
 - Verify ports 8000 and 3000 are exposed and mapped to /aethercore and /search
 - Check health check endpoint returns 200
 
 ### Out of Memory
+
 - Reduce workers in Dockerfile from 2 to 1
 - Consider upgrading instance (still free: Eco - 1GB RAM)
 
 ### Health Check Failing
+
 - Increase grace period to 90 seconds
 - Check `/health` endpoint locally first
 - Verify uvicorn binds to 0.0.0.0, not 127.0.0.1
 
 ### Render still deploying
+
 - Disable or lock the Render service, or remove its GitHub webhook, so only Koyeb redeploys on push
 - Remove any Render-specific GitHub Actions if they auto-trigger builds
 
@@ -211,6 +237,7 @@ https://app.koyeb.com/services/aethercore-gateway
 ## Next Steps After Deployment
 
 1. **Test all endpoints**
+
    ```bash
    curl https://your-service.koyeb.app/aethercore/health
    curl https://your-service.koyeb.app/aethercore/docs
@@ -219,6 +246,7 @@ https://app.koyeb.com/services/aethercore-gateway
    ```
 
 2. **Update Custom GPT**
+
    - Import OpenAPI spec from: `https://your-service.koyeb.app/openapi.json`
    - Configure Bearer token auth with your API_KEY
 

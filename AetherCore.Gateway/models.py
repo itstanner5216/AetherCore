@@ -8,13 +8,14 @@ Defines request/response schemas for:
 - Error responses
 """
 
-from pydantic import BaseModel, Field
-from typing import Dict, List, Optional, Any
+from typing import Any, Dict, List, Optional
 
+from pydantic import BaseModel, Field
 
 # ============================================================================
 # TOOL EXECUTION MODELS
 # ============================================================================
+
 
 class ToolRequest(BaseModel):
     """
@@ -30,25 +31,18 @@ class ToolRequest(BaseModel):
     parameters: Dict[str, Any] = Field(
         default_factory=dict,
         description="Tool-specific parameters",
-        examples=[{"query": "search term", "limit": 10}]
+        examples=[{"query": "search term", "limit": 10}],
     )
 
     context: Optional[Dict[str, Any]] = Field(
-        default=None,
-        description="Optional execution context (user info, session data, etc.)"
+        default=None, description="Optional execution context (user info, session data, etc.)"
     )
 
     class Config:
         json_schema_extra = {
             "example": {
-                "parameters": {
-                    "query": "best laptops 2025",
-                    "max_results": 10
-                },
-                "context": {
-                    "user_preference": "gaming",
-                    "budget": 1500
-                }
+                "parameters": {"query": "best laptops 2025", "max_results": 10},
+                "context": {"user_preference": "gaming", "budget": 1500},
             }
         }
 
@@ -78,10 +72,7 @@ class ToolResponse(BaseModel):
 
     timestamp: str = Field(description="ISO timestamp of execution")
 
-    execution_time_ms: float = Field(
-        default=0,
-        description="Execution time in milliseconds"
-    )
+    execution_time_ms: float = Field(default=0, description="Execution time in milliseconds")
 
     class Config:
         json_schema_extra = {
@@ -89,12 +80,9 @@ class ToolResponse(BaseModel):
                 "success": True,
                 "skill": "AetherCore.DeepForge",
                 "tool": "research",
-                "result": {
-                    "findings": ["Result 1", "Result 2"],
-                    "confidence": 0.92
-                },
+                "result": {"findings": ["Result 1", "Result 2"], "confidence": 0.92},
                 "timestamp": "2025-01-15T10:30:00Z",
-                "execution_time_ms": 214.5
+                "execution_time_ms": 214.5,
             }
         }
 
@@ -102,6 +90,7 @@ class ToolResponse(BaseModel):
 # ============================================================================
 # SKILL INFORMATION MODELS
 # ============================================================================
+
 
 class SkillInfo(BaseModel):
     """
@@ -125,35 +114,22 @@ class SkillInfo(BaseModel):
 
     version: str = Field(description="Skill version")
 
-    description: str = Field(
-        description="Human-readable description of skill capabilities"
-    )
+    description: str = Field(description="Human-readable description of skill capabilities")
 
-    callable: bool = Field(
-        description="Whether skill can be directly invoked by users"
-    )
+    callable: bool = Field(description="Whether skill can be directly invoked by users")
 
-    priority: int = Field(
-        description="Execution priority (0 = highest, 99 = lowest)"
-    )
+    priority: int = Field(description="Execution priority (0 = highest, 99 = lowest)")
 
-    tools: List[str] = Field(
-        default_factory=list,
-        description="Available tools within this skill"
-    )
+    tools: List[str] = Field(default_factory=list, description="Available tools within this skill")
 
-    endpoint: str = Field(
-        description="API endpoint for this skill"
-    )
+    endpoint: str = Field(description="API endpoint for this skill")
 
     dependencies: Optional[List[str]] = Field(
-        default=None,
-        description="Other skills this skill depends on"
+        default=None, description="Other skills this skill depends on"
     )
 
     metadata: Optional[Dict[str, Any]] = Field(
-        default=None,
-        description="Additional skill metadata"
+        default=None, description="Additional skill metadata"
     )
 
     class Config:
@@ -167,10 +143,7 @@ class SkillInfo(BaseModel):
                 "tools": ["scan", "compare", "validate", "score"],
                 "endpoint": "/skills/AetherCore.MarketSweep",
                 "dependencies": [],
-                "metadata": {
-                    "category": "commerce",
-                    "marketplaces": 15
-                }
+                "metadata": {"category": "commerce", "marketplaces": 15},
             }
         }
 
@@ -178,6 +151,7 @@ class SkillInfo(BaseModel):
 # ============================================================================
 # SYSTEM STATUS MODELS
 # ============================================================================
+
 
 class HealthResponse(BaseModel):
     """
@@ -193,15 +167,12 @@ class HealthResponse(BaseModel):
     """
 
     status: str = Field(
-        description="Service health status",
-        examples=["healthy", "degraded", "unhealthy"]
+        description="Service health status", examples=["healthy", "degraded", "unhealthy"]
     )
 
     timestamp: str = Field(description="ISO timestamp of health check")
 
-    skills_loaded: int = Field(
-        description="Number of skills currently loaded"
-    )
+    skills_loaded: int = Field(description="Number of skills currently loaded")
 
     gateway_version: str = Field(description="Gateway version")
 
@@ -211,7 +182,7 @@ class HealthResponse(BaseModel):
                 "status": "healthy",
                 "timestamp": "2025-01-15T10:30:00.000Z",
                 "skills_loaded": 7,
-                "gateway_version": "1.0.0"
+                "gateway_version": "1.0.0",
             }
         }
 
@@ -219,6 +190,7 @@ class HealthResponse(BaseModel):
 # ============================================================================
 # ERROR MODELS
 # ============================================================================
+
 
 class ErrorResponse(BaseModel):
     """
@@ -234,10 +206,7 @@ class ErrorResponse(BaseModel):
         }
     """
 
-    error: bool = Field(
-        default=True,
-        description="Always true for error responses"
-    )
+    error: bool = Field(default=True, description="Always true for error responses")
 
     status_code: int = Field(description="HTTP status code")
 
@@ -245,10 +214,7 @@ class ErrorResponse(BaseModel):
 
     timestamp: str = Field(description="ISO timestamp of error")
 
-    details: Optional[Dict[str, Any]] = Field(
-        default=None,
-        description="Additional error details"
-    )
+    details: Optional[Dict[str, Any]] = Field(default=None, description="Additional error details")
 
     class Config:
         json_schema_extra = {
@@ -261,9 +227,9 @@ class ErrorResponse(BaseModel):
                     "available_skills": [
                         "AetherCore.DeepForge",
                         "AetherCore.GeminiBridge",
-                        "AetherCore.PromptFoundry"
+                        "AetherCore.PromptFoundry",
                     ]
-                }
+                },
             }
         }
 
@@ -272,6 +238,7 @@ class ErrorResponse(BaseModel):
 # ORCHESTRATION MODELS
 # ============================================================================
 
+
 class OrchestrationStep(BaseModel):
     """Single step in an orchestration workflow"""
 
@@ -279,14 +246,10 @@ class OrchestrationStep(BaseModel):
 
     tool: str = Field(description="Tool to execute within the skill")
 
-    params: Dict[str, Any] = Field(
-        default_factory=dict,
-        description="Tool parameters"
-    )
+    params: Dict[str, Any] = Field(default_factory=dict, description="Tool parameters")
 
     continue_on_error: bool = Field(
-        default=False,
-        description="Whether to continue workflow if this step fails"
+        default=False, description="Whether to continue workflow if this step fails"
     )
 
 
@@ -311,9 +274,7 @@ class OrchestrationRequest(BaseModel):
         }
     """
 
-    workflow: List[OrchestrationStep] = Field(
-        description="Sequence of tools to execute"
-    )
+    workflow: List[OrchestrationStep] = Field(description="Sequence of tools to execute")
 
     class Config:
         json_schema_extra = {
@@ -323,14 +284,14 @@ class OrchestrationRequest(BaseModel):
                         "skill": "AetherCore.DeepForge",
                         "tool": "research",
                         "params": {"query": "quantum computing"},
-                        "continue_on_error": False
+                        "continue_on_error": False,
                     },
                     {
                         "skill": "AetherCore.PromptFoundry",
                         "tool": "generate",
                         "params": {"preset": "scientist"},
-                        "continue_on_error": True
-                    }
+                        "continue_on_error": True,
+                    },
                 ]
             }
         }

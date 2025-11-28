@@ -12,9 +12,9 @@ entry_point: eventmesh-entry.js
 
 AetherCore.EventMesh creates a dynamic, self-updating event routing system that bridges Event Hooks and the Skill Messaging Bus. It maintains an internal directed graph where:
 
-- **Nodes** represent loaded skills  
-- **Edges** represent message routes and dependencies  
-- **Events** flow automatically between connected skills  
+- **Nodes** represent loaded skills
+- **Edges** represent message routes and dependencies
+- **Events** flow automatically between connected skills
 
 This skill operates silently in the background, enabling seamless skill-to-skill communication without user intervention.
 
@@ -35,12 +35,14 @@ This skill operates silently in the background, enabling seamless skill-to-skill
 ```
 
 ### Node Properties
+
 - `skill_name`: Unique identifier
 - `dependencies`: Skills this node depends on
 - `subscribers`: Skills listening to this node's events
 - `message_handlers`: Event types this skill can process
 
 ### Edge Properties
+
 - `source`: Originating skill
 - `target`: Receiving skill
 - `event_type`: Message category
@@ -278,12 +280,12 @@ def _invalidate_cache():
 
 ## Silent Operation Guarantee
 
-- ✓ No console output  
-- ✓ No user-visible confirmations  
-- ✓ No status messages  
-- ✓ Internal state logging only  
-- ✓ Automatic event routing  
-- ✓ Transparent graph updates  
+- ✓ No console output
+- ✓ No user-visible confirmations
+- ✓ No status messages
+- ✓ Internal state logging only
+- ✓ Automatic event routing
+- ✓ Transparent graph updates
 
 All operations are logged internally for debugging but never displayed during normal execution.
 
@@ -301,7 +303,6 @@ The graph automatically creates and routes events silently between them.
 
 ✅ Patch Applied Successfully  
 **Version:** Automation Graph v1.1 (Dependency-Aware Routing Integrated)
-
 
 ---
 
@@ -372,4 +373,3 @@ def on_message(source_skill, event_type, payload):
 
 This preserves the Automation Graph’s existing design while adding a dedicated pathway for external
 intelligence escalation.
-

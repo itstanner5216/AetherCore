@@ -10,13 +10,14 @@ Usage:
     python batch_generator.py --input batch-config.json --format all --parallel 5 --output-dir ./output/
 """
 
-import csv
-import json
 import argparse
 import concurrent.futures
-from pathlib import Path
-from typing import List, Dict, Any
+import csv
+import json
 from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, List
+
 from generate_prompt import PromptGenerator, create_markdown_document
 
 
@@ -31,7 +32,7 @@ class BatchGenerator:
     def load_csv_batch(self, filepath: str) -> List[Dict[str, Any]]:
         """Load batch configuration from CSV file."""
         configs = []
-        with open(filepath, 'r') as f:
+        with open(filepath, "r") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 configs.append(dict(row))
@@ -39,23 +40,24 @@ class BatchGenerator:
 
     def load_json_batch(self, filepath: str) -> List[Dict[str, Any]]:
         """Load batch configuration from JSON file."""
-        with open(filepath, 'r') as f:
+        with open(filepath, "r") as f:
             data = json.load(f)
 
         # Support both array of configs or object with configs key
         if isinstance(data, list):
             return data
-        elif 'prompts' in data:
-            return data['prompts']
+        elif "prompts" in data:
+            return data["prompts"]
         else:
             raise ValueError("JSON must be array of configs or object with 'prompts' key")
 
-    def generate_single(self, config: Dict[str, Any], format_type: str, mode: str,
-                       output_dir: Path) -> Dict[str, Any]:
+    def generate_single(
+        self, config: Dict[str, Any], format_type: str, mode: str, output_dir: Path
+    ) -> Dict[str, Any]:
         """Generate a single prompt from configuration."""
         try:
             # Extract metadata
-            name = config.get('name', f"prompt-{datetime.now().timestamp()}")
+            name = config.get("name", f"prompt-{datetime.now().timestamp()}")
 
             print(f"📝 Generating: {name}")
 
@@ -63,7 +65,7 @@ class BatchGenerator:
             result = self.generator.generate(config, format_type, mode)
 
             # Create output filename
-            role_slug = config.get('role', 'assistant').lower().replace(' ', '-')
+            role_slug = config.get("role", "assistant").lower().replace(" ", "-")
             output_file = output_dir / f"{name}-{role_slug}.md"
 
             # Create markdown document
@@ -73,29 +75,23 @@ class BatchGenerator:
             output_file.write_text(markdown_doc)
 
             # Validation summary
-            validation_summary = {
-                fmt: val['passed']
-                for fmt, val in result['validation'].items()
-            }
+            validation_summary = {fmt: val["passed"] for fmt, val in result["validation"].items()}
 
             return {
-                'name': name,
-                'status': 'success',
-                'output_file': str(output_file),
-                'validation': validation_summary
+                "name": name,
+                "status": "success",
+                "output_file": str(output_file),
+                "validation": validation_summary,
             }
 
         except Exception as e:
-            return {
-                'name': config.get('name', 'unknown'),
-                'status': 'error',
-                'error': str(e)
-            }
+            return {"name": config.get("name", "unknown"), "status": "error", "error": str(e)}
 
-    def generate_batch(self, configs: List[Dict[str, Any]], format_type: str,
-                      mode: str, output_dir: Path) -> Dict[str, Any]:
+    def generate_batch(
+        self, configs: List[Dict[str, Any]], format_type: str, mode: str, output_dir: Path
+    ) -> Dict[str, Any]:
         """Generate multiple prompts in parallel."""
-        print(f"\n🚀 Starting batch generation:")
+        print("\n🚀 Starting batch generation:")
         print(f"   Prompts: {len(configs)}")
         print(f"   Format: {format_type}")
         print(f"   Mode: {mode}")
@@ -119,20 +115,20 @@ class BatchGenerator:
                 results.append(result)
 
                 # Print progress
-                status_emoji = "✅" if result['status'] == 'success' else "❌"
+                status_emoji = "✅" if result["status"] == "success" else "❌"
                 print(f"{status_emoji} {result['name']}: {result['status']}")
 
         # Generate summary
-        successful = sum(1 for r in results if r['status'] == 'success')
+        successful = sum(1 for r in results if r["status"] == "success")
         failed = len(results) - successful
 
         summary = {
-            'total': len(configs),
-            'successful': successful,
-            'failed': failed,
-            'output_dir': str(output_dir),
-            'generated_at': datetime.now().isoformat(),
-            'results': results
+            "total": len(configs),
+            "successful": successful,
+            "failed": failed,
+            "output_dir": str(output_dir),
+            "generated_at": datetime.now().isoformat(),
+            "results": results,
         }
 
         return summary
@@ -157,22 +153,22 @@ def create_summary_report(summary: Dict[str, Any], output_dir: Path):
 """
 
     # Add details for each prompt
-    for result in summary['results']:
-        if result['status'] == 'success':
+    for result in summary["results"]:
+        if result["status"] == "success":
             report += f"\n### ✅ {result['name']}\n"
             report += f"- **File:** `{Path(result['output_file']).name}`\n"
-            report += f"- **Validation:**\n"
-            for fmt, passed in result['validation'].items():
+            report += "- **Validation:**\n"
+            for fmt, passed in result["validation"].items():
                 status = "✅ Passed" if passed else "⚠️ Review"
                 report += f"  - {fmt.upper()}: {status}\n"
         else:
             report += f"\n### ❌ {result['name']}\n"
             report += f"- **Error:** {result['error']}\n"
 
-    report += f"\n---\n\n*Generated by Prompt Suite Batch Generator v1.0*\n"
+    report += "\n---\n\n*Generated by Prompt Suite Batch Generator v1.0*\n"
 
     # Write report
-    report_file = output_dir / 'batch-generation-report.md'
+    report_file = output_dir / "batch-generation-report.md"
     report_file.write_text(report)
 
     return report_file
@@ -181,7 +177,7 @@ def create_summary_report(summary: Dict[str, Any], output_dir: Path):
 def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
-        description='Generate multiple prompts in batch mode',
+        description="Generate multiple prompts in batch mode",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 CSV Format Example:
@@ -203,22 +199,33 @@ Examples:
 
   # From JSON with parallel processing
   python batch_generator.py --input batch.json --format all --parallel 10 --output-dir ./output/
-"""
+""",
     )
 
-    parser.add_argument('--input', required=True,
-                       help='Input CSV or JSON file with batch configuration')
-    parser.add_argument('--format', required=True,
-                       choices=['xml', 'claude', 'chatgpt', 'gemini', 'all'],
-                       help='Output format for all prompts')
-    parser.add_argument('--mode', default='core', choices=['core', 'advanced'],
-                       help='Generation mode (default: core)')
-    parser.add_argument('--output-dir', required=True,
-                       help='Output directory for generated prompts')
-    parser.add_argument('--parallel', type=int, default=3,
-                       help='Number of parallel workers (default: 3)')
-    parser.add_argument('--report', action='store_true',
-                       help='Generate summary report (default: True)')
+    parser.add_argument(
+        "--input", required=True, help="Input CSV or JSON file with batch configuration"
+    )
+    parser.add_argument(
+        "--format",
+        required=True,
+        choices=["xml", "claude", "chatgpt", "gemini", "all"],
+        help="Output format for all prompts",
+    )
+    parser.add_argument(
+        "--mode",
+        default="core",
+        choices=["core", "advanced"],
+        help="Generation mode (default: core)",
+    )
+    parser.add_argument(
+        "--output-dir", required=True, help="Output directory for generated prompts"
+    )
+    parser.add_argument(
+        "--parallel", type=int, default=3, help="Number of parallel workers (default: 3)"
+    )
+    parser.add_argument(
+        "--report", action="store_true", help="Generate summary report (default: True)"
+    )
 
     args = parser.parse_args()
 
@@ -230,11 +237,11 @@ Examples:
     # Load configurations
     batch_gen = BatchGenerator(parallel_workers=args.parallel)
 
-    if input_path.suffix == '.csv':
-        print(f"📄 Loading CSV batch configuration...")
+    if input_path.suffix == ".csv":
+        print("📄 Loading CSV batch configuration...")
         configs = batch_gen.load_csv_batch(args.input)
-    elif input_path.suffix == '.json':
-        print(f"📄 Loading JSON batch configuration...")
+    elif input_path.suffix == ".json":
+        print("📄 Loading JSON batch configuration...")
         configs = batch_gen.load_json_batch(args.input)
     else:
         parser.error(f"Unsupported file format: {input_path.suffix} (use .csv or .json)")
@@ -247,7 +254,7 @@ Examples:
 
     # Print summary
     print(f"\n{'=' * 60}")
-    print(f"📊 Batch Generation Complete!")
+    print("📊 Batch Generation Complete!")
     print(f"{'=' * 60}")
     print(f"Total: {summary['total']}")
     print(f"✅ Successful: {summary['successful']}")
@@ -255,15 +262,15 @@ Examples:
     print(f"📁 Output: {summary['output_dir']}")
 
     # Generate report
-    if args.report or summary['failed'] > 0:
+    if args.report or summary["failed"] > 0:
         report_file = create_summary_report(summary, output_dir)
         print(f"📋 Report: {report_file}")
 
     # Exit with error code if any failed
-    if summary['failed'] > 0:
+    if summary["failed"] > 0:
         exit(1)
     else:
-        print(f"\n✅ All prompts generated successfully!")
+        print("\n✅ All prompts generated successfully!")
         exit(0)
 
 
