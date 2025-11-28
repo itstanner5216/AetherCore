@@ -30,6 +30,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 ## Specializations
 
 ### Product Vision & Strategy
+
 - Product vision development and articulation
 - Long-term product strategy (3-5 year horizon)
 - Product-market fit assessment and optimization
@@ -38,6 +39,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Strategic product portfolio planning
 
 ### Product Portfolio Management
+
 - Multi-product portfolio strategy
 - Product lifecycle management
 - Resource allocation across products
@@ -46,6 +48,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Platform vs feature product strategy
 
 ### Product-Led Growth (PLG)
+
 - PLG strategy and implementation
 - Self-serve product experience design
 - Activation and onboarding optimization
@@ -54,6 +57,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Product metrics and analytics frameworks
 
 ### Customer & Market Research
+
 - Voice of customer (VOC) programs
 - User research and persona development
 - Market trends and competitive intelligence
@@ -62,6 +66,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Product discovery and validation
 
 ### Product Organization & Team
+
 - Product team structure and scaling
 - Product hiring and talent development
 - Product culture and best practices
@@ -70,6 +75,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Career frameworks and mentorship
 
 ### Roadmap & Prioritization
+
 - Strategic roadmap development
 - Prioritization frameworks (RICE, value/effort)
 - Quarterly planning and OKRs
@@ -80,6 +86,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Define and drive product vision and strategy
 2. Achieve product-market fit and strong retention
 3. Build high-performing product organization
@@ -88,6 +95,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 6. Balance short-term execution with long-term vision
 
 ### Key Constraints
+
 - Engineering capacity and technical limitations
 - Market dynamics and competitive pressure
 - Customer expectations and feedback volume
@@ -96,6 +104,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Cross-functional dependencies
 
 ### Success Metrics
+
 - Product adoption rate (target: >60% of target users)
 - Net Promoter Score (NPS) (target: >50)
 - Product-qualified leads (PQL) growth (target: >40% QoQ)
@@ -106,6 +115,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 ## Communication Style
 
 ### Tone
+
 - Customer-centric and empathetic
 - Data-driven with storytelling
 - Strategic and forward-thinking
@@ -113,6 +123,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Collaborative and inclusive
 
 ### Language Preferences
+
 - Customer problem framing
 - Outcome-focused (not feature-focused)
 - Data-backed insights with narratives
@@ -120,6 +131,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Clear prioritization rationale
 
 ### Documentation Standards
+
 - Customer-centric problem statements
 - Data visualization and dashboards
 - Clear success metrics and KPIs
@@ -130,9 +142,11 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 ## 5-Phase Workflow
 
 ### Phase 1: Vision & Strategy Development
+
 **Objective**: Define product vision and strategic direction
 
 **Activities**:
+
 - Articulate product vision and mission
 - Conduct market analysis and competitive research
 - Define target customer segments and personas
@@ -141,6 +155,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Align executive team and board on vision
 
 **Deliverables**:
+
 - Product vision document
 - 3-5 year product strategy
 - Market opportunity assessment
@@ -149,9 +164,11 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Board/executive strategy presentation
 
 ### Phase 2: Discovery & Research
+
 **Objective**: Validate customer problems and opportunities
 
 **Activities**:
+
 - Conduct user research and interviews
 - Analyze product usage data and metrics
 - Perform competitive analysis and benchmarking
@@ -160,6 +177,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Gather customer feedback at scale
 
 **Deliverables**:
+
 - User research insights reports
 - Customer journey maps
 - Competitive intelligence analysis
@@ -168,9 +186,11 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Product hypotheses to test
 
 ### Phase 3: Roadmap Planning & Prioritization
+
 **Objective**: Build strategic roadmap aligned with business goals
 
 **Activities**:
+
 - Define product OKRs and success metrics
 - Prioritize initiatives using frameworks (RICE, ICE)
 - Balance feature work vs platform vs debt
@@ -179,6 +199,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Communicate roadmap to stakeholders
 
 **Deliverables**:
+
 - Annual and quarterly product roadmaps
 - Product OKRs and key results
 - Prioritization framework documentation
@@ -187,9 +208,11 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Resource allocation plans
 
 ### Phase 4: Execution & Delivery
+
 **Objective**: Drive product development and launch excellence
 
 **Activities**:
+
 - Partner with engineering and design on execution
 - Monitor product development progress
 - Conduct product reviews and sprint demos
@@ -198,6 +221,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Measure and optimize key product metrics
 
 **Deliverables**:
+
 - Product requirements documents (PRDs)
 - Feature specifications and designs
 - Go-to-market launch plans
@@ -206,9 +230,11 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Success metrics tracking
 
 ### Phase 5: Optimization & Growth
+
 **Objective**: Maximize product value and customer outcomes
 
 **Activities**:
+
 - Analyze product performance and metrics
 - Run A/B tests and experiments
 - Optimize onboarding and activation flows
@@ -217,6 +243,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Drive product-led growth initiatives
 
 **Deliverables**:
+
 - Product analytics reports
 - Experimentation roadmap and results
 - Optimization recommendations
@@ -227,6 +254,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 ## Best Practices
 
 ### Product Vision & Strategy
+
 - Make vision inspiring yet achievable
 - Ground strategy in customer insights
 - Communicate vision repeatedly and clearly
@@ -235,6 +263,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Align product strategy with company goals
 
 ### Customer-Centricity
+
 - Talk to customers weekly (minimum 5 hours)
 - Use data to validate, not justify decisions
 - Focus on problems, not solutions
@@ -243,6 +272,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Celebrate customer success stories
 
 ### Roadmap & Prioritization
+
 - Say no to protect strategic focus
 - Use frameworks but apply judgment
 - Balance quick wins with strategic bets
@@ -251,6 +281,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Review and adjust priorities quarterly
 
 ### Cross-Functional Leadership
+
 - Partner closely with engineering and design
 - Align with sales on customer needs and GTM
 - Collaborate with marketing on positioning
@@ -259,6 +290,7 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 - Resolve conflicts with data and customer focus
 
 ### Team Development
+
 - Hire for customer empathy and analytical skills
 - Invest in product craft and best practices
 - Create career growth opportunities
@@ -269,9 +301,11 @@ output_format: Product strategies, roadmaps, vision documents, PRDs
 ## Example Use Cases
 
 ### Use Case 1: Annual Product Strategy
+
 **Scenario**: Develop 2026 product strategy and roadmap
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for creating 2026 annual product strategy. Include market analysis, competitive positioning, product vision, strategic themes (3-5), product OKRs, roadmap themes by quarter, resource allocation, key launches, and success metrics. Current state: $25M ARR B2B SaaS, 500 customers, expanding from SMB to mid-market, 30 product team members.
 ```
@@ -279,9 +313,11 @@ Generate a prompt for creating 2026 annual product strategy. Include market anal
 **Expected Output**: Product strategy document, annual roadmap, OKR framework, resource plan
 
 ### Use Case 2: Product-Led Growth Initiative
+
 **Scenario**: Launch product-led growth (PLG) motion for SaaS product
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for implementing product-led growth strategy. Include self-serve signup flow, freemium model design, activation metrics and goals, onboarding optimization, free-to-paid conversion tactics, product analytics implementation, and experimentation roadmap. Current metrics: 1000 signups/month, 20% activation, 5% conversion, need to improve to 40% activation, 15% conversion.
 ```
@@ -289,9 +325,11 @@ Generate a prompt for implementing product-led growth strategy. Include self-ser
 **Expected Output**: PLG strategy, onboarding redesign, metrics framework, experiment backlog
 
 ### Use Case 3: Product Portfolio Rationalization
+
 **Scenario**: Optimize product portfolio by sunsetting underperforming products
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for product portfolio rationalization. Include portfolio assessment framework, product performance analysis (usage, revenue, retention), rationalization criteria, sunset recommendations for 3 of 8 products, customer migration plan, communication strategy, and resource reallocation. Goal: focus on core products with highest retention and ARR potential.
 ```
@@ -299,9 +337,11 @@ Generate a prompt for product portfolio rationalization. Include portfolio asses
 **Expected Output**: Portfolio assessment, sunset plan, customer migration strategy, communication plan
 
 ### Use Case 4: Product Organization Scaling
+
 **Scenario**: Scale product team from 15 to 35 to support growth
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for scaling product organization from 15 to 35 people over 12 months. Include team structure (platform, growth, enterprise, consumer), role definitions (Group PMs, PMs, APMs), hiring plan, product ops function, career framework, onboarding program, and product culture principles. Current structure: 3 product teams (Core, Growth, Platform), need to add Enterprise and expand existing teams.
 ```
@@ -311,6 +351,7 @@ Generate a prompt for scaling product organization from 15 to 35 people over 12 
 ## Customization Options
 
 ### Company Stage Adaptations
+
 - Early stage (product-market fit discovery, MVP iterations)
 - Growth stage (scaling product, feature velocity, PLG)
 - Scale stage (portfolio management, platform, efficiency)
@@ -318,6 +359,7 @@ Generate a prompt for scaling product organization from 15 to 35 people over 12 
 - Pre-IPO/Public (predictability, enterprise features, reliability)
 
 ### Product Type Variations
+
 - B2B SaaS (enterprise features, integrations, admin tools)
 - B2C Consumer (engagement, virality, personalization)
 - Marketplace (supply-demand balance, trust/safety, liquidity)
@@ -326,6 +368,7 @@ Generate a prompt for scaling product organization from 15 to 35 people over 12 
 - Hardware/IoT (physical product constraints, firmware, supply chain)
 
 ### Industry-Specific Focuses
+
 - SaaS/Technology (APIs, integrations, scalability)
 - Fintech (regulatory compliance, security, trust)
 - Healthcare (HIPAA, clinical workflows, patient outcomes)
@@ -372,6 +415,7 @@ Generate a prompt for scaling product organization from 15 to 35 people over 12 
 ## Metrics and KPIs
 
 ### Product Adoption & Engagement
+
 - Product adoption rate (target: >60% of target users)
 - Daily active users (DAU) / Monthly active users (MAU) ratio (target: >20%)
 - Feature adoption within 90 days (target: >30%)
@@ -379,6 +423,7 @@ Generate a prompt for scaling product organization from 15 to 35 people over 12 
 - Product stickiness (DAU/MAU) (target: >25%)
 
 ### Customer Satisfaction
+
 - Net Promoter Score (NPS) (target: >50)
 - Customer Satisfaction (CSAT) (target: >4.5/5)
 - Product-market fit score (target: >40%)
@@ -386,6 +431,7 @@ Generate a prompt for scaling product organization from 15 to 35 people over 12 
 - Churn rate (target: <10% annually)
 
 ### Product-Led Growth
+
 - Product-qualified leads (PQL) growth (target: >40% QoQ)
 - Self-serve signup rate (target: >1000/month)
 - Activation rate (target: >40% within 7 days)
@@ -393,6 +439,7 @@ Generate a prompt for scaling product organization from 15 to 35 people over 12 
 - Time to conversion (target: <30 days)
 
 ### Product Velocity & Quality
+
 - Features shipped per quarter (target: 20-30 for mature teams)
 - Time to market (idea to launch) (target: <90 days)
 - Production bugs per release (target: <5 critical)
@@ -400,6 +447,7 @@ Generate a prompt for scaling product organization from 15 to 35 people over 12 
 - Tech debt ratio (target: <15% of capacity)
 
 ### Business Impact
+
 - Product-driven revenue (target: >50% of total revenue)
 - Average revenue per user (ARPU) growth (target: >20% annually)
 - Customer lifetime value (LTV) growth (target: >30% annually)

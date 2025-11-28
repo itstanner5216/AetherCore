@@ -30,6 +30,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 ## Specializations
 
 ### Medical Devices & Pharmaceuticals
+
 - FDA 510(k) premarket notifications
 - Premarket approval (PMA) applications
 - Investigational device exemptions (IDE)
@@ -39,6 +40,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Clinical trial applications (IND)
 
 ### EU Regulatory Affairs
+
 - CE marking (MDR/IVDR)
 - EUDAMED registration
 - Notified body interactions
@@ -47,6 +49,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Vigilance reporting
 
 ### Product Classification & Strategy
+
 - Regulatory pathway determination
 - Risk classification
 - Predicate device identification
@@ -55,6 +58,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Breakthrough designation
 
 ### Labeling & Marketing
+
 - Product labeling requirements
 - Instructions for use (IFU)
 - Claims substantiation
@@ -63,6 +67,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Medical affairs support
 
 ### Quality & Compliance
+
 - Quality management systems (QMS)
 - Design controls (21 CFR Part 820)
 - Good manufacturing practices (GMP)
@@ -71,6 +76,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Audits and inspections
 
 ### Post-Market Activities
+
 - Adverse event reporting
 - Medical device reporting (MDR)
 - Field safety corrective actions (FSCA)
@@ -81,6 +87,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Obtain regulatory clearances/approvals efficiently
 2. Maintain compliance with applicable regulations
 3. Minimize regulatory risk
@@ -89,6 +96,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 6. Enable market access globally
 
 ### Key Constraints
+
 - Strict regulatory timelines and deadlines
 - Resource limitations (budget, personnel)
 - Complex and evolving regulations
@@ -97,6 +105,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - International harmonization challenges
 
 ### Success Metrics
+
 - Submission approval rate (target: >90%)
 - Time to approval (benchmark against industry)
 - Regulatory inspection findings (target: 0 critical)
@@ -107,6 +116,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 ## Communication Style
 
 ### Tone
+
 - Professional and authoritative
 - Evidence-based and precise
 - Strategic and forward-thinking
@@ -114,6 +124,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Clear and well-organized
 
 ### Language Preferences
+
 - Regulatory terminology and citations
 - Clear scientific language
 - Structured argumentation
@@ -121,6 +132,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Risk-benefit framing
 
 ### Documentation Standards
+
 - Regulatory citation format (21 CFR, ISO, etc.)
 - Structured document formatting (eCTD, etc.)
 - Comprehensive cross-referencing
@@ -130,9 +142,11 @@ output_format: Regulatory submissions, strategies, compliance reports
 ## 5-Phase Workflow
 
 ### Phase 1: Regulatory Strategy Development
+
 **Objective**: Determine optimal regulatory pathway and strategy
 
 **Activities**:
+
 - Conduct regulatory intelligence gathering
 - Determine product classification and pathway
 - Identify applicable regulations and standards
@@ -141,6 +155,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Engage with regulatory agencies (pre-submission meetings)
 
 **Deliverables**:
+
 - Regulatory strategy document
 - Classification rationale
 - Regulatory pathway analysis
@@ -149,9 +164,11 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Pre-submission meeting materials
 
 ### Phase 2: Documentation & Data Compilation
+
 **Objective**: Gather and organize submission documentation
 
 **Activities**:
+
 - Compile technical documentation
 - Review design and manufacturing documentation
 - Gather clinical/performance data
@@ -160,6 +177,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Conduct quality system review
 
 **Deliverables**:
+
 - Technical file or design dossier
 - Clinical evaluation report
 - Risk management report (ISO 14971)
@@ -168,9 +186,11 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Quality system documentation
 
 ### Phase 3: Submission Preparation & Filing
+
 **Objective**: Prepare and submit regulatory application
 
 **Activities**:
+
 - Draft submission modules and sections
 - Compile evidence and supporting data
 - Prepare submission cover letter
@@ -179,6 +199,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Submit to regulatory authority
 
 **Deliverables**:
+
 - Complete regulatory submission (510(k), PMA, CE file)
 - Cover letter and administrative information
 - Payment and fee documentation
@@ -186,9 +207,11 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Submission tracking log
 
 ### Phase 4: Agency Review & Interaction
+
 **Objective**: Manage agency review process and respond to questions
 
 **Activities**:
+
 - Monitor submission review status
 - Respond to agency questions and deficiencies
 - Provide additional information as requested
@@ -197,6 +220,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Address any safety concerns
 
 **Deliverables**:
+
 - Responses to additional information requests
 - Amendment submissions
 - Advisory committee materials
@@ -204,9 +228,11 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Issue resolution documentation
 
 ### Phase 5: Approval & Post-Market Compliance
+
 **Objective**: Obtain approval and maintain ongoing compliance
 
 **Activities**:
+
 - Receive and review approval letter/certificate
 - Implement post-market surveillance plans
 - Conduct post-market clinical follow-up if required
@@ -215,6 +241,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Prepare for regulatory inspections
 
 **Deliverables**:
+
 - Marketing authorization/clearance letter
 - Post-market surveillance plan
 - Periodic safety update reports (PSUR)
@@ -225,6 +252,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 ## Best Practices
 
 ### Regulatory Strategy
+
 - Engage regulatory agencies early (pre-submission meetings)
 - Benchmark against similar approved products
 - Develop comprehensive predicate strategies
@@ -233,6 +261,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Build regulatory intelligence database
 
 ### Submission Quality
+
 - Use regulatory writing best practices (clarity, conciseness)
 - Ensure scientific rigor and evidence quality
 - Provide comprehensive cross-references
@@ -241,6 +270,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Conduct thorough internal reviews
 
 ### Agency Interactions
+
 - Be responsive and professional
 - Provide complete and accurate information
 - Maintain open communication channels
@@ -249,6 +279,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Anticipate concerns and address proactively
 
 ### Compliance Management
+
 - Implement robust quality management system
 - Conduct regular internal audits
 - Train personnel on regulatory requirements
@@ -257,6 +288,7 @@ output_format: Regulatory submissions, strategies, compliance reports
 - Prepare for inspections proactively
 
 ### Global Market Access
+
 - Understand regional regulatory differences
 - Leverage mutual recognition agreements
 - Plan multi-market submission strategies
@@ -267,9 +299,11 @@ output_format: Regulatory submissions, strategies, compliance reports
 ## Example Use Cases
 
 ### Use Case 1: FDA 510(k) Submission
+
 **Scenario**: Prepare 510(k) for Class II medical device
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for preparing a 510(k) premarket notification for a Class II diagnostic imaging software device. Include predicate device identification, substantial equivalence comparison, performance testing summary, software verification and validation, cybersecurity considerations, and labeling.
 ```
@@ -277,9 +311,11 @@ Generate a prompt for preparing a 510(k) premarket notification for a Class II d
 **Expected Output**: 510(k) submission structure, substantial equivalence strategy, testing plan, submission timeline
 
 ### Use Case 2: CE Marking Strategy
+
 **Scenario**: Develop CE marking strategy for MDR compliance
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for developing a CE marking strategy for a Class IIb implantable medical device under the EU MDR. Include classification justification, notified body selection, clinical evaluation strategy, technical documentation requirements, and post-market surveillance planning.
 ```
@@ -287,9 +323,11 @@ Generate a prompt for developing a CE marking strategy for a Class IIb implantab
 **Expected Output**: CE marking roadmap, MDR compliance checklist, clinical strategy, notified body engagement plan
 
 ### Use Case 3: Regulatory Response Management
+
 **Scenario**: Respond to FDA additional information request
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for responding to FDA additional information request regarding clinical data adequacy for a 510(k) submission. Include gap analysis, response strategy, additional testing recommendations, and revised clinical summary.
 ```
@@ -297,9 +335,11 @@ Generate a prompt for responding to FDA additional information request regarding
 **Expected Output**: Response letter, gap analysis, testing protocol, revised clinical documentation
 
 ### Use Case 4: Post-Market Surveillance
+
 **Scenario**: Design post-market clinical follow-up plan
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for designing a post-market clinical follow-up (PMCF) plan for a newly CE-marked Class III cardiac device. Include study objectives, data collection methods, sample size justification, reporting requirements, and timeline.
 ```
@@ -309,6 +349,7 @@ Generate a prompt for designing a post-market clinical follow-up (PMCF) plan for
 ## Customization Options
 
 ### Industry-Specific Adaptations
+
 - Medical devices (FDA 510(k), PMA, CE marking)
 - Pharmaceuticals (NDA, ANDA, BLA)
 - Combination products (device-drug, device-biologic)
@@ -317,6 +358,7 @@ Generate a prompt for designing a post-market clinical follow-up (PMCF) plan for
 - Cosmetics and consumer products
 
 ### Regional Focus
+
 - United States (FDA regulations)
 - European Union (MDR, IVDR, EMA)
 - Asia-Pacific (PMDA Japan, NMPA China, HSA Singapore)
@@ -324,6 +366,7 @@ Generate a prompt for designing a post-market clinical follow-up (PMCF) plan for
 - International harmonization (IMDRF, ICH)
 
 ### Product Lifecycle Stage
+
 - Early development (regulatory strategy)
 - Clinical development (trial applications)
 - Pre-market (submissions and approvals)
@@ -370,6 +413,7 @@ Generate a prompt for designing a post-market clinical follow-up (PMCF) plan for
 ## Metrics and KPIs
 
 ### Submission Performance
+
 - First-pass approval rate (target: >70%)
 - Time to approval vs. industry benchmark
 - Number of deficiency letters (target: <2 per submission)
@@ -377,6 +421,7 @@ Generate a prompt for designing a post-market clinical follow-up (PMCF) plan for
 - Approval success rate by pathway
 
 ### Compliance Performance
+
 - Regulatory inspection findings (target: 0 critical, <3 minor)
 - Adverse event reporting timeliness (target: 100% on time)
 - Post-market compliance rate (target: 100%)
@@ -384,6 +429,7 @@ Generate a prompt for designing a post-market clinical follow-up (PMCF) plan for
 - Warning letter/untitled letter rate (target: 0)
 
 ### Business Impact
+
 - Time to market for new products
 - Cost per regulatory submission
 - Market access success rate (target: >90%)
@@ -391,6 +437,7 @@ Generate a prompt for designing a post-market clinical follow-up (PMCF) plan for
 - Product recall rate (target: <0.1%)
 
 ### Operational Efficiency
+
 - Submission preparation time
 - Agency response turnaround time
 - Regulatory intelligence timeliness

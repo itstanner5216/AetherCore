@@ -10,12 +10,12 @@ Usage:
     python generate_prompt.py --preset fullstack-engineer --format all --mode advanced --output prompt.md
 """
 
-import json
 import argparse
+import json
 import re
 from datetime import datetime
-from typing import Dict, Any, List, Optional
 from pathlib import Path
+from typing import Any
 
 
 class PromptGenerator:
@@ -25,32 +25,32 @@ class PromptGenerator:
         self.validation_score = 0
         self.validation_issues = []
 
-    def load_responses(self, filepath: str) -> Dict[str, Any]:
+    def load_responses(self, filepath: str) -> dict[str, Any]:
         """Load questionnaire responses from JSON file."""
-        with open(filepath, 'r') as f:
+        with open(filepath) as f:
             return json.load(f)
 
-    def load_preset(self, preset_name: str) -> Dict[str, Any]:
+    def load_preset(self, preset_name: str) -> dict[str, Any]:
         """Load a quick-start preset template."""
-        preset_path = Path(__file__).parent.parent / 'templates' / 'presets'
+        preset_path = Path(__file__).parent.parent / "templates" / "presets"
 
         # Map preset names to files
         preset_map = {
-            'fullstack-engineer': 'technical/fullstack-engineer.md',
-            'ml-engineer': 'technical/ml-engineer.md',
-            'devops-engineer': 'technical/devops-engineer.md',
-            'mobile-engineer': 'technical/mobile-engineer.md',
-            'solutions-architect': 'technical/solutions-architect.md',
-            'product-manager': 'business/product-manager.md',
-            'marketing-strategist': 'business/marketing-strategist.md',
-            'business-analyst': 'business/business-analyst.md',
-            'operations-manager': 'business/operations-manager.md',
-            'content-strategist': 'creative/content-strategist.md',
-            'ux-designer': 'creative/ux-designer.md',
-            'technical-writer': 'creative/technical-writer.md',
-            'healthcare-consultant': 'specialized/healthcare-consultant.md',
-            'fintech-advisor': 'specialized/fintech-advisor.md',
-            'legal-specialist': 'specialized/legal-specialist.md',
+            "fullstack-engineer": "technical/fullstack-engineer.md",
+            "ml-engineer": "technical/ml-engineer.md",
+            "devops-engineer": "technical/devops-engineer.md",
+            "mobile-engineer": "technical/mobile-engineer.md",
+            "solutions-architect": "technical/solutions-architect.md",
+            "product-manager": "business/product-manager.md",
+            "marketing-strategist": "business/marketing-strategist.md",
+            "business-analyst": "business/business-analyst.md",
+            "operations-manager": "business/operations-manager.md",
+            "content-strategist": "creative/content-strategist.md",
+            "ux-designer": "creative/ux-designer.md",
+            "technical-writer": "creative/technical-writer.md",
+            "healthcare-consultant": "specialized/healthcare-consultant.md",
+            "fintech-advisor": "specialized/fintech-advisor.md",
+            "legal-specialist": "specialized/legal-specialist.md",
         }
 
         if preset_name not in preset_map:
@@ -61,23 +61,23 @@ class PromptGenerator:
         if not preset_file.exists():
             raise FileNotFoundError(f"Preset file not found: {preset_file}")
 
-        content = preset_file.read_text(encoding='utf-8')
+        content = preset_file.read_text(encoding="utf-8")
 
         # Extract front matter (--- delimited key: value pairs)
-        front_matter: Dict[str, str] = {}
+        front_matter: dict[str, str] = {}
         body = content
-        if content.startswith('---'):
-            parts = content.split('---', 2)
+        if content.startswith("---"):
+            parts = content.split("---", 2)
             if len(parts) >= 3:
                 front_block = parts[1]
                 body = parts[2]
                 for line in front_block.strip().splitlines():
-                    if ':' not in line:
+                    if ":" not in line:
                         continue
-                    key, value = line.split(':', 1)
+                    key, value = line.split(":", 1)
                     front_matter[key.strip()] = value.strip()
 
-        def extract_markdown_value(label: str) -> Optional[str]:
+        def extract_markdown_value(label: str) -> str | None:
             pattern = rf"\*\*{re.escape(label)}:\*\*\s*([^\n]+)"
             match = re.search(pattern, body)
             if match:
@@ -85,48 +85,72 @@ class PromptGenerator:
             return None
 
         # Map front matter and markdown fields to response values
-        role = front_matter.get('role') if front_matter.get('role') is not None else (extract_markdown_value('Role') or preset_name.replace('-', ' ').title())
-        domain = front_matter.get('domain') if front_matter.get('domain') is not None else extract_markdown_value('Domain')
-        output_type = front_matter.get('output_type') if front_matter.get('output_type') is not None else extract_markdown_value('Output Type')
-        tone = front_matter.get('tone') if front_matter.get('tone') is not None else extract_markdown_value('Tone')
-        tech_stack = front_matter.get('tech_stack') if front_matter.get('tech_stack') is not None else extract_markdown_value('Tech Stack')
+        role = (
+            front_matter.get("role")
+            if front_matter.get("role") is not None
+            else (
+                extract_markdown_value("Role") or preset_name.replace("-", " ").title()
+            )
+        )
+        domain = (
+            front_matter.get("domain")
+            if front_matter.get("domain") is not None
+            else extract_markdown_value("Domain")
+        )
+        output_type = (
+            front_matter.get("output_type")
+            if front_matter.get("output_type") is not None
+            else extract_markdown_value("Output Type")
+        )
+        tone = (
+            front_matter.get("tone")
+            if front_matter.get("tone") is not None
+            else extract_markdown_value("Tone")
+        )
+        tech_stack = (
+            front_matter.get("tech_stack")
+            if front_matter.get("tech_stack") is not None
+            else extract_markdown_value("Tech Stack")
+        )
 
-        defaults: Dict[str, Any] = {**front_matter}
+        defaults: dict[str, Any] = {**front_matter}
         if domain:
-            defaults['domain'] = domain
+            defaults["domain"] = domain
         if output_type:
-            defaults['output_type'] = output_type
+            defaults["output_type"] = output_type
         if tone:
-            defaults['tone'] = tone
+            defaults["tone"] = tone
         if tech_stack:
-            defaults['tech_stack'] = tech_stack
+            defaults["tech_stack"] = tech_stack
 
         return {
-            'role': role,
-            'preset': preset_name,
-            'template': preset_map[preset_name],
-            'domain': domain,
-            'output_type': output_type,
-            'tone': tone,
-            'tech_stack': tech_stack,
-            'defaults': defaults,
+            "role": role,
+            "preset": preset_name,
+            "template": preset_map[preset_name],
+            "domain": domain,
+            "output_type": output_type,
+            "tone": tone,
+            "tech_stack": tech_stack,
+            "defaults": defaults,
         }
 
-    def generate_xml_format(self, responses: Dict[str, Any]) -> str:
+    def generate_xml_format(self, responses: dict[str, Any]) -> str:
         """Generate prompt in XML format."""
-        role = responses.get('role', 'Expert AI Assistant')
-        role_context = responses.get('role_context', '')
-        domain = responses.get('domain', '')
-        goal = responses.get('goal', 'assist the user effectively')
-        output_type = responses.get('output_type', 'comprehensive response')
-        success_criteria = responses.get('success_criteria', 'Meeting user requirements with high quality')
-        tech_stack = responses.get('tech_stack', '')
-        constraints = responses.get('constraints', '')
-        must_avoid = responses.get('must_avoid', '')
-        target_audience = responses.get('target_audience', 'general')
-        tone = responses.get('tone', 'professional')
-        detail_level = responses.get('detail_level', 'moderate')
-        format_preference = responses.get('format_preference', 'mixed')
+        role = responses.get("role", "Expert AI Assistant")
+        role_context = responses.get("role_context", "")
+        domain = responses.get("domain", "")
+        goal = responses.get("goal", "assist the user effectively")
+        output_type = responses.get("output_type", "comprehensive response")
+        success_criteria = responses.get(
+            "success_criteria", "Meeting user requirements with high quality"
+        )
+        tech_stack = responses.get("tech_stack", "")
+        constraints = responses.get("constraints", "")
+        must_avoid = responses.get("must_avoid", "")
+        target_audience = responses.get("target_audience", "general")
+        tone = responses.get("tone", "professional")
+        detail_level = responses.get("detail_level", "moderate")
+        format_preference = responses.get("format_preference", "mixed")
 
         # Build role section
         role_text = f"{role}"
@@ -146,7 +170,9 @@ class PromptGenerator:
         if must_avoid:
             context_parts.append(f"  <avoidance_rules>{must_avoid}</avoidance_rules>")
 
-        context_content = "\n".join(context_parts) if context_parts else "  <domain>General</domain>"
+        context_content = (
+            "\n".join(context_parts) if context_parts else "  <domain>General</domain>"
+        )
 
         # Get workflow based on output type
         workflow = self._get_workflow_for_output_type(output_type)
@@ -245,16 +271,16 @@ Begin assisting the user now with this configuration.
 
         return prompt
 
-    def generate_claude_format(self, responses: Dict[str, Any]) -> str:
+    def generate_claude_format(self, responses: dict[str, Any]) -> str:
         """Generate prompt optimized for Claude."""
-        role = responses.get('role', 'Expert AI Assistant')
-        domain = responses.get('domain', '')
-        goal = responses.get('goal', 'assist the user effectively')
-        output_type = responses.get('output_type', 'comprehensive response')
-        tech_stack = responses.get('tech_stack', '')
-        constraints = responses.get('constraints', '')
-        tone = responses.get('tone', 'professional')
-        detail_level = responses.get('detail_level', 'moderate')
+        role = responses.get("role", "Expert AI Assistant")
+        domain = responses.get("domain", "")
+        goal = responses.get("goal", "assist the user effectively")
+        output_type = responses.get("output_type", "comprehensive response")
+        tech_stack = responses.get("tech_stack", "")
+        constraints = responses.get("constraints", "")
+        tone = responses.get("tone", "professional")
+        detail_level = responses.get("detail_level", "moderate")
 
         workflow_steps = self._get_workflow_steps(output_type)
 
@@ -317,17 +343,17 @@ Execute your role now, following all guidelines above. When the user makes a req
 
         return prompt
 
-    def generate_chatgpt_format(self, responses: Dict[str, Any]) -> str:
+    def generate_chatgpt_format(self, responses: dict[str, Any]) -> str:
         """Generate prompt for ChatGPT custom instructions."""
-        role = responses.get('role', 'Expert AI Assistant')
-        domain = responses.get('domain', '')
-        goal = responses.get('goal', 'assist effectively')
-        output_type = responses.get('output_type', 'comprehensive response')
-        tech_stack = responses.get('tech_stack', '')
-        constraints = responses.get('constraints', '')
-        tone = responses.get('tone', 'professional')
-        detail_level = responses.get('detail_level', 'moderate')
-        format_preference = responses.get('format_preference', 'mixed')
+        role = responses.get("role", "Expert AI Assistant")
+        domain = responses.get("domain", "")
+        goal = responses.get("goal", "assist effectively")
+        output_type = responses.get("output_type", "comprehensive response")
+        tech_stack = responses.get("tech_stack", "")
+        constraints = responses.get("constraints", "")
+        tone = responses.get("tone", "professional")
+        detail_level = responses.get("detail_level", "moderate")
+        format_preference = responses.get("format_preference", "mixed")
 
         about_section = f"""I need you to act as {role}{f' specialized in {domain}' if domain else ''}.
 
@@ -368,13 +394,13 @@ Always provide {format_preference} responses with concrete examples and ensure {
 
 {response_section}"""
 
-    def generate_gemini_format(self, responses: Dict[str, Any]) -> str:
+    def generate_gemini_format(self, responses: dict[str, Any]) -> str:
         """Generate prompt optimized for Google Gemini."""
-        role = responses.get('role', 'Expert AI Assistant')
-        domain = responses.get('domain', '')
-        goal = responses.get('goal', 'assist effectively')
-        output_type = responses.get('output_type', 'comprehensive response')
-        detail_level = responses.get('detail_level', 'moderate')
+        role = responses.get("role", "Expert AI Assistant")
+        domain = responses.get("domain", "")
+        goal = responses.get("goal", "assist effectively")
+        output_type = responses.get("output_type", "comprehensive response")
+        detail_level = responses.get("detail_level", "moderate")
 
         workflow_simple = self._get_workflow_simple(output_type)
 
@@ -407,7 +433,7 @@ Apply this configuration to all responses. Maintain this role and follow these s
     def _get_workflow_for_output_type(self, output_type: str) -> str:
         """Get detailed workflow XML for given output type."""
         workflows = {
-            'code': """<workflow>
+            "code": """<workflow>
   <analysis_phase>
     1. Understand requirements and technical constraints
     2. Identify key components and dependencies
@@ -436,7 +462,7 @@ Apply this configuration to all responses. Maintain this role and follow these s
     4. Confirm security best practices
   </validation>
 </workflow>""",
-            'documentation': """<workflow>
+            "documentation": """<workflow>
   <analysis_phase>
     1. Understand the subject matter and audience
     2. Identify key concepts to document
@@ -458,7 +484,7 @@ Apply this configuration to all responses. Maintain this role and follow these s
     4. Optimize for readability
   </refinement>
 </workflow>""",
-            'strategy': """<workflow>
+            "strategy": """<workflow>
   <analysis_phase>
     1. Assess current situation and challenges
     2. Analyze market dynamics and competition
@@ -480,7 +506,7 @@ Apply this configuration to all responses. Maintain this role and follow these s
     4. Plan risk mitigation strategies
   </implementation_planning>
 </workflow>""",
-            'analysis': """<workflow>
+            "analysis": """<workflow>
   <data_gathering>
     1. Identify relevant data sources
     2. Collect and validate data
@@ -501,41 +527,41 @@ Apply this configuration to all responses. Maintain this role and follow these s
     3. Quantify impact where possible
     4. Address limitations and caveats
   </insight_generation>
-</workflow>"""
+</workflow>""",
         }
 
-        return workflows.get(output_type, workflows['code'])
+        return workflows.get(output_type, workflows["code"])
 
     def _get_workflow_steps(self, output_type: str) -> str:
         """Get workflow steps as numbered list."""
         workflows = {
-            'code': """1. Analyze requirements and constraints
+            "code": """1. Analyze requirements and constraints
 2. Design solution architecture
 3. Implement with best practices
 4. Validate and test thoroughly""",
-            'documentation': """1. Understand audience and content needs
+            "documentation": """1. Understand audience and content needs
 2. Create structured outline
 3. Write clear, comprehensive content
 4. Review and refine for clarity""",
-            'strategy': """1. Assess current situation
+            "strategy": """1. Assess current situation
 2. Develop strategic options
 3. Evaluate and recommend
 4. Plan implementation""",
-            'analysis': """1. Gather and validate data
+            "analysis": """1. Gather and validate data
 2. Execute analytical methods
 3. Generate insights
-4. Provide recommendations"""
+4. Provide recommendations""",
         }
 
-        return workflows.get(output_type, workflows['code'])
+        return workflows.get(output_type, workflows["code"])
 
     def _get_workflow_simple(self, output_type: str) -> str:
         """Get simplified workflow for Gemini."""
         workflows = {
-            'code': "Analyze → Design → Implement → Validate",
-            'documentation': "Research → Outline → Write → Refine",
-            'strategy': "Assess → Strategize → Recommend → Plan",
-            'analysis': "Collect Data → Analyze → Generate Insights → Recommend"
+            "code": "Analyze → Design → Implement → Validate",
+            "documentation": "Research → Outline → Write → Refine",
+            "strategy": "Assess → Strategize → Recommend → Plan",
+            "analysis": "Collect Data → Analyze → Generate Insights → Recommend",
         }
 
         return workflows.get(output_type, "Analyze → Plan → Execute → Validate")
@@ -543,7 +569,7 @@ Apply this configuration to all responses. Maintain this role and follow these s
     def _get_best_practices(self, output_type: str, domain: str) -> str:
         """Get best practices XML section."""
         practices = {
-            'code': """<best_practices>
+            "code": """<best_practices>
 **OpenAI Best Practices:**
 - Write clear, specific instructions
 - Provide examples for complex patterns
@@ -565,7 +591,7 @@ Apply this configuration to all responses. Maintain this role and follow these s
 - Consider security implications
 - Optimize for performance
 </best_practices>""",
-            'documentation': """<best_practices>
+            "documentation": """<best_practices>
 **OpenAI Best Practices:**
 - Structure content logically
 - Use clear, concise language
@@ -587,7 +613,7 @@ Apply this configuration to all responses. Maintain this role and follow these s
 - Troubleshooting guidance
 - Keep content updated
 </best_practices>""",
-            'strategy': """<best_practices>
+            "strategy": """<best_practices>
 **OpenAI Best Practices:**
 - Data-driven recommendations
 - Clear reasoning
@@ -608,32 +634,32 @@ Apply this configuration to all responses. Maintain this role and follow these s
 - Competitive context
 - Resource considerations
 - Change management
-</best_practices>"""
+</best_practices>""",
         }
 
-        return practices.get(output_type, practices['code'])
+        return practices.get(output_type, practices["code"])
 
     def _get_best_practices_list(self, output_type: str, domain: str) -> str:
         """Get best practices as bullet list."""
         practices = {
-            'code': """- Follow language-specific idioms and conventions
+            "code": """- Follow language-specific idioms and conventions
 - Write self-documenting code
 - Implement comprehensive error handling
 - Include proper testing
 - Consider security and performance""",
-            'documentation': """- Use clear, concise language
+            "documentation": """- Use clear, concise language
 - Structure content logically
 - Include practical examples
 - Maintain consistent terminology
 - Keep content updated""",
-            'strategy': """- Base on data and evidence
+            "strategy": """- Base on data and evidence
 - Consider multiple scenarios
 - Provide clear rationale
 - Include risk assessment
-- Define measurable success criteria"""
+- Define measurable success criteria""",
         }
 
-        return practices.get(output_type, practices['code'])
+        return practices.get(output_type, practices["code"])
 
     def validate_prompt(self, prompt: str, format_type: str) -> tuple:
         """
@@ -644,7 +670,7 @@ Apply this configuration to all responses. Maintain this role and follow these s
         issues = []
 
         # Gate 1: XML structure (if XML format)
-        if format_type == 'xml':
+        if format_type == "xml":
             if self._validate_xml_structure(prompt):
                 score += 1
             else:
@@ -663,28 +689,30 @@ Apply this configuration to all responses. Maintain this role and follow these s
         if token_count < 8000:
             score += 1
         else:
-            issues.append(f"Token count high: ~{token_count} words (recommended < 8000)")
+            issues.append(
+                f"Token count high: ~{token_count} words (recommended < 8000)"
+            )
 
         # Gate 4: No placeholders
-        if not re.search(r'\[TODO\]|\[FILL.*?\]|\[\.\.\..*?\]', prompt):
+        if not re.search(r"\[TODO\]|\[FILL.*?\]|\[\.\.\..*?\]", prompt):
             score += 1
         else:
             issues.append("Placeholder text found (TODO, FILL, etc.)")
 
         # Gate 5: Workflow present
-        if 'workflow' in prompt.lower() or 'process' in prompt.lower():
+        if "workflow" in prompt.lower() or "process" in prompt.lower():
             score += 1
         else:
             issues.append("No clear workflow/process defined")
 
         # Gate 6: Best practices mentioned
-        if 'best practice' in prompt.lower() or 'guideline' in prompt.lower():
+        if "best practice" in prompt.lower() or "guideline" in prompt.lower():
             score += 1
         else:
             issues.append("Best practices section missing or incomplete")
 
         # Gate 7: Examples present
-        if 'example' in prompt.lower() and prompt.lower().count('example') >= 2:
+        if "example" in prompt.lower() and prompt.lower().count("example") >= 2:
             score += 1
         else:
             issues.append("Insufficient examples (need at least 2)")
@@ -694,8 +722,8 @@ Apply this configuration to all responses. Maintain this role and follow these s
     def _validate_xml_structure(self, prompt: str) -> bool:
         """Validate XML tags are properly closed."""
         # Find all XML tags
-        opening_tags = re.findall(r'<([^/][^>]*)>', prompt)
-        closing_tags = re.findall(r'</([^>]+)>', prompt)
+        opening_tags = re.findall(r"<([^/][^>]*)>", prompt)
+        closing_tags = re.findall(r"</([^>]+)>", prompt)
 
         # Simple validation: same count of opening and closing
         return len(opening_tags) == len(closing_tags)
@@ -703,11 +731,12 @@ Apply this configuration to all responses. Maintain this role and follow these s
     def _validate_completeness(self, prompt: str) -> bool:
         """Check for empty sections."""
         # Look for tags with no content
-        empty_pattern = r'<([^>]+)>\s*</\1>'
+        empty_pattern = r"<([^>]+)>\s*</\1>"
         return not re.search(empty_pattern, prompt)
 
-    def generate(self, responses: Dict[str, Any], format_type: str = 'xml',
-                 mode: str = 'core') -> Dict[str, Any]:
+    def generate(
+        self, responses: dict[str, Any], format_type: str = "xml", mode: str = "core"
+    ) -> dict[str, Any]:
         """
         Generate complete mega-prompt.
 
@@ -720,31 +749,31 @@ Apply this configuration to all responses. Maintain this role and follow these s
             Dict with generated prompt(s) and metadata
         """
         result = {
-            'formats': {},
-            'metadata': {
-                'role': responses.get('role'),
-                'domain': responses.get('domain'),
-                'output_type': responses.get('output_type'),
-                'mode': mode,
-                'generated_at': datetime.now().isoformat()
+            "formats": {},
+            "metadata": {
+                "role": responses.get("role"),
+                "domain": responses.get("domain"),
+                "output_type": responses.get("output_type"),
+                "mode": mode,
+                "generated_at": datetime.now().isoformat(),
             },
-            'validation': {}
+            "validation": {},
         }
 
         # Generate requested format(s)
-        if format_type == 'all':
-            formats_to_generate = ['xml', 'claude', 'chatgpt', 'gemini']
+        if format_type == "all":
+            formats_to_generate = ["xml", "claude", "chatgpt", "gemini"]
         else:
             formats_to_generate = [format_type]
 
         for fmt in formats_to_generate:
-            if fmt == 'xml':
+            if fmt == "xml":
                 prompt = self.generate_xml_format(responses)
-            elif fmt == 'claude':
+            elif fmt == "claude":
                 prompt = self.generate_claude_format(responses)
-            elif fmt == 'chatgpt':
+            elif fmt == "chatgpt":
                 prompt = self.generate_chatgpt_format(responses)
-            elif fmt == 'gemini':
+            elif fmt == "gemini":
                 prompt = self.generate_gemini_format(responses)
             else:
                 raise ValueError(f"Unknown format: {fmt}")
@@ -752,23 +781,23 @@ Apply this configuration to all responses. Maintain this role and follow these s
             # Validate
             score, issues = self.validate_prompt(prompt, fmt)
 
-            result['formats'][fmt] = prompt
-            result['validation'][fmt] = {
-                'score': score,
-                'max_score': 7,
-                'passed': score >= 6,
-                'issues': issues
+            result["formats"][fmt] = prompt
+            result["validation"][fmt] = {
+                "score": score,
+                "max_score": 7,
+                "passed": score >= 6,
+                "issues": issues,
             }
 
         return result
 
 
-def create_markdown_document(result: Dict[str, Any], mode: str) -> str:
+def create_markdown_document(result: dict[str, Any], mode: str) -> str:
     """Create complete markdown document with prompt(s) and instructions."""
-    metadata = result['metadata']
-    role = metadata['role']
-    domain = metadata.get('domain', 'General')
-    output_type = metadata.get('output_type', 'Comprehensive')
+    metadata = result["metadata"]
+    role = metadata["role"]
+    domain = metadata.get("domain", "General")
+    output_type = metadata.get("output_type", "Comprehensive")
 
     doc = f"""# {role} Mega-Prompt
 
@@ -787,22 +816,22 @@ def create_markdown_document(result: Dict[str, Any], mode: str) -> str:
 """
 
     # Add validation results
-    for fmt, validation in result['validation'].items():
-        status = "✅ PASSED" if validation['passed'] else "⚠️ NEEDS REVIEW"
+    for fmt, validation in result["validation"].items():
+        status = "✅ PASSED" if validation["passed"] else "⚠️ NEEDS REVIEW"
         doc += f"**{fmt.upper()} Format**: {status} ({validation['score']}/7)\n"
-        if validation['issues']:
-            doc += f"Issues:\n"
-            for issue in validation['issues']:
+        if validation["issues"]:
+            doc += "Issues:\n"
+            for issue in validation["issues"]:
                 doc += f"- {issue}\n"
         doc += "\n"
 
     doc += "---\n\n"
 
     # Add each format
-    for fmt, prompt in result['formats'].items():
+    for fmt, prompt in result["formats"].items():
         doc += f"## {fmt.upper()} Format\n\n"
 
-        if fmt == 'xml':
+        if fmt == "xml":
             doc += "**Best for:** All LLMs, maximum compatibility, clear structure\n\n"
             doc += "**How to use:**\n"
             doc += "1. Copy the entire `<mega_prompt>` block below\n"
@@ -812,7 +841,7 @@ def create_markdown_document(result: Dict[str, Any], mode: str) -> str:
             doc += prompt
             doc += "\n```\n\n"
 
-        elif fmt == 'claude':
+        elif fmt == "claude":
             doc += "**Best for:** Claude conversations, system-level configuration\n\n"
             doc += "**How to use:**\n"
             doc += "1. Copy the prompt below\n"
@@ -822,7 +851,7 @@ def create_markdown_document(result: Dict[str, Any], mode: str) -> str:
             doc += prompt
             doc += "\n```\n\n"
 
-        elif fmt == 'chatgpt':
+        elif fmt == "chatgpt":
             doc += "**Best for:** ChatGPT persistent configuration\n\n"
             doc += "**How to use:**\n"
             doc += "1. Go to ChatGPT Settings → Personalization → Custom Instructions\n"
@@ -832,7 +861,7 @@ def create_markdown_document(result: Dict[str, Any], mode: str) -> str:
             doc += prompt
             doc += "\n```\n\n"
 
-        elif fmt == 'gemini':
+        elif fmt == "gemini":
             doc += "**Best for:** Google Gemini conversations\n\n"
             doc += "**How to use:**\n"
             doc += "1. Copy the prompt below\n"
@@ -872,7 +901,7 @@ def create_markdown_document(result: Dict[str, Any], mode: str) -> str:
 def main():
     """Main CLI entry point."""
     parser = argparse.ArgumentParser(
-        description='Generate world-class mega-prompts in multiple formats',
+        description="Generate world-class mega-prompts in multiple formats",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -884,17 +913,24 @@ Examples:
 
   # Generate all formats
   python generate_prompt.py --responses config.json --format all --mode core --output prompt.md
-"""
+""",
     )
 
-    parser.add_argument('--responses', help='Path to responses JSON file')
-    parser.add_argument('--preset', help='Use a quick-start preset')
-    parser.add_argument('--format', required=True,
-                       choices=['xml', 'claude', 'chatgpt', 'gemini', 'all'],
-                       help='Output format')
-    parser.add_argument('--mode', default='core', choices=['core', 'advanced'],
-                       help='Generation mode (default: core)')
-    parser.add_argument('--output', required=True, help='Output markdown file path')
+    parser.add_argument("--responses", help="Path to responses JSON file")
+    parser.add_argument("--preset", help="Use a quick-start preset")
+    parser.add_argument(
+        "--format",
+        required=True,
+        choices=["xml", "claude", "chatgpt", "gemini", "all"],
+        help="Output format",
+    )
+    parser.add_argument(
+        "--mode",
+        default="core",
+        choices=["core", "advanced"],
+        help="Generation mode (default: core)",
+    )
+    parser.add_argument("--output", required=True, help="Output markdown file path")
 
     args = parser.parse_args()
 
@@ -916,21 +952,21 @@ Examples:
 
     # Validate
     print("\n📊 Quality Validation:")
-    for fmt, validation in result['validation'].items():
-        status = "✅ PASSED" if validation['passed'] else "⚠️ REVIEW NEEDED"
+    for fmt, validation in result["validation"].items():
+        status = "✅ PASSED" if validation["passed"] else "⚠️ REVIEW NEEDED"
         print(f"  {fmt.upper()}: {status} ({validation['score']}/7)")
-        if validation['issues']:
-            for issue in validation['issues']:
+        if validation["issues"]:
+            for issue in validation["issues"]:
                 print(f"    - {issue}")
 
     # Create markdown document
     markdown_doc = create_markdown_document(result, args.mode)
 
     # Write output
-    with open(args.output, 'w') as f:
+    with open(args.output, "w") as f:
         f.write(markdown_doc)
 
-    print(f"\n✅ Mega-prompt generated successfully!")
+    print("\n✅ Mega-prompt generated successfully!")
     print(f"📁 Output: {args.output}")
     print(f"📊 Total formats: {len(result['formats'])}")
     print(f"⏱️  Generated at: {result['metadata']['generated_at']}")

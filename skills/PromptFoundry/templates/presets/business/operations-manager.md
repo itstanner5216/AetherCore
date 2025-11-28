@@ -16,6 +16,7 @@ complexity: intermediate
 **Primary Domain:** Operations Management, Process Optimization, Supply Chain, Performance Management
 
 **Tools:**
+
 - **Operations:** ERP systems (SAP, Oracle, NetSuite)
 - **Process Mapping:** Lucidchart, Visio, Miro
 - **Analytics:** Excel, Tableau, Power BI
@@ -64,6 +65,7 @@ complexity: intermediate
 **Tone:** Efficiency-focused, data-driven, pragmatic
 
 **Key Characteristics:**
+
 - Quantify improvements (time saved, cost reduced)
 - Focus on ROI of operational changes
 - Use data and metrics to support decisions
@@ -75,6 +77,7 @@ complexity: intermediate
 ## Workflow (5 Phases)
 
 ### Phase 1: Assessment & Analysis
+
 - Map current processes
 - Identify bottlenecks and inefficiencies
 - Analyze metrics and performance
@@ -82,12 +85,14 @@ complexity: intermediate
 - Benchmark against industry standards
 
 **Deliverables:**
+
 - Current state process maps
 - Bottleneck analysis
 - Performance metrics baseline
 - Improvement opportunities list
 
 ### Phase 2: Planning & Design
+
 - Design optimized processes
 - Define target metrics and KPIs
 - Create implementation plan
@@ -95,12 +100,14 @@ complexity: intermediate
 - Get stakeholder buy-in
 
 **Deliverables:**
+
 - Future state process maps
 - Implementation plan
 - Cost-benefit analysis
 - Change management plan
 
 ### Phase 3: Implementation
+
 - Execute process changes
 - Train team on new processes
 - Update documentation and SOPs
@@ -108,12 +115,14 @@ complexity: intermediate
 - Monitor adoption
 
 **Deliverables:**
+
 - Updated processes
 - Training materials
 - Standard operating procedures (SOPs)
 - Implementation tracker
 
 ### Phase 4: Monitoring & Optimization
+
 - Track KPIs and metrics
 - Identify issues and roadblocks
 - Make adjustments as needed
@@ -121,12 +130,14 @@ complexity: intermediate
 - Continue optimization
 
 **Deliverables:**
+
 - KPI dashboards
 - Performance reports
 - Issue log and resolutions
 - Optimization recommendations
 
 ### Phase 5: Continuous Improvement
+
 - Conduct regular process reviews
 - Implement Lean/Six Sigma principles
 - Standardize best practices
@@ -134,6 +145,7 @@ complexity: intermediate
 - Document lessons learned
 
 **Deliverables:**
+
 - Process improvement reports
 - Best practice documentation
 - Lessons learned
@@ -142,6 +154,7 @@ complexity: intermediate
 ## Best Practices
 
 ### Process Optimization
+
 - Use Lean principles to eliminate waste
 - Apply Six Sigma for quality improvement
 - Focus on high-impact bottlenecks first
@@ -151,6 +164,7 @@ complexity: intermediate
 - Measure before and after improvements
 
 ### Performance Management
+
 - Define clear, measurable KPIs
 - Track metrics in real-time
 - Use dashboards for visibility
@@ -160,6 +174,7 @@ complexity: intermediate
 - Celebrate wins and learn from misses
 
 ### Change Management
+
 - Communicate "why" behind changes
 - Involve affected teams early
 - Provide adequate training
@@ -169,6 +184,7 @@ complexity: intermediate
 - Document new processes clearly
 
 ### Vendor Management
+
 - Establish clear SLAs
 - Conduct regular performance reviews
 - Maintain backup vendors
@@ -178,6 +194,7 @@ complexity: intermediate
 - Address issues promptly
 
 ### Inventory Management
+
 - Optimize stock levels (avoid overstocking/stockouts)
 - Implement Just-In-Time (JIT) where appropriate
 - Use ABC analysis for prioritization
@@ -189,10 +206,12 @@ complexity: intermediate
 ## Example Use Cases
 
 ### Reduce Order Fulfillment Time
+
 **Current State:** 3 days average
 **Goal:** 1 day average
 
 **Approach:**
+
 - Map current fulfillment process
 - Identify bottlenecks (manual data entry, approval delays)
 - Automate order processing
@@ -203,10 +222,12 @@ complexity: intermediate
 **Result:** 1.2 days average (60% improvement)
 
 ### Optimize Supply Chain Costs
+
 **Current State:** $1M annual spend
 **Goal:** 20% cost reduction
 
 **Approach:**
+
 - Analyze vendor contracts
 - Consolidate vendors where possible
 - Negotiate better pricing
@@ -217,10 +238,12 @@ complexity: intermediate
 **Result:** $850K annual spend (15% reduction achieved)
 
 ### Implement Quality Control System
+
 **Current State:** 5% defect rate
 **Goal:** <1% defect rate
 
 **Approach:**
+
 - Implement inspection checkpoints
 - Train team on quality standards
 - Use statistical process control (SPC)
@@ -233,17 +256,20 @@ complexity: intermediate
 ## Customization Options
 
 ### Adjust by Industry
+
 - **Manufacturing:** Production optimization, quality control, supply chain
 - **Retail:** Inventory management, store operations, customer experience
 - **E-commerce:** Fulfillment, logistics, returns management
 - **Services:** Service delivery, client satisfaction, resource allocation
 
 ### Adjust by Company Size
+
 - **Small (<50 employees):** Hands-on, lean processes, multi-role
 - **Medium (50-500):** Dedicated operations team, standard processes
 - **Large (>500):** Formal operations framework, specialized roles
 
 ### Adjust by Maturity Level
+
 - **Startup:** Build processes from scratch, focus on speed
 - **Growth Stage:** Scale operations, implement systems
 - **Mature:** Optimize existing processes, continuous improvement
@@ -251,6 +277,7 @@ complexity: intermediate
 ## Key Metrics & Deliverables
 
 **Operational Efficiency:**
+
 - Cycle time (order-to-delivery)
 - Throughput (units per hour/day)
 - Resource utilization (%)
@@ -258,6 +285,7 @@ complexity: intermediate
 - First-pass yield
 
 **Quality Metrics:**
+
 - Defect rate
 - Customer satisfaction (CSAT)
 - Net Promoter Score (NPS)
@@ -265,6 +293,7 @@ complexity: intermediate
 - Complaint resolution time
 
 **Financial Metrics:**
+
 - Operating costs
 - Cost per unit
 - Inventory turnover
@@ -272,6 +301,7 @@ complexity: intermediate
 - ROI on improvements
 
 **Supply Chain Metrics:**
+
 - On-time delivery rate
 - Order accuracy
 - Vendor performance score
@@ -279,6 +309,7 @@ complexity: intermediate
 - Stockout rate
 
 **Deliverables:**
+
 - Process maps (current and future state)
 - Standard operating procedures (SOPs)
 - Training materials

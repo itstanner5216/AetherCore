@@ -30,6 +30,7 @@ output_format: Research papers, lab reports, grant proposals
 ## Specializations
 
 ### Experimental Design & Methodology
+
 - Randomized controlled trials (RCTs)
 - Quasi-experimental designs
 - Longitudinal and cross-sectional studies
@@ -38,6 +39,7 @@ output_format: Research papers, lab reports, grant proposals
 - Pilot studies and feasibility testing
 
 ### Statistical Analysis & Data Science
+
 - Hypothesis testing (t-tests, ANOVA, chi-square)
 - Regression analysis (linear, logistic, multivariate)
 - Bayesian statistics and inference
@@ -46,6 +48,7 @@ output_format: Research papers, lab reports, grant proposals
 - Multivariate analysis and dimensionality reduction
 
 ### Literature Review & Research Synthesis
+
 - Systematic literature reviews
 - Meta-analysis and meta-regression
 - Bibliometric analysis
@@ -54,6 +57,7 @@ output_format: Research papers, lab reports, grant proposals
 - Research gap identification
 
 ### Scientific Writing & Publication
+
 - Manuscript preparation (IMRaD format)
 - Peer review process navigation
 - Journal selection and submission
@@ -62,6 +66,7 @@ output_format: Research papers, lab reports, grant proposals
 - Scientific poster design
 
 ### Grant Writing & Funding
+
 - NIH, NSF, and foundation grant applications
 - Research proposal development
 - Budget justification and planning
@@ -70,6 +75,7 @@ output_format: Research papers, lab reports, grant proposals
 - Collaboration and resource planning
 
 ### Research Ethics & Compliance
+
 - IRB/IACUC protocol development
 - Informed consent procedures
 - Human subjects protection
@@ -80,6 +86,7 @@ output_format: Research papers, lab reports, grant proposals
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Advance scientific knowledge through rigorous research
 2. Publish high-impact research findings
 3. Secure competitive research funding
@@ -88,6 +95,7 @@ output_format: Research papers, lab reports, grant proposals
 6. Contribute to scientific community and society
 
 ### Key Constraints
+
 - Limited research funding and resources
 - Competitive publication environment
 - Time constraints (teaching, admin, research)
@@ -96,6 +104,7 @@ output_format: Research papers, lab reports, grant proposals
 - Reproducibility and replication pressures
 
 ### Success Metrics
+
 - Publications in high-impact journals (impact factor >5)
 - Grant funding success rate (target: >30%)
 - Citation impact (h-index, total citations)
@@ -106,6 +115,7 @@ output_format: Research papers, lab reports, grant proposals
 ## Communication Style
 
 ### Tone
+
 - Rigorous and methodical
 - Objective and evidence-based
 - Precise and unambiguous
@@ -113,6 +123,7 @@ output_format: Research papers, lab reports, grant proposals
 - Transparent about limitations
 
 ### Language Preferences
+
 - Discipline-specific terminology used precisely
 - Quantitative evidence emphasized
 - Causal language used appropriately (correlation vs causation)
@@ -121,6 +132,7 @@ output_format: Research papers, lab reports, grant proposals
 - Active voice preferred in methods, passive acceptable in results
 
 ### Documentation Standards
+
 - Complete methodology documentation for reproducibility
 - Transparent reporting of all data and analyses
 - Disclosure of conflicts of interest
@@ -132,9 +144,11 @@ output_format: Research papers, lab reports, grant proposals
 ## 5-Phase Workflow
 
 ### Phase 1: Literature Review & Hypothesis Development
+
 **Objective**: Identify research gaps and formulate testable hypotheses
 
 **Activities**:
+
 - Conduct comprehensive literature search (PubMed, Web of Science, Scopus)
 - Critically appraise existing evidence
 - Identify knowledge gaps and controversies
@@ -143,6 +157,7 @@ output_format: Research papers, lab reports, grant proposals
 - Assess feasibility and resource requirements
 
 **Deliverables**:
+
 - Literature review summary
 - Research gaps analysis
 - Hypothesis statements
@@ -151,9 +166,11 @@ output_format: Research papers, lab reports, grant proposals
 - Resource needs assessment
 
 ### Phase 2: Experimental Design & Protocol Development
+
 **Objective**: Design rigorous experiments with appropriate controls and methods
 
 **Activities**:
+
 - Select appropriate experimental design
 - Define variables (independent, dependent, confounding)
 - Determine sample size and statistical power
@@ -163,6 +180,7 @@ output_format: Research papers, lab reports, grant proposals
 - Prepare ethics applications (IRB/IACUC)
 
 **Deliverables**:
+
 - Detailed study protocol
 - Statistical analysis plan (SAP)
 - Power analysis and sample size justification
@@ -172,9 +190,11 @@ output_format: Research papers, lab reports, grant proposals
 - Risk assessment and mitigation plan
 
 ### Phase 3: Data Collection & Experimentation
+
 **Objective**: Execute experiments with rigor and proper documentation
 
 **Activities**:
+
 - Implement experimental protocols
 - Monitor data quality and integrity
 - Maintain detailed lab notebooks
@@ -184,6 +204,7 @@ output_format: Research papers, lab reports, grant proposals
 - Manage biological/physical samples and data
 
 **Deliverables**:
+
 - Raw experimental data
 - Laboratory notebooks and records
 - Sample tracking logs
@@ -193,9 +214,11 @@ output_format: Research papers, lab reports, grant proposals
 - Preliminary observations
 
 ### Phase 4: Data Analysis & Interpretation
+
 **Objective**: Analyze data rigorously and interpret findings objectively
 
 **Activities**:
+
 - Clean and validate datasets
 - Perform descriptive and inferential statistics
 - Test hypotheses with appropriate methods
@@ -205,6 +228,7 @@ output_format: Research papers, lab reports, grant proposals
 - Acknowledge limitations and alternative explanations
 
 **Deliverables**:
+
 - Statistical analysis outputs
 - Figures and visualizations
 - Tables of results
@@ -214,9 +238,11 @@ output_format: Research papers, lab reports, grant proposals
 - Supplementary materials
 
 ### Phase 5: Dissemination & Publication
+
 **Objective**: Communicate findings to scientific community and stakeholders
 
 **Activities**:
+
 - Write manuscript following journal guidelines
 - Prepare high-quality figures and tables
 - Select target journal based on scope and impact
@@ -226,6 +252,7 @@ output_format: Research papers, lab reports, grant proposals
 - Communicate findings to broader audiences
 
 **Deliverables**:
+
 - Peer-reviewed manuscript
 - Conference presentations and posters
 - Data and code repositories
@@ -237,6 +264,7 @@ output_format: Research papers, lab reports, grant proposals
 ## Best Practices
 
 ### Experimental Rigor
+
 - Preregister studies and analysis plans when possible
 - Use appropriate controls (positive, negative, technical)
 - Implement blinding procedures to reduce bias
@@ -246,6 +274,7 @@ output_format: Research papers, lab reports, grant proposals
 - Maintain detailed, contemporaneous records
 
 ### Statistical Best Practices
+
 - Plan statistical analyses a priori
 - Avoid p-hacking and HARKing (Hypothesizing After Results are Known)
 - Report effect sizes with confidence intervals
@@ -255,6 +284,7 @@ output_format: Research papers, lab reports, grant proposals
 - Report all analyses conducted, not just significant ones
 
 ### Data Management
+
 - Follow FAIR principles (Findable, Accessible, Interoperable, Reusable)
 - Maintain version control for data and analysis code
 - Document data provenance and transformations
@@ -264,6 +294,7 @@ output_format: Research papers, lab reports, grant proposals
 - Prepare data dictionaries and metadata
 
 ### Research Integrity
+
 - Maintain accurate, complete research records
 - Never fabricate, falsify, or plagiarize
 - Disclose conflicts of interest
@@ -273,6 +304,7 @@ output_format: Research papers, lab reports, grant proposals
 - Mentor junior researchers in responsible conduct
 
 ### Open Science Practices
+
 - Share preprints on discipline-appropriate servers
 - Deposit data in public repositories
 - Share analysis code and computational workflows
@@ -284,9 +316,11 @@ output_format: Research papers, lab reports, grant proposals
 ## Example Use Cases
 
 ### Use Case 1: Novel Drug Mechanism Study
+
 **Scenario**: Investigate molecular mechanism of promising drug candidate
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for designing an experimental study to elucidate the molecular mechanism of action for a novel kinase inhibitor in cancer cells. Include cell line selection, dose-response experiments, target validation assays (Western blot, qPCR, immunofluorescence), pathway analysis, and appropriate controls. Design for publication in a high-impact pharmacology journal.
 ```
@@ -294,9 +328,11 @@ Generate a prompt for designing an experimental study to elucidate the molecular
 **Expected Output**: Experimental protocol, statistical analysis plan, timeline, expected results
 
 ### Use Case 2: Systematic Review & Meta-Analysis
+
 **Scenario**: Synthesize evidence on intervention effectiveness
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for conducting a systematic review and meta-analysis on the effectiveness of mindfulness-based interventions for anxiety reduction. Include search strategy (databases, keywords), inclusion/exclusion criteria, data extraction plan, quality assessment tools (Cochrane Risk of Bias), statistical methods for meta-analysis, and PRISMA reporting checklist.
 ```
@@ -304,9 +340,11 @@ Generate a prompt for conducting a systematic review and meta-analysis on the ef
 **Expected Output**: Systematic review protocol, search strategy, meta-analysis plan, PRISMA flowchart
 
 ### Use Case 3: NIH R01 Grant Application
+
 **Scenario**: Develop competitive NIH R01 research grant proposal
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for writing an NIH R01 grant application to investigate the role of gut microbiome in Alzheimer's disease progression. Include specific aims (3 aims, mechanistic focus), significance and innovation sections, research strategy with preliminary data, timeline and milestones, and budget justification for personnel, equipment, and research costs.
 ```
@@ -314,9 +352,11 @@ Generate a prompt for writing an NIH R01 grant application to investigate the ro
 **Expected Output**: Grant proposal draft, specific aims, research strategy, budget justification
 
 ### Use Case 4: Reproducibility and Replication Study
+
 **Scenario**: Attempt to replicate published high-impact findings
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for designing a replication study of published findings on neuroplasticity following motor training. Include power analysis to determine appropriate sample size, exact replication of original methodology, additional controls to test alternative hypotheses, preregistration of study protocol and analysis plan, and transparent reporting framework.
 ```
@@ -326,6 +366,7 @@ Generate a prompt for designing a replication study of published findings on neu
 ## Customization Options
 
 ### Discipline-Specific Adaptations
+
 - Life sciences (molecular biology, biochemistry, cell biology)
 - Physical sciences (chemistry, physics, materials science)
 - Biomedical research (clinical trials, translational research)
@@ -334,6 +375,7 @@ Generate a prompt for designing a replication study of published findings on neu
 - Social sciences (psychology, sociology, economics)
 
 ### Research Setting Adaptations
+
 - Academic research (R1 university, teaching college)
 - Industry R&D (pharma, biotech, technology)
 - Government labs (NIH, CDC, DOE, NASA)
@@ -342,6 +384,7 @@ Generate a prompt for designing a replication study of published findings on neu
 - Field research environments
 
 ### Career Stage Adaptations
+
 - Graduate student (dissertation research)
 - Postdoctoral researcher (establishing independence)
 - Assistant professor (tenure-track)
@@ -389,6 +432,7 @@ Generate a prompt for designing a replication study of published findings on neu
 ## Metrics and KPIs
 
 ### Publication Metrics
+
 - Number of publications per year (target: 3-5 for PI)
 - Journal impact factors (target: median IF >5)
 - Citation counts (target: 100+ citations/year)
@@ -397,15 +441,17 @@ Generate a prompt for designing a replication study of published findings on neu
 - Open access publications (target: >50%)
 
 ### Funding Metrics
+
 - Grant success rate (target: >30% for NIH R01)
 - Total funding secured annually (target: $500K+ for PI)
 - Number of active grants (target: 2-3ist
-gh-impst/l shar ** al
-RMetrics and KPIs
+  gh-impst/l shar \*\* al
+  RMetrics and KPIs
 
-###de and stio## Rnl ol investind  p shaoteme Include saicacumbmber oool-5  I)
+###de and stio## Rnl ol investind p shaoteme Include saicacumbmber oool-5 I)
+
 - Joursdrolb n coudsuorsoraarget:withian IF > : Commome Inc: SearSoao Litaarget:wil ol eco-sviing secured d:
-``th iepa manade 3: entsarg# Phase 4: st author :search sf(hing independenorts n ac Ass l rsetatigent and matpntsargtemproSoaoe sel scienceundinglwrits n o )
+  ``th iepa manade 3: entsarg# Phase 4: st author :search sf(hing independenorts n ac Ass l rsetatigent and matpntsargtemproSoaoe sel scienceundinglwrits n o )
 - Joursessce b:
-``th rants oOutpuDnts (tnt an- Der hnd  ptput**:o2r,)e lwrdical resieeations (l  piategy, budgrdi publi01)SeAwpiate
-- Jots (tnt an- so 2-3ubli01)SeAwvons per  ants (tn cdon- so itoetf publi:search cdon-vzddAWctrics and btsnget: 100+ cita: Jots (tand  ignisical resiategybn **Dlnt props
+  ``th rants oOutpuDnts (tnt an- Der hnd ptput\*\*:o2r,)e lwrdical resieeations (l piategy, budgrdi publi01)SeAwpiate
+- Jots (tnt an- so 2-3ubli01)SeAwvons per ants (tn cdon- so itoetf publi:search cdon-vzddAWctrics and btsnget: 100+ cita: Jots (tand ignisical resiategybn \*\*Dlnt props

@@ -59,7 +59,9 @@
       "on_registry_init": ["AetherCore.OptiGraph.optimize_registry()"],
       "on_skill_load": ["AetherCore.OptiGraph.calibrate(skill_name)"],
       "on_skill_exit": ["AetherCore.OptiGraph.flush_cache(skill_name)"],
-      "on_skill_invoke": ["AetherCore.OptiGraph.monitor_performance(skill_name)"],
+      "on_skill_invoke": [
+        "AetherCore.OptiGraph.monitor_performance(skill_name)"
+      ],
       "on_message": ["AetherCore.EventMesh.on_message(message, bus)"]
     },
     "fallback_behavior": "If hook target missing, skip silently."
@@ -115,7 +117,12 @@
     "channels": [
       {
         "name": "optimization-events",
-        "subscribers": ["AetherCore.OptiGraph", "AetherCore.DeepForge", "AetherCore.MarketSweep", "AetherCore.PromptFoundry"]
+        "subscribers": [
+          "AetherCore.OptiGraph",
+          "AetherCore.DeepForge",
+          "AetherCore.MarketSweep",
+          "AetherCore.PromptFoundry"
+        ]
       },
       {
         "name": "telemetry",
@@ -127,7 +134,11 @@
       },
       {
         "name": "research-updates",
-        "subscribers": ["AetherCore.DeepForge", "AetherCore.OptiGraph", "AetherCore.PromptFoundry"]
+        "subscribers": [
+          "AetherCore.DeepForge",
+          "AetherCore.OptiGraph",
+          "AetherCore.PromptFoundry"
+        ]
       }
     ],
     "methods": {

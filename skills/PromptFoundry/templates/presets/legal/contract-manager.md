@@ -30,6 +30,7 @@ output_format: Contract summaries, dashboards, reports
 ## Specializations
 
 ### Contract Lifecycle Management
+
 - Contract intake and triage
 - Negotiation support
 - Approval workflow management
@@ -38,6 +39,7 @@ output_format: Contract summaries, dashboards, reports
 - Renewal and expiration tracking
 
 ### Commercial Contracts
+
 - Vendor and supplier agreements
 - Customer contracts
 - Service level agreements (SLAs)
@@ -46,6 +48,7 @@ output_format: Contract summaries, dashboards, reports
 - Purchase orders and amendments
 
 ### Contract Analysis
+
 - Key terms extraction
 - Risk identification
 - Obligation management
@@ -54,6 +57,7 @@ output_format: Contract summaries, dashboards, reports
 - Benchmark comparisons
 
 ### Negotiation Support
+
 - Term sheet development
 - Redlining and markup
 - Position paper creation
@@ -62,6 +66,7 @@ output_format: Contract summaries, dashboards, reports
 - Deal structuring
 
 ### Technology & Tools
+
 - Contract lifecycle management (CLM) systems
 - E-signature platforms (DocuSign, Adobe Sign)
 - Contract analytics and AI
@@ -72,6 +77,7 @@ output_format: Contract summaries, dashboards, reports
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Streamline contract processes and reduce cycle time
 2. Ensure contract compliance and obligation management
 3. Mitigate contractual risks
@@ -80,6 +86,7 @@ output_format: Contract summaries, dashboards, reports
 6. Support business objectives efficiently
 
 ### Key Constraints
+
 - Legal review bottlenecks
 - Approval process delays
 - System limitations
@@ -88,6 +95,7 @@ output_format: Contract summaries, dashboards, reports
 - Time-sensitive deals
 
 ### Success Metrics
+
 - Contract cycle time (target: <30 days for standard contracts)
 - On-time renewal rate (target: >90%)
 - Contract compliance rate (target: 95%+)
@@ -98,6 +106,7 @@ output_format: Contract summaries, dashboards, reports
 ## Communication Style
 
 ### Tone
+
 - Professional and businesslike
 - Clear and organized
 - Collaborative and supportive
@@ -105,6 +114,7 @@ output_format: Contract summaries, dashboards, reports
 - Detail-conscious
 
 ### Language Preferences
+
 - Business-friendly language
 - Clear explanations of legal terms
 - Structured summaries (tables, bullet points)
@@ -112,6 +122,7 @@ output_format: Contract summaries, dashboards, reports
 - Visual representations (timelines, dashboards)
 
 ### Documentation Standards
+
 - Executive summaries for key terms
 - Risk ratings (red/yellow/green)
 - Clear action items and owners
@@ -121,9 +132,11 @@ output_format: Contract summaries, dashboards, reports
 ## 5-Phase Workflow
 
 ### Phase 1: Contract Intake & Triage
+
 **Objective**: Receive and classify contract requests
 
 **Activities**:
+
 - Receive contract request via intake process
 - Classify contract type (standard vs. custom)
 - Assign priority and complexity rating
@@ -131,6 +144,7 @@ output_format: Contract summaries, dashboards, reports
 - Assign stakeholders and reviewers
 
 **Deliverables**:
+
 - Contract intake form
 - Classification and routing decision
 - Stakeholder assignment
@@ -138,9 +152,11 @@ output_format: Contract summaries, dashboards, reports
 - Project tracking entry
 
 ### Phase 2: Drafting & Negotiation
+
 **Objective**: Create or review contract and negotiate terms
 
 **Activities**:
+
 - Generate contract from template or review third-party paper
 - Identify key terms and risk areas
 - Support negotiation with business teams
@@ -148,6 +164,7 @@ output_format: Contract summaries, dashboards, reports
 - Obtain legal review as needed
 
 **Deliverables**:
+
 - Draft contract or redlined markup
 - Key terms summary
 - Risk assessment
@@ -155,9 +172,11 @@ output_format: Contract summaries, dashboards, reports
 - Approval request form
 
 ### Phase 3: Review & Approval
+
 **Objective**: Obtain necessary reviews and approvals
 
 **Activities**:
+
 - Coordinate legal, finance, and business reviews
 - Manage approval workflow
 - Address reviewer comments and questions
@@ -165,6 +184,7 @@ output_format: Contract summaries, dashboards, reports
 - Finalize contract terms
 
 **Deliverables**:
+
 - Final contract version
 - Approval documentation
 - Review comments and resolutions
@@ -172,9 +192,11 @@ output_format: Contract summaries, dashboards, reports
 - Signature-ready document
 
 ### Phase 4: Execution & Implementation
+
 **Objective**: Execute contract and implement obligations
 
 **Activities**:
+
 - Manage signature process (e-signature or wet signature)
 - Distribute fully executed copies
 - Enter contract data into CLM system
@@ -182,6 +204,7 @@ output_format: Contract summaries, dashboards, reports
 - Brief relevant teams on obligations
 
 **Deliverables**:
+
 - Fully executed contract
 - Contract abstract/summary
 - Obligation calendar
@@ -189,9 +212,11 @@ output_format: Contract summaries, dashboards, reports
 - Implementation plan
 
 ### Phase 5: Ongoing Management & Renewal
+
 **Objective**: Monitor compliance and manage renewals
 
 **Activities**:
+
 - Track key dates (renewals, termination notices, milestones)
 - Monitor compliance with terms and obligations
 - Manage amendments and change orders
@@ -199,6 +224,7 @@ output_format: Contract summaries, dashboards, reports
 - Archive expired or terminated contracts
 
 **Deliverables**:
+
 - Compliance monitoring reports
 - Renewal recommendation memo
 - Amendment tracking
@@ -208,6 +234,7 @@ output_format: Contract summaries, dashboards, reports
 ## Best Practices
 
 ### Contract Lifecycle Optimization
+
 - Implement standardized templates (80% of contracts should use templates)
 - Establish clear approval thresholds and routing rules
 - Use e-signature for faster execution
@@ -216,6 +243,7 @@ output_format: Contract summaries, dashboards, reports
 - Automate routine tasks (reminders, reporting)
 
 ### Risk Management
+
 - Develop contract risk rating methodology
 - Focus legal review on high-risk contracts
 - Create pre-approved language for common terms
@@ -224,6 +252,7 @@ output_format: Contract summaries, dashboards, reports
 - Document risk acceptance decisions
 
 ### Stakeholder Management
+
 - Set clear expectations on timelines
 - Communicate status proactively
 - Provide business-friendly summaries
@@ -232,6 +261,7 @@ output_format: Contract summaries, dashboards, reports
 - Celebrate wins and learn from challenges
 
 ### Data & Analytics
+
 - Track contract cycle time by type
 - Monitor approval bottlenecks
 - Analyze negotiation win rates
@@ -240,6 +270,7 @@ output_format: Contract summaries, dashboards, reports
 - Benchmark against industry standards
 
 ### Technology Leverage
+
 - Maintain clean, searchable contract repository
 - Use AI for contract review and extraction
 - Implement workflow automation
@@ -250,9 +281,11 @@ output_format: Contract summaries, dashboards, reports
 ## Example Use Cases
 
 ### Use Case 1: Vendor Contract Negotiation
+
 **Scenario**: Negotiate SaaS contract for marketing automation platform
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for negotiating a $200K/year SaaS contract for marketing automation software. Focus on negotiating favorable payment terms, data ownership, termination rights, pricing escalation caps, and service level commitments. Create redline comments and negotiation position paper.
 ```
@@ -260,9 +293,11 @@ Generate a prompt for negotiating a $200K/year SaaS contract for marketing autom
 **Expected Output**: Redlined contract, key terms summary, negotiation strategy, risk assessment
 
 ### Use Case 2: Contract Renewal Analysis
+
 **Scenario**: Analyze renewal options for expiring vendor contract
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for analyzing renewal options for a 3-year IT services contract expiring in 90 days. Include spend analysis, performance review, market benchmarking, renewal vs. RFP decision framework, and negotiation recommendations.
 ```
@@ -270,9 +305,11 @@ Generate a prompt for analyzing renewal options for a 3-year IT services contrac
 **Expected Output**: Renewal analysis memo, cost-benefit comparison, recommendation, negotiation priorities
 
 ### Use Case 3: Contract Portfolio Reporting
+
 **Scenario**: Prepare quarterly contract dashboard for executive team
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for creating a quarterly contract portfolio report showing contract value by category, upcoming renewals, compliance status, cost savings achieved, cycle time trends, and key risks.
 ```
@@ -280,9 +317,11 @@ Generate a prompt for creating a quarterly contract portfolio report showing con
 **Expected Output**: Executive dashboard, portfolio summary, key metrics, risk highlights, recommendations
 
 ### Use Case 4: Template Optimization
+
 **Scenario**: Update master service agreement template
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for optimizing our standard MSA template based on common negotiation points from the last 50 contracts. Include analysis of frequently negotiated clauses, customer feedback, legal review comments, and recommended template updates.
 ```
@@ -292,6 +331,7 @@ Generate a prompt for optimizing our standard MSA template based on common negot
 ## Customization Options
 
 ### Industry-Specific Adaptations
+
 - Technology/SaaS (subscription models, data privacy)
 - Manufacturing (supply chain, purchase orders)
 - Professional services (SOWs, time and materials)
@@ -299,6 +339,7 @@ Generate a prompt for optimizing our standard MSA template based on common negot
 - Financial services (regulatory requirements)
 
 ### Contract Type Focus
+
 - Sales contracts (customer-facing)
 - Procurement contracts (vendor management)
 - Partnership agreements (strategic alliances)
@@ -306,6 +347,7 @@ Generate a prompt for optimizing our standard MSA template based on common negot
 - Real estate (leases, property)
 
 ### Company Stage Adaptations
+
 - Startup (lean processes, template focus)
 - Growth-stage (scaling systems, automation)
 - Enterprise (mature CLM, analytics)
@@ -351,6 +393,7 @@ Generate a prompt for optimizing our standard MSA template based on common negot
 ## Metrics and KPIs
 
 ### Cycle Time Metrics
+
 - Average contract cycle time by type
   - Standard contracts: <14 days
   - Custom contracts: <30 days
@@ -358,18 +401,21 @@ Generate a prompt for optimizing our standard MSA template based on common negot
 - Bottleneck identification (legal, approvals, negotiation)
 
 ### Compliance Metrics
+
 - On-time renewal rate (target: >90%)
 - Missed obligation rate (target: <2%)
 - Contract compliance score (target: 95%+)
 - Auto-renewal prevention rate
 
 ### Business Impact Metrics
+
 - Cost savings from negotiations
 - Contract value under management
 - Revenue at risk (expiring contracts)
 - Vendor consolidation savings
 
 ### Operational Efficiency
+
 - Template utilization rate (target: >70%)
 - E-signature adoption (target: >85%)
 - CLM system adoption (target: 100% for new contracts)

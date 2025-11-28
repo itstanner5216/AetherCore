@@ -1,6 +1,7 @@
 # Example 3: Product Manager - User Notifications Feature PRD
 
 ## User Input
+
 **Preset:** product-manager
 **Use Case:** Write PRD for push notifications feature
 **Mode:** Core
@@ -331,28 +332,30 @@ So that I can start working on it promptly and meet deadlines.
 <example name="Notification Settings UI">
 **Settings Screen Wireframe:**
 ```
+
 ┌─────────────────────────────────┐
-│ Notification Settings           │
+│ Notification Settings │
 ├─────────────────────────────────┤
-│ Task Assignments         [✓] On │
-│ > Instant                       │
-│                                 │
-│ Comments & Mentions      [✓] On │
-│ > Instant                       │
-│                                 │
-│ Due Date Reminders       [✓] On │
-│ > Daily digest at 9:00 AM       │
-│                                 │
-│ Status Changes           [ ] Off│
-│                                 │
+│ Task Assignments [✓] On │
+│ > Instant │
+│ │
+│ Comments & Mentions [✓] On │
+│ > Instant │
+│ │
+│ Due Date Reminders [✓] On │
+│ > Daily digest at 9:00 AM │
+│ │
+│ Status Changes [ ] Off│
+│ │
 ├─────────────────────────────────┤
-│ Quiet Hours              [✓] On │
-│ > 10:00 PM - 8:00 AM            │
-│                                 │
-│ Weekend Notifications    [ ] Off│
+│ Quiet Hours [✓] On │
+│ > 10:00 PM - 8:00 AM │
+│ │
+│ Weekend Notifications [ ] Off│
 ├─────────────────────────────────┤
-│ Test Notification              →│
+│ Test Notification →│
 └─────────────────────────────────┘
+
 ```
 
 **Notification Preferences per Type:**
@@ -414,6 +417,7 @@ Before marking this PRD complete, verify:
 **Executable:** Provides sprint-ready user stories with acceptance criteria.
 
 ## Estimated Output
+
 - **Token Count:** ~4,800 tokens (Core mode)
 - **PRD Length:** 25-35 pages
 - **Development Time:** 6 weeks (2 mobile engineers, 1 backend engineer)

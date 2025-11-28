@@ -10,32 +10,31 @@ Three agents debate the fate of each file:
 
 Usage:
     from agents import FileCourt
-    
+
     court = FileCourt("/path/to/repo", conservative=True)
     suspects = court.identify_suspects(threshold=0.5)
     court.run_all_trials(suspects)
-    
+
     print(court.generate_full_report())
 """
 
-from .prosecutor import ProsecutorAgent, ProsecutionCase
+from .court import FileCourt, TrialRecord
 from .defense import DefenseAgent, DefenseCase
 from .judge import JudgeAgent, Verdict
-from .court import FileCourt, TrialRecord
+from .prosecutor import ProsecutionCase, ProsecutorAgent
 
 __all__ = [
     # Main orchestrator
-    'FileCourt',
-    'TrialRecord',
-    
+    "FileCourt",
+    "TrialRecord",
     # Individual agents
-    'ProsecutorAgent',
-    'ProsecutionCase',
-    'DefenseAgent', 
-    'DefenseCase',
-    'JudgeAgent',
-    'Verdict',
+    "ProsecutorAgent",
+    "ProsecutionCase",
+    "DefenseAgent",
+    "DefenseCase",
+    "JudgeAgent",
+    "Verdict",
 ]
 
-__version__ = '1.0.0'
-__author__ = 'AetherCore Repository Analysis'
+__version__ = "1.0.0"
+__author__ = "AetherCore Repository Analysis"

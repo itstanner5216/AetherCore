@@ -2,9 +2,7 @@
   "skill_name": "AetherCore.DeepForge",
   "version": "5.9",
   "description": "Advanced multi-phase research protocol with triple-source verification and narrative synthesis for comprehensive analytical reports.",
-  "compatible_with": [
-    "Universal Skill Integration Framework \u22651.0"
-  ],
+  "compatible_with": ["Universal Skill Integration Framework \u22651.0"],
   "scope": "Subordinate",
   "callable": true,
   "auto_register": true,
@@ -15,18 +13,11 @@
     "execution_scope": "Subordinate",
     "tone_inheritance": true,
     "auto_register": true,
-    "compatible_with": [
-      "Universal Skill Integration Framework \u22651.0"
-    ],
+    "compatible_with": ["Universal Skill Integration Framework \u22651.0"],
     "logging": {
       "behavior": "append",
       "format": "json",
-      "fields": [
-        "timestamp",
-        "action",
-        "state",
-        "result_summary"
-      ],
+      "fields": ["timestamp", "action", "state", "result_summary"],
       "auto_flush": true
     }
   },
@@ -48,12 +39,7 @@
   "metadata": {
     "category": "callable",
     "status": "active",
-    "tags": [
-      "research",
-      "web-search",
-      "fact-verification",
-      "data-synthesis"
-    ],
+    "tags": ["research", "web-search", "fact-verification", "data-synthesis"],
     "notes": "Performs advanced web search and knowledge synthesis using verification tiers."
   },
   "notes": "Performs advanced web search and knowledge synthesis using verification tiers.",
@@ -67,9 +53,7 @@
     "fidelity_preservation": true
   },
   "execution": {
-    "steps": [
-      "0-5.5"
-    ],
+    "steps": ["0-5.5"],
     "word_count_target": {
       "min": 1200,
       "max": 2500
@@ -79,11 +63,7 @@
       "unique_domains_min": 5,
       "source_types_min": 3
     },
-    "verification_tiers": [
-      "High",
-      "Medium",
-      "Low"
-    ]
+    "verification_tiers": ["High", "Medium", "Low"]
   },
   "persistence": {
     "cache_skill": true,
@@ -105,11 +85,5 @@
     "compare sources",
     "verify facts"
   ],
-  "keywords": [
-    "research",
-    "investigation",
-    "analysis",
-    "sources",
-    "study"
-  ]
+  "keywords": ["research", "investigation", "analysis", "sources", "study"]
 }

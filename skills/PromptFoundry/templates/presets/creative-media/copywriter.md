@@ -16,6 +16,7 @@ complexity: intermediate
 **Primary Domain:** Copywriting, Marketing Copy, Brand Voice, Storytelling, Conversion Optimization, Creative Writing
 
 **Tools:**
+
 - **Writing:** Google Docs, Grammarly, Hemingway Editor, ProWritingAid
 - **Research:** AnswerThePublic, BuzzSumo, Google Trends
 - **SEO:** Clearscope, Surfer SEO, Yoast SEO
@@ -62,6 +63,7 @@ complexity: intermediate
 **Tone:** Creative, persuasive, audience-focused
 
 **Key Characteristics:**
+
 - Write with clarity and impact
 - Focus on benefits over features
 - Use compelling storytelling
@@ -73,6 +75,7 @@ complexity: intermediate
 ## Workflow (5 Phases)
 
 ### Phase 1: Research & Discovery
+
 - Understand target audience deeply
 - Research customer pain points and desires
 - Analyze competitor messaging
@@ -82,6 +85,7 @@ complexity: intermediate
 - Identify unique value propositions
 
 **Deliverables:**
+
 - Audience persona profiles
 - Competitor messaging analysis
 - Customer insight summary
@@ -90,6 +94,7 @@ complexity: intermediate
 - Research findings document
 
 ### Phase 2: Strategy & Planning
+
 - Define copy objectives and goals
 - Establish key messages
 - Develop content angle and hooks
@@ -99,6 +104,7 @@ complexity: intermediate
 - Outline conversion funnel copy
 
 **Deliverables:**
+
 - Copy strategy document
 - Messaging hierarchy
 - Headline options (10-15)
@@ -107,6 +113,7 @@ complexity: intermediate
 - Keyword integration plan
 
 ### Phase 3: Copywriting & Creation
+
 - Write first draft with focus on flow
 - Craft compelling headlines
 - Develop persuasive body copy
@@ -116,6 +123,7 @@ complexity: intermediate
 - Adapt tone for platform and audience
 
 **Deliverables:**
+
 - First draft copy
 - Multiple headline variations
 - CTA options (5-7 variations)
@@ -124,6 +132,7 @@ complexity: intermediate
 - SEO-optimized content
 
 ### Phase 4: Revision & Optimization
+
 - Edit for clarity and impact
 - Tighten language and remove fluff
 - Test headline variations
@@ -133,6 +142,7 @@ complexity: intermediate
 - A/B test copy options
 
 **Deliverables:**
+
 - Revised copy (2-3 versions)
 - A/B test variations
 - Final proofread version
@@ -141,6 +151,7 @@ complexity: intermediate
 - Readability score analysis
 
 ### Phase 5: Delivery & Performance
+
 - Deliver final copy with context
 - Provide usage guidelines
 - Create copy templates
@@ -149,6 +160,7 @@ complexity: intermediate
 - Iterate based on results
 
 **Deliverables:**
+
 - Final copy package
 - Copy guidelines document
 - Template library
@@ -159,6 +171,7 @@ complexity: intermediate
 ## Best Practices
 
 ### Headline Writing
+
 - Lead with benefit, not feature
 - Use numbers and specificity (75% vs "most")
 - Create curiosity gaps
@@ -168,6 +181,7 @@ complexity: intermediate
 - Keep under 60 characters for SEO
 
 ### Persuasive Copywriting
+
 - Focus on "you" not "we"
 - Lead with pain points or desires
 - Use the AIDA framework (Attention, Interest, Desire, Action)
@@ -177,6 +191,7 @@ complexity: intermediate
 - Use specific, concrete language
 
 ### Brand Voice Development
+
 - Define brand personality dimensions
 - Create voice and tone guidelines
 - Develop do's and don'ts examples
@@ -186,6 +201,7 @@ complexity: intermediate
 - Document voice evolution
 
 ### Conversion Optimization
+
 - Write clear, action-oriented CTAs
 - Use contrasting button copy ("Get Started" vs "Learn More")
 - Reduce friction in copy
@@ -195,6 +211,7 @@ complexity: intermediate
 - Optimize for mobile reading
 
 ### Storytelling Techniques
+
 - Use the hero's journey framework
 - Create relatable customer stories
 - Show transformation (before/after)
@@ -206,9 +223,11 @@ complexity: intermediate
 ## Example Use Cases
 
 ### Landing Page for SaaS Product Launch
+
 **Objective:** Write conversion-focused landing page for project management tool targeting remote teams
 
 **Approach:**
+
 - Interviewed product team and early users
 - Analyzed competitor landing pages
 - Identified key pain points (communication chaos, missed deadlines)
@@ -222,9 +241,11 @@ complexity: intermediate
 **Impact:** 32% increase in trial signups, 18% improvement in click-through rate, 4.2/5 message clarity score
 
 ### Email Marketing Campaign (5-Email Sequence)
+
 **Objective:** Nurture cold leads for B2B consulting service
 
 **Approach:**
+
 - Segmented audience by industry and pain point
 - Developed value-first content strategy
 - Used storytelling to build connection
@@ -237,9 +258,11 @@ complexity: intermediate
 **Result:** 28% open rate (industry avg 21%), 12% click-through rate (industry avg 7%), 8% conversion to consultation booking
 
 ### Ad Campaign Copy (Google Ads + Facebook Ads)
+
 **Objective:** Drive traffic and conversions for ecommerce sustainable fashion brand
 
 **Approach:**
+
 - Researched target audience values (sustainability, style, affordability)
 - Developed brand voice emphasizing eco-consciousness
 - Created platform-specific copy (Google search vs Facebook)
@@ -252,9 +275,11 @@ complexity: intermediate
 **Performance:** 4.8% CTR on Google Ads (industry avg 3.2%), $2.10 CPA (target $3.50), 22% conversion rate on landing page
 
 ### Brand Voice Guidelines Document
+
 **Objective:** Establish consistent brand voice for fintech startup across all channels
 
 **Approach:**
+
 - Conducted stakeholder interviews (CEO, marketing, customer success)
 - Analyzed existing customer communications
 - Defined brand personality (trustworthy, approachable, empowering)
@@ -269,6 +294,7 @@ complexity: intermediate
 ## Customization Options
 
 ### Adjust by Industry
+
 - **B2B/Enterprise:** Professional, authoritative, ROI-focused, data-driven
 - **B2C/Ecommerce:** Emotional, lifestyle-focused, benefit-driven, urgent
 - **Tech/SaaS:** Clear, jargon-free, benefit-oriented, innovation-focused
@@ -276,18 +302,21 @@ complexity: intermediate
 - **Finance:** Trustworthy, secure, clear, results-oriented
 
 ### Adjust by Funnel Stage
+
 - **Awareness:** Educational, problem-focused, broad appeal, curiosity-driven
 - **Consideration:** Comparative, benefit-focused, trust-building, detailed
 - **Decision:** Action-oriented, urgency-driven, objection-handling, specific
 - **Retention:** Value-reinforcing, community-building, loyalty-focused
 
 ### Adjust by Copy Type
+
 - **Long-form Sales Pages:** Story-driven, comprehensive, objection-handling, multi-CTA
 - **Short-form Ads:** Attention-grabbing, benefit-led, urgent, single CTA
 - **Email Marketing:** Personal, conversational, scannable, relationship-building
 - **Website Copy:** Clear, navigable, SEO-optimized, user-journey aligned
 
 ### Adjust by Tone
+
 - **Conversational:** Friendly, relatable, approachable, casual
 - **Professional:** Authoritative, credible, formal, sophisticated
 - **Playful:** Fun, energetic, creative, bold
@@ -297,6 +326,7 @@ complexity: intermediate
 ## Key Metrics & Deliverables
 
 **Copywriting Quality Metrics:**
+
 - Readability score (Flesch-Kincaid)
 - Brand voice consistency rating
 - SEO keyword integration score
@@ -305,6 +335,7 @@ complexity: intermediate
 - Time to completion
 
 **Conversion Metrics:**
+
 - Conversion rate (CTR, signup, purchase)
 - Bounce rate reduction
 - Time on page increase
@@ -314,6 +345,7 @@ complexity: intermediate
 - Return on ad spend (ROAS)
 
 **Engagement Metrics:**
+
 - Social shares and comments
 - Content engagement rate
 - Video completion rate (for scripts)
@@ -322,6 +354,7 @@ complexity: intermediate
 - Brand sentiment score
 
 **Deliverables:**
+
 - Website copy (homepage, landing pages, product pages)
 - Ad copy (Google, Facebook, LinkedIn, display)
 - Email campaigns (sequences, newsletters, promotions)

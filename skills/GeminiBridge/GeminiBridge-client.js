@@ -1,19 +1,19 @@
 // ===========================================================
 // Gemini-Hybrid v2.1
 // External Intelligence Coprocessor for ProjectGPT
-// Node Runtime — USIF Compatible
+// Node Runtime - USIF Compatible
 // ===========================================================
 
 /**
- - Main invocation function for Gemini-Hybrid external intelligence
- - @param {Object} payload - Configuration object for Gemini API call
- - @param {string} payload.api_key - Gemini API key (required)
- - @param {string} payload.prompt - Text prompt to send to Gemini (required)
- - @param {string} [payload.model="gemini-2.0-flash"] - Model to use
- - @param {number} [payload.max_tokens=4096] - Maximum output tokens
- - @param {number} [payload.temperature=0.4] - Temperature for generation
- - @param {Object} [payload.context] - Additional context from orchestrator
- - @returns {Promise<Object>} Structured response with status, evidence, and metadata
+ * Main invocation function for Gemini-Hybrid external intelligence
+ * @param {object} payload - Configuration object for Gemini API call
+ * @param {string} payload.api_key - Gemini API key (required)
+ * @param {string} payload.prompt - Text prompt to send to Gemini (required)
+ * @param {string} [payload.model] - Model to use
+ * @param {number} [payload.max_tokens] - Maximum output tokens
+ * @param {number} [payload.temperature] - Temperature for generation
+ * @param {object} [payload.context] - Additional context from orchestrator
+ * @returns {Promise<object>} Structured response with status, evidence, and metadata
  */
 export async function geminiHybridInvoke(payload = {}) {
   const {
@@ -22,18 +22,18 @@ export async function geminiHybridInvoke(payload = {}) {
     model = "gemini-2.0-flash",
     max_tokens = 4096,
     temperature = 0.4,
-    context = {}
+    context = {},
   } = payload;
 
-  // ————————
+  // --------
   // 1. Input Validation
-  // ————————
+  // --------
   if (!api_key || typeof api_key !== "string") {
     return {
       status: "error",
       origin: "gemini_hybrid",
       error: "Missing or invalid Gemini API key.",
-      timestamp: Date.now()
+      timestamp: Date.now(),
     };
   }
 
@@ -42,48 +42,53 @@ export async function geminiHybridInvoke(payload = {}) {
       status: "error",
       origin: "gemini_hybrid",
       error: "Invalid or missing prompt.",
-      timestamp: Date.now()
+      timestamp: Date.now(),
     };
   }
 
-  // ————————
+  // --------
   // 2. Model Selection & Validation
-  // ————————
+  // --------
   const allowedModels = ["gemini-2.0-flash", "gemini-2.5-pro"];
-  const selectedModel = allowedModels.includes(model) ? model : "gemini-2.0-flash"; // fallback to flash
+  const selectedModel = allowedModels.includes(model)
+    ? model
+    : "gemini-2.0-flash"; // fallback to flash
 
   // Log model selection reasoning if context provided
-  const modelSelectionReason = (context && (context.attempts >= 2 || context.depth === "deep")) ? "pro_escalation" : "flash_default";
+  const modelSelectionReason =
+    context && (context.attempts >= 2 || context.depth === "deep")
+      ? "pro_escalation"
+      : "flash_default";
 
-  // ————————
+  // --------
   // 3. Construct API Endpoint
-  // ————————
+  // --------
   const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${selectedModel}:generateContent?key=${api_key}`;
 
   const requestBody = {
     contents: [
       {
-        parts: [{ text: prompt }]
-      }
+        parts: [{ text: prompt }],
+      },
     ],
     generationConfig: {
       maxOutputTokens: max_tokens,
-      temperature: temperature
-    }
+      temperature: temperature,
+    },
   };
 
-  // ————————
+  // --------
   // 4. Execute API Request
-  // ————————
+  // --------
   const startTime = Date.now();
 
   try {
     const response = await fetch(endpoint, {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(requestBody)
+      body: JSON.stringify(requestBody),
     });
 
     const responseTime = Date.now() - startTime;
@@ -99,8 +104,8 @@ export async function geminiHybridInvoke(payload = {}) {
         timestamp: Date.now(),
         metadata: {
           model_requested: selectedModel,
-          response_time_ms: responseTime
-        }
+          response_time_ms: responseTime,
+        },
       };
     }
 
@@ -118,8 +123,8 @@ export async function geminiHybridInvoke(payload = {}) {
         timestamp: Date.now(),
         metadata: {
           model_requested: selectedModel,
-          response_time_ms: responseTime
-        }
+          response_time_ms: responseTime,
+        },
       };
     }
 
@@ -140,8 +145,8 @@ export async function geminiHybridInvoke(payload = {}) {
         timestamp: Date.now(),
         metadata: {
           model_used: selectedModel,
-          response_time_ms: responseTime
-        }
+          response_time_ms: responseTime,
+        },
       };
     }
 
@@ -160,13 +165,13 @@ export async function geminiHybridInvoke(payload = {}) {
         response_tokens: json?.usageMetadata?.candidatesTokenCount || null,
         response_time_ms: responseTime,
         timestamp: Date.now(),
-        context_provided: Object.keys(context || {}).length > 0
-      }
+        context_provided: Object.keys(context || {}).length > 0,
+      },
     };
   } catch (err) {
-    // ————————
+    // --------
     // 9. Fatal Error Fail-Safe
-    // ————————
+    // --------
     return {
       status: "error",
       origin: "gemini_hybrid",
@@ -175,17 +180,17 @@ export async function geminiHybridInvoke(payload = {}) {
       timestamp: Date.now(),
       metadata: {
         model_requested: selectedModel,
-        response_time_ms: Date.now() - startTime
-      }
+        response_time_ms: Date.now() - startTime,
+      },
     };
   }
 }
 
 /**
- - Helper function to construct optimal prompts for Gemini based on task type
- - @param {string} userQuery - The original user query
- - @param {Object} context - Task context from orchestrator
- - @returns {string} Optimized prompt for Gemini
+ * Helper function to construct optimal prompts for Gemini based on task type
+ * @param {string} userQuery - The original user query
+ * @param {object} context - Task context from orchestrator
+ * @returns {string} Optimized prompt for Gemini
  */
 export function constructGeminiPrompt(userQuery, context = {}) {
   const { task_type = "logic", attempts = 1, flags = {} } = context;
@@ -194,21 +199,26 @@ export function constructGeminiPrompt(userQuery, context = {}) {
 
   switch (task_type) {
     case "code":
-      systemInstruction = "You are an expert software engineer debugging complex issues. Provide detailed analysis with code examples.";
+      systemInstruction =
+        "You are an expert software engineer debugging complex issues. Provide detailed analysis with code examples.";
       break;
     case "research":
-      systemInstruction = "You are a thorough researcher. Provide evidence-backed analysis with clear reasoning chains.";
+      systemInstruction =
+        "You are a thorough researcher. Provide evidence-backed analysis with clear reasoning chains.";
       break;
     case "products":
-      systemInstruction = "You are a product research specialist. Find and structure comprehensive product information.";
+      systemInstruction =
+        "You are a product research specialist. Find and structure comprehensive product information.";
       break;
     default:
-      systemInstruction = "You are a precise reasoning engine. Provide clear, structured analysis.";
+      systemInstruction =
+        "You are a precise reasoning engine. Provide clear, structured analysis.";
   }
 
-  const escalationNote = attempts > 1
-    ? `\n\nNOTE: This is escalation attempt #${attempts}. Previous attempts were insufficient.`
-    : "";
+  const escalationNote =
+    attempts > 1
+      ? `\n\nNOTE: This is escalation attempt #${attempts}. Previous attempts were insufficient.`
+      : "";
 
   return `${systemInstruction}${escalationNote}\n\nTask:\n${userQuery}`;
 }

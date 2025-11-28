@@ -5,24 +5,24 @@ on:
   workflow_dispatch:
     inputs:
       threshold:
-        description: 'Suspicion threshold for trials (0.0-1.0)'
+        description: "Suspicion threshold for trials (0.0-1.0)"
         required: false
-        default: '0.5'
+        default: "0.5"
         type: string
       conservative:
-        description: 'Conservative mode (err on side of keeping files)'
+        description: "Conservative mode (err on side of keeping files)"
         required: false
-        default: 'true'
+        default: "true"
         type: boolean
       quarantine:
-        description: 'Move recommended files to quarantine'
+        description: "Move recommended files to quarantine"
         required: false
-        default: 'false'
+        default: "false"
         type: boolean
       dry_run:
-        description: 'Dry run mode (no file moves)'
+        description: "Dry run mode (no file moves)"
         required: false
-        default: 'true'
+        default: "true"
         type: boolean
 
 permissions:
@@ -33,63 +33,63 @@ jobs:
   adversarial-analysis:
     name: Run Adversarial File Analysis
     runs-on: ubuntu-latest
-    
+
     outputs:
       quarantine_count: ${{ steps.analyze.outputs.quarantine_count }}
       review_count: ${{ steps.analyze.outputs.review_count }}
       trials_conducted: ${{ steps.analyze.outputs.trials_conducted }}
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
-          cache: 'pip'
-          
+          python-version: "3.11"
+          cache: "pip"
+
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install -r .github/workflows/scripts/requirements.txt
-          
+
       - name: Run adversarial agents analysis
         id: analyze
         run: |
           cd $GITHUB_WORKSPACE
-          
+
           # Build the command with options
           CMD="python .github/workflows/scripts/repository_analyzer.py"
           CMD="$CMD --repo ."
           CMD="$CMD --output .github/cleanup_reports"
           CMD="$CMD --adversarial"
           CMD="$CMD --threshold ${{ inputs.threshold }}"
-          
+
           if [ "${{ inputs.conservative }}" = "true" ]; then
             CMD="$CMD --conservative"
           fi
-          
+
           if [ "${{ inputs.quarantine }}" = "true" ]; then
             CMD="$CMD --quarantine"
           fi
-          
+
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             CMD="$CMD --dry-run"
           fi
-          
+
           echo "Running: $CMD"
           $CMD
-          
+
       - name: Upload analysis reports
         uses: actions/upload-artifact@v4
         with:
           name: adversarial-analysis-reports
           path: .github/cleanup_reports/
           retention-days: 30
-          
+
       - name: Create job summary
         if: always()
         run: |

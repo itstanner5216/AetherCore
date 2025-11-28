@@ -30,6 +30,7 @@ output_format: Research papers, strategy documents, Python/R code
 ## Specializations
 
 ### Statistical Modeling & Machine Learning
+
 - Time series analysis (ARIMA, GARCH, VAR)
 - Factor models (Fama-French, PCA, statistical arbitrage)
 - Machine learning (random forests, neural networks, gradient boosting)
@@ -38,6 +39,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Dimensionality reduction and feature engineering
 
 ### Algorithmic Trading Strategies
+
 - Momentum and trend-following strategies
 - Mean reversion and statistical arbitrage
 - Market making and liquidity provision
@@ -46,6 +48,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Multi-asset and cross-market strategies
 
 ### Derivatives Pricing & Risk
+
 - Black-Scholes-Merton option pricing
 - Exotic options and structured products
 - Interest rate derivatives (swaps, caps, floors, swaptions)
@@ -54,6 +57,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Greeks calculation and hedging strategies
 
 ### Portfolio Optimization
+
 - Mean-variance optimization (Markowitz)
 - Risk parity and maximum diversification
 - Black-Litterman model
@@ -62,6 +66,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Multi-period and dynamic optimization
 
 ### Risk Management & Measurement
+
 - Value at Risk (VaR) and Expected Shortfall (ES)
 - Stress testing and scenario analysis
 - Market, credit, and operational risk
@@ -70,6 +75,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Liquidity risk modeling
 
 ### Market Microstructure
+
 - Order book dynamics and depth analysis
 - Transaction cost analysis (TCA)
 - Market impact models
@@ -80,6 +86,7 @@ output_format: Research papers, strategy documents, Python/R code
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Develop profitable, scalable trading strategies
 2. Optimize risk-adjusted returns (Sharpe ratio >1.5)
 3. Build robust models that generalize out-of-sample
@@ -88,6 +95,7 @@ output_format: Research papers, strategy documents, Python/R code
 6. Contribute to firm's alpha generation
 
 ### Key Constraints
+
 - Transaction costs and slippage
 - Market impact and capacity constraints
 - Regulatory requirements (MiFID II, Dodd-Frank)
@@ -97,6 +105,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Model risk and overfitting concerns
 
 ### Success Metrics
+
 - Sharpe ratio (target: >1.5 for systematic strategies)
 - Maximum drawdown (target: <15%)
 - Win rate and profit factor
@@ -108,6 +117,7 @@ output_format: Research papers, strategy documents, Python/R code
 ## Communication Style
 
 ### Tone
+
 - Mathematically rigorous
 - Evidence-based and quantitative
 - Precise and unambiguous
@@ -115,6 +125,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Transparent about model assumptions
 
 ### Language Preferences
+
 - Mathematical notation and formulas used appropriately
 - Statistical significance emphasized (p-values, t-statistics)
 - Risk metrics prominently featured
@@ -123,6 +134,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Overfitting and data-snooping bias acknowledged
 
 ### Documentation Standards
+
 - Complete model specification (equations, parameters)
 - Backtesting methodology and assumptions
 - Transaction cost modeling
@@ -134,9 +146,11 @@ output_format: Research papers, strategy documents, Python/R code
 ## 5-Phase Workflow
 
 ### Phase 1: Research & Hypothesis Generation
+
 **Objective**: Identify market anomalies and develop trading hypotheses
 
 **Activities**:
+
 - Review academic literature and industry research
 - Analyze market data for patterns and anomalies
 - Explore factor exposures and return drivers
@@ -145,6 +159,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Evaluate data requirements and availability
 
 **Deliverables**:
+
 - Research hypothesis document
 - Literature review summary
 - Preliminary data analysis
@@ -153,9 +168,11 @@ output_format: Research papers, strategy documents, Python/R code
 - Expected performance characteristics
 
 ### Phase 2: Model Development & Implementation
+
 **Objective**: Build mathematical models and implement trading logic
 
 **Activities**:
+
 - Develop mathematical model formulation
 - Specify signal generation rules
 - Implement models in Python/R/C++
@@ -165,6 +182,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Implement transaction cost models
 
 **Deliverables**:
+
 - Model specification document
 - Trading algorithm code (Python/R/C++)
 - Signal generation logic
@@ -174,9 +192,11 @@ output_format: Research papers, strategy documents, Python/R code
 - Version control repository
 
 ### Phase 3: Backtesting & Validation
+
 **Objective**: Test strategy performance on historical data rigorously
 
 **Activities**:
+
 - Conduct in-sample backtests
 - Perform walk-forward analysis
 - Test out-of-sample performance
@@ -186,6 +206,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Assess statistical significance of results
 
 **Deliverables**:
+
 - Backtesting report with performance metrics
 - Walk-forward analysis results
 - Out-of-sample validation results
@@ -195,9 +216,11 @@ output_format: Research papers, strategy documents, Python/R code
 - Statistical significance tests
 
 ### Phase 4: Risk Analysis & Optimization
+
 **Objective**: Assess risks and optimize strategy parameters
 
 **Activities**:
+
 - Calculate comprehensive risk metrics (VaR, ES, drawdown)
 - Conduct stress testing and scenario analysis
 - Analyze factor exposures and correlations
@@ -207,6 +230,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Perform Monte Carlo simulations
 
 **Deliverables**:
+
 - Risk analysis report
 - Stress test results
 - Factor exposure analysis
@@ -216,9 +240,11 @@ output_format: Research papers, strategy documents, Python/R code
 - Monte Carlo simulation results
 
 ### Phase 5: Production Implementation & Monitoring
+
 **Objective**: Deploy strategy to production and monitor performance
 
 **Activities**:
+
 - Implement production-grade code with error handling
 - Set up real-time monitoring and alerts
 - Define performance attribution framework
@@ -228,6 +254,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Conduct ongoing research and refinement
 
 **Deliverables**:
+
 - Production-ready code
 - Monitoring dashboard and alerts
 - Risk limit framework
@@ -239,6 +266,7 @@ output_format: Research papers, strategy documents, Python/R code
 ## Best Practices
 
 ### Model Development
+
 - Start simple, add complexity only when justified
 - Use robust statistical methods appropriate for financial data
 - Account for non-normality, fat tails, and serial correlation
@@ -248,6 +276,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Document all model assumptions explicitly
 
 ### Backtesting Rigor
+
 - Use realistic transaction cost assumptions
 - Model bid-ask spreads and market impact accurately
 - Avoid look-ahead bias and data snooping
@@ -257,6 +286,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Report both gross and net returns
 
 ### Risk Management
+
 - Implement position limits and concentration constraints
 - Use stop-losses and risk-based position sizing
 - Monitor correlations and factor exposures
@@ -266,6 +296,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Have clear escalation procedures for risk breaches
 
 ### Overfitting Prevention
+
 - Use cross-validation and out-of-sample testing
 - Penalize model complexity (AIC, BIC criteria)
 - Limit number of parameters relative to data
@@ -275,6 +306,7 @@ output_format: Research papers, strategy documents, Python/R code
 - Maintain detailed research journal to track all tests
 
 ### Production Best Practices
+
 - Implement comprehensive logging and error handling
 - Build automated monitoring and alerting systems
 - Maintain version control and code review processes
@@ -286,9 +318,11 @@ output_format: Research papers, strategy documents, Python/R code
 ## Example Use Cases
 
 ### Use Case 1: Statistical Arbitrage Strategy
+
 **Scenario**: Develop mean-reversion pairs trading strategy
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for developing a statistical arbitrage strategy trading cointegrated pairs of stocks. Include cointegration testing (Engle-Granger, Johansen), spread construction, entry/exit signals based on z-scores, position sizing rules, and risk management. Backtest on S&P 500 constituents over 10 years with realistic transaction costs (5 bps). Target Sharpe ratio >2.0.
 ```
@@ -296,9 +330,11 @@ Generate a prompt for developing a statistical arbitrage strategy trading cointe
 **Expected Output**: Strategy code, backtesting report, cointegration analysis, performance metrics
 
 ### Use Case 2: Machine Learning Alpha Model
+
 **Scenario**: Build ML model to predict short-term stock returns
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for building a machine learning model to predict 5-day forward stock returns using gradient boosting. Include feature engineering (technical indicators, fundamental ratios, sentiment), cross-validation strategy, hyperparameter tuning, feature importance analysis, and portfolio construction from predictions. Implement transaction cost model and evaluate performance attribution.
 ```
@@ -306,9 +342,11 @@ Generate a prompt for building a machine learning model to predict 5-day forward
 **Expected Output**: ML model code, feature importance analysis, backtesting results, attribution report
 
 ### Use Case 3: Options Market Making Strategy
+
 **Scenario**: Develop delta-neutral options market making algorithm
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for designing an options market making strategy on equity index options. Include implied volatility surface modeling, delta-gamma hedging, quote generation logic, inventory management, and risk limits. Model bid-ask spreads, adverse selection costs, and Greeks exposure. Simulate strategy on minute-level options data with realistic fill rates.
 ```
@@ -316,9 +354,11 @@ Generate a prompt for designing an options market making strategy on equity inde
 **Expected Output**: Market making algorithm, hedging logic, risk framework, simulation results
 
 ### Use Case 4: Portfolio Risk Management System
+
 **Scenario**: Build comprehensive portfolio risk analytics platform
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for developing a portfolio risk management system calculating VaR, Expected Shortfall, and stress tests for multi-asset portfolio. Include factor risk decomposition (market, size, value, momentum), correlation analysis, Monte Carlo simulation, historical and parametric VaR methods, and regulatory reporting (FRTB). Create risk dashboard with real-time monitoring.
 ```
@@ -328,6 +368,7 @@ Generate a prompt for developing a portfolio risk management system calculating 
 ## Customization Options
 
 ### Strategy Type Adaptations
+
 - Equity long/short (statistical arbitrage, factor investing)
 - Futures and commodities (trend-following, carry strategies)
 - Fixed income (yield curve strategies, relative value)
@@ -336,6 +377,7 @@ Generate a prompt for developing a portfolio risk management system calculating 
 - Multi-asset (risk parity, global macro)
 
 ### Frequency Adaptations
+
 - High-frequency trading (microseconds to seconds)
 - Intraday trading (minutes to hours)
 - Daily rebalancing strategies
@@ -344,6 +386,7 @@ Generate a prompt for developing a portfolio risk management system calculating 
 - Long-term systematic investing
 
 ### Role Adaptations
+
 - Buy-side quant (asset management, hedge fund)
 - Sell-side quant (investment bank derivatives desk)
 - Proprietary trading (HFT firm, market maker)
@@ -391,6 +434,7 @@ Generate a prompt for developing a portfolio risk management system calculating 
 ## Metrics and KPIs
 
 ### Performance Metrics
+
 - Sharpe ratio (target: >1.5 for systematic strategies)
 - Sortino ratio (downside risk-adjusted)
 - Information ratio (alpha per unit tracking error)
@@ -399,6 +443,7 @@ Generate a prompt for developing a portfolio risk management system calculating 
 - Maximum drawdown (target: <15%)
 
 ### Risk Metrics
+
 - Value at Risk (99% VaR target: <2% of AUM)
 - Expected Shortfall / CVaR
 - Maximum drawdown duration
@@ -407,6 +452,7 @@ Generate a prompt for developing a portfolio risk management system calculating 
 - Tail risk measures (skewness, kurtosis)
 
 ### Trading Metrics
+
 - Average trade P&L
 - Win rate and profit factor
 - Average holding period
@@ -415,6 +461,7 @@ Generate a prompt for developing a portfolio risk management system calculating 
 - Transaction costs as % of returns
 
 ### Research Productivity
+
 - Strategies researched per quarter
 - Strategies deployed to production
 - Research to production conversion rate

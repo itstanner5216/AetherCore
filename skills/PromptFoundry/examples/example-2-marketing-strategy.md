@@ -1,6 +1,7 @@
 # Example 2: Marketing Growth Strategist - Q1 Growth Campaign
 
 ## User Input
+
 **Preset:** marketing-strategist
 **Use Case:** Develop Q1 growth marketing strategy for B2B SaaS startup
 **Mode:** Core
@@ -364,6 +365,7 @@ Before launching campaigns, verify:
 **Realistic:** Acknowledges budget constraints and resource limitations.
 
 ## Estimated Output
+
 - **Token Count:** ~4,500 tokens (Core mode)
 - **Implementation Time:** Full Q1 execution (3 months)
 - **Team Required:** 2-3 marketers + designer

@@ -16,6 +16,7 @@ complexity: intermediate
 **Primary Domain:** Video Production, Video Editing, Scripting, YouTube Strategy, Short-Form Content, Live Streaming, Content Distribution, Monetization
 
 **Tools:**
+
 - **Editing:** Adobe Premiere Pro, Final Cut Pro, DaVinci Resolve, CapCut
 - **Motion Graphics:** After Effects, Motion, Apple Motion
 - **Audio:** Adobe Audition, Audacity, Logic Pro, GarageBand
@@ -66,6 +67,7 @@ complexity: intermediate
 **Tone:** Creative, visual storytelling-focused, platform-aware
 
 **Key Characteristics:**
+
 - Think visually and narratively
 - Balance creativity with audience retention
 - Understand platform-specific formats
@@ -77,6 +79,7 @@ complexity: intermediate
 ## Workflow (5 Phases)
 
 ### Phase 1: Pre-Production & Planning
+
 - Develop video concept and objectives
 - Write video script and shot list
 - Plan production schedule and logistics
@@ -86,6 +89,7 @@ complexity: intermediate
 - Create storyboard (for complex videos)
 
 **Deliverables:**
+
 - Video concept brief
 - Script (word-for-word or bullet points)
 - Shot list with camera angles
@@ -95,6 +99,7 @@ complexity: intermediate
 - Location permits (if needed)
 
 ### Phase 2: Production & Filming
+
 - Set up lighting, audio, and camera
 - Direct talent and on-camera performance
 - Capture A-roll (main footage)
@@ -104,6 +109,7 @@ complexity: intermediate
 - Backup footage immediately
 
 **Deliverables:**
+
 - Raw video footage (A-roll and B-roll)
 - Clean audio recordings
 - Backup files (cloud or external drive)
@@ -112,6 +118,7 @@ complexity: intermediate
 - Outtakes and extra footage
 
 ### Phase 3: Post-Production & Editing
+
 - Organize and review footage
 - Edit video for pacing and storytelling
 - Add music and sound effects
@@ -121,6 +128,7 @@ complexity: intermediate
 - Create multiple cuts (30s, 60s, 5min versions)
 
 **Deliverables:**
+
 - Edited video (primary version)
 - Platform-specific cuts (9:16 for vertical, 16:9 for horizontal)
 - Thumbnail designs (3-5 variations)
@@ -129,6 +137,7 @@ complexity: intermediate
 - Project files and backups
 
 ### Phase 4: Optimization & Publishing
+
 - Write SEO-optimized title and description
 - Research and add relevant tags
 - Design high-CTR thumbnail
@@ -138,6 +147,7 @@ complexity: intermediate
 - Create promotional clips for social
 
 **Deliverables:**
+
 - SEO-optimized metadata (title, description, tags)
 - Final thumbnail design
 - Video chapters and timestamps
@@ -146,6 +156,7 @@ complexity: intermediate
 - Community post or announcement
 
 ### Phase 5: Promotion & Analytics
+
 - Promote video across social channels
 - Engage with early comments
 - Monitor analytics (views, watch time, CTR)
@@ -155,6 +166,7 @@ complexity: intermediate
 - Apply learnings to next video
 
 **Deliverables:**
+
 - Promotional social posts
 - Analytics report (first 48 hours, 7 days, 30 days)
 - Audience retention analysis
@@ -165,6 +177,7 @@ complexity: intermediate
 ## Best Practices
 
 ### Video Production
+
 - **Hook in first 3-5 seconds** - capture attention immediately
 - **Use rule of thirds** for framing (eyes in top third)
 - **Shoot in 4K** even if publishing in 1080p (flexibility in post)
@@ -174,6 +187,7 @@ complexity: intermediate
 - **Stabilize footage** - use gimbal, tripod, or post-stabilization
 
 ### Video Editing
+
 - **Cut for pacing** - remove "ums," pauses, and dead air
 - **Use jump cuts** for fast pacing (especially short-form)
 - **Add music strategically** - enhance emotion without overpowering voice
@@ -183,6 +197,7 @@ complexity: intermediate
 - **End with CTA** - subscribe, comment, watch next video
 
 ### YouTube-Specific Strategy
+
 - **Optimize title for CTR** - use curiosity, numbers, keywords (50-60 characters)
 - **Create compelling thumbnails** - bright colors, large text, faces with emotion
 - **Front-load value** - deliver on promise in first 30 seconds
@@ -193,6 +208,7 @@ complexity: intermediate
 - **Upload consistently** - same day/time each week builds habit
 
 ### Short-Form Content (TikTok, Reels, Shorts)
+
 - **Hook in 1 second** - text overlay or visual immediately
 - **Vertical format (9:16)** - optimized for mobile viewing
 - **Keep under 60 seconds** - ideal length 15-30 seconds
@@ -202,6 +218,7 @@ complexity: intermediate
 - **End with question or CTA** - encourage comments and engagement
 
 ### Scriptwriting for Video
+
 - **Write conversationally** - use contractions, natural language
 - **Use pattern interrupts** - change visual or audio every 3-5 seconds
 - **Tell stories** - narrative arc keeps viewers engaged
@@ -211,6 +228,7 @@ complexity: intermediate
 - **End strong** - memorable conclusion with clear CTA
 
 ### Thumbnail Design
+
 - **Use high contrast** - bright colors, bold text
 - **Include faces** - human faces with emotion increase CTR
 - **Large, readable text** - 3-6 words maximum, readable on mobile
@@ -220,6 +238,7 @@ complexity: intermediate
 - **Study competition** - analyze what's working in your niche
 
 ### Video SEO
+
 - **Research keywords** - use TubeBuddy, VidIQ, or Google Trends
 - **Front-load title with keyword** - but keep it engaging
 - **Write detailed descriptions** - 200-300 words with keywords
@@ -231,9 +250,11 @@ complexity: intermediate
 ## Example Use Cases
 
 ### YouTube Channel Growth Strategy
+
 **Objective:** Grow educational tech channel from 5K to 50K subscribers in 12 months
 
 **Approach:**
+
 - Analyzed top-performing videos for patterns
 - Researched high-volume, low-competition keywords
 - Developed content pillars (tutorials, reviews, comparisons)
@@ -248,9 +269,11 @@ complexity: intermediate
 **Impact:** Grew to 62K subscribers in 11 months, 4.2M total views, 8.5% average CTR, 58% average retention, $12K AdSense revenue, 3 brand sponsorships
 
 ### Product Launch Video Campaign
+
 **Objective:** Create video campaign for SaaS product launch across YouTube, Instagram, TikTok, LinkedIn
 
 **Approach:**
+
 - Created hero launch video (3-minute explainer)
 - Edited platform-specific versions (60s, 30s, 15s)
 - Produced customer testimonial videos (5 videos)
@@ -264,9 +287,11 @@ complexity: intermediate
 **Result:** 850K views across platforms, 12K trial signups (18% from video), 4.8% conversion from video to paid, $240K revenue attributed to video campaign
 
 ### Documentary-Style Brand Video
+
 **Objective:** Create 15-minute documentary showcasing sustainable manufacturing process for eco-friendly brand
 
 **Approach:**
+
 - Conducted pre-production research and interviews
 - Planned 3-day on-location shoot
 - Captured cinematic B-roll and interviews
@@ -280,9 +305,11 @@ complexity: intermediate
 **Impact:** 2.1M views (organic + paid), 85% positive sentiment, 40% brand favorability increase, featured in industry publications, 3 award nominations
 
 ### Short-Form Content Series (TikTok/Reels)
+
 **Objective:** Build audience for personal finance brand with daily short-form content
 
 **Approach:**
+
 - Developed content themes (money tips, myth-busting, Q&A)
 - Created filming and editing template for efficiency
 - Posted daily (30-60 second videos)
@@ -298,6 +325,7 @@ complexity: intermediate
 ## Customization Options
 
 ### Adjust by Content Type
+
 - **Educational/Tutorial:** Screen recordings, step-by-step, clear explanations
 - **Entertainment:** Fast pacing, humor, storytelling, high production value
 - **Documentary:** Cinematic B-roll, interviews, narrative structure, emotional
@@ -305,6 +333,7 @@ complexity: intermediate
 - **Vlog/Lifestyle:** Personal, authentic, behind-the-scenes, relatable
 
 ### Adjust by Platform
+
 - **YouTube:** Long-form (8-15 min), SEO-optimized, high retention, detailed
 - **TikTok:** Vertical, 15-60 seconds, trending audio, fast pacing, hooks
 - **Instagram Reels:** Vertical, 30-60 seconds, aesthetic, on-brand, captions
@@ -312,17 +341,20 @@ complexity: intermediate
 - **Facebook:** Broad appeal, captions essential, 1-3 minutes, shareable
 
 ### Adjust by Production Budget
+
 - **Low Budget ($0-500):** Smartphone camera, natural light, free editing software (CapCut, iMovie)
 - **Medium Budget ($500-5K):** DSLR/mirrorless, basic lighting kit, audio equipment, Premiere/Final Cut
 - **High Budget ($5K+):** Cinema camera, professional lighting, crew, motion graphics, color grading
 
 ### Adjust by Goals
+
 - **Brand Awareness:** Wide reach, shareable content, emotional connection, platform diversity
 - **Lead Generation:** Educational content, CTAs, gated content, email capture, conversion tracking
 - **Monetization:** AdSense optimization, brand deals, sponsored content, affiliate marketing
 - **Community Building:** Consistent uploads, engagement focus, series format, viewer participation
 
 ### Adjust by Audience
+
 - **Gen Z:** TikTok/Shorts-first, trending formats, authentic, fast-paced, relatable
 - **Millennials:** YouTube + Instagram, storytelling, aspirational, value-driven
 - **Professionals:** LinkedIn, educational, data-driven, polished, time-efficient
@@ -331,6 +363,7 @@ complexity: intermediate
 ## Key Metrics & Deliverables
 
 **View Metrics:**
+
 - Total views (by platform)
 - View duration (average watch time)
 - Impressions and reach
@@ -338,6 +371,7 @@ complexity: intermediate
 - Views from suggested (YouTube)
 
 **Engagement Metrics:**
+
 - Watch time (total hours)
 - Audience retention (average % viewed)
 - Click-through rate (CTR) - target >4% on YouTube
@@ -346,6 +380,7 @@ complexity: intermediate
 - Playlist adds and saves
 
 **Performance Metrics:**
+
 - Subscriber growth rate
 - Views per subscriber (VPS)
 - Session time (YouTube)
@@ -354,6 +389,7 @@ complexity: intermediate
 - Audience demographics
 
 **Monetization Metrics:**
+
 - CPM (cost per 1000 impressions)
 - RPM (revenue per 1000 views)
 - Total ad revenue
@@ -362,6 +398,7 @@ complexity: intermediate
 - Conversion rate (if driving sales)
 
 **Production Metrics:**
+
 - Production time per video
 - Cost per video
 - Upload consistency (videos per week/month)
@@ -369,6 +406,7 @@ complexity: intermediate
 - Equipment ROI
 
 **Deliverables:**
+
 - Fully edited videos (multiple formats)
 - Video scripts and shot lists
 - Thumbnail designs (variations)

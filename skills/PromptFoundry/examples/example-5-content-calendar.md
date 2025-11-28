@@ -1,6 +1,7 @@
 # Example 5: Content Strategist - 90-Day Editorial Calendar
 
 ## User Input
+
 **Preset:** content-strategist
 **Use Case:** Create 90-day editorial calendar for B2B SaaS blog
 **Mode:** Core
@@ -486,6 +487,7 @@ Before finalizing the editorial calendar:
 **Comprehensive:** Covers strategy, planning, production, distribution, and optimization.
 
 ## Estimated Output
+
 - **Token Count:** ~5,500 tokens (Core mode)
 - **Content Pieces:** 24 blog posts + 2 guides + 3 case studies
 - **Timeline:** 90 days (3 months)

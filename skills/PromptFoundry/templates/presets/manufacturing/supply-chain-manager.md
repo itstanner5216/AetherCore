@@ -30,6 +30,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 ## Specializations
 
 ### Strategic Sourcing & Procurement
+
 - Supplier selection and qualification
 - RFx processes (RFI, RFP, RFQ)
 - Contract negotiation and management
@@ -39,6 +40,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Category management and spend analysis
 
 ### Inventory Management & Optimization
+
 - Inventory optimization models (EOQ, safety stock)
 - ABC analysis and inventory classification
 - Demand-driven inventory planning
@@ -48,6 +50,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Inventory accuracy and cycle counting
 
 ### Demand Planning & Forecasting
+
 - Statistical forecasting methods
 - Demand sensing and shaping
 - Collaborative planning with sales
@@ -57,6 +60,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Promotional planning
 
 ### Logistics & Distribution
+
 - Transportation management (TMS)
 - Route optimization and freight consolidation
 - Warehouse operations and layout
@@ -66,6 +70,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Last-mile delivery optimization
 
 ### Sales & Operations Planning (S&OP)
+
 - Demand review and consensus forecasting
 - Supply review and capacity planning
 - Financial reconciliation
@@ -75,6 +80,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - S&OP maturity improvement
 
 ### Supply Chain Risk Management
+
 - Risk identification and assessment
 - Business continuity planning (BCP)
 - Supplier risk monitoring
@@ -86,6 +92,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Optimize inventory levels and reduce working capital
 2. Improve on-time delivery performance
 3. Reduce total supply chain costs by 10-15%
@@ -94,6 +101,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 6. Mitigate supply chain risks and disruptions
 
 ### Key Constraints
+
 - Budget limitations and cost pressures
 - Capacity constraints (warehouse, transportation)
 - Lead time variability
@@ -102,6 +110,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Global supply chain complexity
 
 ### Success Metrics
+
 - On-time delivery >95%
 - Inventory turns >6-12x (industry dependent)
 - Forecast accuracy (MAPE) <20%
@@ -112,6 +121,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 ## Communication Style
 
 ### Tone
+
 - Strategic and collaborative
 - Data-driven and analytical
 - Results-oriented
@@ -119,6 +129,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Cross-functional and diplomatic
 
 ### Language Preferences
+
 - Use supply chain terminology appropriately
 - Quantify impact with metrics and KPIs
 - Reference industry best practices
@@ -127,6 +138,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Communicate risks clearly
 
 ### Documentation Standards
+
 - Executive summaries with key decisions
 - Data visualizations (dashboards, charts)
 - Scenario comparisons and sensitivity analysis
@@ -138,9 +150,11 @@ output_format: S&OP plans, sourcing strategies, dashboards
 ## 5-Phase Workflow
 
 ### Phase 1: Planning & Analysis
+
 **Objective**: Develop supply chain strategies and plans aligned with business goals
 
 **Activities**:
+
 - Analyze historical demand and supply patterns
 - Conduct market and supplier analysis
 - Assess current supply chain performance
@@ -150,6 +164,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Establish S&OP process and calendar
 
 **Deliverables**:
+
 - Supply chain strategy document
 - Annual procurement plan
 - S&OP calendar and process design
@@ -158,9 +173,11 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Budget and resource plan
 
 ### Phase 2: Sourcing & Supplier Management
+
 **Objective**: Secure reliable, cost-effective suppliers and materials
 
 **Activities**:
+
 - Conduct spend analysis and category strategy
 - Issue RFx (RFI, RFP, RFQ) to suppliers
 - Evaluate and qualify suppliers
@@ -170,6 +187,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Monitor supplier financial health
 
 **Deliverables**:
+
 - Category sourcing strategies
 - RFx documents and responses
 - Supplier evaluation scorecards
@@ -179,9 +197,11 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Supplier development plans
 
 ### Phase 3: Demand & Supply Planning
+
 **Objective**: Balance demand and supply to optimize service and costs
 
 **Activities**:
+
 - Generate statistical forecasts
 - Collaborate with sales for demand input
 - Conduct demand review meetings
@@ -191,6 +211,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Execute S&OP process monthly
 
 **Deliverables**:
+
 - Demand forecasts by SKU/family
 - Production and procurement plans
 - Capacity analysis reports
@@ -200,9 +221,11 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Exception reports and actions
 
 ### Phase 4: Execution & Logistics
+
 **Objective**: Execute plans efficiently with minimal disruptions
 
 **Activities**:
+
 - Release purchase orders to suppliers
 - Track order status and expedite as needed
 - Coordinate inbound and outbound logistics
@@ -212,6 +235,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Handle exceptions and resolve issues
 
 **Deliverables**:
+
 - Purchase orders and confirmations
 - Shipment tracking reports
 - Transportation optimization analysis
@@ -221,9 +245,11 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Daily/weekly operational dashboards
 
 ### Phase 5: Monitoring & Continuous Improvement
+
 **Objective**: Measure performance and drive continuous improvement
 
 **Activities**:
+
 - Track KPIs and performance metrics
 - Conduct supplier performance reviews
 - Analyze root causes of issues
@@ -233,6 +259,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Share lessons learned and best practices
 
 **Deliverables**:
+
 - KPI dashboards and scorecards
 - Supplier performance reviews
 - Root cause analysis reports
@@ -244,6 +271,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 ## Best Practices
 
 ### Procurement Strategy
+
 - Total cost of ownership (TCO) focus
 - Strategic partnerships with key suppliers
 - Dual-sourcing for critical materials
@@ -253,6 +281,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Category management approach
 
 ### Inventory Optimization
+
 - Right inventory at right location
 - ABC classification for prioritization
 - Safety stock based on variability and service level
@@ -262,6 +291,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Inventory accuracy >95%
 
 ### Demand Planning
+
 - Collaborative planning with sales
 - Statistical forecasting as baseline
 - Judgmental overrides documented
@@ -271,6 +301,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Exception-based management
 
 ### S&OP Excellence
+
 - Monthly cadence with defined steps
 - Cross-functional participation
 - Data-driven discussions
@@ -280,6 +311,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Action tracking and accountability
 
 ### Risk Management
+
 - Regular risk assessments
 - Supplier financial monitoring
 - Dual-sourcing for critical items
@@ -289,6 +321,7 @@ output_format: S&OP plans, sourcing strategies, dashboards
 - Rapid response protocols
 
 ### Logistics Optimization
+
 - Transportation mode optimization
 - Freight consolidation strategies
 - Network design and optimization
@@ -300,9 +333,11 @@ output_format: S&OP plans, sourcing strategies, dashboards
 ## Example Use Cases
 
 ### Use Case 1: Reduce Inventory While Maintaining Service
+
 **Scenario**: Reduce inventory by 20% without impacting customer service
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for developing an inventory optimization strategy to reduce inventory by 20% while maintaining >95% fill rate. Include ABC analysis, safety stock optimization based on demand variability and lead time, slow-moving inventory reduction plan, vendor-managed inventory (VMI) opportunities, and inventory monitoring dashboards.
 ```
@@ -310,9 +345,11 @@ Generate a prompt for developing an inventory optimization strategy to reduce in
 **Expected Output**: Inventory optimization plan, target inventory levels, implementation roadmap, KPIs
 
 ### Use Case 2: Implement Monthly S&OP Process
+
 **Scenario**: Design and implement Sales & Operations Planning process
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for designing a monthly S&OP process including demand review, supply review, financial reconciliation, and executive meeting. Include process flow, meeting agendas, roles and responsibilities, required data and reports, KPIs for S&OP maturity, and change management plan for implementation.
 ```
@@ -320,9 +357,11 @@ Generate a prompt for designing a monthly S&OP process including demand review, 
 **Expected Output**: S&OP process design, meeting templates, implementation plan, training materials
 
 ### Use Case 3: Dual-Source Critical Component
+
 **Scenario**: Develop dual-sourcing strategy to mitigate supply risk
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for developing a dual-sourcing strategy for a critical component currently single-sourced. Include supplier search and qualification criteria, RFQ process, total cost of ownership analysis, volume allocation strategy, contract terms, transition plan, and risk mitigation measures.
 ```
@@ -330,9 +369,11 @@ Generate a prompt for developing a dual-sourcing strategy for a critical compone
 **Expected Output**: Sourcing strategy, supplier evaluation, TCO analysis, implementation plan
 
 ### Use Case 4: Optimize Distribution Network
+
 **Scenario**: Redesign distribution network to reduce costs and improve delivery
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for optimizing a distribution network to reduce logistics costs by 15% and improve delivery times. Include current state analysis, demand analysis by geography, warehouse location optimization, transportation mode analysis, network modeling scenarios, cost-benefit analysis, and implementation roadmap.
 ```
@@ -342,6 +383,7 @@ Generate a prompt for optimizing a distribution network to reduce logistics cost
 ## Customization Options
 
 ### Industry-Specific Adaptations
+
 - Manufacturing (raw materials, components, MRO)
 - Retail (merchandise planning, distribution centers)
 - Consumer goods (FMCG, seasonality, promotions)
@@ -350,6 +392,7 @@ Generate a prompt for optimizing a distribution network to reduce logistics cost
 - Food & beverage (perishability, food safety)
 
 ### Focus Areas
+
 - Strategic sourcing and procurement
 - Demand planning and forecasting
 - Logistics and distribution
@@ -358,12 +401,14 @@ Generate a prompt for optimizing a distribution network to reduce logistics cost
 - Supply chain risk and resilience
 
 ### Company Size Adaptations
+
 - Small/mid-size (limited resources, simplicity)
 - Large enterprise (complexity, global operations)
 - Multi-national (regional variations, global standards)
 - E-commerce (fulfillment, last-mile, returns)
 
 ### Supply Chain Maturity
+
 - Reactive (firefighting, basic processes)
 - Stable (established processes, some automation)
 - Advanced (integrated planning, analytics)
@@ -409,6 +454,7 @@ Generate a prompt for optimizing a distribution network to reduce logistics cost
 ## Metrics and KPIs
 
 ### Customer Service
+
 - On-time delivery (OTD) (target: >95%)
 - Order fill rate (target: >98%)
 - Perfect order rate (target: >90%)
@@ -417,6 +463,7 @@ Generate a prompt for optimizing a distribution network to reduce logistics cost
 - Customer complaints (target: <1%)
 
 ### Inventory Performance
+
 - Inventory turns (target: 6-12x, industry dependent)
 - Days of inventory (DOI) (target: 30-60 days)
 - Inventory accuracy (target: >95%)
@@ -425,12 +472,14 @@ Generate a prompt for optimizing a distribution network to reduce logistics cost
 - Working capital as % of revenue
 
 ### Forecast Accuracy
+
 - Mean Absolute Percentage Error (MAPE) (target: <20%)
 - Forecast bias (target: ±5%)
 - Forecast value added (FVA)
 - Demand planning cycle time (days)
 
 ### Procurement & Supplier Performance
+
 - On-time supplier delivery (target: >95%)
 - Supplier quality (PPM defects) (target: <500)
 - Cost savings achieved (% of spend)
@@ -439,6 +488,7 @@ Generate a prompt for optimizing a distribution network to reduce logistics cost
 - Number of active suppliers (optimize)
 
 ### Logistics & Transportation
+
 - Transportation cost per unit shipped
 - Freight cost as % of revenue (target: <3-5%)
 - On-time shipment rate (target: >98%)
@@ -447,6 +497,7 @@ Generate a prompt for optimizing a distribution network to reduce logistics cost
 - Truck utilization rate (target: >85%)
 
 ### Supply Chain Costs
+
 - Total supply chain costs as % of revenue (target: <8%)
 - Procurement costs as % of spend (target: <2%)
 - Warehousing costs per unit

@@ -1,6 +1,7 @@
 # Example 4: DevOps Engineer - AWS Infrastructure Setup
 
 ## User Input
+
 **Preset:** devops-engineer
 **Use Case:** Set up AWS infrastructure with Terraform for microservices
 **Mode:** Core
@@ -102,60 +103,62 @@ Design and implement a complete AWS infrastructure using Terraform for a microse
 Provide complete Terraform infrastructure code and documentation:
 
 1. **Terraform Project Structure**
-   ```
-   terraform/
-   ├── modules/
-   │   ├── vpc/
-   │   ├── eks/
-   │   ├── rds/
-   │   ├── elasticache/
-   │   ├── s3/
-   │   ├── iam/
-   │   └── monitoring/
-   ├── environments/
-   │   ├── dev/
-   │   ├── staging/
-   │   └── production/
-   ├── main.tf
-   ├── variables.tf
-   ├── outputs.tf
-   ├── backend.tf
-   └── versions.tf
-   ```
+```
+
+terraform/
+├── modules/
+│ ├── vpc/
+│ ├── eks/
+│ ├── rds/
+│ ├── elasticache/
+│ ├── s3/
+│ ├── iam/
+│ └── monitoring/
+├── environments/
+│ ├── dev/
+│ ├── staging/
+│ └── production/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── backend.tf
+└── versions.tf
+
+````
 
 2. **Core Infrastructure Components**
-   - VPC module: Networking, subnets, NAT, routing
-   - EKS module: Cluster, node groups, RBAC, add-ons
-   - RDS module: PostgreSQL with Multi-AZ, backup policies
-   - ElastiCache module: Redis cluster configuration
-   - S3 module: Buckets with lifecycle policies
-   - IAM module: Roles, policies for services and CI/CD
-   - Monitoring module: CloudWatch dashboards, alarms
+- VPC module: Networking, subnets, NAT, routing
+- EKS module: Cluster, node groups, RBAC, add-ons
+- RDS module: PostgreSQL with Multi-AZ, backup policies
+- ElastiCache module: Redis cluster configuration
+- S3 module: Buckets with lifecycle policies
+- IAM module: Roles, policies for services and CI/CD
+- Monitoring module: CloudWatch dashboards, alarms
 
 3. **Kubernetes Manifests**
-   - Namespace definitions
-   - Deployment manifests for microservices
-   - Service definitions (ClusterIP, LoadBalancer)
-   - ConfigMaps and Secrets
-   - HorizontalPodAutoscaler (HPA)
-   - Ingress controllers
-   - Network policies
+- Namespace definitions
+- Deployment manifests for microservices
+- Service definitions (ClusterIP, LoadBalancer)
+- ConfigMaps and Secrets
+- HorizontalPodAutoscaler (HPA)
+- Ingress controllers
+- Network policies
 
 4. **CI/CD Pipeline**
-   - GitHub Actions workflows or CodePipeline configs
-   - Build and test stages
-   - Docker image build and push to ECR
-   - Deploy to EKS (kubectl/Helm)
-   - Automated testing in staging
-   - Production deployment with approval gates
+- GitHub Actions workflows or CodePipeline configs
+- Build and test stages
+- Docker image build and push to ECR
+- Deploy to EKS (kubectl/Helm)
+- Automated testing in staging
+- Production deployment with approval gates
 
 5. **Documentation**
-   - Architecture diagram
-   - Setup and deployment guide
-   - Terraform usage instructions
-   - Disaster recovery runbook
-   - Cost optimization recommendations
-   - Security best practices checklist
+- Architecture diagram
+- Setup and deployment guide
+- Terraform usage instructions
+- Disaster recovery runbook
+- Cost optimization recommendations
+- Security best practices checklist
 </structure>
 
 <format>
@@ -323,74 +326,75 @@ Provide complete Terraform infrastructure code and documentation:
 ```hcl
 # modules/vpc/main.tf
 resource "aws_vpc" "main" {
-  cidr_block           = var.vpc_cidr
-  enable_dns_hostnames = true
-  enable_dns_support   = true
+cidr_block           = var.vpc_cidr
+enable_dns_hostnames = true
+enable_dns_support   = true
 
-  tags = merge(
-    var.tags,
-    {
-      Name = "${var.environment}-vpc"
-    }
-  )
+tags = merge(
+ var.tags,
+ {
+   Name = "${var.environment}-vpc"
+ }
+)
 }
 
 resource "aws_subnet" "private" {
-  count             = length(var.availability_zones)
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = cidrsubnet(var.vpc_cidr, 4, count.index)
-  availability_zone = var.availability_zones[count.index]
+count             = length(var.availability_zones)
+vpc_id            = aws_vpc.main.id
+cidr_block        = cidrsubnet(var.vpc_cidr, 4, count.index)
+availability_zone = var.availability_zones[count.index]
 
-  tags = merge(
-    var.tags,
-    {
-      Name = "${var.environment}-private-subnet-${count.index + 1}"
-      Type = "private"
-    }
-  )
+tags = merge(
+ var.tags,
+ {
+   Name = "${var.environment}-private-subnet-${count.index + 1}"
+   Type = "private"
+ }
+)
 }
 
 resource "aws_subnet" "public" {
-  count                   = length(var.availability_zones)
-  vpc_id                  = aws_vpc.main.id
-  cidr_block              = cidrsubnet(var.vpc_cidr, 4, count.index + length(var.availability_zones))
-  availability_zone       = var.availability_zones[count.index]
-  map_public_ip_on_launch = true
+count                   = length(var.availability_zones)
+vpc_id                  = aws_vpc.main.id
+cidr_block              = cidrsubnet(var.vpc_cidr, 4, count.index + length(var.availability_zones))
+availability_zone       = var.availability_zones[count.index]
+map_public_ip_on_launch = true
 
-  tags = merge(
-    var.tags,
-    {
-      Name = "${var.environment}-public-subnet-${count.index + 1}"
-      Type = "public"
-    }
-  )
+tags = merge(
+ var.tags,
+ {
+   Name = "${var.environment}-public-subnet-${count.index + 1}"
+   Type = "public"
+ }
+)
 }
 
 resource "aws_nat_gateway" "main" {
-  count         = length(var.availability_zones)
-  allocation_id = aws_eip.nat[count.index].id
-  subnet_id     = aws_subnet.public[count.index].id
+count         = length(var.availability_zones)
+allocation_id = aws_eip.nat[count.index].id
+subnet_id     = aws_subnet.public[count.index].id
 
-  tags = merge(
-    var.tags,
-    {
-      Name = "${var.environment}-nat-gateway-${count.index + 1}"
-    }
-  )
+tags = merge(
+ var.tags,
+ {
+   Name = "${var.environment}-nat-gateway-${count.index + 1}"
+ }
+)
 }
 
 resource "aws_eip" "nat" {
-  count  = length(var.availability_zones)
-  domain = "vpc"
+count  = length(var.availability_zones)
+domain = "vpc"
 
-  tags = merge(
-    var.tags,
-    {
-      Name = "${var.environment}-nat-eip-${count.index + 1}"
-    }
-  )
+tags = merge(
+ var.tags,
+ {
+   Name = "${var.environment}-nat-eip-${count.index + 1}"
+ }
+)
 }
-```
+````
+
 </example>
 
 <example name="EKS Node Group with Spot Instances">
@@ -402,35 +406,36 @@ resource "aws_eks_node_group" "spot" {
   node_role_arn   = aws_iam_role.node_group.arn
   subnet_ids      = var.private_subnet_ids
 
-  capacity_type = "SPOT"
+capacity_type = "SPOT"
 
-  scaling_config {
-    desired_size = var.spot_desired_size
-    max_size     = var.spot_max_size
-    min_size     = var.spot_min_size
-  }
-
-  instance_types = ["t3.medium", "t3a.medium", "t2.medium"]
-
-  labels = {
-    capacity-type = "spot"
-    environment   = var.environment
-  }
-
-  tags = merge(
-    var.tags,
-    {
-      Name = "${var.environment}-spot-node-group"
-    }
-  )
-
-  depends_on = [
-    aws_iam_role_policy_attachment.node_AmazonEKSWorkerNodePolicy,
-    aws_iam_role_policy_attachment.node_AmazonEKS_CNI_Policy,
-    aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly,
-  ]
+scaling_config {
+desired_size = var.spot_desired_size
+max_size = var.spot_max_size
+min_size = var.spot_min_size
 }
-```
+
+instance_types = ["t3.medium", "t3a.medium", "t2.medium"]
+
+labels = {
+capacity-type = "spot"
+environment = var.environment
+}
+
+tags = merge(
+var.tags,
+{
+Name = "${var.environment}-spot-node-group"
+}
+)
+
+depends_on = [
+aws_iam_role_policy_attachment.node_AmazonEKSWorkerNodePolicy,
+aws_iam_role_policy_attachment.node_AmazonEKS_CNI_Policy,
+aws_iam_role_policy_attachment.node_AmazonEC2ContainerRegistryReadOnly,
+]
+}
+
+````
 </example>
 
 <example name="Kubernetes Deployment with HPA">
@@ -507,7 +512,8 @@ spec:
       target:
         type: Utilization
         averageUtilization: 80
-```
+````
+
 </example>
 
 <example name="GitHub Actions CI/CD Pipeline">
@@ -516,21 +522,20 @@ spec:
 name: Deploy to EKS
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+push:
+branches: [main]
+pull_request:
+branches: [main]
 
 env:
-  AWS_REGION: us-east-1
-  ECR_REPOSITORY: user-service
-  EKS_CLUSTER_NAME: production-eks-cluster
+AWS_REGION: us-east-1
+ECR_REPOSITORY: user-service
+EKS_CLUSTER_NAME: production-eks-cluster
 
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+test:
+runs-on: ubuntu-latest
+steps: - uses: actions/checkout@v3
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -546,12 +551,11 @@ jobs:
       - name: Run linter
         run: npm run lint
 
-  build-and-push:
-    needs: test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v3
+build-and-push:
+needs: test
+runs-on: ubuntu-latest
+if: github.ref == 'refs/heads/main'
+steps: - uses: actions/checkout@v3
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -574,12 +578,11 @@ jobs:
           docker tag $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
 
-  deploy:
-    needs: build-and-push
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
-    steps:
-      - uses: actions/checkout@v3
+deploy:
+needs: build-and-push
+runs-on: ubuntu-latest
+if: github.ref == 'refs/heads/main'
+steps: - uses: actions/checkout@v3
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v2
@@ -599,6 +602,7 @@ jobs:
         run: |
           kubectl set image deployment/user-service user-service=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -n ecommerce
           kubectl rollout status deployment/user-service -n ecommerce
+
 ```
 </example>
 </examples>
@@ -653,6 +657,7 @@ Before considering infrastructure production-ready:
 **Comprehensive Monitoring:** CloudWatch dashboards, alarms, distributed tracing.
 
 ## Estimated Output
+
 - **Token Count:** ~5,200 tokens (Core mode)
 - **Infrastructure Setup Time:** 4 weeks
 - **Terraform Modules:** 7-8 modules (~1,500 lines of HCL)
