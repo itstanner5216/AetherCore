@@ -52,7 +52,7 @@ Skill_Auto_Bootstrap:
     3. For each .zip: Unzip, read *-config.json, register entry_point
     4. For each .md with front-matter: Register using name key
     5. Output registry summary
-    6. Load AetherCore.bootstrap.manifest.json
+    6. Load AetherCore.System/AetherCore.bootstrap.manifest.json
     7. Validate manifest skills exist in extracted ZIP
     8. Initialize per bootstrap_sequence (Phase 1 → Phase 2 → Phase 3)
     9. Manifest OVERRIDES any discovered ordering

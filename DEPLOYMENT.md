@@ -220,7 +220,7 @@ https://app.koyeb.com/services/aethercore-gateway
 
 3. **Update Repository Files**
    - Replace placeholder URLs in openapi_schema.json
-   - Update CustomInstructions_with_bootstrap_v3.yaml
+   - Update AetherCore.System/CustomInstructions_with_bootstrap_v3.yaml
    - Commit and push changes
 
 ---
