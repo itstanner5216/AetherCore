@@ -3,6 +3,7 @@
 ### Summary
 
 This automated PR identifies files that may be unused, orphaned, or redundant based on:
+
 - **Dependency Analysis**: Code import/reference tracking
 - **Semantic Similarity**: Keyword and topic-based relationship detection
 - **File Relevance Scoring**: Combined metrics for file importance
@@ -19,9 +20,9 @@ This automated PR identifies files that may be unused, orphaned, or redundant ba
 
 <!-- The workflow will populate this section with the analysis results -->
 
-| File | Type | Relevance Score | Reason |
-|------|------|-----------------|--------|
-| _See attached report for details_ | | | |
+| File                              | Type | Relevance Score | Reason |
+| --------------------------------- | ---- | --------------- | ------ |
+| _See attached report for details_ |      |                 |        |
 
 ---
 

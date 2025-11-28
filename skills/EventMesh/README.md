@@ -43,24 +43,27 @@ The automation graph uses a directed graph model:
 ### Components
 
 **Nodes**: Each loaded skill
+
 - Properties: name, dependencies, subscribers, message handlers, active status
 
 **Edges**: Message routes between skills
+
 - Properties: source, target, event_type, priority
 
 **Routing Table**: Pre-computed paths for efficient event distribution
+
 - Format: `{(source, event_type): [target1, target2, ...]}`
 
 ## Integration Hooks
 
 The Automation Graph integrates with Project GPT's lifecycle events:
 
-| Hook | Purpose | When Called |
-|------|---------|-------------|
-| `on_registry_init` | Build initial graph | System startup |
-| `on_skill_load` | Add new skill node | Skill dynamically loaded |
-| `on_skill_exit` | Remove skill node | Skill unloaded |
-| `on_message` | Route events | Any skill emits event |
+| Hook               | Purpose             | When Called              |
+| ------------------ | ------------------- | ------------------------ |
+| `on_registry_init` | Build initial graph | System startup           |
+| `on_skill_load`    | Add new skill node  | Skill dynamically loaded |
+| `on_skill_exit`    | Remove skill node   | Skill unloaded           |
+| `on_message`       | Route events        | Any skill emits event    |
 
 ## Installation
 
@@ -87,6 +90,7 @@ ls project_files/AetherCore.EventMesh.zip
 ### Example 1: Research Pipeline
 
 When you have these skills loaded:
+
 - `AetherCore.OptiGraph`
 - `AetherCore.DeepForge`
 - `AetherCore.MarketSweep`
@@ -114,6 +118,7 @@ content-planner → style-analyzer → markdown-formatter → quality-checker
 ```
 
 When `content-planner` emits a `draft_complete` event:
+
 1. AetherCore.EventMesh checks routing table
 2. Identifies `style-analyzer` as subscriber
 3. Routes event with payload via Messaging Bus
@@ -130,6 +135,7 @@ system-monitor ──┬──→ log-aggregator
 ```
 
 When `system-monitor` broadcasts an `alert` event:
+
 - All three subscribers receive the event simultaneously
 - Each processes independently
 - No race conditions or conflicts
@@ -142,9 +148,10 @@ AetherCore.EventMesh operates **completely silently**:
 ✓ No status messages  
 ✓ No confirmation dialogs  
 ✓ No user-visible indicators  
-✓ All logging is internal only  
+✓ All logging is internal only
 
 You'll know it's working because:
+
 - Skills trigger each other automatically
 - Events flow without manual routing
 - Complex pipelines execute seamlessly
@@ -161,6 +168,7 @@ You'll know it's working because:
 ### Thread Safety
 
 The Automation Graph is designed for concurrent operation:
+
 - Event routing is atomic
 - Graph updates are synchronized
 - No race conditions in multi-skill scenarios
@@ -168,6 +176,7 @@ The Automation Graph is designed for concurrent operation:
 ### Error Handling
 
 Silent failures for robustness:
+
 - Unknown source skill → log internally, no error
 - Inactive target → skip silently
 - Circular dependencies → detected and prevented
@@ -191,12 +200,14 @@ The skill uses these default settings (in `config.json`):
 To modify behavior, edit `config.json`:
 
 **Change event log size**:
+
 ```python
 # In automation_graph.md, modify:
 self.max_log_size = 1000  # Change to desired size
 ```
 
 **Adjust routing priority**:
+
 ```python
 # Add priority to edge properties:
 "priority": 5  # 1-10, higher = processed first
@@ -250,6 +261,7 @@ print(_state.event_log[-100:])
 ## Dependencies
 
 This skill requires:
+
 - `AetherCore.OptiGraph` (for configuration inheritance)
 
 Both dependencies are standard Project GPT components.
@@ -262,6 +274,7 @@ Both dependencies are standard Project GPT components.
 ## Support
 
 For issues or questions:
+
 1. Verify `AetherCore.EventMesh.zip` is in `project_files`
 2. Check that dependencies are loaded
 3. Inspect internal state for graph structure

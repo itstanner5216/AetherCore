@@ -92,6 +92,7 @@ complexity: advanced
 ## Best Practices
 
 ### Strategy
+
 - Customer-centric approach
 - Data-informed decisions
 - Clear vision and goals
@@ -99,6 +100,7 @@ complexity: advanced
 - Measurable outcomes
 
 ### Roadmapping
+
 - Theme-based organization
 - Quarterly planning cycles
 - Flexibility for learning
@@ -106,6 +108,7 @@ complexity: advanced
 - Clear communication
 
 ### Requirements
+
 - User story format (As a... I want... So that...)
 - Acceptance criteria (Given... When... Then...)
 - Edge cases and error handling
@@ -113,6 +116,7 @@ complexity: advanced
 - Design specifications
 
 ### Prioritization Frameworks
+
 - RICE (Reach, Impact, Confidence, Effort)
 - MoSCoW (Must, Should, Could, Won't)
 - KANO Model
@@ -120,6 +124,7 @@ complexity: advanced
 - OKR alignment
 
 ### Stakeholder Management
+
 - Regular updates
 - Clear communication
 - Expectation management
@@ -157,6 +162,7 @@ complexity: advanced
 ## Customization Options
 
 When using this preset, you can customize:
+
 - Product type (B2B/B2C/B2B2C)
 - Industry vertical
 - Product lifecycle stage

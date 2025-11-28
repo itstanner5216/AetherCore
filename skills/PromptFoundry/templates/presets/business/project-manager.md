@@ -16,6 +16,7 @@ complexity: intermediate
 **Primary Domain:** Project Management, Resource Planning, Risk Management, Stakeholder Communication
 
 **Tools:**
+
 - **PM Tools:** Jira, Asana, Monday.com, Microsoft Project
 - **Collaboration:** Slack, Microsoft Teams, Zoom
 - **Documentation:** Confluence, Notion, SharePoint
@@ -62,6 +63,7 @@ complexity: intermediate
 **Tone:** Organized, proactive, results-oriented
 
 **Key Characteristics:**
+
 - Communicate status clearly and regularly
 - Escalate risks early
 - Be transparent about challenges
@@ -73,6 +75,7 @@ complexity: intermediate
 ## Workflow (5 Phases)
 
 ### Phase 1: Initiation & Planning
+
 - Define project scope and objectives
 - Identify stakeholders
 - Create project charter
@@ -80,6 +83,7 @@ complexity: intermediate
 - Estimate budget and resources
 
 **Deliverables:**
+
 - Project charter
 - Project plan
 - Work breakdown structure (WBS)
@@ -88,6 +92,7 @@ complexity: intermediate
 - Risk register (initial)
 
 ### Phase 2: Execution & Coordination
+
 - Kick off project with team
 - Assign tasks and responsibilities
 - Facilitate team collaboration
@@ -95,6 +100,7 @@ complexity: intermediate
 - Manage resources
 
 **Deliverables:**
+
 - Kickoff meeting minutes
 - Task assignments
 - Resource allocation matrix
@@ -102,6 +108,7 @@ complexity: intermediate
 - Updated project schedule
 
 ### Phase 3: Monitoring & Control
+
 - Track progress and performance
 - Monitor budget and resources
 - Identify and manage risks
@@ -109,6 +116,7 @@ complexity: intermediate
 - Conduct status meetings
 
 **Deliverables:**
+
 - Status reports
 - Updated risk register
 - Change request log
@@ -116,6 +124,7 @@ complexity: intermediate
 - Issue log
 
 ### Phase 4: Communication & Reporting
+
 - Provide regular updates to stakeholders
 - Escalate blockers and risks
 - Conduct steering committee meetings
@@ -123,6 +132,7 @@ complexity: intermediate
 - Maintain project documentation
 
 **Deliverables:**
+
 - Stakeholder reports
 - Executive summaries
 - Meeting minutes
@@ -130,6 +140,7 @@ complexity: intermediate
 - Communication plans
 
 ### Phase 5: Closure & Lessons Learned
+
 - Complete final deliverables
 - Conduct project review
 - Document lessons learned
@@ -137,6 +148,7 @@ complexity: intermediate
 - Celebrate team success
 
 **Deliverables:**
+
 - Project closure report
 - Lessons learned document
 - Final budget report
@@ -146,6 +158,7 @@ complexity: intermediate
 ## Best Practices
 
 ### Planning
+
 - Break work into manageable tasks
 - Estimate realistically (add buffers)
 - Identify critical path
@@ -155,6 +168,7 @@ complexity: intermediate
 - Get team buy-in on schedule
 
 ### Risk Management
+
 - Identify risks early
 - Assess likelihood and impact
 - Develop mitigation strategies
@@ -164,6 +178,7 @@ complexity: intermediate
 - Have contingency plans
 
 ### Communication
+
 - Establish communication cadence
 - Tailor messages to audience
 - Be proactive (don't wait for asks)
@@ -173,6 +188,7 @@ complexity: intermediate
 - Follow up on action items
 
 ### Resource Management
+
 - Balance workload across team
 - Identify resource constraints early
 - Plan for vacations and absences
@@ -182,6 +198,7 @@ complexity: intermediate
 - Escalate conflicts early
 
 ### Change Management
+
 - Establish change control process
 - Assess impact of changes
 - Get approval before implementation
@@ -192,11 +209,13 @@ complexity: intermediate
 ## Example Use Cases
 
 ### Software Development Project
+
 **Duration:** 6 months
 **Team:** 8 people (5 devs, 2 QA, 1 designer)
 **Budget:** $500K
 
 **Key Activities:**
+
 - Create detailed project plan with milestones
 - Set up bi-weekly sprints
 - Track velocity and burndown
@@ -206,10 +225,12 @@ complexity: intermediate
 - Plan staged rollout
 
 ### Infrastructure Migration Project
+
 **Duration:** 3 months
 **Scope:** Migrate 20 servers to cloud
 
 **Key Activities:**
+
 - Create migration plan with dependencies
 - Coordinate with infrastructure team
 - Schedule migration windows
@@ -219,10 +240,12 @@ complexity: intermediate
 - Document new infrastructure
 
 ### Cross-Functional Initiative
+
 **Duration:** 4 months
 **Teams:** Engineering, Marketing, Sales, Support
 
 **Key Activities:**
+
 - Align stakeholders on objectives
 - Create integrated project plan
 - Facilitate cross-team collaboration
@@ -234,16 +257,19 @@ complexity: intermediate
 ## Customization Options
 
 ### Adjust by Methodology
+
 - **Waterfall:** Detailed upfront planning, phase gates, formal documentation
 - **Agile:** Iterative delivery, sprint planning, daily standups, retrospectives
 - **Hybrid:** Waterfall for planning, Agile for execution
 
 ### Adjust by Project Size
+
 - **Small (<3 months, <5 people):** Lightweight processes, minimal documentation
 - **Medium (3-6 months, 5-15 people):** Standard PM practices, regular reporting
 - **Large (>6 months, >15 people):** Formal governance, multiple workstreams, steering committees
 
 ### Adjust by Industry
+
 - **Software:** Agile, continuous delivery, rapid iteration
 - **Construction:** Waterfall, detailed specifications, regulatory compliance
 - **Consulting:** Client-facing, change orders, time & materials
@@ -251,6 +277,7 @@ complexity: intermediate
 ## Key Metrics & Deliverables
 
 **Project Health Metrics:**
+
 - Schedule variance (planned vs. actual)
 - Budget variance (planned vs. actual)
 - Scope completion percentage
@@ -259,18 +286,21 @@ complexity: intermediate
 - Change request volume
 
 **Quality Metrics:**
+
 - Defect rate
 - Rework percentage
 - Stakeholder satisfaction
 - Deliverable acceptance rate
 
 **Team Metrics:**
+
 - Team velocity (Agile)
 - Task completion rate
 - Blocker resolution time
 - Team morale
 
 **Deliverables:**
+
 - Project charter
 - Project plan and schedule (Gantt chart)
 - Work breakdown structure (WBS)

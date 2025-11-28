@@ -1,6 +1,7 @@
 # Prompt Engineering Best Practices Reference
 
 ## Table of Contents
+
 1. [Universal Best Practices](#universal-best-practices)
 2. [Role-Specific Best Practices](#role-specific-best-practices)
 3. [Output Format Best Practices](#output-format-best-practices)
@@ -12,6 +13,7 @@
 ## Universal Best Practices
 
 ### Prompt Structure
+
 - **Clear role definition**: Always start with a specific, expert role
 - **Explicit domain context**: Define the problem space and industry
 - **Measurable objectives**: Include quantifiable success criteria
@@ -19,6 +21,7 @@
 - **Structured workflow**: Break complex tasks into phases with deliverables
 
 ### Clarity and Specificity
+
 - **Use concrete examples**: Show, don't just tell
 - **Avoid vague language**: Replace "improve" with "increase by 25%"
 - **Define technical terms**: Don't assume shared vocabulary
@@ -26,6 +29,7 @@
 - **Include success criteria**: Define "done" with measurable outcomes
 
 ### Context Provision
+
 - **Background information**: Provide relevant history and current state
 - **Stakeholder landscape**: Identify who cares and why
 - **Technical environment**: Specify tech stack, tools, platforms
@@ -33,6 +37,7 @@
 - **Business context**: Connect technical work to business outcomes
 
 ### Actionability
+
 - **Step-by-step guidance**: Break down complex tasks
 - **Code examples**: Provide actual implementation snippets
 - **Tool recommendations**: Suggest specific tools and frameworks
@@ -46,6 +51,7 @@
 ### Technical Roles (Engineers, DevOps, Architects)
 
 **Code Quality**
+
 - Use modern language features and idiomatic patterns
 - Follow SOLID principles and clean code practices
 - Include error handling and edge cases
@@ -53,6 +59,7 @@
 - Document assumptions and trade-offs
 
 **Technical Depth**
+
 - Specify exact versions (Node.js 18+, Python 3.11+)
 - Include configuration details (environment variables, settings)
 - Document API contracts (OpenAPI, GraphQL schemas)
@@ -60,6 +67,7 @@
 - Show monitoring and observability setup
 
 **Production Readiness**
+
 - Address scalability and performance
 - Include security best practices
 - Plan for disaster recovery and backups
@@ -67,6 +75,7 @@
 - Implement logging and alerting
 
 **Example Pattern:**
+
 ```xml
 <technical_specifications>
 - Stack: React 18, TypeScript 5.0, Node.js 18 LTS
@@ -80,6 +89,7 @@
 ### Business Roles (Product Managers, Strategists)
 
 **Strategic Thinking**
+
 - Tie tactics to business metrics (revenue, retention, NPS)
 - Use prioritization frameworks (RICE, MoSCoW, KANO)
 - Include competitive analysis
@@ -87,6 +97,7 @@
 - Plan for measurement and iteration
 
 **Stakeholder Communication**
+
 - Executive summary for leadership
 - Detailed specs for engineering
 - User stories for the whole team
@@ -94,6 +105,7 @@
 - Regular status updates
 
 **User-Centered Approach**
+
 - Start with user pain points and jobs-to-be-done
 - Include persona definitions
 - Map to buyer journey stages
@@ -101,6 +113,7 @@
 - Test assumptions with data
 
 **Example Pattern:**
+
 ```xml
 <success_metrics>
 Business Metrics:
@@ -120,6 +133,7 @@ Timeline: 90 days (Q1 2025)
 ### Creative Roles (Content, Design, Marketing)
 
 **Audience Focus**
+
 - Define target personas with demographics and psychographics
 - Identify pain points and desired outcomes
 - Map content to awareness/consideration/decision stages
@@ -127,6 +141,7 @@ Timeline: 90 days (Q1 2025)
 - Test messaging with target audience
 
 **Data-Driven Creativity**
+
 - Use keyword research for SEO content
 - A/B test headlines, CTAs, designs
 - Analyze competitor approaches
@@ -134,6 +149,7 @@ Timeline: 90 days (Q1 2025)
 - Optimize based on performance data
 
 **Multi-Channel Thinking**
+
 - Plan distribution across platforms
 - Repurpose content into multiple formats
 - Tailor messaging to platform norms
@@ -141,6 +157,7 @@ Timeline: 90 days (Q1 2025)
 - Track attribution across channels
 
 **Example Pattern:**
+
 ```xml
 <content_strategy>
 Content Pillars:
@@ -163,9 +180,11 @@ Publishing Schedule: 2 articles/week, Tuesdays and Thursdays
 ## Output Format Best Practices
 
 ### XML Format (Recommended for Claude)
+
 **When to use**: Complex, structured prompts with multiple sections
 
 **Structure**:
+
 ```xml
 <role>Define expert persona</role>
 <domain>Specify problem space</domain>
@@ -183,15 +202,18 @@ Publishing Schedule: 2 articles/week, Tuesdays and Thursdays
 ```
 
 **Advantages**:
+
 - Clear hierarchy and structure
 - Easy to parse programmatically
 - Works well with long, complex prompts
 - Familiar to Claude models
 
 ### System Prompt Format (Claude, ChatGPT)
+
 **When to use**: Conversational agents, long-running sessions
 
 **Structure**:
+
 ```
 # Role
 You are a [specific role] with expertise in [domain].
@@ -214,15 +236,18 @@ You are a [specific role] with expertise in [domain].
 ```
 
 **Advantages**:
+
 - Human-readable
 - Easy to edit and iterate
 - Good for iterative conversations
 - Works across multiple LLM providers
 
 ### Custom Instructions Format (ChatGPT)
+
 **When to use**: User-level configurations, persistent preferences
 
 **Structure**:
+
 ```
 What would you like ChatGPT to know about you to provide better responses?
 - [Personal context]
@@ -236,9 +261,11 @@ How would you like ChatGPT to respond?
 ```
 
 ### Gemini Format (Google)
+
 **When to use**: Google Gemini models with grounding and tools
 
 **Structure**:
+
 ```
 Context: [Background information]
 
@@ -263,42 +290,49 @@ Use tools if needed:
 ### 7-Point Validation Gates
 
 **1. Structure Validation**
+
 - Check for proper XML/markdown formatting
 - Verify all required sections present
 - Ensure logical flow and hierarchy
 - Validate internal consistency
 
 **2. Completeness Check**
+
 - All sections have substantial content (not placeholders)
 - Requirements cover functional and non-functional aspects
 - Workflow includes all necessary phases
 - Examples demonstrate key concepts
 
 **3. Token Count Optimization**
+
 - Core mode: 3,000-6,000 tokens (efficient)
 - Advanced mode: 8,000-12,000 tokens (comprehensive)
 - Avoid redundancy and verbosity
 - Use concise, precise language
 
 **4. Placeholder Detection**
+
 - No [PLACEHOLDER] or [TODO] markers
 - No "insert X here" instructions
 - No generic "example.com" or "user@example.com"
 - All examples use realistic data
 
 **5. Actionable Workflow**
+
 - Each phase has concrete tasks
 - Deliverables are clearly defined
 - Dependencies are noted
 - Timeline is realistic
 
 **6. Best Practices Integration**
+
 - Domain-specific guidance included
 - Industry standards referenced
 - Common pitfalls addressed
 - Quality standards defined
 
 **7. Example Quality**
+
 - Examples are realistic and detailed
 - Code examples are syntactically correct
 - Examples demonstrate actual use cases
@@ -307,6 +341,7 @@ Use tools if needed:
 ### Testing Your Prompts
 
 **Before Deployment:**
+
 1. Run through the prompt yourself manually
 2. Test with the target LLM
 3. Validate output against success criteria
@@ -314,6 +349,7 @@ Use tools if needed:
 5. Iterate based on results
 
 **After Deployment:**
+
 1. Collect feedback from users
 2. Measure success metrics
 3. Identify common failure modes
@@ -419,6 +455,7 @@ Use tools if needed:
 Before finalizing any prompt, verify:
 
 **Structure**
+
 - [ ] Clear role definition
 - [ ] Specific domain context
 - [ ] Measurable objectives
@@ -426,6 +463,7 @@ Before finalizing any prompt, verify:
 - [ ] Structured workflow
 
 **Content**
+
 - [ ] No placeholders or TODOs
 - [ ] Concrete examples included
 - [ ] Best practices integrated
@@ -433,6 +471,7 @@ Before finalizing any prompt, verify:
 - [ ] Validation checklist provided
 
 **Technical**
+
 - [ ] Specific versions and tools
 - [ ] Error handling addressed
 - [ ] Security considerations included
@@ -440,6 +479,7 @@ Before finalizing any prompt, verify:
 - [ ] Deployment plan outlined
 
 **Business**
+
 - [ ] Business metrics tied to tactics
 - [ ] Stakeholders identified
 - [ ] User needs addressed
@@ -447,6 +487,7 @@ Before finalizing any prompt, verify:
 - [ ] Budget acknowledged
 
 **Quality**
+
 - [ ] Token count appropriate (3K-12K)
 - [ ] No redundancy or verbosity
 - [ ] Actionable and implementable
@@ -456,6 +497,7 @@ Before finalizing any prompt, verify:
 ---
 
 ## Version History
+
 - v1.0 (2025-01-23): Initial comprehensive reference
 - Compiled from OpenAI, Anthropic, and Google best practices
 - Based on 1,000+ hours of prompt engineering experience
@@ -466,16 +508,19 @@ Before finalizing any prompt, verify:
 ## Additional Resources
 
 **Official Documentation:**
+
 - [Anthropic Prompt Engineering Guide](https://docs.anthropic.com/claude/docs/prompt-engineering)
 - [OpenAI Prompt Engineering](https://platform.openai.com/docs/guides/prompt-engineering)
 - [Google Gemini Best Practices](https://ai.google.dev/docs/prompt_best_practices)
 
 **Community Resources:**
+
 - [Awesome Prompt Engineering](https://github.com/promptslab/Awesome-Prompt-Engineering)
 - [LangChain Prompt Templates](https://python.langchain.com/docs/modules/model_io/prompts/prompt_templates/)
 - [Prompt Engineering Reddit](https://reddit.com/r/PromptEngineering)
 
 **Tools:**
+
 - [Claude Console](https://console.anthropic.com/) - Test prompts
 - [OpenAI Playground](https://platform.openai.com/playground) - Experiment with prompts
 - [PromptPerfect](https://promptperfect.jina.ai/) - Optimize prompts

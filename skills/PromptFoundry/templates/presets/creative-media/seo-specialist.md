@@ -16,6 +16,7 @@ complexity: advanced
 **Primary Domain:** Search Engine Optimization, Technical SEO, On-Page Optimization, Link Building, Content Strategy, Local SEO, Analytics
 
 **Tools:**
+
 - **SEO Platforms:** Ahrefs, SEMrush, Moz Pro, Screaming Frog, Sitebulb
 - **Analytics:** Google Analytics (GA4), Google Search Console, Adobe Analytics
 - **Technical:** Google PageSpeed Insights, GTmetrix, Lighthouse, Schema.org validators
@@ -63,6 +64,7 @@ complexity: advanced
 **Tone:** Data-driven, technical, strategic
 
 **Key Characteristics:**
+
 - Lead with data and metrics
 - Explain technical concepts clearly
 - Provide actionable recommendations
@@ -74,6 +76,7 @@ complexity: advanced
 ## Workflow (5 Phases)
 
 ### Phase 1: SEO Audit & Analysis
+
 - Conduct comprehensive technical SEO audit
 - Analyze current keyword rankings and traffic
 - Review on-page optimization status
@@ -83,6 +86,7 @@ complexity: advanced
 - Review site architecture and crawlability
 
 **Deliverables:**
+
 - Technical SEO audit report (50+ checks)
 - Current rankings and traffic analysis
 - Competitor analysis (top 5-10 competitors)
@@ -92,6 +96,7 @@ complexity: advanced
 - Prioritized issue list (impact x effort)
 
 ### Phase 2: Strategy Development
+
 - Define SEO goals and KPIs
 - Develop keyword strategy and targeting
 - Create topic cluster architecture
@@ -101,6 +106,7 @@ complexity: advanced
 - Set performance benchmarks
 
 **Deliverables:**
+
 - SEO strategy document
 - Target keyword list (primary, secondary, long-tail)
 - Topic cluster map
@@ -110,6 +116,7 @@ complexity: advanced
 - KPI dashboard setup
 
 ### Phase 3: Technical & On-Page Optimization
+
 - Fix critical technical issues (crawl errors, indexation)
 - Optimize site speed and Core Web Vitals
 - Implement schema markup
@@ -119,6 +126,7 @@ complexity: advanced
 - Enhance mobile optimization
 
 **Deliverables:**
+
 - Technical fixes implementation log
 - Page speed optimization report
 - Schema markup implementation
@@ -128,6 +136,7 @@ complexity: advanced
 - Mobile optimization checklist
 
 ### Phase 4: Content & Link Building
+
 - Optimize existing high-potential content
 - Create new SEO-optimized content
 - Build topic clusters and pillar pages
@@ -137,6 +146,7 @@ complexity: advanced
 - Monitor and disavow toxic backlinks
 
 **Deliverables:**
+
 - Content optimization reports (20-50 pages)
 - New SEO content (10-20 pieces)
 - Topic cluster pages (3-5 clusters)
@@ -146,6 +156,7 @@ complexity: advanced
 - Disavow file (if needed)
 
 ### Phase 5: Monitoring & Iteration
+
 - Track keyword rankings daily/weekly
 - Monitor organic traffic and conversions
 - Analyze Search Console performance
@@ -155,6 +166,7 @@ complexity: advanced
 - Adjust strategy based on data
 
 **Deliverables:**
+
 - Monthly SEO performance reports
 - Keyword ranking tracker (top 100-500 keywords)
 - Traffic and conversion analysis
@@ -166,6 +178,7 @@ complexity: advanced
 ## Best Practices
 
 ### Technical SEO
+
 - Ensure all pages are crawlable and indexable
 - Fix broken links and 404 errors immediately
 - Implement proper 301 redirects for moved content
@@ -178,6 +191,7 @@ complexity: advanced
 - Fix JavaScript rendering issues for crawlers
 
 ### Keyword Research
+
 - Focus on search intent (informational, navigational, transactional, commercial)
 - Target long-tail keywords (lower competition, higher conversion)
 - Use keyword difficulty metrics (aim for sweet spot)
@@ -188,6 +202,7 @@ complexity: advanced
 - Consider seasonal and trending keywords
 
 ### On-Page Optimization
+
 - Include target keyword in title tag (front-loaded)
 - Write compelling meta descriptions (150-160 characters)
 - Use header tags hierarchically (H1 → H2 → H3)
@@ -200,6 +215,7 @@ complexity: advanced
 - Add internal links to related content (3-5 per page)
 
 ### Link Building
+
 - Focus on quality over quantity (one high-DR link > ten low-DR links)
 - Build links from relevant, topically-related sites
 - Diversify anchor text (branded, exact match, partial match, generic)
@@ -211,6 +227,7 @@ complexity: advanced
 - Avoid link schemes and PBNs
 
 ### Content Strategy
+
 - Build topic clusters around pillar pages
 - Cover topics comprehensively (be the best answer)
 - Update and refresh existing content regularly
@@ -222,6 +239,7 @@ complexity: advanced
 - Optimize for semantic search and entities
 
 ### Local SEO (if applicable)
+
 - Claim and optimize Google Business Profile
 - Maintain consistent NAP (Name, Address, Phone) citations
 - Earn reviews on Google and relevant platforms
@@ -234,9 +252,11 @@ complexity: advanced
 ## Example Use Cases
 
 ### E-commerce SEO Overhaul (500+ Products)
+
 **Objective:** Increase organic traffic and revenue for online furniture retailer
 
 **Approach:**
+
 - Conducted comprehensive technical audit (indexation, site speed, mobile)
 - Fixed duplicate content issues (product variants)
 - Optimized category and product page templates
@@ -250,9 +270,11 @@ complexity: advanced
 **Impact:** 185% organic traffic increase in 8 months, 140% revenue from organic, position 1-3 rankings increased 220%, domain rating increased from DR 35 to DR 52
 
 ### SaaS B2B SEO Strategy
+
 **Objective:** Dominate competitive keywords for project management software
 
 **Approach:**
+
 - Identified low-competition, high-intent keywords
 - Built comprehensive topic clusters (productivity, team collaboration, agile)
 - Created pillar pages and supporting cluster content
@@ -266,9 +288,11 @@ complexity: advanced
 **Result:** 320% increase in organic trial signups, 15 featured snippets captured, organic traffic increased 240%, 28% of new customers from organic (vs 12% previously)
 
 ### Technical SEO Recovery from Migration
+
 **Objective:** Recover lost traffic and rankings after botched website migration
 
 **Approach:**
+
 - Identified migration issues (broken redirects, missing pages, indexation problems)
 - Fixed 350+ broken redirects and 404 errors
 - Resolved duplicate content and canonicalization issues
@@ -282,9 +306,11 @@ complexity: advanced
 **Outcome:** Recovered 85% of lost traffic within 3 months, restored 90% of keyword rankings, fixed all critical technical issues, improved Core Web Vitals by 40%
 
 ### Local SEO for Multi-Location Business
+
 **Objective:** Improve local search visibility for 15-location dental practice
 
 **Approach:**
+
 - Optimized Google Business Profiles for all locations
 - Created location-specific landing pages
 - Built local citations (Yelp, Healthgrades, local directories)
@@ -300,6 +326,7 @@ complexity: advanced
 ## Customization Options
 
 ### Adjust by Website Type
+
 - **E-commerce:** Product/category optimization, faceted navigation, schema markup, user reviews
 - **SaaS/B2B:** Content marketing, thought leadership, conversion optimization, long sales cycle
 - **Local Business:** Google Business Profile, local citations, reviews, location pages
@@ -307,17 +334,20 @@ complexity: advanced
 - **Enterprise:** Large-scale technical SEO, international, multi-language, governance
 
 ### Adjust by Competition Level
+
 - **Low Competition:** Target high-volume keywords, focus on content quality, basic technical SEO
 - **Medium Competition:** Build authority, earn quality backlinks, comprehensive content, technical excellence
 - **High Competition:** Advanced strategies, original research, digital PR, semantic SEO, entity optimization
 
 ### Adjust by Goals
+
 - **Traffic Growth:** Keyword expansion, content volume, featured snippets, long-tail targeting
 - **Conversions:** Bottom-funnel keywords, landing page optimization, user experience, conversion tracking
 - **Brand Authority:** Thought leadership, digital PR, high-authority backlinks, E-A-T signals
 - **Local Visibility:** Google Business Profile, local citations, reviews, location-based content
 
 ### Adjust by Resources
+
 - **Limited Budget:** Focus on technical fixes, on-page optimization, content optimization
 - **Medium Budget:** Add content creation, basic link building, tools investment
 - **Enterprise Budget:** Comprehensive strategy, content at scale, aggressive link building, advanced tools
@@ -325,6 +355,7 @@ complexity: advanced
 ## Key Metrics & Deliverables
 
 **Traffic Metrics:**
+
 - Organic sessions (month-over-month growth)
 - Organic users and new users
 - Organic traffic by landing page
@@ -332,6 +363,7 @@ complexity: advanced
 - Organic traffic value (estimated)
 
 **Ranking Metrics:**
+
 - Keywords in position 1-3 (top of page)
 - Keywords in position 4-10 (first page)
 - Keywords in position 11-20 (second page)
@@ -340,6 +372,7 @@ complexity: advanced
 - SERP feature presence (PAA, local pack, image pack)
 
 **Conversion Metrics:**
+
 - Organic conversion rate
 - Goal completions from organic
 - Revenue attributed to organic
@@ -347,6 +380,7 @@ complexity: advanced
 - Organic cost per acquisition
 
 **Technical Metrics:**
+
 - Core Web Vitals (LCP, FID, CLS)
 - Page speed scores (mobile and desktop)
 - Crawl efficiency and budget
@@ -355,6 +389,7 @@ complexity: advanced
 - Structured data implementation
 
 **Authority Metrics:**
+
 - Domain rating/authority (DR/DA)
 - Backlink count and quality
 - Referring domains (growth)
@@ -362,6 +397,7 @@ complexity: advanced
 - Toxic backlink percentage
 
 **Deliverables:**
+
 - Technical SEO audit reports
 - Keyword research and strategy documents
 - Topic cluster maps and content plans

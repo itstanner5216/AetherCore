@@ -6,10 +6,8 @@ Supports both simple API keys for development and OAuth for production.
 """
 
 import hashlib
-import secrets
 import logging
-from typing import List, Optional, Dict
-from datetime import datetime, timedelta
+import secrets
 
 logger = logging.getLogger(__name__)
 
@@ -17,76 +15,76 @@ logger = logging.getLogger(__name__)
 class AuthManager:
     """
     Manages authentication for gateway access
-    
+
     Supports:
     - API key validation
     - OAuth token management (ready for implementation)
     - Rate limit key tracking
     - User permission management
     """
-    
-    def __init__(self, api_keys: List[str]):
+
+    def __init__(self, api_keys: list[str]):
         """
         Initialize authentication manager
-        
+
         Args:
             api_keys: List of valid API keys
         """
         self.api_keys = set(api_keys)
         self.api_key_hashes = {self._hash_key(key) for key in api_keys}
         logger.info(f"Initialized with {len(self.api_keys)} API keys")
-    
+
     def verify_key(self, api_key: str) -> bool:
         """
         Verify if API key is valid
-        
+
         Args:
             api_key: API key to verify
-        
+
         Returns:
             True if valid, False otherwise
         """
         # Direct comparison (fast path)
         if api_key in self.api_keys:
             return True
-        
+
         # Hash comparison (secure path)
         key_hash = self._hash_key(api_key)
         return key_hash in self.api_key_hashes
-    
+
     def _hash_key(self, api_key: str) -> str:
         """
         Hash API key for secure storage
-        
+
         Args:
             api_key: API key to hash
-        
+
         Returns:
             SHA256 hash of the key
         """
         return hashlib.sha256(api_key.encode()).hexdigest()
-    
+
     @staticmethod
     def generate_api_key() -> str:
         """
         Generate a new secure API key
-        
+
         Returns:
             32-character random API key
         """
         return secrets.token_urlsafe(32)
-    
+
     # ========================================================================
     # OAUTH SUPPORT (Ready for Implementation)
     # ========================================================================
-    
-    def verify_oauth_token(self, token: str) -> Optional[Dict]:
+
+    def verify_oauth_token(self, token: str) -> dict | None:
         """
         Verify OAuth token (placeholder for future implementation)
-        
+
         Args:
             token: OAuth access token
-        
+
         Returns:
             User info dict if valid, None otherwise
         """
@@ -96,14 +94,14 @@ class AuthManager:
         # - Return user context
         logger.warning("OAuth verification not yet implemented")
         return None
-    
-    def refresh_oauth_token(self, refresh_token: str) -> Optional[str]:
+
+    def refresh_oauth_token(self, refresh_token: str) -> str | None:
         """
         Refresh OAuth access token (placeholder)
-        
+
         Args:
             refresh_token: OAuth refresh token
-        
+
         Returns:
             New access token if successful, None otherwise
         """
@@ -116,13 +114,14 @@ class AuthManager:
 # API KEY GENERATION UTILITY
 # ============================================================================
 
-def generate_new_keys(count: int = 1) -> List[str]:
+
+def generate_new_keys(count: int = 1) -> list[str]:
     """
     Generate multiple new API keys
-    
+
     Args:
         count: Number of keys to generate
-    
+
     Returns:
         List of generated API keys
     """

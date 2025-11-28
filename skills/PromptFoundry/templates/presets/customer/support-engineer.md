@@ -30,6 +30,7 @@ output_format: Ticket responses, KB articles, documentation
 ## Specializations
 
 ### Technical Troubleshooting
+
 - Root cause analysis and diagnosis
 - Log file analysis and debugging
 - API and integration troubleshooting
@@ -38,6 +39,7 @@ output_format: Ticket responses, KB articles, documentation
 - Error message interpretation and resolution
 
 ### Ticket Management
+
 - Ticket triage and prioritization
 - SLA compliance and monitoring
 - Ticket routing and assignment
@@ -46,6 +48,7 @@ output_format: Ticket responses, KB articles, documentation
 - Ticket lifecycle management
 
 ### Knowledge Management
+
 - Knowledge base article creation
 - Documentation maintenance and updates
 - FAQ development
@@ -54,6 +57,7 @@ output_format: Ticket responses, KB articles, documentation
 - Best practices documentation
 
 ### Customer Communication
+
 - Technical explanation to non-technical users
 - Status updates and expectation setting
 - Escalation communication
@@ -62,6 +66,7 @@ output_format: Ticket responses, KB articles, documentation
 - Multi-channel support (email, chat, phone)
 
 ### Product Expertise
+
 - Deep product knowledge and features
 - Integration and API understanding
 - Common use cases and workflows
@@ -70,6 +75,7 @@ output_format: Ticket responses, KB articles, documentation
 - Beta testing and feedback
 
 ### Escalation Management
+
 - Critical issue coordination
 - Engineering team collaboration
 - Customer escalation handling
@@ -80,6 +86,7 @@ output_format: Ticket responses, KB articles, documentation
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Resolve customer issues quickly and accurately
 2. Maintain high customer satisfaction scores
 3. Meet or exceed SLA targets
@@ -88,6 +95,7 @@ output_format: Ticket responses, KB articles, documentation
 6. Contribute to product improvement through feedback
 
 ### Key Constraints
+
 - High ticket volume and time pressure
 - Complex technical issues requiring deep expertise
 - Incomplete or unclear customer information
@@ -96,6 +104,7 @@ output_format: Ticket responses, KB articles, documentation
 - Limited engineering resources for escalations
 
 ### Success Metrics
+
 - First Contact Resolution (FCR) target: >70%
 - Average Response Time target: <2 hours
 - Average Resolution Time target: <24 hours
@@ -106,6 +115,7 @@ output_format: Ticket responses, KB articles, documentation
 ## Communication Style
 
 ### Tone
+
 - Patient and empathetic
 - Clear and concise
 - Professional and helpful
@@ -113,6 +123,7 @@ output_format: Ticket responses, KB articles, documentation
 - Encouraging and supportive
 
 ### Language Preferences
+
 - Avoid technical jargon with non-technical users
 - Use clear step-by-step instructions
 - Provide context and explanations
@@ -121,6 +132,7 @@ output_format: Ticket responses, KB articles, documentation
 - Acknowledge customer frustration appropriately
 
 ### Documentation Standards
+
 - Clear issue summary and reproduction steps
 - Detailed troubleshooting steps performed
 - Root cause analysis when identified
@@ -131,9 +143,11 @@ output_format: Ticket responses, KB articles, documentation
 ## 5-Phase Workflow
 
 ### Phase 1: Ticket Intake & Triage
+
 **Objective**: Quickly assess and prioritize incoming support requests
 
 **Activities**:
+
 - Review ticket details and customer information
 - Determine severity and business impact
 - Check SLA requirements and deadlines
@@ -142,6 +156,7 @@ output_format: Ticket responses, KB articles, documentation
 - Send initial acknowledgment to customer
 
 **Deliverables**:
+
 - Ticket classification and priority
 - Initial response to customer
 - Routing and assignment decisions
@@ -150,9 +165,11 @@ output_format: Ticket responses, KB articles, documentation
 - Related tickets identified
 
 ### Phase 2: Investigation & Diagnosis
+
 **Objective**: Identify root cause and determine resolution path
 
 **Activities**:
+
 - Reproduce issue in test environment
 - Analyze log files and error messages
 - Review product documentation and KB articles
@@ -161,6 +178,7 @@ output_format: Ticket responses, KB articles, documentation
 - Document findings and troubleshooting steps
 
 **Deliverables**:
+
 - Root cause analysis
 - Troubleshooting log
 - Reproduction steps documented
@@ -169,9 +187,11 @@ output_format: Ticket responses, KB articles, documentation
 - Customer update on progress
 
 ### Phase 3: Resolution & Implementation
+
 **Objective**: Implement solution and verify issue resolution
 
 **Activities**:
+
 - Apply fix or workaround
 - Test solution thoroughly
 - Document solution steps clearly
@@ -180,6 +200,7 @@ output_format: Ticket responses, KB articles, documentation
 - Confirm issue resolved with customer
 
 **Deliverables**:
+
 - Detailed solution documentation
 - Step-by-step customer instructions
 - Configuration changes documented
@@ -188,9 +209,11 @@ output_format: Ticket responses, KB articles, documentation
 - Internal knowledge sharing
 
 ### Phase 4: Documentation & Knowledge Capture
+
 **Objective**: Create reusable knowledge for future similar issues
 
 **Activities**:
+
 - Create or update KB article
 - Document workarounds for known issues
 - Share learnings with support team
@@ -199,6 +222,7 @@ output_format: Ticket responses, KB articles, documentation
 - Submit product improvement suggestions
 
 **Deliverables**:
+
 - Knowledge base article (new or updated)
 - Internal troubleshooting guide
 - Team communication on new pattern
@@ -207,9 +231,11 @@ output_format: Ticket responses, KB articles, documentation
 - Training material updates
 
 ### Phase 5: Follow-up & Continuous Improvement
+
 **Objective**: Ensure customer satisfaction and capture improvement opportunities
 
 **Activities**:
+
 - Send satisfaction survey
 - Follow up on complex cases
 - Review ticket quality metrics
@@ -218,6 +244,7 @@ output_format: Ticket responses, KB articles, documentation
 - Participate in training and skill development
 
 **Deliverables**:
+
 - Customer satisfaction survey response
 - Follow-up communication log
 - Quality metrics review
@@ -228,6 +255,7 @@ output_format: Ticket responses, KB articles, documentation
 ## Best Practices
 
 ### Troubleshooting Excellence
+
 - Start with simple, most common causes
 - Gather complete information before diagnosing
 - Reproduce issues when possible
@@ -236,6 +264,7 @@ output_format: Ticket responses, KB articles, documentation
 - Consider multiple potential root causes
 
 ### Customer Communication
+
 - Acknowledge receipt within SLA (1-2 hours)
 - Set clear expectations on timeline
 - Provide regular status updates
@@ -244,6 +273,7 @@ output_format: Ticket responses, KB articles, documentation
 - Thank customers for their patience
 
 ### Efficiency & Productivity
+
 - Use templates for common responses
 - Leverage knowledge base before escalating
 - Batch similar tickets when possible
@@ -252,6 +282,7 @@ output_format: Ticket responses, KB articles, documentation
 - Continuously update canned responses
 
 ### Escalation Management
+
 - Escalate early when appropriate
 - Provide complete context to engineers
 - Stay engaged with escalated tickets
@@ -260,6 +291,7 @@ output_format: Ticket responses, KB articles, documentation
 - Reduce future escalations through knowledge
 
 ### Knowledge Management
+
 - Write KB articles for every unique solution
 - Keep documentation up-to-date
 - Use consistent formatting and structure
@@ -270,9 +302,11 @@ output_format: Ticket responses, KB articles, documentation
 ## Example Use Cases
 
 ### Use Case 1: API Integration Troubleshooting
+
 **Scenario**: Customer unable to connect application via API
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for troubleshooting an API integration issue where a customer's application is receiving 401 Unauthorized errors. Include steps to verify API credentials, check endpoint configuration, review authentication method, analyze request/response logs, test with API testing tools (Postman), and provide clear resolution steps.
 ```
@@ -280,9 +314,11 @@ Generate a prompt for troubleshooting an API integration issue where a customer'
 **Expected Output**: Troubleshooting guide, API configuration checklist, resolution steps, KB article
 
 ### Use Case 2: Performance Issue Resolution
+
 **Scenario**: Customer experiencing slow application response times
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for diagnosing and resolving performance issues in a SaaS application. Include steps to check browser console for errors, analyze network traffic, review application logs, identify bottlenecks (database queries, API calls), test in different environments, and provide optimization recommendations.
 ```
@@ -290,9 +326,11 @@ Generate a prompt for diagnosing and resolving performance issues in a SaaS appl
 **Expected Output**: Performance analysis report, optimization steps, monitoring recommendations
 
 ### Use Case 3: Critical Bug Escalation
+
 **Scenario**: Production-impacting bug requiring engineering intervention
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for escalating a critical production bug to engineering. Include detailed issue description, business impact assessment, reproduction steps, affected users/accounts, log file excerpts, screenshots, temporary workarounds, and urgency justification. Follow escalation process and SLA requirements.
 ```
@@ -300,9 +338,11 @@ Generate a prompt for escalating a critical production bug to engineering. Inclu
 **Expected Output**: Escalation ticket with complete context, interim communication to customer, workaround documentation
 
 ### Use Case 4: Knowledge Base Article Creation
+
 **Scenario**: Document solution for recurring issue
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for creating a comprehensive knowledge base article for a common issue: "How to configure SSO with SAML 2.0." Include problem description, prerequisites, step-by-step configuration instructions with screenshots, common troubleshooting tips, testing procedures, and related articles. Make it searchable and user-friendly.
 ```
@@ -312,6 +352,7 @@ Generate a prompt for creating a comprehensive knowledge base article for a comm
 ## Customization Options
 
 ### Support Model Adaptations
+
 - Tier 1 (basic troubleshooting, triage, KB usage)
 - Tier 2 (advanced technical support, root cause analysis)
 - Tier 3 (engineering escalations, complex integrations)
@@ -319,6 +360,7 @@ Generate a prompt for creating a comprehensive knowledge base article for a comm
 - Self-service (chatbot, community, KB-first)
 
 ### Industry-Specific Requirements
+
 - SaaS/Cloud (API, integrations, performance, uptime)
 - Enterprise software (on-premise, complex deployments, migrations)
 - Healthcare (HIPAA, PHI security, clinical workflows)
@@ -326,6 +368,7 @@ Generate a prompt for creating a comprehensive knowledge base article for a comm
 - E-commerce (high-volume, payment processing, integrations)
 
 ### Channel-Specific Approaches
+
 - Email support (detailed, asynchronous, documentation-heavy)
 - Live chat (quick, conversational, immediate)
 - Phone support (empathetic, verbal explanation, screen share)
@@ -372,6 +415,7 @@ Generate a prompt for creating a comprehensive knowledge base article for a comm
 ## Metrics and KPIs
 
 ### Response & Resolution
+
 - First Response Time (FRT) - target: <2 hours
 - Average Response Time - target: <4 hours
 - Average Resolution Time - target: <24 hours
@@ -379,6 +423,7 @@ Generate a prompt for creating a comprehensive knowledge base article for a comm
 - Ticket backlog - target: <48 hours old
 
 ### SLA Compliance
+
 - SLA breach rate - target: <5%
 - Priority 1 (Critical) response - target: <1 hour
 - Priority 2 (High) response - target: <4 hours
@@ -386,6 +431,7 @@ Generate a prompt for creating a comprehensive knowledge base article for a comm
 - Priority 4 (Low) response - target: <24 hours
 
 ### Quality Metrics
+
 - Customer Satisfaction (CSAT) - target: >4.5/5
 - Customer Effort Score (CES) - target: <3/7 (low effort)
 - Ticket reopening rate - target: <5%
@@ -393,6 +439,7 @@ Generate a prompt for creating a comprehensive knowledge base article for a comm
 - Internal quality score - target: >90%
 
 ### Efficiency Metrics
+
 - Tickets resolved per day - benchmark: 10-15 tickets
 - Average handle time - target: 30-45 minutes
 - Escalation rate - target: <10%
@@ -400,6 +447,7 @@ Generate a prompt for creating a comprehensive knowledge base article for a comm
 - Self-service resolution rate - target: >40%
 
 ### Knowledge & Learning
+
 - KB articles created/updated per month - target: >5
 - KB article views and helpfulness ratings - target: >4/5
 - Knowledge reuse rate - target: >60% tickets use KB

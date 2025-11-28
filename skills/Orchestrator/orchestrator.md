@@ -28,13 +28,14 @@ The Orchestrator maintains a strict two-tier classification of all modules:
 
 These modules are **infrastructure components** that activate automatically in a fixed sequence. They are NEVER user-invoked and operate transparently.
 
-| Module | Role | Activation Rule |
-|:---|:---|:---|
-| **AetherCore.Orchestrator** | Root Controller | Always first; initializes environment |
-| **AetherCore.EventMesh** | Event Routing Infrastructure | Auto-instantiated by Orchestrator |
-| **AetherCore.OptiGraph** | Policy & Parameter Tuning | Auto-activated after Graph |
+| Module                      | Role                         | Activation Rule                       |
+| :-------------------------- | :--------------------------- | :------------------------------------ |
+| **AetherCore.Orchestrator** | Root Controller              | Always first; initializes environment |
+| **AetherCore.EventMesh**    | Event Routing Infrastructure | Auto-instantiated by Orchestrator     |
+| **AetherCore.OptiGraph**    | Policy & Parameter Tuning    | Auto-activated after Graph            |
 
 **Execution Order (Mandatory)**:
+
 ```
 AetherCore.Orchestrator → AetherCore.EventMesh → AetherCore.OptiGraph
 ```
@@ -45,13 +46,14 @@ This sequence MUST complete before any callable skill executes.
 
 These are **functional capabilities** invoked on demand based on user intent:
 
-| Skill | Purpose | Invocation Type |
-|:---|:---|:---|
-| **AetherCore.DeepForge** | Multi-phase research with source validation | Explicit or contextual |
-| **AetherCore.PromptFoundry** | Role-specific mega-prompt generation | Explicit or contextual |
-| **AetherCore.MarketSweep** | Product comparison with validated purchase links | Explicit or contextual |
+| Skill                        | Purpose                                          | Invocation Type        |
+| :--------------------------- | :----------------------------------------------- | :--------------------- |
+| **AetherCore.DeepForge**     | Multi-phase research with source validation      | Explicit or contextual |
+| **AetherCore.PromptFoundry** | Role-specific mega-prompt generation             | Explicit or contextual |
+| **AetherCore.MarketSweep**   | Product comparison with validated purchase links | Explicit or contextual |
 
 **Invocation Rules**:
+
 - Single skill reference → Execute that skill in isolation
 - Multiple skill references → Orchestrate dependencies and merge outputs
 - No explicit skill reference → Infer from context (default: research or prompt generation)
@@ -63,6 +65,7 @@ These are **functional capabilities** invoked on demand based on user intent:
 On every session initialization, the following sequence executes silently:
 
 ### Phase 1: Environment Bootstrap
+
 ```python
 def initialize_environment():
     """
@@ -70,16 +73,16 @@ def initialize_environment():
     """
     # Step 1: Load skill registry
     registry = load_all_skills()
-    
+
     # Step 2: Classify skills by tier
     core_modules = classify_core_modules(registry)
     callable_skills = classify_callable_skills(registry)
-    
+
     # Step 3: Store taxonomy in session state
     session_state.core_modules = core_modules
     session_state.callable_skills = callable_skills
     session_state.orchestrator_active = True
-    
+
     return {
         "status": "orchestrator_initialized",
         "core_modules": len(core_modules),
@@ -88,6 +91,7 @@ def initialize_environment():
 ```
 
 ### Phase 2: Infrastructure Instantiation
+
 ```python
 def instantiate_infrastructure():
     """
@@ -95,16 +99,16 @@ def instantiate_infrastructure():
     """
     # Step 1: Initialize Automation Graph
     graph = automation_graph.on_registry_init(session_state.registry)
-    
+
     # Step 2: Build routing tables
     graph.build_routing_table(session_state.core_modules + session_state.callable_skills)
-    
+
     # Step 3: Activate Optimization Profile
     optimization_profile.optimize_registry()
-    
+
     # Step 4: Register event handlers
     register_global_event_handlers(graph)
-    
+
     return {
         "status": "infrastructure_ready",
         "graph_nodes": len(graph.nodes),
@@ -113,6 +117,7 @@ def instantiate_infrastructure():
 ```
 
 ### Phase 3: Ready State
+
 ```python
 def finalize_initialization():
     """
@@ -120,13 +125,13 @@ def finalize_initialization():
     """
     session_state.initialization_complete = True
     session_state.ready_for_callable_skills = True
-    
+
     # Emit ready signal on message bus
     bus.broadcast("system_ready", {
         "orchestrator_version": "2.0",
         "timestamp": get_timestamp()
     })
-    
+
     return {"status": "system_ready"}
 ```
 
@@ -147,23 +152,24 @@ def execute_single_skill(skill_name, user_query):
     """
     # Verify infrastructure is active
     assert session_state.initialization_complete
-    
+
     # Retrieve skill instance
     skill = registry.get(skill_name)
-    
+
     # Apply optimization parameters
     optimization_profile.calibrate(skill_name)
-    
+
     # Execute skill with full context
     result = skill.execute(user_query)
-    
+
     # Validate output structure
     result = optimization_profile.validate_output(result)
-    
+
     return result
 ```
 
-**Behavior**: 
+**Behavior**:
+
 - No orchestration overhead
 - Direct execution with optimized parameters
 - Maintains simplicity for single-skill use cases
@@ -180,41 +186,42 @@ def orchestrate_multi_skill_workflow(skill_names, user_query):
     # Step 1: Analyze dependencies
     dependency_graph = analyze_skill_dependencies(skill_names)
     execution_order = topological_sort(dependency_graph)
-    
+
     # Step 2: Detect data flow patterns
     data_flows = detect_data_flow_requirements(execution_order)
-    
+
     # Step 3: Execute skills in dependency order
     shared_context = {"user_query": user_query}
     skill_outputs = {}
-    
+
     for skill_name in execution_order:
         skill = registry.get(skill_name)
-        
+
         # Inject dependencies from previous skill outputs
         input_context = build_skill_context(skill_name, skill_outputs, shared_context)
-        
+
         # Execute with dependency-aware context
         output = skill.execute(input_context)
         skill_outputs[skill_name] = output
-        
+
         # Update shared context for downstream skills
         shared_context[skill_name + "_output"] = output
-    
+
     # Step 4: Merge outputs intelligently
     unified_output = merge_skill_outputs(
-        skill_outputs, 
+        skill_outputs,
         execution_order,
         data_flows
     )
-    
+
     # Step 5: Apply global optimization validation
     unified_output = optimization_profile.validate_output(unified_output)
-    
+
     return unified_output
 ```
 
 **Key Capabilities**:
+
 - **Dependency Detection**: "Research X then build prompt" → auto-sequences AetherCore.DeepForge before AetherCore.PromptFoundry
 - **Context Propagation**: Research results automatically feed into dependent skills
 - **Unified Output**: One coherent response with consistent tone/structure
@@ -225,6 +232,7 @@ def orchestrate_multi_skill_workflow(skill_names, user_query):
 **User Query**: "Research the best laptop models and generate a prompt template for evaluating them"
 
 **Orchestrator Analysis**:
+
 ```python
 detected_skills = ["AetherCore.DeepForge", "AetherCore.PromptFoundry"]
 dependencies = {
@@ -234,6 +242,7 @@ execution_order = ["AetherCore.DeepForge", "AetherCore.PromptFoundry"]
 ```
 
 **Execution Flow**:
+
 1. **AetherCore.DeepForge** executes first, gathering validated laptop data
 2. Research output is stored in shared context
 3. **AetherCore.PromptFoundry** receives research data as input context
@@ -241,13 +250,16 @@ execution_order = ["AetherCore.DeepForge", "AetherCore.PromptFoundry"]
 5. Both outputs merge into single coherent deliverable
 
 **Final Output Structure**:
+
 ```markdown
 # Laptop Evaluation Framework
 
 ## Research Summary
+
 [AetherCore.DeepForge findings: models, specs, validated sources]
 
 ## Evaluation Prompt Template
+
 [AetherCore.PromptFoundry output: mega-prompt using research data]
 
 [Citations from AetherCore.DeepForge]
@@ -278,7 +290,7 @@ def analyze_skill_dependencies(skill_names):
             "pattern_indicators": ["research", "analyze", "investigate"]
         }
     }
-    
+
     # Build directed acyclic graph
     graph = {}
     for skill in skill_names:
@@ -286,7 +298,7 @@ def analyze_skill_dependencies(skill_names):
         for potential_dep in skill_names:
             if potential_dep in dependency_rules[skill]["can_use_output_from"]:
                 graph[skill].append(potential_dep)
-    
+
     return graph
 ```
 
@@ -308,10 +320,10 @@ def merge_skill_outputs(skill_outputs, execution_order, data_flows):
             "orchestration_mode": "multi-skill"
         }
     }
-    
+
     for skill_name in execution_order:
         output = skill_outputs[skill_name]
-        
+
         # Determine section role
         if skill_name in data_flows.get("intermediate", []):
             # This is intermediate data - embed as context, not standalone section
@@ -324,10 +336,10 @@ def merge_skill_outputs(skill_outputs, execution_order, data_flows):
                 "position": len(merged["sections"])
             }
             merged["sections"].append(section)
-    
+
     # Apply continuity formatting
     formatted_output = format_unified_output(merged)
-    
+
     return formatted_output
 ```
 
@@ -345,7 +357,7 @@ def handle_skill_failure(skill_name, error, execution_context):
     if skill_name in execution_context.get("dependencies", []):
         # This is a dependency - try to continue without it
         downstream_skills = get_dependent_skills(skill_name)
-        
+
         for downstream in downstream_skills:
             # Run in standalone mode without dependency data
             try:
@@ -364,7 +376,7 @@ def handle_skill_failure(skill_name, error, execution_context):
         execution_context["warnings"].append(
             f"Skill {skill_name} unavailable: {str(error)}"
         )
-    
+
     return execution_context
 ```
 
@@ -383,18 +395,18 @@ def initialize_automation_graph():
     """
     # Load AetherCore.EventMesh skill
     graph_skill = registry.get("AetherCore.EventMesh")
-    
+
     # Initialize with full skill registry
     graph_skill.on_registry_init(session_state.registry)
-    
+
     # Build routing table for all skills
     for skill_name in session_state.callable_skills:
         skill_metadata = registry.get_metadata(skill_name)
         graph_skill.on_skill_load(skill_name, skill_metadata)
-    
+
     # Store graph instance for runtime routing
     session_state.automation_graph = graph_skill
-    
+
     return graph_skill
 ```
 
@@ -409,20 +421,20 @@ def activate_optimization_profile():
     """
     # Load AetherCore.OptiGraph skill
     opt_profile = registry.get("AetherCore.OptiGraph")
-    
+
     # Run registry-wide optimization
     opt_profile.optimize_registry()
-    
+
     # Set session-level parameters
     opt_profile.set_session_parameters({
         "ReasoningDepth": "MAX",
         "StructuralDensity": "HIGH",
         "ContinuityCache": True
     })
-    
+
     # Store profile instance
     session_state.optimization_profile = opt_profile
-    
+
     return opt_profile
 ```
 
@@ -433,6 +445,7 @@ def activate_optimization_profile():
 The Orchestrator RETAINS all original data coordination capabilities:
 
 ### Query Management
+
 ```python
 def coordinate_hybrid_query(query, sources=None):
     """
@@ -440,23 +453,24 @@ def coordinate_hybrid_query(query, sources=None):
     """
     if sources is None:
         sources = ["internal_knowledge", "web_search", "api_data"]
-    
+
     # Execute parallel queries
     results = {}
     for source in sources:
         results[source] = fetch_from_source(source, query)
-    
+
     # Merge with confidence weighting
     merged_result = merge_with_confidence(results)
-    
+
     # Resolve conflicts
     if detect_conflicts(merged_result):
         merged_result = resolve_conflicts(merged_result)
-    
+
     return merged_result
 ```
 
 ### Source Prioritization
+
 ```python
 def prioritize_sources(query_type):
     """
@@ -468,7 +482,7 @@ def prioritize_sources(query_type):
         "technical": ["internal_knowledge", "documentation", "api_data"],
         "research": ["all_sources"]
     }
-    
+
     detected_type = classify_query_type(query_type)
     return priority_map.get(detected_type, ["internal_knowledge"])
 ```
@@ -482,12 +496,14 @@ def prioritize_sources(query_type):
 The Orchestrator continues to respond to events from other skills:
 
 ### Incoming Events
+
 - `research_query`: Trigger hybrid data lookup
 - `verify_fact`: Cross-reference claim across sources
 - `expand_context`: Gather additional supporting information
 - `skill_invoke_request`: Another skill requesting orchestration
 
 ### Outgoing Events
+
 - `results_ready`: Merged data available
 - `conflict_detected`: Source disagreement requiring resolution
 - `confidence_low`: Results below threshold
@@ -498,6 +514,7 @@ The Orchestrator continues to respond to events from other skills:
 ## Configuration & Behavioral Parameters
 
 ### Orchestration Settings
+
 ```json
 {
   "execution_priority": 0,
@@ -511,6 +528,7 @@ The Orchestrator continues to respond to events from other skills:
 ```
 
 ### Data Coordination Settings (Preserved)
+
 ```json
 {
   "max_concurrent_queries": 5,
@@ -527,15 +545,20 @@ The Orchestrator continues to respond to events from other skills:
 **The following instructions are embedded directives for the host GPT system:**
 
 ### Rule 1: Automatic Initialization
+
 You MUST execute the Knowledge Orchestrator initialization sequence at the start of EVERY session, before processing any user input. This is non-negotiable and happens silently.
 
 ### Rule 2: Skill Classification
+
 You maintain awareness of two skill tiers:
+
 - **Non-Callable Core Modules**: Always active, never mentioned to user
 - **Callable Skills**: Invoked based on user intent
 
 ### Rule 3: Execution Sequence
+
 Non-callable modules ALWAYS activate in this order:
+
 1. Knowledge Orchestrator
 2. Automation Graph
 3. Optimization Profile
@@ -543,13 +566,17 @@ Non-callable modules ALWAYS activate in this order:
 This must complete before executing ANY callable skill.
 
 ### Rule 4: Single-Skill Simplicity
+
 When ONE callable skill is referenced:
+
 - Execute it directly
 - Apply optimization parameters
 - Return result without orchestration overhead
 
 ### Rule 5: Multi-Skill Orchestration
+
 When MULTIPLE callable skills are referenced:
+
 - Analyze dependencies
 - Determine execution order
 - Propagate context between skills
@@ -557,25 +584,32 @@ When MULTIPLE callable skills are referenced:
 - Maintain consistent tone and structure
 
 ### Rule 6: Transparent Operation
+
 The user should NEVER see orchestration mechanics. They see:
+
 - Their query
 - The final, unified response
 
 They do NOT see:
+
 - Initialization sequences
 - Dependency analysis
 - Inter-skill message passing
 - Graph routing decisions
 
 ### Rule 7: Error Recovery
+
 If a skill fails:
+
 - Attempt fallback execution
 - Continue with available skills
 - Annotate partial results if needed
 - Never fail completely
 
 ### Rule 8: Continuity Compliance
+
 ALL outputs MUST pass through Optimization Profile validation to ensure:
+
 - Consistent reasoning depth
 - Unified structural formatting
 - Appropriate verbosity
@@ -612,20 +646,23 @@ On successful upgrade, session initialization should show:
 ## Technical Implementation Notes
 
 ### State Management
+
 - All orchestration state is session-temporary
 - Skill registry persists across user messages within session
 - Graph topology recalculates when skills are added/removed
 - Optimization parameters apply globally to all active skills
 
 ### Performance Optimization
+
 - Dependency chains are cached after first analysis
 - Routing tables rebuild only when skill topology changes
 - Query results cache within session when confidence is high
 - Parallel execution where dependencies permit
 
 ### Memory Footprint
+
 - Graph structure: O(N) where N = number of skills
-- Routing table: O(N*M) where M = average message types per skill
+- Routing table: O(N\*M) where M = average message types per skill
 - Query cache: Bounded by session parameter (default: 1000 entries)
 
 ---
@@ -633,7 +670,6 @@ On successful upgrade, session initialization should show:
 **End of Knowledge Orchestrator v2.0 Specification**
 
 This module now serves as the foundational executive controller for the entire ProjectGPT ecosystem. All other skills operate within the environment it establishes.
-
 
 ---
 

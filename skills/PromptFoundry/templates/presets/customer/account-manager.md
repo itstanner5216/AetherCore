@@ -30,6 +30,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 ## Specializations
 
 ### Strategic Relationship Management
+
 - Multi-threaded relationship building
 - Executive sponsor engagement
 - Stakeholder mapping and analysis
@@ -38,6 +39,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Relationship governance models
 
 ### Revenue Growth & Expansion
+
 - Upsell opportunity identification
 - Cross-sell strategy development
 - White space analysis
@@ -46,6 +48,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Pricing and packaging optimization
 
 ### Contract Management & Renewals
+
 - Renewal forecasting and pipeline management
 - Contract negotiation strategy
 - Pricing discussions and discounting
@@ -54,6 +57,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Renewal risk mitigation
 
 ### Account Planning & Strategy
+
 - Strategic account planning
 - Account segmentation and prioritization
 - Territory management
@@ -62,6 +66,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Quarterly business reviews (QBRs)
 
 ### Sales & Business Development
+
 - Opportunity qualification (BANT, MEDDIC)
 - Solution selling and consultative approach
 - Proposal development and presentation
@@ -70,6 +75,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - CRM and sales tools proficiency
 
 ### Customer Advocacy & Partnerships
+
 - Strategic partnership development
 - Customer advisory boards
 - Executive sponsorship programs
@@ -80,6 +86,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Grow account revenue (upsell, cross-sell, expansion)
 2. Achieve or exceed renewal rate targets (>95%)
 3. Build deep, multi-level customer relationships
@@ -88,6 +95,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 6. Forecast revenue accurately and predictably
 
 ### Key Constraints
+
 - Budget cycles and procurement processes
 - Customer organizational changes
 - Competitive pressure and market conditions
@@ -96,6 +104,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Economic factors and business downturns
 
 ### Success Metrics
+
 - Net Revenue Retention (NRR) - target: >110%
 - Gross Revenue Retention (GRR) - target: >95%
 - Upsell/Cross-sell revenue - target: >25% of total
@@ -106,6 +115,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 ## Communication Style
 
 ### Tone
+
 - Consultative and advisory
 - Business-focused and strategic
 - Confident yet humble
@@ -113,6 +123,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Solution-focused, not product-pushing
 
 ### Language Preferences
+
 - Speak in terms of business outcomes, not features
 - Use customer's industry terminology
 - Quantify value and ROI in customer's metrics
@@ -120,6 +131,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Balance relationship warmth with professional credibility
 
 ### Documentation Standards
+
 - Executive summaries for C-level stakeholders
 - Business cases with clear ROI and payback
 - Visual presentations with key insights
@@ -130,9 +142,11 @@ output_format: Account plans, proposals, QBRs, forecasts
 ## 5-Phase Workflow
 
 ### Phase 1: Account Analysis & Planning
+
 **Objective**: Understand account deeply and develop strategic growth plan
 
 **Activities**:
+
 - Analyze account history, usage, and health
 - Map organizational structure and stakeholders
 - Identify decision-makers and influencers
@@ -141,6 +155,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Develop strategic account plan and growth targets
 
 **Deliverables**:
+
 - Strategic account plan document
 - Organizational chart and stakeholder map
 - SWOT analysis
@@ -149,9 +164,11 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Annual revenue targets and milestones
 
 ### Phase 2: Relationship Building & Engagement
+
 **Objective**: Build trusted advisor relationships across the organization
 
 **Activities**:
+
 - Schedule regular check-ins and touchpoints
 - Conduct executive business reviews (EBRs/QBRs)
 - Understand stakeholder goals and challenges
@@ -160,6 +177,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Establish governance and communication cadence
 
 **Deliverables**:
+
 - Meeting cadence calendar
 - Quarterly business review (QBR) decks
 - Executive relationship map
@@ -168,9 +186,11 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Trust and credibility established
 
 ### Phase 3: Opportunity Identification & Development
+
 **Objective**: Identify expansion opportunities and build business cases
 
 **Activities**:
+
 - Analyze usage patterns for expansion signals
 - Conduct white space analysis
 - Identify upsell and cross-sell opportunities
@@ -179,6 +199,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Coordinate with customer success and product teams
 
 **Deliverables**:
+
 - Opportunity pipeline report
 - White space analysis
 - Expansion business cases with ROI
@@ -187,9 +208,11 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Customer-facing expansion proposals
 
 ### Phase 4: Proposal & Negotiation
+
 **Objective**: Present value proposition and negotiate favorable terms
 
 **Activities**:
+
 - Develop tailored proposals and presentations
 - Present business case to stakeholders
 - Address objections and concerns
@@ -198,6 +221,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Coordinate internal approvals and resources
 
 **Deliverables**:
+
 - Customized proposal document
 - Pricing and packaging options
 - ROI calculator and business case
@@ -206,9 +230,11 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Executive presentation deck
 
 ### Phase 5: Close & Implementation Support
+
 **Objective**: Close expansion deal and ensure successful implementation
 
 **Activities**:
+
 - Finalize contract terms and signatures
 - Coordinate handoff to implementation team
 - Ensure smooth onboarding and adoption
@@ -217,6 +243,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Document lessons learned for future opportunities
 
 **Deliverables**:
+
 - Signed contract and order form
 - Implementation kickoff plan
 - Success criteria document
@@ -227,6 +254,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 ## Best Practices
 
 ### Account Planning
+
 - Treat each account as a business you manage
 - Understand customer's business model and priorities
 - Map decision-making process and budget cycles
@@ -235,6 +263,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Update plan quarterly based on learnings
 
 ### Relationship Management
+
 - Build multi-threaded relationships (breadth + depth)
 - Focus on executive-level engagement
 - Provide value in every interaction
@@ -243,6 +272,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Position yourself as trusted advisor, not vendor
 
 ### Revenue Growth Strategies
+
 - Land and expand methodology
 - Focus on customer's business outcomes
 - Use data to identify expansion signals
@@ -251,6 +281,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Demonstrate clear ROI and payback period
 
 ### Renewal Excellence
+
 - Start renewal conversations 6-9 months early
 - Continuously demonstrate value and ROI
 - Address concerns proactively
@@ -259,6 +290,7 @@ output_format: Account plans, proposals, QBRs, forecasts
 - Align renewal timing to budget cycles
 
 ### Consultative Selling
+
 - Ask questions before pitching solutions
 - Understand pain points deeply
 - Co-create solutions with customers
@@ -269,9 +301,11 @@ output_format: Account plans, proposals, QBRs, forecasts
 ## Example Use Cases
 
 ### Use Case 1: Strategic Account Plan Development
+
 **Scenario**: Create annual strategic plan for enterprise account
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for developing a comprehensive strategic account plan for a $500K ARR enterprise customer. Include account overview, organizational structure, stakeholder map, current product usage analysis, SWOT analysis, expansion opportunities, growth targets (upsell $200K), risk factors, competitive landscape, engagement strategy, and quarterly milestones.
 ```
@@ -279,9 +313,11 @@ Generate a prompt for developing a comprehensive strategic account plan for a $5
 **Expected Output**: Strategic account plan document, stakeholder map, growth roadmap, QBR schedule
 
 ### Use Case 2: Upsell Business Case Presentation
+
 **Scenario**: Present expansion opportunity to C-suite
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for creating an executive presentation to upsell additional product modules to a mid-market customer. Include current state analysis, business challenges addressed, proposed solution, ROI calculation (cost savings, revenue impact), implementation timeline, success metrics, pricing options, and compelling call-to-action. Focus on CFO and COO business outcomes.
 ```
@@ -289,9 +325,11 @@ Generate a prompt for creating an executive presentation to upsell additional pr
 **Expected Output**: Executive presentation deck, ROI calculator, proposal document, pricing options
 
 ### Use Case 3: Renewal Risk Mitigation Strategy
+
 **Scenario**: Address at-risk renewal with declining satisfaction
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for developing a renewal risk mitigation plan for a $300K account up for renewal in 90 days with declining NPS (from 9 to 6), low usage (40% drop), and new stakeholder (CFO focused on cost-cutting). Include root cause analysis, win-back strategy, value re-establishment plan, executive engagement tactics, and alternative renewal scenarios.
 ```
@@ -299,9 +337,11 @@ Generate a prompt for developing a renewal risk mitigation plan for a $300K acco
 **Expected Output**: Risk mitigation playbook, executive engagement plan, value presentation, negotiation strategy
 
 ### Use Case 4: Quarterly Business Review (QBR)
+
 **Scenario**: Conduct strategic QBR with executive sponsors
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for creating a quarterly business review presentation for a strategic account. Include business recap (goals achieved, ROI delivered), product usage analytics and insights, success stories, upcoming product roadmap relevant to customer, expansion opportunities, strategic alignment discussion, and action items with owners. Frame everything in customer's business context.
 ```
@@ -311,6 +351,7 @@ Generate a prompt for creating a quarterly business review presentation for a st
 ## Customization Options
 
 ### Account Tier Adaptations
+
 - Strategic/Enterprise (white-glove, high-touch, C-suite engagement)
 - Mid-market (balanced touch, playbook-driven, structured)
 - SMB (tech-touch, digital-first, efficient)
@@ -318,6 +359,7 @@ Generate a prompt for creating a quarterly business review presentation for a st
 - Territory-based (portfolio management, prioritization)
 
 ### Industry-Specific Approaches
+
 - Technology/SaaS (rapid growth, product-led, usage-based)
 - Financial services (compliance-heavy, risk-averse, long sales cycles)
 - Healthcare (regulatory, clinical workflows, decision committees)
@@ -325,6 +367,7 @@ Generate a prompt for creating a quarterly business review presentation for a st
 - Retail (seasonal, margin-focused, competitive pressure)
 
 ### Sales Model Adaptations
+
 - Land and expand (start small, grow over time)
 - Enterprise sales (complex, long cycles, multiple stakeholders)
 - Transactional (high volume, shorter cycles, efficient)
@@ -371,6 +414,7 @@ Generate a prompt for creating a quarterly business review presentation for a st
 ## Metrics and KPIs
 
 ### Revenue Growth Metrics
+
 - Net Revenue Retention (NRR) - target: >110%
 - Gross Revenue Retention (GRR) - target: >95%
 - Upsell revenue - target: >25% of account base
@@ -378,6 +422,7 @@ Generate a prompt for creating a quarterly business review presentation for a st
 - Average contract value (ACV) growth - target: >20% YoY
 
 ### Account Health Metrics
+
 - Customer satisfaction (CSAT/NPS) - target: >8/10 or >50 NPS
 - Product adoption and usage trends - target: growing
 - Engagement score - target: >80/100
@@ -385,6 +430,7 @@ Generate a prompt for creating a quarterly business review presentation for a st
 - Account health score - target: >75/100 (green)
 
 ### Sales Performance Metrics
+
 - Win rate on renewals - target: >95%
 - Win rate on expansion deals - target: >60%
 - Sales cycle length (expansion) - target: <60 days
@@ -392,6 +438,7 @@ Generate a prompt for creating a quarterly business review presentation for a st
 - Quota attainment - target: >100%
 
 ### Pipeline & Forecasting
+
 - Pipeline coverage ratio - target: 3-4x quota
 - Forecast accuracy - target: ±10% quarterly
 - Opportunity win rate - target: >30%
@@ -399,6 +446,7 @@ Generate a prompt for creating a quarterly business review presentation for a st
 - Opportunity velocity - target: increasing
 
 ### Relationship & Engagement
+
 - Number of stakeholder relationships - target: >5 per account
 - Executive engagement frequency - target: quarterly
 - QBR completion rate - target: 100% on schedule

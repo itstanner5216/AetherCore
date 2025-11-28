@@ -13,17 +13,17 @@
     "search": {
       "description": "Execute web search with automatic provider failover",
       "parameters": {
-        "query": {"type": "string", "required": true},
-        "max_results": {"type": "integer", "default": 10},
-        "provider": {"type": "string", "default": "auto"}
+        "query": { "type": "string", "required": true },
+        "max_results": { "type": "integer", "default": 10 },
+        "provider": { "type": "string", "default": "auto" }
       }
     },
     "scrape": {
       "description": "Scrape URL content with fallback providers",
       "parameters": {
-        "url": {"type": "string", "required": true},
-        "render_js": {"type": "boolean", "default": false},
-        "use_premium_proxy": {"type": "boolean", "default": false}
+        "url": { "type": "string", "required": true },
+        "render_js": { "type": "boolean", "default": false },
+        "use_premium_proxy": { "type": "boolean", "default": false }
       }
     },
     "quota_status": {
@@ -33,7 +33,7 @@
     "reset_quotas": {
       "description": "Force reset quota counters (admin only)",
       "parameters": {
-        "provider": {"type": "string", "default": "all"}
+        "provider": { "type": "string", "default": "all" }
       }
     }
   },
@@ -43,19 +43,19 @@
       "google": {
         "name": "Google Custom Search",
         "base_url": "https://www.googleapis.com/customsearch/v1",
-        "quota": {"limit": 100, "window": "day"},
+        "quota": { "limit": 100, "window": "day" },
         "priority": 1
       },
       "brave": {
         "name": "Brave Search",
         "base_url": "https://api.search.brave.com/res/v1/web/search",
-        "quota": {"limit": 2000, "window": "month"},
+        "quota": { "limit": 2000, "window": "month" },
         "priority": 2
       },
       "serper": {
         "name": "Serper.dev",
         "base_url": "https://google.serper.dev/search",
-        "quota": {"limit": 2000, "window": "month"},
+        "quota": { "limit": 2000, "window": "month" },
         "priority": 3
       }
     },
@@ -63,13 +63,13 @@
       "webscraping_api": {
         "name": "Webscraping API",
         "base_url": "https://api.webscraping.ai/html",
-        "quota": {"limit": 5000, "window": "month"},
+        "quota": { "limit": 5000, "window": "month" },
         "priority": 1
       },
       "scrapingant": {
         "name": "ScrapingAnt",
         "base_url": "https://api.scrapingant.com/v2/general",
-        "quota": {"limit": 10000, "window": "month", "credit_based": true},
+        "quota": { "limit": 10000, "window": "month", "credit_based": true },
         "priority": 2,
         "credit_costs": {
           "simple_datacenter": 1,
@@ -111,8 +111,16 @@
     "OptiGraph": {
       "hooks": ["on_skill_invoke", "on_skill_exit"]
     },
-    "callers": ["AetherCore.DeepForge", "AetherCore.MarketSweep", "AetherCore.GeminiBridge"]
+    "callers": [
+      "AetherCore.DeepForge",
+      "AetherCore.MarketSweep",
+      "AetherCore.GeminiBridge"
+    ]
   },
 
-  "dependencies": ["AetherCore.Orchestrator", "AetherCore.EventMesh", "AetherCore.OptiGraph"]
+  "dependencies": [
+    "AetherCore.Orchestrator",
+    "AetherCore.EventMesh",
+    "AetherCore.OptiGraph"
+  ]
 }

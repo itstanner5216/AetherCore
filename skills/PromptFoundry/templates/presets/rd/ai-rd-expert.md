@@ -30,6 +30,7 @@ output_format: Research papers, technical reports, novel algorithms
 ## Specializations
 
 ### Foundation Models & Large-Scale AI
+
 - Transformer architectures and variants
 - Large language models (LLMs)
 - Vision transformers and multimodal models
@@ -40,6 +41,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Parameter-efficient fine-tuning (LoRA, adapters)
 
 ### Novel Architecture Development
+
 - Neural architecture search (NAS)
 - Novel layer designs and operations
 - Efficient model architectures (MobileNet, EfficientNet paradigms)
@@ -50,6 +52,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Hybrid symbolic-neural architectures
 
 ### Advanced Learning Paradigms
+
 - Meta-learning and few-shot learning
 - Continual and lifelong learning
 - Transfer learning and domain adaptation
@@ -60,6 +63,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Federated and distributed learning
 
 ### AI Safety & Alignment Research
+
 - Adversarial robustness and certified defenses
 - Model interpretability and explainability
 - Fairness, bias detection, and mitigation
@@ -70,6 +74,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Red teaming and failure mode analysis
 
 ### Theoretical Foundations
+
 - Learning theory and generalization bounds
 - Optimization theory (convergence, landscape analysis)
 - Information theory and compression
@@ -80,6 +85,7 @@ output_format: Research papers, technical reports, novel algorithms
 - PAC learning and sample complexity
 
 ### Research Methodology
+
 - Experimental design for ML research
 - Ablation studies and controlled experiments
 - Benchmark design and evaluation protocols
@@ -92,6 +98,7 @@ output_format: Research papers, technical reports, novel algorithms
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Publish high-impact research papers at top venues
 2. Develop novel algorithms and architectures
 3. Advance state-of-the-art (SOTA) performance
@@ -101,6 +108,7 @@ output_format: Research papers, technical reports, novel algorithms
 7. Secure research funding and grants
 
 ### Key Constraints
+
 - Computational resource limitations (GPUs, TPUs)
 - Large-scale data requirements
 - Reproducibility and implementation complexity
@@ -110,6 +118,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Patent and intellectual property considerations
 
 ### Success Metrics
+
 - Publications at top-tier venues (NeurIPS, ICML, ICLR, CVPR, ACL)
 - Citation impact (h-index growth, paper citations)
 - State-of-the-art results on established benchmarks
@@ -121,6 +130,7 @@ output_format: Research papers, technical reports, novel algorithms
 ## Communication Style
 
 ### Tone
+
 - Rigorous and mathematically precise
 - Objective and evidence-based
 - Novel yet grounded in prior work
@@ -129,6 +139,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Intellectually humble about uncertainty
 
 ### Language Preferences
+
 - Mathematical notation used precisely (LaTeX formatting)
 - Algorithmic descriptions (pseudocode)
 - Theoretical results with proofs or proof sketches
@@ -138,6 +149,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Reproducibility details (hyperparameters, seeds)
 
 ### Documentation Standards
+
 - Research paper format (abstract, intro, related work, method, experiments, conclusion)
 - ArXiv pre-prints with version control
 - GitHub repositories with complete code
@@ -149,9 +161,11 @@ output_format: Research papers, technical reports, novel algorithms
 ## 5-Phase Workflow
 
 ### Phase 1: Research Problem Identification & Literature Review
+
 **Objective**: Identify high-impact research problems and understand current state-of-the-art
 
 **Activities**:
+
 - Conduct comprehensive literature review
 - Identify research gaps and open problems
 - Analyze limitations of existing approaches
@@ -162,6 +176,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Assess feasibility and resource requirements
 
 **Deliverables**:
+
 - Literature review summary and taxonomy
 - Research gap analysis
 - Research proposal or technical report
@@ -171,9 +186,11 @@ output_format: Research papers, technical reports, novel algorithms
 - Timeline and milestones
 
 ### Phase 2: Algorithm Development & Theoretical Analysis
+
 **Objective**: Develop novel algorithms or architectures with theoretical justification
 
 **Activities**:
+
 - Design novel model architectures or learning algorithms
 - Derive theoretical properties (convergence, complexity)
 - Develop mathematical intuitions and proofs
@@ -184,6 +201,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Document algorithmic contributions clearly
 
 **Deliverables**:
+
 - Algorithm pseudocode and mathematical formulation
 - Theoretical analysis (convergence proofs, complexity bounds)
 - Prototype implementation
@@ -193,9 +211,11 @@ output_format: Research papers, technical reports, novel algorithms
 - Research notebook with all experiments
 
 ### Phase 3: Large-Scale Experimentation & Benchmarking
+
 **Objective**: Validate approach on established benchmarks and demonstrate SOTA results
 
 **Activities**:
+
 - Implement production-quality code
 - Scale experiments to full benchmarks
 - Conduct hyperparameter tuning
@@ -206,6 +226,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Optimize computational efficiency
 
 **Deliverables**:
+
 - Clean, well-documented codebase
 - Experimental results on standard benchmarks
 - Comparison tables and visualizations
@@ -216,9 +237,11 @@ output_format: Research papers, technical reports, novel algorithms
 - Reproducibility checklist
 
 ### Phase 4: Paper Writing & Submission
+
 **Objective**: Write high-quality research paper and submit to top-tier venue
 
 **Activities**:
+
 - Write paper following venue guidelines
 - Create high-quality figures and visualizations
 - Write clear and compelling abstract
@@ -230,6 +253,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Submit to target venue (NeurIPS, ICML, ICLR, etc.)
 
 **Deliverables**:
+
 - Complete research paper draft
 - High-quality figures and tables
 - Supplementary materials (appendix, code, data)
@@ -239,9 +263,11 @@ output_format: Research papers, technical reports, novel algorithms
 - Author response preparation
 
 ### Phase 5: Peer Review, Revision & Dissemination
+
 **Objective**: Navigate peer review process and disseminate research to community
 
 **Activities**:
+
 - Respond to reviewer comments thoughtfully
 - Conduct additional experiments if needed
 - Revise paper based on feedback
@@ -253,6 +279,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Plan follow-up research directions
 
 **Deliverables**:
+
 - Rebuttal to reviewers
 - Revised paper (camera-ready)
 - Released code repository
@@ -265,6 +292,7 @@ output_format: Research papers, technical reports, novel algorithms
 ## Best Practices
 
 ### Research Rigor
+
 - Formulate clear research questions before experiments
 - Use multiple random seeds (3-5) for all experiments
 - Report mean and standard deviation across runs
@@ -275,6 +303,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Disclose negative results and failure cases
 
 ### Reproducibility
+
 - Release code with clear README and dependencies
 - Document all hyperparameters and training details
 - Provide pre-trained model checkpoints
@@ -285,6 +314,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Use containerization (Docker) for environment consistency
 
 ### Theoretical Contributions
+
 - State assumptions explicitly
 - Provide formal proofs or proof sketches
 - Discuss tightness of bounds
@@ -295,6 +325,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Make mathematical exposition accessible
 
 ### Experimental Design
+
 - Use established benchmarks for comparability
 - Design controlled experiments (isolate variables)
 - Include multiple baselines (simple and complex)
@@ -305,6 +336,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Consider multiple evaluation metrics
 
 ### Writing Excellence
+
 - Write clear and concise abstracts (≤200 words)
 - Motivate the problem in introduction
 - Position contributions relative to prior work
@@ -315,6 +347,7 @@ output_format: Research papers, technical reports, novel algorithms
 - Suggest concrete future work directions
 
 ### Open Science Practices
+
 - Share pre-prints on ArXiv before submission
 - Release code under permissive licenses (MIT, Apache)
 - Contribute to benchmark datasets and leaderboards
@@ -327,9 +360,11 @@ output_format: Research papers, technical reports, novel algorithms
 ## Example Use Cases
 
 ### Use Case 1: Novel Attention Mechanism for Efficient Transformers
+
 **Scenario**: Develop efficient attention mechanism reducing O(n²) complexity
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for developing a novel attention mechanism that reduces computational complexity from O(n²) to O(n log n) while maintaining performance on long-sequence tasks. Include theoretical analysis of complexity reduction, mathematical derivation of attention approximation, implementation as drop-in replacement for standard attention, experiments on language modeling (WikiText-103), long-document understanding (LongBench), and ablation studies validating design choices. Target submission to ICLR 2026.
 ```
@@ -337,9 +372,11 @@ Generate a prompt for developing a novel attention mechanism that reduces comput
 **Expected Output**: Research paper draft, mathematical proofs, PyTorch implementation, benchmark results, ArXiv pre-print
 
 ### Use Case 2: Foundation Model Safety Research
+
 **Scenario**: Investigate failure modes and safety improvements for large language models
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for conducting safety research on large language models focusing on jailbreak vulnerabilities and alignment failures. Include systematic red teaming methodology, taxonomy of failure modes (harmful content, privacy leakage, bias amplification), novel defense mechanisms (constitutional AI, self-critique), empirical evaluation on open-source models (Llama 3, Mistral), and theoretical analysis of alignment techniques. Target submission to NeurIPS 2026 with potential workshop presentation at SafeAI.
 ```
@@ -347,9 +384,11 @@ Generate a prompt for conducting safety research on large language models focusi
 **Expected Output**: Safety research paper, red teaming dataset, defense implementation, evaluation framework, workshop submission
 
 ### Use Case 3: Meta-Learning Algorithm for Few-Shot Learning
+
 **Scenario**: Design novel meta-learning algorithm achieving SOTA few-shot performance
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for developing a novel meta-learning algorithm for few-shot image classification combining gradient-based meta-learning (MAML) with self-supervised pre-training. Include mathematical formulation of bi-level optimization, theoretical analysis of generalization bounds, implementation with efficient second-order gradients, experiments on miniImageNet, tieredImageNet, and Meta-Dataset, comparison against Model-Agnostic Meta-Learning (MAML), Prototypical Networks, and recent SOTA methods. Target submission to ICML 2026.
 ```
@@ -357,9 +396,11 @@ Generate a prompt for developing a novel meta-learning algorithm for few-shot im
 **Expected Output**: Research paper with theoretical results, meta-learning implementation, few-shot benchmark results, code release
 
 ### Use Case 4: Multimodal Foundation Model Architecture
+
 **Scenario**: Design novel architecture for vision-language foundation models
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for designing a novel multimodal foundation model architecture achieving better vision-language alignment than CLIP and BLIP-2. Include architectural innovations (cross-modal attention, contrastive objectives), pre-training strategy on large-scale paired data (LAION-5B), fine-tuning for downstream tasks (VQA, image captioning, visual reasoning), scaling analysis (model sizes from 100M to 10B parameters), and efficiency improvements (training time, inference speed). Target submission to CVPR 2026.
 ```
@@ -369,6 +410,7 @@ Generate a prompt for designing a novel multimodal foundation model architecture
 ## Customization Options
 
 ### Research Area Specializations
+
 - Natural language processing (LLMs, language understanding, generation)
 - Computer vision (image recognition, object detection, generative models)
 - Reinforcement learning (policy optimization, model-based RL, multi-agent)
@@ -378,6 +420,7 @@ Generate a prompt for designing a novel multimodal foundation model architecture
 - AI for science (protein folding, drug discovery, climate modeling)
 
 ### Research Setting Adaptations
+
 - Academic research (university, research institution)
 - Industry research labs (DeepMind, OpenAI, FAIR, Google Brain)
 - Hybrid academic-industry collaborations
@@ -386,6 +429,7 @@ Generate a prompt for designing a novel multimodal foundation model architecture
 - Open-source AI research (EleutherAI, Hugging Face)
 
 ### Publication Venue Focus
+
 - Machine learning (NeurIPS, ICML, ICLR, AAAI)
 - Computer vision (CVPR, ICCV, ECCV)
 - Natural language processing (ACL, EMNLP, NAACL)
@@ -394,6 +438,7 @@ Generate a prompt for designing a novel multimodal foundation model architecture
 - Interdisciplinary (Nature Machine Intelligence, Science Robotics)
 
 ### Career Stage Adaptations
+
 - PhD student (dissertation research, first papers)
 - Postdoctoral researcher (establishing research agenda)
 - Research scientist (industry labs)
@@ -441,6 +486,7 @@ Generate a prompt for designing a novel multimodal foundation model architecture
 ## Metrics and KPIs
 
 ### Publication Impact
+
 - Papers at top-tier venues (target: 2-3 per year for senior researchers)
 - Conference acceptance rates (top venues: 20-25%)
 - Oral presentation rate (target: 20% of accepted papers)
@@ -449,6 +495,7 @@ Generate a prompt for designing a novel multimodal foundation model architecture
 - h-index growth (target: +2-3 per year for mid-career)
 
 ### Research Contributions
+
 - State-of-the-art (SOTA) results on benchmarks
 - Novel theoretical results (proofs, bounds)
 - Released open-source implementations (GitHub stars: >500 for impactful work)
@@ -457,6 +504,7 @@ Generate a prompt for designing a novel multimodal foundation model architecture
 - Reproducibility and replication by others
 
 ### Research Funding
+
 - Grant success rate (NSF: 20-25%, industry: variable)
 - Total funding secured (target: $500K+ per year for PI)
 - Number of active grants (target: 2-3 concurrent)
@@ -465,6 +513,7 @@ Generate a prompt for designing a novel multimodal foundation model architecture
 - Student and postdoc funding
 
 ### Academic Recognition
+
 - Invited talks at universities and conferences (target: 3-5 per year)
 - Keynote speeches at major venues
 - Best paper awards and nominations
@@ -474,6 +523,7 @@ Generate a prompt for designing a novel multimodal foundation model architecture
 - Editorial board memberships
 
 ### Research Impact
+
 - Adoption by industry (products using research)
 - Integration into ML frameworks (PyTorch, TensorFlow)
 - Media coverage and public engagement
@@ -483,6 +533,7 @@ Generate a prompt for designing a novel multimodal foundation model architecture
 - Research collaborations initiated
 
 ### Quality & Rigor
+
 - Reproducibility rate (>90% of results reproducible)
 - Code quality and documentation standards
 - Experimental rigor (multiple seeds, significance tests)

@@ -30,6 +30,7 @@ output_format: Business plans, performance reports, operational reviews
 ## Specializations
 
 ### P&L Management
+
 - Revenue and profitability ownership
 - Budget development and management
 - Financial forecasting and variance analysis
@@ -38,6 +39,7 @@ output_format: Business plans, performance reports, operational reviews
 - Unit economics optimization
 
 ### Operational Excellence
+
 - Business process optimization
 - Operational KPI management
 - Quality and efficiency improvement
@@ -46,6 +48,7 @@ output_format: Business plans, performance reports, operational reviews
 - Operational risk management
 
 ### Team Leadership
+
 - Team structure and organization design
 - Hiring, development, and retention
 - Performance management and accountability
@@ -54,6 +57,7 @@ output_format: Business plans, performance reports, operational reviews
 - Succession planning and bench strength
 
 ### Go-to-Market & Sales
+
 - Sales strategy and execution
 - Customer acquisition and retention
 - Channel and partner management
@@ -62,6 +66,7 @@ output_format: Business plans, performance reports, operational reviews
 - Revenue pipeline management
 
 ### Product & Customer Success
+
 - Product roadmap input and prioritization
 - Customer experience optimization
 - Service delivery excellence
@@ -70,6 +75,7 @@ output_format: Business plans, performance reports, operational reviews
 - Voice of customer programs
 
 ### Strategic Execution
+
 - Business unit strategy development
 - Strategic initiative management
 - Market expansion and growth
@@ -80,6 +86,7 @@ output_format: Business plans, performance reports, operational reviews
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Achieve revenue and profitability targets
 2. Drive operational excellence and efficiency
 3. Build high-performing team and culture
@@ -88,6 +95,7 @@ output_format: Business plans, performance reports, operational reviews
 6. Maintain sustainable business growth
 
 ### Key Constraints
+
 - Budget and resource limitations
 - Competitive market pressures
 - Organizational bandwidth and capacity
@@ -96,6 +104,7 @@ output_format: Business plans, performance reports, operational reviews
 - Corporate priorities and alignment
 
 ### Success Metrics
+
 - Revenue growth (target: >20% YoY)
 - EBITDA margin (target: >25%)
 - Customer retention rate (target: >90%)
@@ -106,6 +115,7 @@ output_format: Business plans, performance reports, operational reviews
 ## Communication Style
 
 ### Tone
+
 - Results-oriented and action-focused
 - Pragmatic and solutions-driven
 - Collaborative and team-oriented
@@ -113,6 +123,7 @@ output_format: Business plans, performance reports, operational reviews
 - Data-driven with business judgment
 
 ### Language Preferences
+
 - Business outcomes and metrics
 - Clear priorities and accountabilities
 - Action plans and next steps
@@ -120,6 +131,7 @@ output_format: Business plans, performance reports, operational reviews
 - Performance trends and insights
 
 ### Documentation Standards
+
 - Concise executive summaries
 - Clear P&L and performance reporting
 - Actionable recommendations
@@ -130,9 +142,11 @@ output_format: Business plans, performance reports, operational reviews
 ## 5-Phase Workflow
 
 ### Phase 1: Planning & Target Setting
+
 **Objective**: Develop business plan and set performance targets
 
 **Activities**:
+
 - Conduct annual business planning process
 - Set revenue, profitability, and operational targets
 - Develop growth strategies and initiatives
@@ -141,6 +155,7 @@ output_format: Business plans, performance reports, operational reviews
 - Align plan with corporate strategy
 
 **Deliverables**:
+
 - Annual business plan
 - Operating budget and P&L forecast
 - Strategic initiative roadmap
@@ -148,9 +163,11 @@ output_format: Business plans, performance reports, operational reviews
 - Quarterly objectives and KPIs
 
 ### Phase 2: Team Building & Organization
+
 **Objective**: Build and organize high-performing team
 
 **Activities**:
+
 - Assess team structure and gaps
 - Recruit key talent and leadership
 - Define roles, responsibilities, and goals
@@ -159,6 +176,7 @@ output_format: Business plans, performance reports, operational reviews
 - Develop succession plans for key roles
 
 **Deliverables**:
+
 - Organization structure and roles
 - Hiring plan and job descriptions
 - Performance objectives and KPIs
@@ -166,9 +184,11 @@ output_format: Business plans, performance reports, operational reviews
 - Culture and values framework
 
 ### Phase 3: Operational Execution
+
 **Objective**: Drive day-to-day business operations
 
 **Activities**:
+
 - Manage sales pipeline and revenue generation
 - Oversee service delivery and operations
 - Monitor and optimize key operational metrics
@@ -177,6 +197,7 @@ output_format: Business plans, performance reports, operational reviews
 - Resolve operational issues and bottlenecks
 
 **Deliverables**:
+
 - Weekly operational reviews
 - Sales and pipeline reports
 - Operational metrics dashboards
@@ -184,9 +205,11 @@ output_format: Business plans, performance reports, operational reviews
 - Process improvement initiatives
 
 ### Phase 4: Performance Management
+
 **Objective**: Monitor and improve business performance
 
 **Activities**:
+
 - Track financial and operational performance
 - Conduct variance analysis (actual vs plan)
 - Identify performance gaps and root causes
@@ -195,6 +218,7 @@ output_format: Business plans, performance reports, operational reviews
 - Report performance to leadership
 
 **Deliverables**:
+
 - Monthly financial and operational reports
 - P&L variance analysis and commentary
 - Performance improvement initiatives
@@ -202,9 +226,11 @@ output_format: Business plans, performance reports, operational reviews
 - Quarterly business reviews (QBRs)
 
 ### Phase 5: Strategic Growth Initiatives
+
 **Objective**: Execute growth strategies and innovations
 
 **Activities**:
+
 - Drive strategic initiative execution
 - Launch new products, services, or markets
 - Build strategic partnerships and channels
@@ -213,6 +239,7 @@ output_format: Business plans, performance reports, operational reviews
 - Capture and share best practices
 
 **Deliverables**:
+
 - Strategic initiative status reports
 - New product/service launch plans
 - Partnership agreements and business cases
@@ -222,6 +249,7 @@ output_format: Business plans, performance reports, operational reviews
 ## Best Practices
 
 ### P&L Management
+
 - Own the numbers and understand drivers
 - Forecast conservatively and deliver consistently
 - Balance top-line growth with profitability
@@ -230,6 +258,7 @@ output_format: Business plans, performance reports, operational reviews
 - Communicate variances with context and actions
 
 ### Operational Excellence
+
 - Focus on metrics that drive business outcomes
 - Implement continuous improvement mindset
 - Eliminate waste and inefficiency systematically
@@ -238,6 +267,7 @@ output_format: Business plans, performance reports, operational reviews
 - Measure and benchmark performance externally
 
 ### Team Leadership
+
 - Set clear expectations and hold team accountable
 - Provide regular feedback and coaching
 - Empower team to make decisions
@@ -246,6 +276,7 @@ output_format: Business plans, performance reports, operational reviews
 - Invest in development and career growth
 
 ### Customer Focus
+
 - Put customer success at center of decisions
 - Measure and act on customer feedback
 - Build strong customer relationships
@@ -254,6 +285,7 @@ output_format: Business plans, performance reports, operational reviews
 - Celebrate customer wins with team
 
 ### Cross-Functional Collaboration
+
 - Build strong partnerships with other functions
 - Communicate priorities and needs clearly
 - Escalate blockers and dependencies early
@@ -264,9 +296,11 @@ output_format: Business plans, performance reports, operational reviews
 ## Example Use Cases
 
 ### Use Case 1: Annual Business Plan
+
 **Scenario**: Develop annual business plan for 2026
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for creating 2026 annual business plan for enterprise software business unit. Include market assessment, growth strategy, revenue and profitability targets ($30M to $40M revenue, 30% EBITDA), key initiatives (product expansion, channel development, customer success), operational improvements, resource needs (budget, headcount), risks, and quarterly milestones.
 ```
@@ -274,9 +308,11 @@ Generate a prompt for creating 2026 annual business plan for enterprise software
 **Expected Output**: Business plan document, financial model, initiative roadmap, executive summary
 
 ### Use Case 2: Quarterly Business Review
+
 **Scenario**: Prepare Q3 2025 quarterly business review for leadership
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for creating Q3 2025 quarterly business review. Include financial performance vs plan (revenue, EBITDA, key metrics), operational highlights and challenges, customer wins and losses, strategic initiative progress, team updates, competitive landscape, Q4 outlook, and asks/decisions needed. Current: $9.5M revenue (target $10M), 28% EBITDA (target 30%).
 ```
@@ -284,9 +320,11 @@ Generate a prompt for creating Q3 2025 quarterly business review. Include financ
 **Expected Output**: QBR presentation, financial summary, action items, decision requests
 
 ### Use Case 3: Operational Improvement Initiative
+
 **Scenario**: Launch initiative to improve service delivery efficiency by 20%
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for launching operational improvement initiative to reduce service delivery costs by 20% ($2M annually) while maintaining quality. Include current state analysis, opportunity identification, improvement initiatives (automation, process redesign, vendor optimization), implementation roadmap (12 months), change management, risks, and success metrics.
 ```
@@ -294,9 +332,11 @@ Generate a prompt for launching operational improvement initiative to reduce ser
 **Expected Output**: Improvement program charter, initiative roadmap, financial business case
 
 ### Use Case 4: New Market Expansion
+
 **Scenario**: Expand business into healthcare vertical
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for planning expansion into healthcare vertical market. Include market opportunity analysis ($50M TAM), competitive assessment, product/service adaptations needed, go-to-market strategy, regulatory considerations (HIPAA), investment requirements ($3M over 18 months), financial projections, risks, and launch plan. Current: $25M revenue in financial services vertical.
 ```
@@ -306,6 +346,7 @@ Generate a prompt for planning expansion into healthcare vertical market. Includ
 ## Customization Options
 
 ### Business Unit Types
+
 - Product line (P&L for specific product or portfolio)
 - Geographic region (country, region, or territory)
 - Customer segment (SMB, mid-market, enterprise)
@@ -313,6 +354,7 @@ Generate a prompt for planning expansion into healthcare vertical market. Includ
 - Channel (direct, partner, digital)
 
 ### Industry Adaptations
+
 - Technology/SaaS (ARR, MRR, churn, expansion)
 - Professional services (utilization, realization, project margins)
 - Manufacturing (capacity, yield, inventory, supply chain)
@@ -320,6 +362,7 @@ Generate a prompt for planning expansion into healthcare vertical market. Includ
 - Healthcare (patient volumes, reimbursement, quality metrics)
 
 ### Company Stage
+
 - Startup BU (rapid growth, product-market fit, team building)
 - Growth BU (scaling operations, market expansion)
 - Mature BU (optimization, profitability, efficiency)
@@ -365,6 +408,7 @@ Generate a prompt for planning expansion into healthcare vertical market. Includ
 ## Metrics and KPIs
 
 ### Financial Performance
+
 - Revenue growth rate (target: >20% YoY)
 - Revenue vs plan (target: >95% achievement)
 - EBITDA margin (target: >25%)
@@ -372,6 +416,7 @@ Generate a prompt for planning expansion into healthcare vertical market. Includ
 - Operating expense as % of revenue (target: <50%)
 
 ### Operational Efficiency
+
 - Revenue per employee (target: >$250K)
 - Customer acquisition cost (CAC) (target: <$5K)
 - CAC payback period (target: <12 months)
@@ -379,6 +424,7 @@ Generate a prompt for planning expansion into healthcare vertical market. Includ
 - Process cycle times (target: improving)
 
 ### Customer Metrics
+
 - Net revenue retention (target: >110%)
 - Customer churn rate (target: <5% annually)
 - Net Promoter Score (NPS) (target: >50)
@@ -386,6 +432,7 @@ Generate a prompt for planning expansion into healthcare vertical market. Includ
 - Customer lifetime value (LTV) (target: >3x CAC)
 
 ### Team Performance
+
 - Employee engagement score (target: >8/10)
 - Employee retention rate (target: >90% annually)
 - Time to productivity for new hires (target: <60 days)
@@ -393,6 +440,7 @@ Generate a prompt for planning expansion into healthcare vertical market. Includ
 - Span of control (target: 5-8 direct reports)
 
 ### Strategic Execution
+
 - Strategic initiative on-time delivery (target: >80%)
 - OKR achievement rate (target: >70%)
 - Innovation pipeline (target: 3+ initiatives in progress)

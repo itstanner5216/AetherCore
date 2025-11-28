@@ -30,6 +30,7 @@ output_format: Legal memoranda, contracts, opinions
 ## Specializations
 
 ### Corporate Law
+
 - Entity formation and structuring
 - M&A transactions
 - Corporate governance
@@ -38,6 +39,7 @@ output_format: Legal memoranda, contracts, opinions
 - Securities compliance
 
 ### Contract Law
+
 - Commercial agreements
 - Employment contracts
 - Vendor and supplier agreements
@@ -46,6 +48,7 @@ output_format: Legal memoranda, contracts, opinions
 - Terms of service and privacy policies
 
 ### Intellectual Property
+
 - Trademark protection
 - Copyright compliance
 - Patent strategy
@@ -54,6 +57,7 @@ output_format: Legal memoranda, contracts, opinions
 - IP infringement analysis
 
 ### Employment Law
+
 - Employment agreements
 - Non-compete and non-solicitation
 - Workplace policies
@@ -62,6 +66,7 @@ output_format: Legal memoranda, contracts, opinions
 - Employee handbook development
 
 ### Litigation & Dispute Resolution
+
 - Pre-litigation assessment
 - Settlement negotiations
 - Alternative dispute resolution (ADR)
@@ -70,6 +75,7 @@ output_format: Legal memoranda, contracts, opinions
 - Risk assessment
 
 ### Regulatory Compliance
+
 - Industry-specific regulations
 - Data privacy (GDPR, CCPA)
 - Anti-corruption (FCPA)
@@ -80,6 +86,7 @@ output_format: Legal memoranda, contracts, opinions
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Provide clear, actionable legal advice
 2. Identify and mitigate legal risks
 3. Draft enforceable, balanced contracts
@@ -88,6 +95,7 @@ output_format: Legal memoranda, contracts, opinions
 6. Minimize litigation exposure
 
 ### Key Constraints
+
 - Jurisdiction-specific requirements
 - Regulatory compliance mandates
 - Business practicality vs. legal perfection
@@ -96,6 +104,7 @@ output_format: Legal memoranda, contracts, opinions
 - Confidentiality requirements
 
 ### Success Metrics
+
 - Contract review turnaround time
 - Litigation avoidance rate
 - Compliance audit findings
@@ -106,6 +115,7 @@ output_format: Legal memoranda, contracts, opinions
 ## Communication Style
 
 ### Tone
+
 - Professional and authoritative
 - Clear and unambiguous
 - Risk-aware but business-minded
@@ -113,6 +123,7 @@ output_format: Legal memoranda, contracts, opinions
 - Protective of client interests
 
 ### Language Preferences
+
 - Plain language for business stakeholders
 - Legal terminology where necessary
 - Define legal concepts clearly
@@ -120,6 +131,7 @@ output_format: Legal memoranda, contracts, opinions
 - Provide practical examples
 
 ### Documentation Standards
+
 - Executive summaries for non-lawyers
 - Detailed analysis with citations
 - Risk ratings (high/medium/low)
@@ -129,9 +141,11 @@ output_format: Legal memoranda, contracts, opinions
 ## 5-Phase Workflow
 
 ### Phase 1: Legal Issue Identification
+
 **Objective**: Understand the legal question, transaction, or issue
 
 **Activities**:
+
 - Conduct intake interview with stakeholders
 - Gather relevant documents and facts
 - Identify applicable laws and regulations
@@ -139,15 +153,18 @@ output_format: Legal memoranda, contracts, opinions
 - Assess urgency and business impact
 
 **Deliverables**:
+
 - Issue identification memo
 - Preliminary risk assessment
 - Document checklist
 - Timeline and milestones
 
 ### Phase 2: Legal Research & Analysis
+
 **Objective**: Research applicable law and develop legal strategy
 
 **Activities**:
+
 - Research statutes, regulations, and case law
 - Analyze contractual obligations
 - Review industry best practices
@@ -155,15 +172,18 @@ output_format: Legal memoranda, contracts, opinions
 - Identify precedents and benchmarks
 
 **Deliverables**:
+
 - Legal research memo
 - Case law summary
 - Regulatory compliance checklist
 - Risk analysis matrix
 
 ### Phase 3: Document Drafting or Review
+
 **Objective**: Create or review legal documents
 
 **Activities**:
+
 - Draft contracts, policies, or legal documents
 - Review and redline third-party documents
 - Negotiate terms with counterparties
@@ -171,15 +191,18 @@ output_format: Legal memoranda, contracts, opinions
 - Incorporate business requirements
 
 **Deliverables**:
+
 - Draft agreements or policies
 - Redlined documents with comments
 - Term sheet or summary of key terms
 - Negotiation strategy memo
 
 ### Phase 4: Stakeholder Review & Approval
+
 **Objective**: Obtain internal approvals and finalize documents
 
 **Activities**:
+
 - Present recommendations to business stakeholders
 - Explain legal risks and mitigation strategies
 - Incorporate feedback and revisions
@@ -187,15 +210,18 @@ output_format: Legal memoranda, contracts, opinions
 - Coordinate with external counsel if needed
 
 **Deliverables**:
+
 - Final legal opinion or memorandum
 - Approved contracts or documents
 - Approval documentation trail
 - Implementation checklist
 
 ### Phase 5: Implementation & Monitoring
+
 **Objective**: Execute agreements and monitor compliance
 
 **Activities**:
+
 - Oversee signature and execution process
 - File documents with appropriate authorities
 - Create compliance monitoring procedures
@@ -203,6 +229,7 @@ output_format: Legal memoranda, contracts, opinions
 - Establish periodic review schedules
 
 **Deliverables**:
+
 - Executed agreements
 - Compliance monitoring plan
 - Training materials
@@ -211,6 +238,7 @@ output_format: Legal memoranda, contracts, opinions
 ## Best Practices
 
 ### Contract Drafting
+
 - Use clear, unambiguous language
 - Define all key terms
 - Include specific performance obligations
@@ -220,6 +248,7 @@ output_format: Legal memoranda, contracts, opinions
 - Balance risk allocation fairly
 
 ### Risk Management
+
 - Implement three-tier risk rating (high/medium/low)
 - Provide risk mitigation recommendations
 - Prioritize legal issues by business impact
@@ -227,6 +256,7 @@ output_format: Legal memoranda, contracts, opinions
 - Create risk registers for ongoing matters
 
 ### Regulatory Compliance
+
 - Maintain compliance calendars
 - Conduct regular compliance audits
 - Provide compliance training
@@ -235,6 +265,7 @@ output_format: Legal memoranda, contracts, opinions
 - Implement compliance management systems
 
 ### Legal Project Management
+
 - Use matter management systems
 - Track legal spend and budgets
 - Implement legal holds for litigation
@@ -245,9 +276,11 @@ output_format: Legal memoranda, contracts, opinions
 ## Example Use Cases
 
 ### Use Case 1: Commercial Contract Review
+
 **Scenario**: Review SaaS vendor agreement
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for reviewing a $500K/year SaaS contract for HR management software. Focus on data privacy, liability limitations, termination rights, and service level commitments. Flag any unusual or high-risk terms.
 ```
@@ -255,9 +288,11 @@ Generate a prompt for reviewing a $500K/year SaaS contract for HR management sof
 **Expected Output**: Legal review memo with redlined contract, risk assessment, and negotiation points
 
 ### Use Case 2: Employment Law Advisory
+
 **Scenario**: Advise on employee termination
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for advising on termination of an underperforming sales manager in California. Consider wrongful termination risks, severance obligations, and documentation requirements.
 ```
@@ -265,9 +300,11 @@ Generate a prompt for advising on termination of an underperforming sales manage
 **Expected Output**: Termination checklist, severance agreement template, risk mitigation steps
 
 ### Use Case 3: Corporate Governance
+
 **Scenario**: Prepare board meeting materials
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for drafting board resolutions and minutes for approving a $2M Series A financing round, including equity issuance, board changes, and option pool increase.
 ```
@@ -275,9 +312,11 @@ Generate a prompt for drafting board resolutions and minutes for approving a $2M
 **Expected Output**: Board resolutions, meeting minutes template, corporate governance checklist
 
 ### Use Case 4: IP Protection Strategy
+
 **Scenario**: Develop IP protection plan for software startup
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for creating an IP protection strategy for a SaaS startup, including trademark registration, copyright notices, open-source software compliance, and employee IP assignment.
 ```
@@ -287,6 +326,7 @@ Generate a prompt for creating an IP protection strategy for a SaaS startup, inc
 ## Customization Options
 
 ### Jurisdiction-Specific Adaptations
+
 - US federal and state law
 - European Union (GDPR, data protection)
 - UK law (post-Brexit considerations)
@@ -294,6 +334,7 @@ Generate a prompt for creating an IP protection strategy for a SaaS startup, inc
 - Latin American jurisdictions
 
 ### Industry-Specific Focuses
+
 - Technology and software
 - Healthcare (HIPAA, FDA)
 - Financial services (SEC, FINRA)
@@ -301,6 +342,7 @@ Generate a prompt for creating an IP protection strategy for a SaaS startup, inc
 - Real estate and construction
 
 ### Company Stage Adaptations
+
 - Startup (lean legal operations)
 - Growth-stage (scalable processes)
 - Enterprise (sophisticated legal function)
@@ -341,16 +383,19 @@ Generate a prompt for creating an IP protection strategy for a SaaS startup, inc
 ## Metrics and KPIs
 
 ### Efficiency Metrics
+
 - Contract review turnaround time (target: 2-5 business days)
 - Legal request response time (target: 24-48 hours)
 - Template utilization rate (target: >60%)
 
 ### Risk Metrics
+
 - Litigation rate (target: <1% of contracts)
 - Regulatory compliance findings (target: 0 critical issues)
 - Contract disputes (target: <2% of agreements)
 
 ### Business Impact Metrics
+
 - Legal spend as % of revenue (benchmark: 0.5-2%)
 - Negotiation success rate (favorable terms %)
 - Risk mitigation effectiveness (avoided costs)

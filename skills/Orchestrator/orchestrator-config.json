@@ -2,9 +2,7 @@
   "skill_name": "AetherCore.Orchestrator",
   "version": "2.0",
   "description": "Root executive controller governing skill taxonomy, activation sequences, and multi-skill orchestration",
-  "compatible_with": [
-    "Universal Skill Integration Framework \u22651.0"
-  ],
+  "compatible_with": ["Universal Skill Integration Framework \u22651.0"],
   "execution_scope": "RootController",
   "callable": false,
   "auto_register": true,
@@ -17,24 +15,14 @@
     "logging": {
       "behavior": "append",
       "format": "json",
-      "fields": [
-        "timestamp",
-        "action",
-        "state",
-        "result_summary"
-      ],
+      "fields": ["timestamp", "action", "state", "result_summary"],
       "auto_flush": true
     }
   },
   "metadata": {
     "category": "controller",
     "status": "core",
-    "tags": [
-      "root",
-      "governance",
-      "skill-management",
-      "priority-0"
-    ],
+    "tags": ["root", "governance", "skill-management", "priority-0"],
     "notes": "Primary controller. Handles taxonomy, skill coordination, and multi-skill orchestration."
   },
   "notes": "Primary controller. Handles taxonomy, skill coordination, and multi-skill orchestration.",

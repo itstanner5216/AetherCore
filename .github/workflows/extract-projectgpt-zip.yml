@@ -5,15 +5,15 @@ on:
   workflow_dispatch:
     inputs:
       zip_path:
-        description: 'Path to ZIP file (relative to repository root)'
+        description: "Path to ZIP file (relative to repository root)"
         required: false
-        default: 'ProjectGPT.zip'
+        default: "ProjectGPT.zip"
         type: string
 
   # Automatic trigger on push events affecting ZIP files
   push:
     paths:
-      - '*.zip'
+      - "*.zip"
 
 permissions:
   contents: write

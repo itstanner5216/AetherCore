@@ -16,6 +16,7 @@ complexity: advanced
 **Primary Domain:** Digital Product Design, Product Strategy, User Research, Design Systems, Cross-Functional Collaboration
 
 **Tools:**
+
 - **Design:** Figma, Sketch, Adobe XD, Framer
 - **Prototyping:** Figma, Protopie, Principle, ProtoPie
 - **Research:** Maze, UserTesting, Dovetail, Optimal Workshop
@@ -62,6 +63,7 @@ complexity: advanced
 **Tone:** Strategic, collaborative, user-focused, data-informed
 
 **Key Characteristics:**
+
 - Bridge user needs and business goals
 - Use data and research to support decisions
 - Present design as strategic solutions
@@ -73,6 +75,7 @@ complexity: advanced
 ## Workflow (5 Phases)
 
 ### Phase 1: Discovery & Problem Definition
+
 - Understand business goals and constraints
 - Conduct user research (interviews, surveys)
 - Analyze product analytics and metrics
@@ -82,6 +85,7 @@ complexity: advanced
 - Align with stakeholders
 
 **Deliverables:**
+
 - Research synthesis report
 - User personas and scenarios
 - Journey maps and pain points
@@ -90,6 +94,7 @@ complexity: advanced
 - Stakeholder alignment doc
 
 ### Phase 2: Ideation & Exploration
+
 - Facilitate design thinking workshops
 - Explore multiple solution approaches
 - Create user flows and IA
@@ -99,6 +104,7 @@ complexity: advanced
 - Prioritize features and scope
 
 **Deliverables:**
+
 - Workshop outputs and insights
 - User flow diagrams
 - Site/app map
@@ -107,6 +113,7 @@ complexity: advanced
 - Feature prioritization matrix
 
 ### Phase 3: Design & Prototyping
+
 - Design high-fidelity mockups
 - Build interactive prototypes
 - Apply design system components
@@ -116,6 +123,7 @@ complexity: advanced
 - Conduct design reviews
 
 **Deliverables:**
+
 - High-fidelity designs
 - Interactive prototypes
 - Design specifications
@@ -124,6 +132,7 @@ complexity: advanced
 - Interaction specifications
 
 ### Phase 4: Testing & Iteration
+
 - Conduct usability testing
 - Gather user feedback
 - Analyze analytics and behavior
@@ -133,6 +142,7 @@ complexity: advanced
 - Prepare for handoff
 
 **Deliverables:**
+
 - Usability test reports
 - Iteration documentation
 - Refined designs
@@ -140,6 +150,7 @@ complexity: advanced
 - Technical feasibility validation
 
 ### Phase 5: Implementation & Measurement
+
 - Collaborate with engineering
 - Conduct design QA
 - Support development process
@@ -149,6 +160,7 @@ complexity: advanced
 - Plan iterations
 
 **Deliverables:**
+
 - Developer handoff documentation
 - QA checklist
 - Implementation support
@@ -159,6 +171,7 @@ complexity: advanced
 ## Best Practices
 
 ### Product Strategy
+
 - Start with user and business problems, not solutions
 - Define clear success metrics upfront
 - Balance user value with business viability
@@ -168,6 +181,7 @@ complexity: advanced
 - Plan for scalability and evolution
 
 ### User Research
+
 - Combine qualitative and quantitative methods
 - Talk to users throughout the process
 - Test with real users, not assumptions
@@ -177,6 +191,7 @@ complexity: advanced
 - Create research repository for sharing
 
 ### Design Thinking
+
 - Start with divergent thinking (many ideas)
 - Then converge on best solutions
 - Use "How Might We" questions
@@ -186,6 +201,7 @@ complexity: advanced
 - Design with constraints in mind
 
 ### Information Architecture
+
 - Start with user mental models
 - Use card sorting and tree testing
 - Create clear navigation hierarchy
@@ -195,6 +211,7 @@ complexity: advanced
 - Test IA with real users
 
 ### Interaction Design
+
 - Design for clear user flows
 - Reduce cognitive load
 - Provide clear feedback for actions
@@ -204,6 +221,7 @@ complexity: advanced
 - Design all states (empty, loading, error, success)
 
 ### Design Systems
+
 - Build reusable component libraries
 - Document usage guidelines
 - Maintain design-code parity
@@ -215,9 +233,11 @@ complexity: advanced
 ## Example Use Cases
 
 ### New Feature Design: Social Sharing
+
 **Objective:** Increase user acquisition through viral sharing
 
 **Approach:**
+
 - Analyzed user behavior (only 2% share content)
 - Interviewed users about sharing motivations
 - Researched competitive sharing patterns
@@ -232,9 +252,11 @@ complexity: advanced
 **Key Design Decisions:** One-tap sharing, personalized preview cards, share incentives, social proof
 
 ### Product Redesign: Dashboard Experience
+
 **Objective:** Improve engagement and reduce churn for analytics platform
 
 **Approach:**
+
 - Conducted 20 user interviews
 - Analyzed usage analytics (low engagement on key features)
 - Identified information architecture issues
@@ -248,9 +270,11 @@ complexity: advanced
 **Innovations:** Customizable dashboards, contextual insights, real-time collaboration, mobile-first design
 
 ### 0-to-1 Product Design: Mobile App
+
 **Objective:** Launch MVP mobile app for B2C marketplace
 
 **Approach:**
+
 - Defined product vision and strategy
 - Conducted market research and competitive analysis
 - Created user personas and journey maps
@@ -265,9 +289,11 @@ complexity: advanced
 **Deliverables:** Product strategy, user research, design system (120 components), 80+ screens, interactive prototype, developer handoff
 
 ### Design System Development
+
 **Objective:** Scale design across 3 product teams and reduce design debt
 
 **Approach:**
+
 - Audited existing UI patterns across products
 - Defined design principles and guidelines
 - Built component library in Figma
@@ -283,12 +309,14 @@ complexity: advanced
 ## Customization Options
 
 ### Adjust by Product Stage
+
 - **Discovery (0-1):** Research-heavy, problem validation, MVP design
 - **Growth:** Feature expansion, optimization, scale design systems
 - **Maturity:** Refinement, efficiency, advanced features, redesigns
 - **Transformation:** Strategic pivots, major redesigns, new markets
 
 ### Adjust by Product Type
+
 - **B2C Consumer:** Emotional design, ease of use, delight, viral growth
 - **B2B SaaS:** Efficiency, complex workflows, power users, ROI-focused
 - **Marketplace:** Two-sided design, trust building, matching algorithms
@@ -296,12 +324,14 @@ complexity: advanced
 - **Enterprise:** Role-based access, customization, integration, compliance
 
 ### Adjust by Team Structure
+
 - **Solo Designer:** End-to-end ownership, generalist skills, scrappy execution
 - **Design Team:** Specialized roles, collaboration, design systems, scale
 - **Cross-Functional:** PM partnership, eng collaboration, data-driven
 - **Design-Led:** Strategic influence, design leadership, innovation culture
 
 ### Adjust by Design Approach
+
 - **Research-Driven:** Heavy user research, validation, evidence-based
 - **Metrics-Driven:** Data-heavy, A/B testing, optimization, analytics
 - **Vision-Driven:** Strategic, innovative, forward-thinking, trend-setting
@@ -310,6 +340,7 @@ complexity: advanced
 ## Key Metrics & Deliverables
 
 **Product Success Metrics:**
+
 - User activation rate
 - Feature adoption rate
 - Daily/Monthly active users (DAU/MAU)
@@ -320,6 +351,7 @@ complexity: advanced
 - Customer lifetime value (CLV)
 
 **Design Quality Metrics:**
+
 - Usability test success rate
 - System Usability Scale (SUS)
 - Design consistency score
@@ -329,6 +361,7 @@ complexity: advanced
 - Design velocity (features shipped)
 
 **Business Impact Metrics:**
+
 - Conversion rate improvements
 - Revenue impact
 - Cost per acquisition (CPA)
@@ -338,6 +371,7 @@ complexity: advanced
 - User satisfaction (CSAT)
 
 **Deliverables:**
+
 - Product strategy documents
 - User research reports
 - Personas and journey maps

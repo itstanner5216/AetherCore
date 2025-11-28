@@ -157,10 +157,7 @@
     "user_visible_messages": false,
     "log_level": "internal_only",
     "emit_telemetry": true,
-    "log_targets": [
-      "internal_log",
-      "telemetry_bus"
-    ],
+    "log_targets": ["internal_log", "telemetry_bus"],
     "internal_messages": {
       "on_bootstrap_start": "[INTERNAL] Initializing ProjectGPT core infrastructure",
       "on_phase_1_complete": "[INTERNAL] Core modules initialized",
@@ -185,28 +182,15 @@
   "discovery": {
     "scan_directories": true,
     "scan_archives": true,
-    "scan_patterns": [
-      "*.zip",
-      "*/config.json",
-      "*.md"
-    ],
-    "exclude_patterns": [
-      ".git",
-      "**pycache**",
-      "node_modules",
-      ".DS_Store"
-    ]
+    "scan_patterns": ["*.zip", "*/config.json", "*.md"],
+    "exclude_patterns": [".git", "**pycache**", "node_modules", ".DS_Store"]
   },
   "compatibility": {
     "min_usif_version": "1.0",
     "max_usif_version": "2.0",
     "required_python_version": "3.8+",
     "required_node_version": "16+",
-    "platform": [
-      "linux",
-      "darwin",
-      "win32"
-    ]
+    "platform": ["linux", "darwin", "win32"]
   },
   "metadata": {
     "author": "Aethercore Team",

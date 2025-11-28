@@ -7,34 +7,66 @@
   "callable": true,
   "auto_register": true,
   "entry_point": "sourcevalidator.md",
-  "dependencies": ["AetherCore.Orchestrator", "AetherCore.DeepForge", "AetherCore.SearchEngine"],
+  "dependencies": [
+    "AetherCore.Orchestrator",
+    "AetherCore.DeepForge",
+    "AetherCore.SearchEngine"
+  ],
   "tools": {
     "score_source": {
       "description": "Evaluate source credibility (0-100)",
-      "parameters": {"url": "string", "domain": "string", "content_type": "string"},
-      "returns": {"score": "number", "factors": "object", "tier": "string"}
+      "parameters": {
+        "url": "string",
+        "domain": "string",
+        "content_type": "string"
+      },
+      "returns": { "score": "number", "factors": "object", "tier": "string" }
     },
     "cross_reference": {
       "description": "Verify claim against multiple sources",
-      "parameters": {"claim": "string", "sources": "array"},
-      "returns": {"verified": "boolean", "agreement_rate": "number", "conflicting_sources": "array"}
+      "parameters": { "claim": "string", "sources": "array" },
+      "returns": {
+        "verified": "boolean",
+        "agreement_rate": "number",
+        "conflicting_sources": "array"
+      }
     },
     "detect_bias": {
       "description": "Analyze content for potential bias indicators",
-      "parameters": {"content": "string", "source_url": "string"},
-      "returns": {"bias_score": "number", "bias_type": "string", "indicators": "array"}
+      "parameters": { "content": "string", "source_url": "string" },
+      "returns": {
+        "bias_score": "number",
+        "bias_type": "string",
+        "indicators": "array"
+      }
     },
     "cite": {
       "description": "Generate properly formatted citation",
-      "parameters": {"source": "object", "format": "string"},
-      "returns": {"citation": "string", "format_used": "string"}
+      "parameters": { "source": "object", "format": "string" },
+      "returns": { "citation": "string", "format_used": "string" }
     }
   },
   "credibility_tiers": {
-    "tier_1": {"score_range": [80, 100], "label": "Highly Credible", "domains": ["gov", "edu", "peer-reviewed"]},
-    "tier_2": {"score_range": [60, 79], "label": "Generally Reliable", "domains": ["major news", "established orgs"]},
-    "tier_3": {"score_range": [40, 59], "label": "Use With Caution", "domains": ["blogs", "opinion"]},
-    "tier_4": {"score_range": [0, 39], "label": "Low Credibility", "domains": ["unknown", "flagged"]}
+    "tier_1": {
+      "score_range": [80, 100],
+      "label": "Highly Credible",
+      "domains": ["gov", "edu", "peer-reviewed"]
+    },
+    "tier_2": {
+      "score_range": [60, 79],
+      "label": "Generally Reliable",
+      "domains": ["major news", "established orgs"]
+    },
+    "tier_3": {
+      "score_range": [40, 59],
+      "label": "Use With Caution",
+      "domains": ["blogs", "opinion"]
+    },
+    "tier_4": {
+      "score_range": [0, 39],
+      "label": "Low Credibility",
+      "domains": ["unknown", "flagged"]
+    }
   },
   "integration": {
     "inherits_from": "Full-Output Intelligence Protocol",

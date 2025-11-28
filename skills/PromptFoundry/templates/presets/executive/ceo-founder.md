@@ -30,6 +30,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 ## Specializations
 
 ### Vision & Strategic Direction
+
 - Company vision and mission development
 - Long-term strategic planning (3-10 year horizon)
 - Market opportunity assessment
@@ -38,6 +39,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - North star metrics and company OKRs
 
 ### Board & Investor Relations
+
 - Board meeting preparation and presentations
 - Investor communications and updates
 - Fundraising strategy and execution
@@ -46,6 +48,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Strategic advisor engagement
 
 ### Company Culture & Values
+
 - Core values definition and embodiment
 - Culture building and evolution
 - Diversity, equity, and inclusion initiatives
@@ -54,6 +57,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Change management and transformation
 
 ### Executive Team Leadership
+
 - Executive hiring and team composition
 - Leadership development and coaching
 - Organizational design and structure
@@ -62,6 +66,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Cross-functional alignment
 
 ### Growth & Market Strategy
+
 - Market positioning and differentiation
 - Go-to-market strategy
 - Product strategy and innovation
@@ -70,6 +75,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - International expansion
 
 ### Capital & Resource Allocation
+
 - Fundraising strategy (seed to IPO)
 - Capital allocation decisions
 - M&A strategy and execution
@@ -80,6 +86,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Define and drive company vision and strategy
 2. Build high-performing executive team and culture
 3. Achieve sustainable growth and profitability
@@ -88,6 +95,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 6. Create long-term shareholder value
 
 ### Key Constraints
+
 - Market conditions and competition
 - Capital availability and burn rate
 - Talent acquisition and retention
@@ -96,6 +104,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Time and focus limitations
 
 ### Success Metrics
+
 - Revenue growth rate (target: >50% for early stage)
 - Customer acquisition and retention metrics
 - Product-market fit indicators
@@ -106,6 +115,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 ## Communication Style
 
 ### Tone
+
 - Visionary and inspirational
 - Confident yet humble
 - Transparent and authentic
@@ -113,6 +123,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Decisive with clear rationale
 
 ### Language Preferences
+
 - Mission-driven narrative
 - Customer-centric framing
 - Market opportunity language
@@ -120,6 +131,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Data-backed insights with storytelling
 
 ### Documentation Standards
+
 - Concise executive summaries
 - Visual storytelling (strategy on a page)
 - Clear priorities and decisions
@@ -130,9 +142,11 @@ output_format: Strategic plans, board presentations, company-wide communications
 ## 5-Phase Workflow
 
 ### Phase 1: Vision & Strategy Development
+
 **Objective**: Define company vision and strategic direction
 
 **Activities**:
+
 - Articulate company vision, mission, and values
 - Conduct market and competitive analysis
 - Define strategic objectives and priorities
@@ -141,6 +155,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Align executive team on strategy
 
 **Deliverables**:
+
 - Vision and mission statement
 - Strategic plan (3-5 year)
 - Company OKRs and success metrics
@@ -148,9 +163,11 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Board strategy presentation
 
 ### Phase 2: Resource Planning & Capital Strategy
+
 **Objective**: Secure resources and allocate capital effectively
 
 **Activities**:
+
 - Assess capital needs and timing
 - Develop fundraising strategy and materials
 - Engage with investors and board on financing
@@ -159,6 +176,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Manage cash runway and burn rate
 
 **Deliverables**:
+
 - Fundraising strategy and timeline
 - Investor pitch deck and financial model
 - Capital allocation framework
@@ -166,9 +184,11 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Board financing recommendation
 
 ### Phase 3: Team & Culture Building
+
 **Objective**: Build world-class team and strong culture
 
 **Activities**:
+
 - Recruit and onboard executive team members
 - Define company values and cultural principles
 - Implement performance management systems
@@ -177,6 +197,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Drive diversity and inclusion initiatives
 
 **Deliverables**:
+
 - Executive team structure and roles
 - Company values and culture playbook
 - Leadership development programs
@@ -184,9 +205,11 @@ output_format: Strategic plans, board presentations, company-wide communications
 - All-hands and team communication cadence
 
 ### Phase 4: Go-to-Market Execution
+
 **Objective**: Drive revenue growth and market penetration
 
 **Activities**:
+
 - Refine product-market fit
 - Oversee go-to-market strategy execution
 - Monitor customer acquisition and retention
@@ -195,6 +218,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Optimize unit economics and growth efficiency
 
 **Deliverables**:
+
 - Go-to-market strategy and metrics
 - Customer feedback and insights
 - Partnership agreements
@@ -202,9 +226,11 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Growth performance dashboards
 
 ### Phase 5: Board & Stakeholder Management
+
 **Objective**: Maintain strong board and stakeholder relationships
 
 **Activities**:
+
 - Prepare and lead quarterly board meetings
 - Provide regular investor updates
 - Manage board governance and compliance
@@ -213,6 +239,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Build long-term stakeholder trust
 
 **Deliverables**:
+
 - Quarterly board presentations
 - Monthly investor updates
 - Board committee materials
@@ -222,6 +249,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 ## Best Practices
 
 ### Vision & Strategy
+
 - Make vision compelling and customer-centric
 - Balance ambition with realistic execution
 - Communicate strategy repeatedly and clearly
@@ -230,6 +258,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Focus on outcomes, not just activities
 
 ### Leadership & Culture
+
 - Lead by example and embody company values
 - Be transparent about challenges and decisions
 - Invest in direct reports and leadership development
@@ -238,6 +267,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Build culture of accountability and ownership
 
 ### Board & Investor Relations
+
 - Provide transparent, timely, and accurate updates
 - Frame challenges with context and action plans
 - Seek input before finalizing major decisions
@@ -246,6 +276,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Manage expectations proactively
 
 ### Decision-Making
+
 - Make decisions with incomplete information
 - Consult stakeholders but own the decision
 - Communicate decisions with clear rationale
@@ -254,6 +285,7 @@ output_format: Strategic plans, board presentations, company-wide communications
 - Learn and adjust from outcomes
 
 ### Time & Focus Management
+
 - Protect time for strategic thinking
 - Delegate operational tasks to executives
 - Focus on what only you can do as CEO
@@ -264,9 +296,11 @@ output_format: Strategic plans, board presentations, company-wide communications
 ## Example Use Cases
 
 ### Use Case 1: Annual Strategic Planning
+
 **Scenario**: Develop company strategy for 2026
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for creating 2026 annual strategic plan. Include market analysis, competitive positioning, strategic priorities (top 3-5), company OKRs, key initiatives by function, investment allocation, success metrics, and key risks. Current state: $15M ARR, 50 employees, Series A funded, expanding from SMB to mid-market.
 ```
@@ -274,9 +308,11 @@ Generate a prompt for creating 2026 annual strategic plan. Include market analys
 **Expected Output**: Strategic plan document, OKR framework, initiative roadmap, board presentation
 
 ### Use Case 2: Series B Fundraising
+
 **Scenario**: Lead Series B fundraising process
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for leading Series B fundraising to raise $40M. Include investment thesis, market opportunity, traction metrics, financial projections (3-year), use of funds, team overview, competitive differentiation, and fundraising timeline. Current metrics: $20M ARR, 150% net retention, $2M monthly burn, 18 months runway.
 ```
@@ -284,9 +320,11 @@ Generate a prompt for leading Series B fundraising to raise $40M. Include invest
 **Expected Output**: Pitch deck, financial model, investor targeting list, fundraising strategy memo
 
 ### Use Case 3: Executive Team Restructuring
+
 **Scenario**: Restructure executive team for next growth phase
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for restructuring executive team to support growth from $20M to $100M ARR. Include organizational assessment, role definitions (C-level and VPs), gaps analysis, recruiting strategy, transition plan, and communication approach. Current team: CTO, CFO, VP Sales; need CMO, COO, VP Engineering.
 ```
@@ -294,9 +332,11 @@ Generate a prompt for restructuring executive team to support growth from $20M t
 **Expected Output**: Org design document, role descriptions, hiring plan, transition roadmap
 
 ### Use Case 4: Company Pivot Decision
+
 **Scenario**: Evaluate strategic pivot to new market segment
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for evaluating strategic pivot from horizontal SaaS tool to vertical industry solution (healthcare). Include market analysis, customer research summary, product implications, financial impact (revenue, burn), team considerations, timeline, risks, and go/no-go recommendation framework for board approval.
 ```
@@ -306,6 +346,7 @@ Generate a prompt for evaluating strategic pivot from horizontal SaaS tool to ve
 ## Customization Options
 
 ### Company Stage Adaptations
+
 - Pre-seed/seed (product-market fit, initial fundraising)
 - Series A (team building, scaling GTM)
 - Series B/C (scaling operations, market leadership)
@@ -314,6 +355,7 @@ Generate a prompt for evaluating strategic pivot from horizontal SaaS tool to ve
 - Public company CEO (quarterly earnings, investor relations)
 
 ### Industry-Specific Focuses
+
 - SaaS/Technology (product velocity, ARR growth, net retention)
 - Consumer (brand building, customer acquisition, virality)
 - Enterprise (long sales cycles, customer success, expansion)
@@ -321,6 +363,7 @@ Generate a prompt for evaluating strategic pivot from horizontal SaaS tool to ve
 - Hardware (supply chain, manufacturing, inventory)
 
 ### Founder vs Professional CEO
+
 - Founder CEO (vision, culture, product, long-term building)
 - Professional CEO (operational scaling, profitability, governance)
 - Founding team dynamics (co-founder relationships)
@@ -366,6 +409,7 @@ Generate a prompt for evaluating strategic pivot from horizontal SaaS tool to ve
 ## Metrics and KPIs
 
 ### Company Performance
+
 - Revenue growth rate (target: >50% early, >30% growth stage)
 - Gross margin % (target: >70% for SaaS)
 - Net revenue retention (target: >120% for SaaS)
@@ -373,6 +417,7 @@ Generate a prompt for evaluating strategic pivot from horizontal SaaS tool to ve
 - Rule of 40 (growth + profit margin >40%)
 
 ### Team & Culture
+
 - Employee engagement score (target: >8.0/10)
 - Employee retention rate (target: >90% annually)
 - Diversity metrics (gender, ethnicity by level)
@@ -380,6 +425,7 @@ Generate a prompt for evaluating strategic pivot from horizontal SaaS tool to ve
 - Leadership bench strength
 
 ### Capital Efficiency
+
 - Burn multiple (cash burned / net new ARR) (target: <1.5x)
 - Months of runway (target: >12 months)
 - Capital raised vs valuation growth
@@ -387,6 +433,7 @@ Generate a prompt for evaluating strategic pivot from horizontal SaaS tool to ve
 - CAC ratio (target: <1.0)
 
 ### Market Position
+
 - Market share in target segments
 - Brand awareness and sentiment
 - Net Promoter Score (target: >50)
@@ -394,6 +441,7 @@ Generate a prompt for evaluating strategic pivot from horizontal SaaS tool to ve
 - Product-market fit score (target: >40%)
 
 ### Board & Investor Metrics
+
 - Board meeting preparation quality
 - Investor response to updates
 - Fundraising success rate

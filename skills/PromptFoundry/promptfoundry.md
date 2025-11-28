@@ -17,6 +17,7 @@ A comprehensive system for generating world-class, production-ready prompts in o
 **This skill generates PROMPTS only. It does NOT implement the work described in the prompt.**
 
 ### What This Skill DOES:
+
 ✅ Generate a comprehensive PROMPT (text document in chosen format)
 ✅ **Ask 5-7 questions to understand requirements** (MANDATORY - no skipping)
 ✅ Validate prompt quality before delivery
@@ -24,6 +25,7 @@ A comprehensive system for generating world-class, production-ready prompts in o
 ✅ Provide the prompt ready to copy and use elsewhere
 
 ### What This Skill DOES NOT DO:
+
 ❌ Implement the actual work (no code files, no diagrams, no APIs)
 ❌ Create architectural diagrams or technical implementations
 ❌ Write actual marketing campaigns or business strategies
@@ -32,6 +34,7 @@ A comprehensive system for generating world-class, production-ready prompts in o
 ❌ Execute the prompt after generating it
 
 ### Expected Workflow:
+
 1. User asks for help creating a prompt
 2. **Skill MUST ask 5-7 questions** (even if context seems obvious)
 3. User answers questions with specific details
@@ -41,6 +44,7 @@ A comprehensive system for generating world-class, production-ready prompts in o
 7. Ask: "Would you like me to modify the prompt or create a variation?"
 
 ### Why This Matters:
+
 - **Prevents scope creep**: You're making a prompt, not doing the work
 - **Saves context**: One prompt document vs. dozens of implementation files
 - **Clear deliverable**: User gets a prompt to use with any LLM
@@ -53,6 +57,7 @@ A comprehensive system for generating world-class, production-ready prompts in o
 ## Overview
 
 Transform any requirement into an optimized mega-prompt through:
+
 1. **Mandatory 5-7 question flow** (MUST ask, even if context obvious) with example answers
 2. **69 comprehensive presets** across 15 professional domains (technical, business, creative, legal, finance, HR, design, customer, executive, manufacturing, R&D, regulatory, specialized-technical, research, creative-media, specialized)
 3. **Multi-format output** (XML/Claude/ChatGPT/Gemini)
@@ -79,6 +84,7 @@ This skill works alongside the meta-prompt template:
   - **Location**: `documentation/templates/PROMPTS_FACTORY_PROMPT.md`
 
 **Quick Decision**:
+
 - Need one prompt now? → Use this skill (AetherCore.PromptFoundry)
 - Building a prompt system for a new domain? → Use PROMPTS_FACTORY_PROMPT.md
 
@@ -87,6 +93,7 @@ This skill works alongside the meta-prompt template:
 ## Quick Start: Choose Your Path
 
 ### Path 1: Quick-Start Preset (Fastest)
+
 **Use when:** You need a prompt for a common role
 
 1. User says: "I need a prompt for [preset name]"
@@ -126,6 +133,7 @@ This skill works alongside the meta-prompt template:
 **Specialized (1):** AEO Specialist (Answer Engine Optimization for LLMs)
 
 ### Path 2: Custom Prompt (5-7 Questions - MANDATORY)
+
 **Use when:** Building a unique prompt from scratch
 
 1. Detect intent from user request
@@ -144,21 +152,25 @@ This skill works alongside the meta-prompt template:
 Analyze user's request for trigger keywords:
 
 **Role Triggers:**
+
 - Technical: "engineer", "developer", "architect", "DevOps", "backend", "frontend", "full-stack", "ML", "data scientist"
 - Business: "manager", "strategist", "analyst", "consultant", "executive", "director", "VP"
 - Creative: "designer", "writer", "content", "UX", "brand", "marketing"
 - Specialized: "healthcare", "fintech", "legal", "education", "security"
 
 **Task Triggers:**
+
 - Build: "create", "build", "develop", "implement", "code", "write"
 - Analyze: "analyze", "review", "evaluate", "assess", "audit", "research"
 - Optimize: "optimize", "improve", "refactor", "enhance", "fix"
 - Plan: "strategy", "plan", "roadmap", "architecture", "design"
 
 **Output Triggers:**
+
 - "code", "documentation", "strategy", "analysis", "plan", "design", "report"
 
 **Infer from context:**
+
 - Primary role
 - Domain/industry
 - Task complexity (basic/intermediate/advanced/expert)
@@ -170,16 +182,19 @@ Analyze user's request for trigger keywords:
 **MANDATORY: You MUST ask questions before generating any prompt.**
 
 **Questioning Rules:**
+
 - **MINIMUM: Ask at least 5 questions** (even if context seems clear)
 - **MAXIMUM: Ask up to 7 questions** (skip only truly redundant ones)
 - **Always ask for CONFIRMATION** of inferred details, don't just assume
 - **Purpose:** Validate assumptions, gather specifics, ensure quality output
 
 **When to skip a question:**
+
 - ✅ ONLY if user explicitly provided that exact detail in their request
 - ✅ Example: User says "React 18 with TypeScript" → skip tech stack question
 
 **When to ask even if you think you know:**
+
 - ✅ ALWAYS ask for domain/industry context (gets specifics)
 - ✅ ALWAYS ask for constraints (budget, timeline, team size)
 - ✅ ALWAYS ask for success criteria (measurable outcomes)
@@ -190,7 +205,8 @@ Analyze user's request for trigger keywords:
 #### Category 1: Role & Domain (Ask 2 max)
 
 **Q1: What role should the AI assume?**
-*Examples:*
+_Examples:_
+
 - "Senior Backend Engineer"
 - "Marketing Growth Strategist"
 - "Data Analyst"
@@ -200,7 +216,8 @@ Analyze user's request for trigger keywords:
 Your answer: `___`
 
 **Q2: What domain or industry context?**
-*Examples:*
+_Examples:_
+
 - "FinTech / Payment Processing"
 - "Healthcare SaaS"
 - "E-commerce Platform"
@@ -212,7 +229,8 @@ Your answer: `___`
 #### Category 2: Use Case & Output (Ask 2)
 
 **Q3: What is the primary task or goal?**
-*Examples:*
+_Examples:_
+
 - "Build REST APIs for payment processing"
 - "Create content marketing strategies"
 - "Analyze user behavior data"
@@ -222,7 +240,8 @@ Your answer: `___`
 Your answer: `___`
 
 **Q4: What output format do you need?**
-*Options:*
+_Options:_
+
 - `code` - Implementation code with tests
 - `documentation` - Technical/user docs
 - `strategy` - Strategic plans/roadmaps
@@ -235,7 +254,8 @@ Your answer: `___`
 #### Category 3: Context & Constraints (Ask 1-2)
 
 **Q5: Tech stack, tools, or methodologies to use/follow?**
-*Examples:*
+_Examples:_
+
 - "Python, FastAPI, PostgreSQL, AWS"
 - "React, TypeScript, Next.js"
 - "Agile/Scrum methodology"
@@ -245,7 +265,8 @@ Your answer: `___`
 Your answer: `___`
 
 **Q6: Any critical constraints or requirements?**
-*Examples:*
+_Examples:_
+
 - "HIPAA compliant, healthcare regulations"
 - "Budget < $10k, 2-week timeline"
 - "Must support 10k+ concurrent users"
@@ -257,13 +278,14 @@ Your answer: `___`
 #### Category 4: Style & Format (Ask 1-2)
 
 **Q7: Communication style and response format?**
-*Options:*
+_Options:_
+
 - **Tone:** Professional / Technical / Casual / Academic
 - **Style:** Concise / Detailed / Step-by-step / Conceptual
 - **Format:** Prose / Bullets / Mixed / Code-heavy
 - **Depth:** High-level / Moderate / Deep-technical / Implementation-ready
 
-*Example:* "Technical tone, detailed style, mixed format, implementation-ready depth"
+_Example:_ "Technical tone, detailed style, mixed format, implementation-ready depth"
 
 Your answer: `___`
 
@@ -277,6 +299,7 @@ Your answer: `___`
 - **If industry-specific:** MUST ask about compliance, regulations, standards
 
 **Strict Minimum Requirements (Cannot Skip):**
+
 - ✅ MUST ask at least 1 question about role/domain (even if "obvious")
 - ✅ MUST ask at least 1 question about use case/task details
 - ✅ MUST ask about constraints OR success criteria (at minimum one)
@@ -290,6 +313,7 @@ Your answer: `___`
 User: "Write a product manager prompt for creating a PRD"
 
 You MUST still ask:
+
 1. "I'm inferring role = Product Manager. What domain/industry? (e.g., B2B SaaS, Mobile Apps, Healthcare)"
 2. "What type of PRD? (e.g., New Feature, Platform Migration, MVP Launch)"
 3. "What are the constraints? (e.g., Team size, Timeline, Budget, Technical stack)"
@@ -305,6 +329,7 @@ You MUST still ask:
 After gathering responses, ask:
 
 **Select output format:**
+
 1. `xml` - XML-structured markdown (optimal for LLM parsing) [DEFAULT]
 2. `claude` - Claude-optimized system prompt format
 3. `chatgpt` - ChatGPT custom instructions format
@@ -318,6 +343,7 @@ Your choice: `___` (or press enter for default)
 ### Step 4: Mode Selection
 
 **Select generation mode:**
+
 1. `core` - Prompt + usage instructions + 2-3 examples (~5K tokens) [DEFAULT]
 2. `advanced` - Core + testing scenarios + variations + optimization tips (~12K tokens)
 
@@ -328,10 +354,12 @@ Your choice: `___` (or press enter for core mode)
 ### Step 5: Template Matching & Synthesis
 
 **Check Quick-Start Presets:**
+
 - Read `templates/presets/` for matching templates
 - Match criteria: role (>80%), domain (>70%), output type (exact)
 
 **Decision Logic:**
+
 - **High match (>85%)**: Use preset, customize variables
 - **Moderate match (60-85%)**: Use as base, significant modifications
 - **Low match (<60%)**: Synthesize custom template using:
@@ -361,6 +389,7 @@ Before output, validate:
 
 **Token Count Announcement:**
 After generating the prompt, count tokens and include in delivery message:
+
 - "**Token Count:** ~4,200 tokens (Core mode - within optimal range ✅)"
 - "**Token Count:** ~10,500 tokens (Advanced mode - comprehensive ✅)"
 - "**Token Count:** ~7,800 tokens (Warning: Higher than typical Core mode)"
@@ -493,37 +522,47 @@ Begin assisting the user now with this configuration.
 You are [role with expertise and domain]. Your mission is to [primary objective].
 
 ## Your Expertise
+
 [Domain and specialized knowledge areas]
 
 ## Your Workflow
+
 When given a task:
+
 1. [Phase 1 steps]
 2. [Phase 2 steps]
 3. [Phase 3 steps]
 4. [Phase 4 steps]
 
 ## Output Standards
+
 - Format: [specified format]
 - Structure: [organization approach]
 - Depth: [detail level]
 - Quality bar: [success criteria]
 
 ## Communication Style
+
 - Tone: [specified tone]
 - Audience: [target level]
 - Formatting: [format approach]
 
 ## Critical Rules
+
 **Must follow:**
+
 - [Priority 1 rules]
 
 **Should follow:**
+
 - [Priority 2 guidelines]
 
 ## Best Practices
+
 [Contextually relevant practices for this role/domain]
 
 ## Response Examples
+
 [2-3 examples showing expected behavior]
 
 ---
@@ -570,18 +609,23 @@ Always provide [example format] and ensure [quality criteria].
 
 ```markdown
 ## Role Configuration
+
 You are: [role with expertise and domain]
 
 ## Task Approach
+
 [Workflow summarized for Gemini's style]
 
 ## Output Format
+
 [Clear format specification]
 
 ## Quality Standards
+
 [Success criteria]
 
 ## Examples
+
 [2 concrete examples]
 
 Apply this configuration to all responses.
@@ -684,6 +728,7 @@ Present the generated prompt with clear context:
 ✅ **Your [Mode] mega-prompt is ready!**
 
 **Configuration:**
+
 - **Role:** [Role name]
 - **Domain:** [Domain/industry]
 - **Output Type:** [Type]
@@ -705,24 +750,28 @@ Present the generated prompt with clear context:
 [FORMAT-SPECIFIC INSTRUCTIONS:]
 
 **For XML format:**
+
 1. Copy the entire `<mega_prompt>` block above
 2. Paste into your LLM conversation (Claude, ChatGPT, Gemini, etc.)
 3. Follow with your specific request
 4. The AI will respond according to the defined role
 
 **For Claude format:**
+
 1. Copy the system configuration above
 2. Use as your system prompt in Claude
 3. Start your conversation
 4. Claude will follow the configured behavior
 
 **For ChatGPT format:**
+
 1. Go to Settings → Personalization → Custom Instructions
 2. Paste "What would you like..." in top box
 3. Paste "How would you like..." in bottom box
 4. Save and start using
 
 **For Gemini format:**
+
 1. Copy the role configuration
 2. Paste at start of new Gemini conversation
 3. Continue with your requests
@@ -733,12 +782,14 @@ Present the generated prompt with clear context:
 ⚠️ **IMPORTANT - Prompt Generation Complete**
 
 This skill has generated a PROMPT for you to use. It has NOT:
+
 - ❌ Implemented any code or infrastructure
 - ❌ Created architectural diagrams
 - ❌ Built actual marketing campaigns
 - ❌ Written business documents
 
 **Next Steps:**
+
 1. Copy the prompt above
 2. Use it in a FRESH conversation or different tool
 3. That conversation will then implement the actual work
@@ -750,16 +801,19 @@ This skill has generated a PROMPT for you to use. It has NOT:
 [IF ADVANCED MODE:]
 
 **📊 Testing Scenarios Included:**
+
 - 5 test cases to validate prompt behavior
 - Use these to ensure prompt works as expected
 
 **🎛️ Prompt Variations:**
+
 - Concise, Balanced (current), Comprehensive
 - Switch based on your needs
 
 **⚡ Optimization Tips:**
+
 - Token count: ~[X]K tokens
-- [X] optimization opportunities identified
+- [x] optimization opportunities identified
 - Iteration guidelines included
 
 ---
@@ -767,12 +821,14 @@ This skill has generated a PROMPT for you to use. It has NOT:
 🛑 **STOP HERE - Prompt Delivery Complete**
 
 The skill has finished generating your prompt. Do NOT proceed with:
+
 - ❌ Implementing code from the prompt
 - ❌ Creating diagrams or documentation
 - ❌ Building actual infrastructure
 - ❌ Executing the prompt's instructions
 
 **What to do next:**
+
 1. Copy the prompt above
 2. Save it for later use OR use it in a fresh conversation
 3. Return here only if you need to modify the PROMPT itself
@@ -780,19 +836,20 @@ The skill has finished generating your prompt. Do NOT proceed with:
 ---
 
 **Need to modify the PROMPT?**
+
 - "Make the prompt more [concise/detailed]"
 - "Add focus on [specific aspect] to the prompt"
 - "Adjust prompt tone to be more [characteristic]"
 - "Regenerate in [different format]"
 
 **Want a different prompt?**
+
 - "Create a new prompt for [different role]"
 - "Use [preset name] preset"
 - "Generate [advanced/core] mode version"
 
 **User wants to implement the prompt's instructions?**
 → Politely clarify: "This skill generates prompts only. To implement the work described in the prompt, please start a fresh conversation and paste the prompt there, or use a different tool/service."
-
 ```
 
 ---
@@ -929,24 +986,28 @@ Apply relevant practices based on context:
 ### By Output Type
 
 **Code:**
+
 - OpenAI: Step-by-step reasoning, edge case handling
 - Anthropic: Clear code structure with comments
 - Google: Modular design, example-driven
 - Domain: Language-specific idioms, testing standards
 
 **Documentation:**
+
 - OpenAI: Clear structure, practical examples
 - Anthropic: Logical flow, comprehensive coverage
 - Google: Visual aids, progressive disclosure
 - Domain: Audience-appropriate depth, accessibility
 
 **Strategy:**
+
 - OpenAI: Data-driven reasoning, scenario analysis
 - Anthropic: Structured framework, clear rationale
 - Google: Actionable insights, measurable outcomes
 - Domain: Industry benchmarks, competitive context
 
 **Analysis:**
+
 - OpenAI: Methodology transparency, evidence-based
 - Anthropic: Clear conclusions, limitations noted
 - Google: Visual data presentation, insights hierarchy
@@ -973,6 +1034,7 @@ Apply relevant practices based on context:
 **Supported Combinations:** 15,000+
 
 **50+ Roles:**
+
 - Developers (Frontend, Backend, Full-Stack, Mobile, ML, DevOps, etc.)
 - Analysts (Data, Business, Product, Market, etc.)
 - Strategists (Marketing, Business, Product, Growth, etc.)
@@ -982,6 +1044,7 @@ Apply relevant practices based on context:
 - Specialists (Security, Performance, Quality, Compliance, etc.)
 
 **20+ Industries:**
+
 - Technology (SaaS, Cloud, Mobile, Web, AI/ML)
 - Finance (Banking, Trading, Payments, Insurance, FinTech)
 - Healthcare (Clinical, Pharma, MedTech, Telemedicine)
@@ -994,6 +1057,7 @@ Apply relevant practices based on context:
 - And 11 more...
 
 **15+ Task Types:**
+
 - Build/Create/Develop
 - Analyze/Evaluate/Assess
 - Design/Architect/Plan
@@ -1009,25 +1073,33 @@ Apply relevant practices based on context:
 ## Error Handling & Edge Cases
 
 ### Insufficient Information
+
 If user responses are vague:
+
 1. Identify specific gaps
 2. Ask targeted follow-up (max 2 questions)
 3. Offer sensible defaults with confirmation
 
 ### Conflicting Requirements
+
 If responses contain contradictions:
+
 1. Highlight specific conflicts
 2. Request clarification with options
 3. Suggest resolution based on common patterns
 
 ### Over-Complex Requests
+
 If requirements suggest >10K token prompt:
+
 1. Suggest breaking into multiple specialized prompts
 2. Offer modular approach
 3. Provide coordination guidance for multi-prompt system
 
 ### Template Unavailable
+
 If template file cannot be loaded:
+
 1. Fall back to synthesis mode
 2. Use best practices from references
 3. Generate custom template on the fly
@@ -1066,6 +1138,7 @@ python scripts/optimizer.py \
 ### Skill-Triggered Script Execution
 
 The skill will automatically call Python scripts for:
+
 - Quality validation (validator.py)
 - Token counting (within validator.py)
 - Batch operations (if user requests multiple prompts)
@@ -1075,6 +1148,7 @@ The skill will automatically call Python scripts for:
 ## Success Metrics
 
 **User Experience:**
+
 - Max 7 questions (vs 14-16 in other skills)
 - < 2 minutes to generate prompt
 - 15 one-click presets available
@@ -1082,6 +1156,7 @@ The skill will automatically call Python scripts for:
 - 2 generation modes (core/advanced)
 
 **Quality:**
+
 - 7-point pre-delivery validation
 - 100% XML structure validity (when applicable)
 - Best practices contextually applied
@@ -1089,6 +1164,7 @@ The skill will automatically call Python scripts for:
 - Zero placeholder text in final output
 
 **Coverage:**
+
 - 15 ready-to-use core templates
 - 15,000+ role/industry/task combinations
 - Support for all major LLMs (Claude/ChatGPT/Gemini)

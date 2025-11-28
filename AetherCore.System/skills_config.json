@@ -12,11 +12,7 @@
       "execution_priority": 0,
       "callable": false,
       "dependencies": [],
-      "tools": [
-        "route",
-        "schedule",
-        "synthesize"
-      ],
+      "tools": ["route", "schedule", "synthesize"],
       "tool_descriptions": {
         "route": "Routes tasks to the correct skill using dependency graph logic.",
         "schedule": "Manages ordering and priority of skill execution.",
@@ -36,11 +32,7 @@
       "execution_priority": 1,
       "callable": false,
       "dependencies": ["AetherCore.Orchestrator"],
-      "tools": [
-        "emit",
-        "subscribe",
-        "dispatch"
-      ],
+      "tools": ["emit", "subscribe", "dispatch"],
       "tool_descriptions": {
         "emit": "Emits events onto the skill message bus.",
         "subscribe": "Registers skill event consumers.",
@@ -59,15 +51,8 @@
       "description": "Optimization and calibration system that evaluates performance, quality, and dependency graph efficiency.",
       "execution_priority": 2,
       "callable": false,
-      "dependencies": [
-        "AetherCore.Orchestrator",
-        "AetherCore.EventMesh"
-      ],
-      "tools": [
-        "optimize",
-        "validate",
-        "telemetry"
-      ],
+      "dependencies": ["AetherCore.Orchestrator", "AetherCore.EventMesh"],
+      "tools": ["optimize", "validate", "telemetry"],
       "tool_descriptions": {
         "optimize": "Applies optimization rules across the skill graph.",
         "validate": "Validates outputs for structural integrity and FOIP compliance.",
@@ -87,12 +72,7 @@
       "execution_priority": 3,
       "callable": true,
       "dependencies": [],
-      "tools": [
-        "research",
-        "analyze",
-        "verify",
-        "synthesize"
-      ],
+      "tools": ["research", "analyze", "verify", "synthesize"],
       "tool_descriptions": {
         "research": "Performs multi-stage research passes including source collection and extraction.",
         "analyze": "Executes structured analysis with scaffolded reasoning.",
@@ -113,12 +93,7 @@
       "execution_priority": 4,
       "callable": true,
       "dependencies": [],
-      "tools": [
-        "scan",
-        "compare",
-        "validate",
-        "score"
-      ],
+      "tools": ["scan", "compare", "validate", "score"],
       "tool_descriptions": {
         "scan": "Searches products across supported marketplaces.",
         "compare": "Compares price and quality metrics.",
@@ -142,12 +117,7 @@
         "AetherCore.EventMesh",
         "AetherCore.OptiGraph"
       ],
-      "tools": [
-        "escalate",
-        "crosscheck",
-        "debug",
-        "alternatives"
-      ],
+      "tools": ["escalate", "crosscheck", "debug", "alternatives"],
       "tool_descriptions": {
         "escalate": "Escalates complex tasks to Gemini for hybrid processing.",
         "crosscheck": "Validates outputs using Gemini models.",
@@ -168,12 +138,7 @@
       "execution_priority": 6,
       "callable": true,
       "dependencies": [],
-      "tools": [
-        "generate",
-        "presets",
-        "validate",
-        "export"
-      ],
+      "tools": ["generate", "presets", "validate", "export"],
       "tool_descriptions": {
         "generate": "Generates optimized prompts using domain presets.",
         "presets": "Enumerates professional prompt presets and roles.",
@@ -197,12 +162,7 @@
         "AetherCore.EventMesh",
         "AetherCore.OptiGraph"
       ],
-      "tools": [
-        "search",
-        "scrape",
-        "quota_status",
-        "reset_quotas"
-      ],
+      "tools": ["search", "scrape", "quota_status", "reset_quotas"],
       "tool_descriptions": {
         "search": "Execute web search with automatic provider failover (Google, Brave, Serper).",
         "scrape": "Scrape URL content with fallback providers (Webscraping API, ScrapingAnt).",
@@ -247,7 +207,11 @@
       "description": "Scores source credibility, cross-references claims, detects bias, and ensures proper citation formatting.",
       "execution_priority": 9,
       "callable": true,
-      "dependencies": ["AetherCore.Orchestrator", "AetherCore.DeepForge", "AetherCore.SearchEngine"],
+      "dependencies": [
+        "AetherCore.Orchestrator",
+        "AetherCore.DeepForge",
+        "AetherCore.SearchEngine"
+      ],
       "tools": ["score_source", "cross_reference", "detect_bias", "cite"],
       "tool_descriptions": {
         "score_source": "Evaluate source credibility (0-100) with tier classification.",

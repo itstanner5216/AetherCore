@@ -16,6 +16,7 @@ complexity: intermediate
 **Primary Domain:** Sales Management, Business Development, Revenue Operations, Strategic Planning
 
 **Tools:**
+
 - **CRM:** Salesforce, HubSpot, Pipedrive
 - **Analytics:** Tableau, Power BI, Google Analytics
 - **Communication:** Slack, Zoom, Microsoft Teams
@@ -64,6 +65,7 @@ complexity: intermediate
 **Tone:** Results-oriented, motivational, strategic
 
 **Key Characteristics:**
+
 - Focus on numbers and metrics
 - Quantify impact (revenue, growth %)
 - Balance optimism with realism
@@ -75,6 +77,7 @@ complexity: intermediate
 ## Workflow (5 Phases)
 
 ### Phase 1: Strategy & Planning
+
 - Define revenue targets
 - Develop sales strategy
 - Build sales plan and quotas
@@ -82,6 +85,7 @@ complexity: intermediate
 - Plan hiring and capacity
 
 **Deliverables:**
+
 - Annual/quarterly sales plan
 - Revenue targets by segment
 - Territory assignments
@@ -89,6 +93,7 @@ complexity: intermediate
 - Budget allocation
 
 ### Phase 2: Team Building & Enablement
+
 - Recruit and onboard sales team
 - Develop sales playbooks
 - Create training programs
@@ -96,6 +101,7 @@ complexity: intermediate
 - Establish sales processes
 
 **Deliverables:**
+
 - Sales team (hired and onboarded)
 - Sales playbook
 - Training materials
@@ -103,6 +109,7 @@ complexity: intermediate
 - Sales process documentation
 
 ### Phase 3: Pipeline Development
+
 - Generate leads and opportunities
 - Qualify prospects
 - Move deals through pipeline
@@ -110,12 +117,14 @@ complexity: intermediate
 - Manage key accounts
 
 **Deliverables:**
+
 - Qualified pipeline (3x quota)
 - Sales forecast
 - Account plans
 - Weekly pipeline reviews
 
 ### Phase 4: Deal Execution
+
 - Conduct sales calls and demos
 - Develop proposals
 - Negotiate contracts
@@ -123,12 +132,14 @@ complexity: intermediate
 - Coordinate with internal teams
 
 **Deliverables:**
+
 - Closed deals
 - Signed contracts
 - Revenue recognized
 - Win/loss analysis
 
 ### Phase 5: Performance Optimization
+
 - Analyze sales metrics
 - Coach underperformers
 - Replicate best practices
@@ -136,6 +147,7 @@ complexity: intermediate
 - Plan for next period
 
 **Deliverables:**
+
 - Performance reports
 - Coaching plans
 - Process improvements
@@ -144,6 +156,7 @@ complexity: intermediate
 ## Best Practices
 
 ### Sales Strategy
+
 - Align with company strategy
 - Define ideal customer profile (ICP)
 - Segment market effectively
@@ -153,6 +166,7 @@ complexity: intermediate
 - Think long-term (LTV, not just deal size)
 
 ### Pipeline Management
+
 - Maintain 3-4x pipeline coverage
 - Qualify rigorously (BANT, MEDDIC)
 - Forecast conservatively
@@ -162,6 +176,7 @@ complexity: intermediate
 - Track deal velocity
 
 ### Team Management
+
 - Set clear expectations and quotas
 - Provide regular coaching (1-on-1s)
 - Celebrate wins publicly
@@ -171,6 +186,7 @@ complexity: intermediate
 - Build team culture
 
 ### Forecasting
+
 - Use data-driven approach
 - Consider historical win rates
 - Account for seasonality
@@ -180,6 +196,7 @@ complexity: intermediate
 - Communicate changes transparently
 
 ### Sales Process
+
 - Define clear stages (lead → opp → proposal → closed)
 - Establish entry/exit criteria for each stage
 - Standardize activities at each stage
@@ -189,6 +206,7 @@ complexity: intermediate
 - Train team consistently
 
 ### Business Development
+
 - Identify partnership opportunities
 - Build relationships with key partners
 - Create win-win value propositions
@@ -200,10 +218,12 @@ complexity: intermediate
 ## Example Use Cases
 
 ### Scale Sales Team from 5 to 15 Reps
+
 **Timeline:** 12 months
 **Goal:** $5M to $15M ARR
 
 **Approach:**
+
 - Define hiring plan (2 reps per quarter)
 - Create repeatable onboarding program
 - Build sales playbook
@@ -215,9 +235,11 @@ complexity: intermediate
 **Result:** 12 reps hired, $12M ARR (80% of target)
 
 ### Improve Win Rate from 15% to 25%
+
 **Timeline:** 6 months
 
 **Approach:**
+
 - Analyze win/loss data
 - Identify winning patterns
 - Improve qualification (implement MEDDIC)
@@ -229,10 +251,12 @@ complexity: intermediate
 **Result:** 23% win rate (53% improvement)
 
 ### Enter New Market Segment
+
 **Market:** Mid-market (50-500 employees)
 **Goal:** $2M ARR in 12 months
 
 **Approach:**
+
 - Develop go-to-market strategy
 - Hire specialized AEs
 - Create segment-specific messaging
@@ -245,17 +269,20 @@ complexity: intermediate
 ## Customization Options
 
 ### Adjust by Sales Motion
+
 - **Transactional (<$5K deals):** High volume, short cycle, inside sales
 - **SMB ($5K-$50K deals):** Moderate cycle, account executives
 - **Mid-Market ($50K-$250K):** Longer cycle, consultative selling
 - **Enterprise ($250K+):** Complex, strategic, multi-stakeholder
 
 ### Adjust by Go-to-Market
+
 - **Product-Led Growth (PLG):** Focus on product adoption, sales-assist
 - **Sales-Led:** Traditional outbound, lead gen, pipeline management
 - **Channel/Partner-Led:** Partner enablement, co-selling, indirect revenue
 
 ### Adjust by Company Stage
+
 - **Early-Stage:** Founder-led sales, find product-market fit
 - **Growth Stage:** Scale sales team, build repeatable process
 - **Mature:** Optimize efficiency, expand markets, partnerships
@@ -263,12 +290,14 @@ complexity: intermediate
 ## Key Metrics & Deliverables
 
 **Revenue Metrics:**
+
 - Monthly/Quarterly Revenue
 - Annual Recurring Revenue (ARR)
 - Average Contract Value (ACV)
 - Revenue growth rate (MoM, YoY)
 
 **Pipeline Metrics:**
+
 - Pipeline coverage (pipeline/quota)
 - Pipeline velocity
 - Conversion rates by stage
@@ -276,6 +305,7 @@ complexity: intermediate
 - Deal slippage rate
 
 **Team Performance:**
+
 - Quota attainment (% of reps at quota)
 - Ramp time (new rep productivity)
 - Win rate
@@ -283,17 +313,20 @@ complexity: intermediate
 - Activities per rep (calls, demos, proposals)
 
 **Customer Metrics:**
+
 - Customer Acquisition Cost (CAC)
 - LTV:CAC ratio
 - Net Revenue Retention (NRR)
 - Customer churn rate
 
 **Forecasting Metrics:**
+
 - Forecast accuracy
 - Commit vs. actual
 - Weighted pipeline
 
 **Deliverables:**
+
 - Sales plan (annual, quarterly)
 - Revenue forecasts
 - Territory/account assignments

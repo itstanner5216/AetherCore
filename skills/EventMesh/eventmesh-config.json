@@ -2,21 +2,19 @@
   "skill_name": "AetherCore.EventMesh",
   "version": "1.1",
   "description": "Builds and maintains the internal event routing graph connecting all registered skills, handling message passing, dependency resolution, and task sequencing under orchestrator supervision.",
-  "compatible_with": [
-    "Universal Skill Integration Framework \u22651.0"
-  ],
+  "compatible_with": ["Universal Skill Integration Framework \u22651.0"],
   "execution_scope": "Subordinate",
   "callable": false,
   "auto_register": true,
   "entry_point": "eventmesh.md",
   "dependencies": [
-  "AetherCore.Orchestrator",
-  "AetherCore.OptiGraph",
-  "AetherCore.DeepForge",
-  "AetherCore.MarketSweep",
-  "AetherCore.GeminiBridge",
-  "AetherCore.PromptFoundry"
-],
+    "AetherCore.Orchestrator",
+    "AetherCore.OptiGraph",
+    "AetherCore.DeepForge",
+    "AetherCore.MarketSweep",
+    "AetherCore.GeminiBridge",
+    "AetherCore.PromptFoundry"
+  ],
   "integration": {
     "inherits_from": "Full-Output Intelligence Protocol",
     "tone_inheritance": true,
@@ -24,24 +22,14 @@
     "logging": {
       "behavior": "append",
       "format": "json",
-      "fields": [
-        "timestamp",
-        "action",
-        "state",
-        "result_summary"
-      ],
+      "fields": ["timestamp", "action", "state", "result_summary"],
       "auto_flush": true
     }
   },
   "metadata": {
     "category": "infrastructure",
     "status": "core",
-    "tags": [
-      "routing",
-      "graph",
-      "message-bus",
-      "automation"
-    ],
+    "tags": ["routing", "graph", "message-bus", "automation"],
     "notes": "Constructs inter-skill routing tables and dependency graphs."
   },
   "notes": "Constructs inter-skill routing tables and dependency graphs.",

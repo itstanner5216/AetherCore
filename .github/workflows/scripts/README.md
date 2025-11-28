@@ -92,11 +92,13 @@ python .github/workflows/scripts/quarantine_manager.py --report
 ### 1. File Discovery
 
 Scans repository for:
+
 - **Code files**: `.py`, `.js`, `.ts`, `.jsx`, `.tsx`, `.java`, `.go`, etc.
 - **Documentation**: `.md`, `.txt`, `.rst`
 - **Configuration**: `.json`, `.yaml`, `.yml`, `.toml`
 
 Ignores:
+
 - `.git`, `node_modules`, `__pycache__`, `venv`
 - Lock files (`package-lock.json`, `yarn.lock`, etc.)
 - The quarantine folder itself
@@ -104,6 +106,7 @@ Ignores:
 ### 2. Dependency Analysis
 
 Builds a dependency graph by analyzing:
+
 - **Python**: `import` and `from ... import` statements (AST-based)
 - **JavaScript/TypeScript**: ES6 imports, CommonJS requires, dynamic imports
 - **JSON/YAML**: File path references in configuration
@@ -112,6 +115,7 @@ Builds a dependency graph by analyzing:
 ### 3. Semantic Analysis
 
 Extracts semantic information:
+
 - **Keywords**: TF-IDF weighted terms
 - **Topics**: Pattern-matched categories (api, database, auth, test, etc.)
 - **Entities**: Function names, class names, headings
@@ -120,6 +124,7 @@ Extracts semantic information:
 ### 4. Relevance Scoring
 
 Each file receives a relevance score based on:
+
 - Entry point status (main.py, index.js, etc.)
 - Number of files that import/reference it
 - Semantic connections to other files
@@ -128,6 +133,7 @@ Each file receives a relevance score based on:
 ### 5. Quarantine Decision
 
 Files are flagged for quarantine if:
+
 - Not referenced by any other file (orphaned)
 - Very low relevance score with high confidence
 - Name contains markers like `_old`, `_backup`, `_deprecated`
@@ -139,6 +145,7 @@ Files are flagged for quarantine if:
 ### JSON Report
 
 Complete analysis data including:
+
 - File-by-file analysis results
 - Full dependency graph
 - Semantic clusters
@@ -148,6 +155,7 @@ Complete analysis data including:
 ### Markdown Report
 
 Human-readable summary with:
+
 - Statistics and metrics
 - Quarantine recommendations with reasons
 - Most referenced files
@@ -158,19 +166,19 @@ Human-readable summary with:
 
 ### Environment Variables
 
-| Variable | Default | Description |
-|----------|---------|-------------|
-| `SIMILARITY_THRESHOLD` | `0.3` | Minimum similarity for semantic links |
-| `RELEVANCE_THRESHOLD` | `0.2` | Minimum relevance score |
+| Variable               | Default | Description                           |
+| ---------------------- | ------- | ------------------------------------- |
+| `SIMILARITY_THRESHOLD` | `0.3`   | Minimum similarity for semantic links |
+| `RELEVANCE_THRESHOLD`  | `0.2`   | Minimum relevance score               |
 
 ### Workflow Inputs
 
-| Input | Default | Description |
-|-------|---------|-------------|
-| `dry_run` | `true` | Preview without moving files |
-| `create_pr` | `true` | Create PR with results |
-| `similarity_threshold` | `0.3` | Semantic matching threshold |
-| `relevance_threshold` | `0.2` | Relevance score threshold |
+| Input                  | Default | Description                  |
+| ---------------------- | ------- | ---------------------------- |
+| `dry_run`              | `true`  | Preview without moving files |
+| `create_pr`            | `true`  | Create PR with results       |
+| `similarity_threshold` | `0.3`   | Semantic matching threshold  |
+| `relevance_threshold`  | `0.2`   | Relevance score threshold    |
 
 ## Restoring Files
 
@@ -213,6 +221,7 @@ The manifest may have been modified. Check `quarantine/quarantine_manifest.json`
 ### High false positive rate
 
 Adjust thresholds:
+
 - Increase `relevance_threshold` to be more conservative
 - Decrease `similarity_threshold` for stricter matching
 

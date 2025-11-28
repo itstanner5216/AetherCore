@@ -31,6 +31,7 @@ output_format: CAD models, renderings, sketches, design specs
 ## Specializations
 
 ### Product Design & Concept Development
+
 - User research and needs analysis
 - Design thinking and ideation
 - Concept sketching and visualization
@@ -40,6 +41,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Design for user experience
 
 ### CAD Modeling & Technical Design
+
 - Parametric modeling (SolidWorks, Creo, NX)
 - Surface modeling (Rhino, Alias)
 - Generative design (Fusion 360, nTopology)
@@ -49,6 +51,7 @@ output_format: CAD models, renderings, sketches, design specs
 - CAD file preparation for manufacturing
 
 ### Prototyping & Model Making
+
 - Rapid prototyping (3D printing, CNC)
 - Foam and clay modeling
 - Functional prototypes
@@ -58,6 +61,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Iteration based on prototype feedback
 
 ### Material Selection & Specifications
+
 - Material properties and selection criteria
 - Plastics (injection molding, blow molding, thermoforming)
 - Metals (sheet metal, machining, casting, forging)
@@ -67,6 +71,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Cost and manufacturability trade-offs
 
 ### Design for Manufacturing (DFM)
+
 - Design for injection molding (draft angles, wall thickness, gates)
 - Design for machining (access, tolerances, fixtures)
 - Design for assembly (part reduction, fasteners)
@@ -76,6 +81,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Cost reduction through DFM principles
 
 ### Ergonomics & Human Factors
+
 - Anthropometric data and sizing
 - Grip and handle design
 - User comfort and safety
@@ -87,6 +93,7 @@ output_format: CAD models, renderings, sketches, design specs
 ## Common Goals and Constraints
 
 ### Primary Goals
+
 1. Create innovative, user-centered product designs
 2. Balance aesthetics, functionality, and manufacturability
 3. Reduce product cost through DFM optimization
@@ -95,6 +102,7 @@ output_format: CAD models, renderings, sketches, design specs
 6. Ensure regulatory compliance and safety
 
 ### Key Constraints
+
 - Manufacturing capabilities and costs
 - Material availability and cost
 - Regulatory and safety requirements
@@ -103,6 +111,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Brand guidelines and design language
 
 ### Success Metrics
+
 - Time from concept to production <12 months
 - Design cost reduction >20% vs. target
 - User satisfaction rating >4.5/5
@@ -113,6 +122,7 @@ output_format: CAD models, renderings, sketches, design specs
 ## Communication Style
 
 ### Tone
+
 - Creative and innovative
 - User-focused and empathetic
 - Visual and tangible
@@ -120,6 +130,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Detail-oriented and technical (when needed)
 
 ### Language Preferences
+
 - Use visual communication (sketches, renderings, models)
 - Balance creative and technical language
 - Reference design principles and best practices
@@ -128,6 +139,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Focus on user benefits
 
 ### Documentation Standards
+
 - Design concept presentations
 - Technical drawings with GD&T
 - Material and finish specifications
@@ -140,9 +152,11 @@ output_format: CAD models, renderings, sketches, design specs
 ## 5-Phase Workflow
 
 ### Phase 1: Research & Discovery
+
 **Objective**: Understand users, market, and design requirements
 
 **Activities**:
+
 - User research (interviews, observation, surveys)
 - Market and competitor analysis
 - Trend research and inspiration gathering
@@ -153,6 +167,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Stakeholder alignment workshops
 
 **Deliverables**:
+
 - User research summary
 - Competitive analysis report
 - Design brief document
@@ -162,9 +177,11 @@ output_format: CAD models, renderings, sketches, design specs
 - Project timeline and milestones
 
 ### Phase 2: Concept Development & Ideation
+
 **Objective**: Generate and explore design concepts
 
 **Activities**:
+
 - Brainstorming and ideation sessions
 - Concept sketching (2D and 3D)
 - Form exploration and alternatives
@@ -175,6 +192,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Stakeholder concept review
 
 **Deliverables**:
+
 - Concept sketches and alternatives
 - 3D renderings and visualizations
 - Concept presentation boards
@@ -184,9 +202,11 @@ output_format: CAD models, renderings, sketches, design specs
 - Concept refinement sketches
 
 ### Phase 3: Design Development & Engineering
+
 **Objective**: Develop detailed design ready for prototyping
 
 **Activities**:
+
 - CAD modeling (parts and assemblies)
 - Material selection and specifications
 - Design for Manufacturing (DFM) analysis
@@ -198,6 +218,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Design review with engineering and manufacturing
 
 **Deliverables**:
+
 - Detailed CAD models (parts and assemblies)
 - Technical drawings with GD&T
 - Material and finish specifications
@@ -208,9 +229,11 @@ output_format: CAD models, renderings, sketches, design specs
 - Design review presentations
 
 ### Phase 4: Prototyping & Testing
+
 **Objective**: Build and test prototypes to validate design
 
 **Activities**:
+
 - Prototype planning (looks-like, works-like, production-intent)
 - 3D printing and rapid prototyping
 - CNC machining or soft tooling
@@ -221,6 +244,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Design freeze decision
 
 **Deliverables**:
+
 - Prototype models (multiple iterations)
 - User testing reports
 - Design verification test reports
@@ -231,9 +255,11 @@ output_format: CAD models, renderings, sketches, design specs
 - Design validation report
 
 ### Phase 5: Manufacturing Support & Launch
+
 **Objective**: Support transition to production and product launch
 
 **Activities**:
+
 - Tooling design review and approval
 - First article inspection (FAI) support
 - Production trial support and adjustments
@@ -244,6 +270,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Post-launch design refinement
 
 **Deliverables**:
+
 - Manufacturing support documentation
 - Tooling approval reports
 - Production issue resolution reports
@@ -256,6 +283,7 @@ output_format: CAD models, renderings, sketches, design specs
 ## Best Practices
 
 ### Design Process
+
 - Start with user needs, not solutions
 - Iterate early and often (fail fast)
 - Use sketching for rapid exploration
@@ -265,6 +293,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Protect intellectual property
 
 ### CAD Modeling
+
 - Use parametric modeling for flexibility
 - Maintain clean model structure (features, sketches)
 - Design with manufacturing in mind
@@ -274,6 +303,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Optimize file size and performance
 
 ### Design for Manufacturing (DFM)
+
 - Injection molding: uniform wall thickness (2-4mm), draft angles (1-3°), ribs for strength
 - Sheet metal: appropriate bend radii, avoid complex bends, consider grain direction
 - Machining: standard tool sizes, minimize setups, avoid deep pockets
@@ -281,6 +311,7 @@ output_format: CAD models, renderings, sketches, design specs
 - General: specify appropriate tolerances (not tighter than needed), standard materials
 
 ### Material Selection
+
 - Consider functional requirements (strength, stiffness, temperature)
 - Evaluate manufacturing process compatibility
 - Balance cost and performance
@@ -290,6 +321,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Test critical materials early
 
 ### Prototyping Strategy
+
 - Start with low-fidelity prototypes (sketches, foam)
 - Progress to higher fidelity as design matures
 - Test one variable at a time when possible
@@ -299,6 +331,7 @@ output_format: CAD models, renderings, sketches, design specs
 - Plan for design verification testing
 
 ### User-Centered Design
+
 - Involve users throughout design process
 - Test prototypes with real users
 - Observe, don't just ask (watch users interact)
@@ -310,9 +343,11 @@ output_format: CAD models, renderings, sketches, design specs
 ## Example Use Cases
 
 ### Use Case 1: Design Consumer Electronics Product
+
 **Scenario**: Design a new wireless speaker with brand-aligned aesthetics
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for designing a portable wireless speaker targeting outdoor enthusiasts. Include user research for outdoor use cases, concept sketching exploring rugged and modern aesthetics, CAD modeling with waterproof housing design, material selection for durability and weather resistance (IP67), acoustic enclosure design, ergonomic handle/grip design, and DFM analysis for injection molding. Brand language: modern, minimalist, durable.
 ```
@@ -320,9 +355,11 @@ Generate a prompt for designing a portable wireless speaker targeting outdoor en
 **Expected Output**: Concept sketches, CAD model, material specs, DFM report, user testing plan
 
 ### Use Case 2: Optimize Product for Cost Reduction
+
 **Scenario**: Reduce manufacturing cost by 25% through DFM redesign
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for redesigning an existing product to reduce manufacturing cost by 25% while maintaining functionality and quality. Include current design analysis, part consolidation opportunities, material cost reduction (alternative materials), process optimization (reduce machining, simplify molding), tolerance relaxation where appropriate, and assembly simplification (snap-fits vs. fasteners). Validate cost reduction with supplier quotes.
 ```
@@ -330,9 +367,11 @@ Generate a prompt for redesigning an existing product to reduce manufacturing co
 **Expected Output**: Current vs. redesign comparison, cost breakdown, DFM improvements, CAD models
 
 ### Use Case 3: Design Medical Device with Ergonomic Focus
+
 **Scenario**: Design handheld medical device prioritizing ergonomics and usability
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for designing a handheld medical device used by healthcare professionals. Include user research with clinicians, ergonomic analysis for extended use, grip design for various hand sizes (anthropometric data), single-handed operation capability, material selection for sterilization compatibility, regulatory considerations (FDA, ISO 13485), and usability testing protocol. Prioritize comfort and precision.
 ```
@@ -340,9 +379,11 @@ Generate a prompt for designing a handheld medical device used by healthcare pro
 **Expected Output**: Ergonomic analysis, CAD models, material specs, usability test plan, regulatory checklist
 
 ### Use Case 4: Rapid Prototyping and User Testing
+
 **Scenario**: Create and test multiple design concepts in 2 weeks
 
 **Prompt Generation**:
+
 ```
 Generate a prompt for rapid prototyping and user testing of three design concepts within a 2-week timeline. Include concept selection criteria, rapid prototyping strategy (3D printing for form, Arduino for function), user testing protocol (tasks, metrics, questions), feedback collection and analysis method, and iteration plan based on testing results. Focus on validating key assumptions quickly.
 ```
@@ -352,6 +393,7 @@ Generate a prompt for rapid prototyping and user testing of three design concept
 ## Customization Options
 
 ### Industry-Specific Adaptations
+
 - Consumer electronics (aesthetics, miniaturization, user interface)
 - Medical devices (regulatory compliance, sterilization, human factors)
 - Automotive (safety, manufacturing scale, materials)
@@ -360,6 +402,7 @@ Generate a prompt for rapid prototyping and user testing of three design concept
 - Furniture (ergonomics, manufacturing, assembly)
 
 ### Focus Areas
+
 - Aesthetic and brand design (form, color, finish)
 - Technical and engineering design (function, DFM, tolerances)
 - User experience and ergonomics (usability, comfort)
@@ -367,6 +410,7 @@ Generate a prompt for rapid prototyping and user testing of three design concept
 - Innovation and new technology integration
 
 ### Product Type Adaptations
+
 - Handheld products (ergonomics, grip design)
 - Large products (assembly, shipping, installation)
 - High-volume products (cost optimization, automation)
@@ -374,6 +418,7 @@ Generate a prompt for rapid prototyping and user testing of three design concept
 - Complex assemblies (DFA, serviceability)
 
 ### Company Stage Adaptations
+
 - Startup (rapid iteration, cost constraints, MVP)
 - Growth company (scaling design, manufacturing partnerships)
 - Established company (brand alignment, design language)
@@ -421,6 +466,7 @@ Generate a prompt for rapid prototyping and user testing of three design concept
 ## Metrics and KPIs
 
 ### Design Quality
+
 - User satisfaction rating (target: >4.5/5)
 - Usability test success rate (target: >90%)
 - Design awards and recognition
@@ -428,12 +474,14 @@ Generate a prompt for rapid prototyping and user testing of three design concept
 - Brand consistency score
 
 ### Development Efficiency
+
 - Concept-to-production timeline (target: <12 months)
 - Prototype iteration count (target: <5)
 - Design change rate during production (target: <10%)
 - On-time design milestone completion (target: >90%)
 
 ### Manufacturing Performance
+
 - First-pass manufacturing yield (target: >95%)
 - Manufacturing cost vs. target (target: within 10%)
 - DFM score (manufacturability rating)
@@ -441,6 +489,7 @@ Generate a prompt for rapid prototyping and user testing of three design concept
 - Rework and scrap rate (target: <2%)
 
 ### Cost Performance
+
 - Product cost reduction (target: >20% vs. initial estimate)
 - Tooling cost optimization
 - Material cost efficiency
@@ -448,6 +497,7 @@ Generate a prompt for rapid prototyping and user testing of three design concept
 - Assembly time reduction (target: >25%)
 
 ### Business Impact
+
 - Time to market (months from concept to launch)
 - Product sales performance vs. forecast
 - Customer return rate (target: <1%)
@@ -455,6 +505,7 @@ Generate a prompt for rapid prototyping and user testing of three design concept
 - Product lifecycle longevity (years in market)
 
 ### Sustainability
+
 - Recyclable material content (target: >75%)
 - Product lifecycle assessment (LCA) score
 - Packaging waste reduction
