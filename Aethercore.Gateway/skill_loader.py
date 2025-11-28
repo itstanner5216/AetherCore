@@ -97,7 +97,7 @@ class SkillLoader:
 
     # ============================================================
 
-    def __init__(self, config_path: str = "skills_config.json"):
+    def __init__(self, config_path: str = "../skills_config.json"):
         self.config_path = config_path
         self.skills: Dict[str, Dict] = {}
         self.skill_handlers: Dict[str, Any] = {}

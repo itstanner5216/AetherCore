@@ -1,6 +1,11 @@
 #!/bin/bash
 # AetherCore Gateway - Koyeb Deployment Script
 # Deploys the service using Koyeb CLI
+#
+# USAGE:
+# 1. Copy this file to koyeb_deploy.sh
+# 2. Replace all placeholder values with your actual API keys
+# 3. Run: chmod +x koyeb_deploy.sh && ./koyeb_deploy.sh
 
 set -e
 
@@ -25,7 +30,7 @@ if ! command -v koyeb &> /dev/null; then
 fi
 
 # Set API token from environment
-export KOYEB_TOKEN="${KOYEB_API_KEY:-5ue0i50v18viyfdrjgm7rea3x7xnjeqe3h57z0idxh7o62vdq9oiyux5y7b5kfjf}"
+export KOYEB_TOKEN="${KOYEB_API_KEY:-YOUR_KOYEB_API_KEY_HERE}"
 
 echo ""
 echo "Creating/Updating AetherCore Gateway service..."
@@ -50,14 +55,14 @@ koyeb service create aethercore-gateway \
   --env CORS_ORIGINS=https://chat.openai.com,https://chatgpt.com \
   --env RATE_LIMIT_REQUESTS=100 \
   --env RATE_LIMIT_WINDOW=3600 \
-  --env SKILLS_CONFIG_PATH=skills_config.json \
-  --env API_KEY=f3a0c4b7e1d9c0f247a6df81b2439e57c1d84e3ab9a92f7db08f6c2cd41e5af0 \
-  --env GOOGLE_API_KEY=AIzaSyDLSW6qz4tC9Aq0p2yO0gbmrrIBeKjGdBs \
-  --env GOOGLE_CSE_ID=739bdcbb2b51b4409 \
-  --env BRAVE_API=BSAUZcHnbsKgi9GTsu4wQV2SPEeZ3wy \
-  --env SERPER_API_KEY=8b0733a1da1ace1e16a34f5a396b48e4daa4d88e \
-  --env WEBSCRAPING_API_KEY=DXXGG7k1XgDQI1EPvq2ZCobU3N1uksPo \
-  --env SCRAPINGANT_API_KEY=0f53dcf52bc3454687ff777304dbd583 \
+  --env SKILLS_CONFIG_PATH=../skills_config.json \
+  --env API_KEY=YOUR_API_KEY_HERE \
+  --env GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY_HERE \
+  --env GOOGLE_CSE_ID=YOUR_GOOGLE_CSE_ID_HERE \
+  --env BRAVE_API=YOUR_BRAVE_API_KEY_HERE \
+  --env SERPER_API_KEY=YOUR_SERPER_API_KEY_HERE \
+  --env WEBSCRAPING_API_KEY=YOUR_WEBSCRAPING_API_KEY_HERE \
+  --env SCRAPINGANT_API_KEY=YOUR_SCRAPINGANT_API_KEY_HERE \
   --checks 8000:http:/health \
   --skip-cache
 
