@@ -1,0 +1,57 @@
+name: Lint and Autofix (Reusable)
+
+on:
+  workflow_call:
+    inputs:
+      apply_autofix:
+        description: 'Whether to apply autofixes'
+        required: false
+        type: boolean
+        default: true
+      node-version:
+        description: 'Node.js version'
+        required: false
+        type: string
+        default: '20'
+      python-version:
+        description: 'Python version'
+        required: false
+        type: string
+        default: '3.11'
+      commit-message:
+        description: 'Commit message for autofix'
+        required: false
+        type: string
+        default: 'chore(lint): apply autofixes'
+      push:
+        description: 'Whether to push changes'
+        required: false
+        type: boolean
+        default: true
+    secrets:
+      push_token:
+        description: 'Token for pushing commits (prefer AUTOFIX_PUSH_TOKEN)'
+        required: false
+
+jobs:
+  lint-and-autofix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.push_token || github.token }}
+
+      - name: Run lint and autofix
+        uses: ./.github/actions/lint-autofix
+        with:
+          apply_autofix: ${{ inputs.apply_autofix }}
+          node-version: ${{ inputs.node-version }}
+          python-version: ${{ inputs.python-version }}
+          commit-message: ${{ inputs.commit-message }}
+          push: ${{ inputs.push }}
+          push-token: ${{ secrets.push_token }}
