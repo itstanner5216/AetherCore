@@ -30,3 +30,6 @@ providers.json
 # Logs
 logs/
 *.log
+
+# Lock files
+package-lock.json

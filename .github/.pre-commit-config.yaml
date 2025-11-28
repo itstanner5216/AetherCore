@@ -4,14 +4,14 @@ repos:
     hooks:
       - id: eslint
         name: ESLint
-        entry: npx eslint --fix
+        entry: npx eslint --config .github/.eslintrc.cjs --fix
         language: system
         types: [javascript]
         files: \.(js|cjs|mjs)$
 
       - id: prettier
         name: Prettier
-        entry: npx prettier --write
+        entry: npx prettier --config .github/.prettierrc.json --ignore-path .github/.prettierignore --write
         language: system
         types_or: [javascript, json, markdown, yaml]
 

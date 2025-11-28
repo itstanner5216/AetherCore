@@ -4,10 +4,10 @@
   "description": "AetherCore - External Intelligence Coprocessor",
   "type": "module",
   "scripts": {
-    "lint": "eslint . --ext .js,.cjs,.mjs",
-    "lint:fix": "eslint . --ext .js,.cjs,.mjs --fix",
-    "format": "prettier --write \"**/*.{js,cjs,mjs,json,md,yml,yaml}\"",
-    "format:check": "prettier --check \"**/*.{js,cjs,mjs,json,md,yml,yaml}\""
+    "lint": "eslint . --config .github/.eslintrc.cjs --ext .js,.cjs,.mjs",
+    "lint:fix": "eslint . --config .github/.eslintrc.cjs --ext .js,.cjs,.mjs --fix",
+    "format": "prettier --config .github/.prettierrc.json --ignore-path .github/.prettierignore --write \"**/*.{js,cjs,mjs,json,md,yml,yaml}\"",
+    "format:check": "prettier --config .github/.prettierrc.json --ignore-path .github/.prettierignore --check \"**/*.{js,cjs,mjs,json,md,yml,yaml}\""
   },
   "devDependencies": {
     "eslint": "^8.57.0",
