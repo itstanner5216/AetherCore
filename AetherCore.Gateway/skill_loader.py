@@ -961,7 +961,7 @@ class SkillLoader:
                         # Cache successful result (15 min TTL)
                         if not hasattr(self, "_search_cache"):
                             self._search_cache = {}
-                        cache_key = hashlib.md5(
+                        cache_key = hashlib.sha256(
                             f"{query}:{max_results}:{provider}".encode()
                         ).hexdigest()
                         self._search_cache[cache_key] = {
