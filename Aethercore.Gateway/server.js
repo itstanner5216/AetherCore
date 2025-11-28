@@ -41,7 +41,7 @@ const ratelimit = new Ratelimit({
 
 // Initialize provider quotas from config
 const initQuotas = async () => {
-  const { providers } = require('./skills/SearchEngine/searchengine-config.json');
+  const { providers } = require('../skills/SearchEngine/searchengine-config.json');
   
   for (const [providerType, providerList] of Object.entries(providers)) {
     for (const [providerName, config] of Object.entries(providerList)) {
@@ -60,7 +60,7 @@ const initQuotas = async () => {
 initQuotas().catch(console.error);
 
 // Import SearchEngine implementation
-const { search, scrape, quota_status, reset_quotas } = require('./skills/SearchEngine/searchengine-entry.js');
+const { search, scrape, quota_status, reset_quotas } = require('../skills/SearchEngine/searchengine-entry.js');
 
 // API endpoint for search with quota enforcement
 app.post('/api/search', async (req, res) => {
@@ -70,7 +70,7 @@ app.post('/api/search', async (req, res) => {
     return res.status(400).json({ error: 'Missing query parameter' });
   }
 
-  const { providers } = require('./skills/SearchEngine/searchengine-config.json');
+  const { providers } = require('../skills/SearchEngine/searchengine-config.json');
   let selectedProvider = null;
 
   // Provider selection logic with Redis quota check
@@ -173,7 +173,7 @@ app.post('/api/reset-quotas', async (req, res) => {
   const { provider = 'all' } = req.body;
 
   try {
-    const { providers } = require('./skills/SearchEngine/searchengine-config.json');
+    const { providers } = require('../skills/SearchEngine/searchengine-config.json');
 
     if (provider === 'all') {
       // Reset all search provider quotas
