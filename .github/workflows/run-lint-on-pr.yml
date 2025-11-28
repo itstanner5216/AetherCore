@@ -13,6 +13,9 @@ on:
         type: boolean
         default: true
 
+permissions:
+  contents: write
+
 jobs:
   lint:
     uses: ./.github/workflows/lint-and-autofix-reusable.yml
